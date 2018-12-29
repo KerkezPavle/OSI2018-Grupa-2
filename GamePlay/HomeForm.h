@@ -1,8 +1,9 @@
 #pragma once
 #include <Windows.h>
+#include "Username.h"
 
 
-namespace CLTTestApp {
+namespace GamePlay {
 
 	using namespace System;
 	using namespace System::ComponentModel;
@@ -363,7 +364,7 @@ namespace CLTTestApp {
 
 	}
 	private: System::Void btnGame1_Click(System::Object^  sender, System::EventArgs^  e) {
-
+		
 	}
 	private: System::Void btnSettings_Click(System::Object^  sender, System::EventArgs^  e) {
 

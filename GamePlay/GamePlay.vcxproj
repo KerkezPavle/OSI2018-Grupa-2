@@ -133,11 +133,20 @@
   <ItemGroup>
     <ClCompile Include="HomeForm.cpp" />
     <ClCompile Include="Test.cpp" />
+    <ClCompile Include="Username.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="HomeForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="Username.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Username.resx">
+      <DependentUpon>Username.h</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
