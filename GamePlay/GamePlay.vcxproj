@@ -144,6 +144,9 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="HomeForm.resx">
+      <DependentUpon>HomeForm.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Username.resx">
       <DependentUpon>Username.h</DependentUpon>
     </EmbeddedResource>

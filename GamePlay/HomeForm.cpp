@@ -16,7 +16,5 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 	else {
 		Application::Run(gcnew HomeForm());
 	}
-	//Username frm;
-	//frm.ShowDialog();
 	return 0;
 }

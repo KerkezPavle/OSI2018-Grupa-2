@@ -351,6 +351,7 @@ namespace GamePlay {
 			this->Controls->Add(this->menuStrip1);
 			this->MainMenuStrip = this->menuStrip1;
 			this->Name = L"HomeForm";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"HomeForm";
 			this->menuStrip1->ResumeLayout(false);
 			this->menuStrip1->PerformLayout();
