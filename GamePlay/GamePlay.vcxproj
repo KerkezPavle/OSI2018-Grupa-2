@@ -133,12 +133,14 @@
   <ItemGroup>
     <ClCompile Include="HomeForm.cpp" />
     <ClCompile Include="Test.cpp" />
+    <ClCompile Include="tinyxml2.cpp" />
     <ClCompile Include="Username.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="HomeForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="tinyxml2.h" />
     <ClInclude Include="Username.h">
       <FileType>CppForm</FileType>
     </ClInclude>
