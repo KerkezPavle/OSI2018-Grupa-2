@@ -135,15 +135,18 @@
     <ClCompile Include="Test.cpp" />
     <ClCompile Include="tinyxml2.cpp" />
     <ClCompile Include="Username.cpp" />
+    <ClCompile Include="XMLDataFile.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="HomeForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="loto.h" />
     <ClInclude Include="tinyxml2.h" />
     <ClInclude Include="Username.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="XMLDataFile.h" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="HomeForm.resx">

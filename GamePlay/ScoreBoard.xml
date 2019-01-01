@@ -1,0 +1,23 @@
+<Statistics>
+    <FirstGame>
+        <Score>
+            <date>Mon Dec 31 00:53:01 2018</date>
+            <value>10</value>
+        </Score>
+        <Score>
+            <date>Mon Dec 31 00:53:01 2018</date>
+            <value>20</value>
+        </Score>
+        <Score>
+            <date>Mon Dec 31 00:53:01 2018</date>
+            <value>30</value>
+        </Score>
+        <Score>
+            <date>Mon Dec 31 00:53:01 2018</date>
+            <value>40</value>
+        </Score>
+    </FirstGame>
+    <SecondGame/>
+    <ThirdGame/>
+    <FourthGame/>
+</Statistics>

@@ -1,6 +1,7 @@
 #pragma once
 #include <Windows.h>
 #include "Username.h"
+#include "XMLDataFile.h"
 
 
 namespace GamePlay {
@@ -60,7 +61,8 @@ namespace GamePlay {
 	private: System::Windows::Forms::Button^  button2;
 	private: System::Windows::Forms::Button^  button3;
 	private: System::Windows::Forms::Button^  button4;
-	private: System::Windows::Forms::Button^  button5;
+	private: System::Windows::Forms::Button^  btnStartBingo;
+
 	private: System::Windows::Forms::Button^  button6;
 	private: System::Windows::Forms::Button^  button7;
 	private: System::Windows::Forms::Button^  button8;
@@ -96,7 +98,7 @@ namespace GamePlay {
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->button4 = (gcnew System::Windows::Forms::Button());
-			this->button5 = (gcnew System::Windows::Forms::Button());
+			this->btnStartBingo = (gcnew System::Windows::Forms::Button());
 			this->button6 = (gcnew System::Windows::Forms::Button());
 			this->button7 = (gcnew System::Windows::Forms::Button());
 			this->button8 = (gcnew System::Windows::Forms::Button());
@@ -265,14 +267,15 @@ namespace GamePlay {
 			this->button4->Text = L"Otkljucaj igru";
 			this->button4->UseVisualStyleBackColor = true;
 			// 
-			// button5
+			// btnStartBingo
 			// 
-			this->button5->Location = System::Drawing::Point(411, 225);
-			this->button5->Name = L"button5";
-			this->button5->Size = System::Drawing::Size(109, 38);
-			this->button5->TabIndex = 14;
-			this->button5->Text = L"START";
-			this->button5->UseVisualStyleBackColor = true;
+			this->btnStartBingo->Location = System::Drawing::Point(411, 225);
+			this->btnStartBingo->Name = L"btnStartBingo";
+			this->btnStartBingo->Size = System::Drawing::Size(109, 38);
+			this->btnStartBingo->TabIndex = 14;
+			this->btnStartBingo->Text = L"START";
+			this->btnStartBingo->UseVisualStyleBackColor = true;
+			this->btnStartBingo->Click += gcnew System::EventHandler(this, &HomeForm::button5_Click);
 			// 
 			// button6
 			// 
@@ -335,7 +338,7 @@ namespace GamePlay {
 			this->Controls->Add(this->button8);
 			this->Controls->Add(this->button7);
 			this->Controls->Add(this->button6);
-			this->Controls->Add(this->button5);
+			this->Controls->Add(this->btnStartBingo);
 			this->Controls->Add(this->button4);
 			this->Controls->Add(this->button3);
 			this->Controls->Add(this->button2);
@@ -361,10 +364,19 @@ namespace GamePlay {
 		}
 #pragma endregion
 	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
+		const char *XMLFileName = "ScoreBoard.xml";
 
+		if (makeXMLScoreFileSafe(XMLFileName) == 0) {
+			System::Windows::Forms::MessageBox::Show("ScoreXML file already exists", "ScoreXML - Statistics", System::Windows::Forms::MessageBoxButtons::OK, System::Windows::Forms::MessageBoxIcon::Information);
+		}
+		makeXMLSettingsFile();
 
 	}
 	private: System::Void btnGame1_Click(System::Object^  sender, System::EventArgs^  e) {
+		insertDataIntoStats(1, 10);
+		insertDataIntoStats(1, 20);
+		insertDataIntoStats(1, 30);
+		insertDataIntoStats(1, 40);
 		
 	}
 	private: System::Void btnSettings_Click(System::Object^  sender, System::EventArgs^  e) {
@@ -378,7 +390,10 @@ namespace GamePlay {
 	private: System::Void button8_Click(System::Object^  sender, System::EventArgs^  e) {
 
 	}
-	};
+	private: System::Void button5_Click(System::Object^  sender, System::EventArgs^  e) {
+		testFun();
+	}
+};
 }
 
 
