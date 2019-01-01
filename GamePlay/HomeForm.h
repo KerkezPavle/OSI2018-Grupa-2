@@ -67,7 +67,10 @@ namespace GamePlay {
 	private: System::Windows::Forms::Button^  button7;
 	private: System::Windows::Forms::Button^  button8;
 	private: System::Windows::Forms::Button^  button9;
-	private: System::Windows::Forms::Label^  label3;
+	private: System::Windows::Forms::Label^  lblUsername;
+	private: System::Windows::Forms::ToolStripMenuItem^  optionsToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^  clearUsernameToolStripMenuItem;
+
 
 	private:
 		/// <summary>
@@ -91,6 +94,8 @@ namespace GamePlay {
 			this->menuStrip1 = (gcnew System::Windows::Forms::MenuStrip());
 			this->toolStripMenuItem1 = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->exitToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->optionsToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->clearUsernameToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->aboutToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->lblKviz = (gcnew System::Windows::Forms::Label());
 			this->lblbingo = (gcnew System::Windows::Forms::Label());
@@ -103,7 +108,7 @@ namespace GamePlay {
 			this->button7 = (gcnew System::Windows::Forms::Button());
 			this->button8 = (gcnew System::Windows::Forms::Button());
 			this->button9 = (gcnew System::Windows::Forms::Button());
-			this->label3 = (gcnew System::Windows::Forms::Label());
+			this->lblUsername = (gcnew System::Windows::Forms::Label());
 			this->menuStrip1->SuspendLayout();
 			this->SuspendLayout();
 			// 
@@ -177,9 +182,9 @@ namespace GamePlay {
 			// 
 			// menuStrip1
 			// 
-			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(2) {
+			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(3) {
 				this->toolStripMenuItem1,
-					this->aboutToolStripMenuItem
+					this->optionsToolStripMenuItem, this->aboutToolStripMenuItem
 			});
 			this->menuStrip1->Location = System::Drawing::Point(0, 0);
 			this->menuStrip1->Name = L"menuStrip1";
@@ -200,6 +205,20 @@ namespace GamePlay {
 			this->exitToolStripMenuItem->Size = System::Drawing::Size(92, 22);
 			this->exitToolStripMenuItem->Text = L"Exit";
 			this->exitToolStripMenuItem->Click += gcnew System::EventHandler(this, &HomeForm::exitToolStripMenuItem_Click);
+			// 
+			// optionsToolStripMenuItem
+			// 
+			this->optionsToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->clearUsernameToolStripMenuItem });
+			this->optionsToolStripMenuItem->Name = L"optionsToolStripMenuItem";
+			this->optionsToolStripMenuItem->Size = System::Drawing::Size(61, 20);
+			this->optionsToolStripMenuItem->Text = L"Options";
+			// 
+			// clearUsernameToolStripMenuItem
+			// 
+			this->clearUsernameToolStripMenuItem->Name = L"clearUsernameToolStripMenuItem";
+			this->clearUsernameToolStripMenuItem->Size = System::Drawing::Size(180, 22);
+			this->clearUsernameToolStripMenuItem->Text = L"Clear Username";
+			this->clearUsernameToolStripMenuItem->Click += gcnew System::EventHandler(this, &HomeForm::clearUsernameToolStripMenuItem_Click);
 			// 
 			// aboutToolStripMenuItem
 			// 
@@ -319,21 +338,21 @@ namespace GamePlay {
 			this->button9->UseVisualStyleBackColor = false;
 			this->button9->Click += gcnew System::EventHandler(this, &HomeForm::button9_Click);
 			// 
-			// label3
+			// lblUsername
 			// 
-			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(222, 60);
-			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(35, 13);
-			this->label3->TabIndex = 19;
-			this->label3->Text = L"label3";
+			this->lblUsername->AutoSize = true;
+			this->lblUsername->Location = System::Drawing::Point(222, 60);
+			this->lblUsername->Name = L"lblUsername";
+			this->lblUsername->Size = System::Drawing::Size(0, 13);
+			this->lblUsername->TabIndex = 19;
+			this->lblUsername->Text = getUsername();
 			// 
 			// HomeForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(744, 399);
-			this->Controls->Add(this->label3);
+			this->Controls->Add(this->lblUsername);
 			this->Controls->Add(this->button9);
 			this->Controls->Add(this->button8);
 			this->Controls->Add(this->button7);
@@ -393,6 +412,12 @@ namespace GamePlay {
 	private: System::Void button5_Click(System::Object^  sender, System::EventArgs^  e) {
 		testFun();
 	}
+private: System::Void clearUsernameToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
+	HomeForm::Hide();
+	clearUsername();
+	this->lblUsername->Text = getUsername();
+	HomeForm::Show();
+}
 };
 }
 

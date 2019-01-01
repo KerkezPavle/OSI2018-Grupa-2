@@ -1,10 +1,11 @@
 #include "XMLDataFile.h"
 #include "tinyxml2.h"
 #include <Windows.h>
+#include "Username.h"
 #include <time.h>
 #include <iostream>
 #include <string>
-#include <string>
+#include <vcclr.h>
 #include "loto.h"
 using namespace tinyxml2;
 
@@ -239,17 +240,89 @@ bool isUserNameSet() {
 	const char* XMLFileName = "Settings.xml";
 	tinyxml2::XMLDocument xmlDoc;
 	xmlDoc.LoadFile(XMLFileName);
-	std::string temp = xmlDoc.FirstChildElement("Settings")->FirstChildElement("Username")->GetText();
-	if (temp.empty()) {
+	if (xmlDoc.FirstChildElement("Settings")->FirstChildElement("Username")->GetText() == nullptr)
 		return false;
-	}
-	else {
+	else
 		return true;
+	
+}
+
+bool setUserName(std::string username)
+{
+	const char* SettingsXMLFile = "Settings.xml";
+	tinyxml2::XMLDocument xmlDoc;
+	xmlDoc.LoadFile(SettingsXMLFile);
+	XMLElement *element = xmlDoc.FirstChildElement("Settings")->FirstChildElement("Username");
+	element->SetText(username.c_str());
+	xmlDoc.SaveFile(SettingsXMLFile);
+	return true;
+}
+
+System::String^ getUsername() {
+	const char *c;
+	const char* SettingsXMLFile = "Settings.xml";
+	tinyxml2::XMLDocument xmlDoc;
+	xmlDoc.LoadFile(SettingsXMLFile);
+	c = xmlDoc.FirstChildElement("Settings")->FirstChildElement("Username")->GetText();
+	xmlDoc.SaveFile(SettingsXMLFile);
+	System::String^ strNew = gcnew System::String(c);
+	return strNew;
+}
+
+void clearUsername() {
+	const char* SettingsXMLFile = "Settings.xml";
+	tinyxml2::XMLDocument xmlDoc;
+	xmlDoc.LoadFile(SettingsXMLFile);
+	xmlDoc.FirstChildElement("Settings")->FirstChildElement("Username")->SetText("");
+	xmlDoc.SaveFile(SettingsXMLFile);
+	GamePlay::Username frm;
+	frm.ShowDialog();
+}
+
+/*
+	@desc: This function overrides Close (X) button operation
+*/
+
+BOOL WINAPI CtrlHandler(DWORD fdwCtrlType)
+{
+	switch (fdwCtrlType)
+	{
+		// Handle the CTRL-C signal. 
+	case CTRL_C_EVENT:
+		Beep(750, 300);
+		return TRUE;
+
+		// CTRL-CLOSE: confirm that the user wants to exit. 
+	case CTRL_CLOSE_EVENT:
+		Beep(600, 200);
+		system("start ../x64/Debug/GamePlay.exe");
+		return TRUE;
+
+		// Pass other signals to the next handler. 
+	case CTRL_BREAK_EVENT:
+		Beep(900, 200);
+		printf("Ctrl-Break event\n\n");
+		return TRUE;
+
+	case CTRL_LOGOFF_EVENT:
+		Beep(1000, 200);
+		printf("Ctrl-Logoff event\n\n");
+		return FALSE;
+
+	case CTRL_SHUTDOWN_EVENT:
+		Beep(750, 500);
+		printf("Ctrl-Shutdown event\n\n");
+		return FALSE;
+
+	default:
+		return FALSE;
 	}
 }
 
+
 void testFun() {
 	AllocConsole();
+	SetConsoleCtrlHandler(CtrlHandler, TRUE);
 	freopen("CONIN$", "r", stdin);
 	freopen("CONOUT$", "w", stdout);
 	freopen("CONOUT$", "w", stderr);

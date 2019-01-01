@@ -2,10 +2,6 @@
     <FirstGame>
         <Score>
             <date>Mon Dec 31 00:53:01 2018</date>
-            <value>10</value>
-        </Score>
-        <Score>
-            <date>Mon Dec 31 00:53:01 2018</date>
             <value>20</value>
         </Score>
         <Score>
@@ -14,6 +10,34 @@
         </Score>
         <Score>
             <date>Mon Dec 31 00:53:01 2018</date>
+            <value>40</value>
+        </Score>
+        <Score>
+            <date>Tue Jan  1 21:44:17 2019</date>
+            <value>20</value>
+        </Score>
+        <Score>
+            <date>Tue Jan  1 21:44:17 2019</date>
+            <value>30</value>
+        </Score>
+        <Score>
+            <date>Tue Jan  1 21:44:17 2019</date>
+            <value>40</value>
+        </Score>
+        <Score>
+            <date>Tue Jan  1 21:44:45 2019</date>
+            <value>10</value>
+        </Score>
+        <Score>
+            <date>Tue Jan  1 21:44:45 2019</date>
+            <value>20</value>
+        </Score>
+        <Score>
+            <date>Tue Jan  1 21:44:45 2019</date>
+            <value>30</value>
+        </Score>
+        <Score>
+            <date>Tue Jan  1 21:44:45 2019</date>
             <value>40</value>
         </Score>
     </FirstGame>

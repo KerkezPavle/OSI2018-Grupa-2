@@ -1,5 +1,6 @@
 #pragma once
 #include "tinyxml2.h"
+#include <string>
 
 /*
 @desc: Function deletes XML score file
@@ -23,6 +24,8 @@ void sortGameResults(const char* XMLFileName);
 // Settings
 bool makeXMLSettingsFile();
 bool isUserNameSet();
-bool setUserName();
+bool setUserName(std::string);
+System::String^ getUsername();
+void clearUsername();
 void testFun();
 void testTest(); 

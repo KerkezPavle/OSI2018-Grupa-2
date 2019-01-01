@@ -1,5 +1,7 @@
 #pragma once
 #include "tinyxml2.h"
+#include "XMLDataFile.h"
+#include <msclr\marshal_cppstd.h>
 
 namespace GamePlay {
 
@@ -161,7 +163,11 @@ namespace GamePlay {
 			System::Windows::Forms::MessageBox::Show("Username not valid!", "Username", System::Windows::Forms::MessageBoxButtons::OK, System::Windows::Forms::MessageBoxIcon::Error);
 		}
 		else {
-			
+			System::String^ managedString = txtUsername->Text;
+
+			msclr::interop::marshal_context context;
+			std::string standardString = context.marshal_as<std::string>(managedString);
+			setUserName(standardString);
 			this->Close();
 		}
 	}

@@ -1,5 +1,6 @@
 #include "HomeForm.h"
 #include "Username.h"
+#include "XMLDataFile.h"
 #include <Windows.h>
 
 using namespace GamePlay;
@@ -8,13 +9,14 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 {
 	Application::EnableVisualStyles();
 	Application::SetCompatibleTextRenderingDefault(false);
-	if (1) {
-		Username frm;
-		frm.ShowDialog();
+	if (isUserNameSet()) {
 		Application::Run(gcnew HomeForm());
 	}
 	else {
+		Username frm;
+		frm.ShowDialog();
 		Application::Run(gcnew HomeForm());
+		
 	}
 	return 0;
 }
