@@ -19,10 +19,12 @@ private:
 	class Square
 
 	{
+		friend class Mineboard;
 	public:
 		enum class State { Hidden, Revealed };
-		void put_mine();
+		void put_mine() { isMine = true; }
 		bool has_mine() const { return isMine; }
+		void set_revealed_state (int count) ;
 		
 
 	private:
@@ -42,6 +44,7 @@ private:
 	
 public:
 	Square& square_at(int, int); //used for accessing the square at given coordinates
+	static bool index_in_range(int, int);
 
 };
 
