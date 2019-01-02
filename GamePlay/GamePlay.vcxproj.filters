@@ -53,6 +53,9 @@
     <ClInclude Include="Game2.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Game4.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Username.resx">
