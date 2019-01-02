@@ -131,6 +131,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Game2.cpp" />
     <ClCompile Include="HomeForm.cpp" />
     <ClCompile Include="Test.cpp" />
     <ClCompile Include="tinyxml2.cpp" />
@@ -138,6 +139,7 @@
     <ClCompile Include="XMLDataFile.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Game2.h" />
     <ClInclude Include="HomeForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>

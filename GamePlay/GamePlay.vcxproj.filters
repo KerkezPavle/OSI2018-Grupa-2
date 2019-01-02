@@ -30,6 +30,9 @@
     <ClCompile Include="XMLDataFile.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Game2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="HomeForm.h">
@@ -45,6 +48,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="loto.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Game2.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
