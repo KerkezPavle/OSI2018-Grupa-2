@@ -12,12 +12,13 @@ class Question {
 	std::string text;
 	Answer answer[4];
 	difficulty mode;
+	int chooseQuestion();
 	int queNum;
 public:
-	Question(int, difficulty);
+	static int counter;
+	Question(difficulty);
 	Question();
 	~Question();
 };
 
 void game2(int, double);
-
