@@ -18,15 +18,6 @@ Question::Question() : Question(difficulty::hard) {}
 
 Question::~Question() {}
 
-void game2(int points, double percentage) {
-	Question q[num_of_Q];
-	for (int i = 0; i < num_of_Q; ++i) {
-		q[i].draw();
-		points += q[i].answerIt();
-		std::cout << std::endl;
-	}
-}
-
 int Question::chooseQuestion() {
 	std::string tmp;
 	static int used[num_of_Q] = { -1,-1,-1,-1,-1 };
@@ -100,4 +91,18 @@ int Question::answerIt() {
 	else return answerIt();
 	std::cout << std::endl;
 	return 0;
+}
+
+int game2(int points, double percentage) {
+	int offset = 0;
+	std::cout << "Starting points:" << points << std::endl;
+	Question q[num_of_Q];
+	for (int i = 0; i < num_of_Q; ++i) {
+		q[i].draw();
+		offset += q[i].answerIt();
+		std::cout << std::endl;
+		std::cout << "Points:" << points + offset << std::endl;
+	}
+	if (offset == 100)offset += 50;
+	return points + offset;
 }

@@ -23,4 +23,4 @@ public:
 	~Question();
 };
 
-void game2(int, double);
+int game2(int, double);
