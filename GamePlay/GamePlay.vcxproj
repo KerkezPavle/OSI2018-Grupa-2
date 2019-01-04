@@ -133,6 +133,7 @@
   <ItemGroup>
     <ClCompile Include="EnterCodeForm.cpp" />
     <ClCompile Include="Game2.cpp" />
+    <ClCompile Include="Game4.cpp" />
     <ClCompile Include="HomeForm.cpp" />
     <ClCompile Include="Test.cpp" />
     <ClCompile Include="tinyxml2.cpp" />

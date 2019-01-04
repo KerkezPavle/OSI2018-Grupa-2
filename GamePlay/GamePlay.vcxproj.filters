@@ -33,7 +33,10 @@
     <ClCompile Include="Game2.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="EnterCodeForm.cpp">
+	<ClCompile Include="EnterCodeForm.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Game4.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
