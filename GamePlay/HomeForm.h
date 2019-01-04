@@ -3,6 +3,8 @@
 #include "Username.h"
 #include "XMLDataFile.h"
 #include "EnterCodeForm.h"
+#include "csvfile.h"
+#include <string>
 
 
 namespace GamePlay {
@@ -14,6 +16,7 @@ namespace GamePlay {
 	using namespace System::Data;
 	using namespace System::Drawing;
 	using namespace System::Windows::Forms;
+	using namespace System::Runtime::InteropServices;
 
 
 	/// <summary>
@@ -71,11 +74,12 @@ namespace GamePlay {
 
 
 	private: System::Windows::Forms::Button^  button7;
-	private: System::Windows::Forms::Button^  button8;
-	private: System::Windows::Forms::Button^  button9;
+
+
 	private: System::Windows::Forms::Label^  lblUsername;
 	private: System::Windows::Forms::ToolStripMenuItem^  optionsToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^  clearUsernameToolStripMenuItem;
+	private: System::Windows::Forms::Button^  btnStats;
 
 
 	private:
@@ -110,9 +114,8 @@ namespace GamePlay {
 			this->btnStartBingo = (gcnew System::Windows::Forms::Button());
 			this->btnUGame4 = (gcnew System::Windows::Forms::Button());
 			this->button7 = (gcnew System::Windows::Forms::Button());
-			this->button8 = (gcnew System::Windows::Forms::Button());
-			this->button9 = (gcnew System::Windows::Forms::Button());
 			this->lblUsername = (gcnew System::Windows::Forms::Label());
+			this->btnStats = (gcnew System::Windows::Forms::Button());
 			this->menuStrip1->SuspendLayout();
 			this->SuspendLayout();
 			// 
@@ -298,30 +301,6 @@ namespace GamePlay {
 			this->button7->Text = L"START";
 			this->button7->UseVisualStyleBackColor = true;
 			// 
-			// button8
-			// 
-			this->button8->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
-				static_cast<System::Int32>(static_cast<System::Byte>(128)));
-			this->button8->Location = System::Drawing::Point(593, 348);
-			this->button8->Name = L"button8";
-			this->button8->Size = System::Drawing::Size(101, 39);
-			this->button8->TabIndex = 17;
-			this->button8->Text = L"Terminal";
-			this->button8->UseVisualStyleBackColor = false;
-			this->button8->Click += gcnew System::EventHandler(this, &HomeForm::button8_Click);
-			// 
-			// button9
-			// 
-			this->button9->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
-				static_cast<System::Int32>(static_cast<System::Byte>(128)));
-			this->button9->Location = System::Drawing::Point(494, 348);
-			this->button9->Name = L"button9";
-			this->button9->Size = System::Drawing::Size(93, 39);
-			this->button9->TabIndex = 18;
-			this->button9->Text = L"Enter Code";
-			this->button9->UseVisualStyleBackColor = false;
-			this->button9->Click += gcnew System::EventHandler(this, &HomeForm::button9_Click);
-			// 
 			// lblUsername
 			// 
 			this->lblUsername->AutoSize = true;
@@ -330,7 +309,16 @@ namespace GamePlay {
 			this->lblUsername->Size = System::Drawing::Size(30, 13);
 			this->lblUsername->TabIndex = 19;
 			this->lblUsername->Text = L"temp";
-			this->lblUsername->Text = getUsername();
+			// 
+			// btnStats
+			// 
+			this->btnStats->Location = System::Drawing::Point(592, 334);
+			this->btnStats->Name = L"btnStats";
+			this->btnStats->Size = System::Drawing::Size(96, 38);
+			this->btnStats->TabIndex = 20;
+			this->btnStats->Text = L"Statistics";
+			this->btnStats->UseVisualStyleBackColor = true;
+			this->btnStats->Click += gcnew System::EventHandler(this, &HomeForm::btnStats_Click);
 			// 
 			// HomeForm
 			// 
@@ -338,9 +326,8 @@ namespace GamePlay {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->AutoScroll = true;
 			this->ClientSize = System::Drawing::Size(744, 399);
+			this->Controls->Add(this->btnStats);
 			this->Controls->Add(this->lblUsername);
-			this->Controls->Add(this->button9);
-			this->Controls->Add(this->button8);
 			this->Controls->Add(this->button7);
 			this->Controls->Add(this->btnUGame4);
 			this->Controls->Add(this->btnStartBingo);
@@ -358,7 +345,7 @@ namespace GamePlay {
 			this->MainMenuStrip = this->menuStrip1;
 			this->Name = L"HomeForm";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
-			this->Text = L"HomeForm";
+			this->Text = L"GamePlay";
 			this->menuStrip1->ResumeLayout(false);
 			this->menuStrip1->PerformLayout();
 			this->ResumeLayout(false);
@@ -416,6 +403,16 @@ private: System::Void button6_Click(System::Object^  sender, System::EventArgs^ 
 	EnterCodeForm frm;
 	frm.GameCode = "4";
 	frm.ShowDialog();
+}
+private: System::Void btnStats_Click(System::Object^  sender, System::EventArgs^  e) {
+	SaveFileDialog^ saveFileDialog1 = gcnew SaveFileDialog();
+	saveFileDialog1->Filter = "File|*.csv";
+	saveFileDialog1->Title = "Save Score To";
+	System::String^ name = getUsername();
+	saveFileDialog1->FileName = name;
+	saveFileDialog1->AddExtension = ".csv";
+	if(saveFileDialog1->ShowDialog() == System::Windows::Forms::DialogResult::OK)
+		MakeCSV((char*)(void*)Marshal::StringToHGlobalAnsi(saveFileDialog1->FileName));
 }
 };
 }

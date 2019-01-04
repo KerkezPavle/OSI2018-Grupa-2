@@ -272,6 +272,21 @@ bool setUserName(std::string username)
 	return true;
 }
 
+const char* getCSVFileNameChar() {
+	const char *c;
+	const char* SettingsXMLFile = "Settings.xml";
+	tinyxml2::XMLDocument xmlDoc;
+	xmlDoc.LoadFile(SettingsXMLFile);
+	c = xmlDoc.FirstChildElement("Settings")->FirstChildElement("Username")->GetText();
+	char *a;
+	strcpy(a, c);
+	char*x = strcat(a, ".csv");
+	xmlDoc.SaveFile(SettingsXMLFile);
+	return x;
+}
+
+
+
 System::String^ getUsername() {
 	const char *c;
 	const char* SettingsXMLFile = "Settings.xml";

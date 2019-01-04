@@ -141,6 +141,7 @@
     <ClCompile Include="XMLDataFile.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="csvfile.h" />
     <ClInclude Include="EnterCodeForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
