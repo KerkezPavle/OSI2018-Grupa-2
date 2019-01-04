@@ -131,6 +131,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="EnterCodeForm.cpp" />
     <ClCompile Include="Game2.cpp" />
     <ClCompile Include="HomeForm.cpp" />
     <ClCompile Include="Test.cpp" />
@@ -139,6 +140,9 @@
     <ClCompile Include="XMLDataFile.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="EnterCodeForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="Game2.h" />
     <ClInclude Include="Game4.h" />
     <ClInclude Include="HomeForm.h">
@@ -152,6 +156,9 @@
     <ClInclude Include="XMLDataFile.h" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="EnterCodeForm.resx">
+      <DependentUpon>EnterCodeForm.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="HomeForm.resx">
       <DependentUpon>HomeForm.h</DependentUpon>
     </EmbeddedResource>

@@ -40,7 +40,7 @@ namespace GamePlay {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::Button^  btnSave;
+
 	protected:
 
 	protected:
@@ -49,7 +49,7 @@ namespace GamePlay {
 	private: System::Windows::Forms::Label^  label2;
 	private: System::Windows::Forms::Button^  btnStartGame1;
 
-	private: System::Windows::Forms::Button^  btnSettings;
+
 	private: System::Windows::Forms::Button^  button1;
 	private: System::Windows::Forms::MenuStrip^  menuStrip1;
 	private: System::Windows::Forms::ToolStripMenuItem^  toolStripMenuItem1;
@@ -85,11 +85,9 @@ namespace GamePlay {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->btnSave = (gcnew System::Windows::Forms::Button());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->btnStartGame1 = (gcnew System::Windows::Forms::Button());
-			this->btnSettings = (gcnew System::Windows::Forms::Button());
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->menuStrip1 = (gcnew System::Windows::Forms::MenuStrip());
 			this->toolStripMenuItem1 = (gcnew System::Windows::Forms::ToolStripMenuItem());
@@ -111,18 +109,6 @@ namespace GamePlay {
 			this->lblUsername = (gcnew System::Windows::Forms::Label());
 			this->menuStrip1->SuspendLayout();
 			this->SuspendLayout();
-			// 
-			// btnSave
-			// 
-			this->btnSave->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
-				static_cast<System::Int32>(static_cast<System::Byte>(128)));
-			this->btnSave->Location = System::Drawing::Point(628, 348);
-			this->btnSave->Name = L"btnSave";
-			this->btnSave->Size = System::Drawing::Size(104, 39);
-			this->btnSave->TabIndex = 0;
-			this->btnSave->Text = L"New XML File";
-			this->btnSave->UseVisualStyleBackColor = false;
-			this->btnSave->Click += gcnew System::EventHandler(this, &HomeForm::button1_Click);
 			// 
 			// label1
 			// 
@@ -158,18 +144,6 @@ namespace GamePlay {
 			this->btnStartGame1->Text = L" START";
 			this->btnStartGame1->UseVisualStyleBackColor = true;
 			this->btnStartGame1->Click += gcnew System::EventHandler(this, &HomeForm::btnGame1_Click);
-			// 
-			// btnSettings
-			// 
-			this->btnSettings->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
-				static_cast<System::Int32>(static_cast<System::Byte>(128)));
-			this->btnSettings->Location = System::Drawing::Point(518, 348);
-			this->btnSettings->Name = L"btnSettings";
-			this->btnSettings->Size = System::Drawing::Size(104, 39);
-			this->btnSettings->TabIndex = 5;
-			this->btnSettings->Text = L"Settings file";
-			this->btnSettings->UseVisualStyleBackColor = false;
-			this->btnSettings->Click += gcnew System::EventHandler(this, &HomeForm::btnSettings_Click);
 			// 
 			// button1
 			// 
@@ -216,7 +190,7 @@ namespace GamePlay {
 			// clearUsernameToolStripMenuItem
 			// 
 			this->clearUsernameToolStripMenuItem->Name = L"clearUsernameToolStripMenuItem";
-			this->clearUsernameToolStripMenuItem->Size = System::Drawing::Size(180, 22);
+			this->clearUsernameToolStripMenuItem->Size = System::Drawing::Size(157, 22);
 			this->clearUsernameToolStripMenuItem->Text = L"Clear Username";
 			this->clearUsernameToolStripMenuItem->Click += gcnew System::EventHandler(this, &HomeForm::clearUsernameToolStripMenuItem_Click);
 			// 
@@ -318,7 +292,7 @@ namespace GamePlay {
 			// 
 			this->button8->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
 				static_cast<System::Int32>(static_cast<System::Byte>(128)));
-			this->button8->Location = System::Drawing::Point(411, 348);
+			this->button8->Location = System::Drawing::Point(593, 348);
 			this->button8->Name = L"button8";
 			this->button8->Size = System::Drawing::Size(101, 39);
 			this->button8->TabIndex = 17;
@@ -330,7 +304,7 @@ namespace GamePlay {
 			// 
 			this->button9->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
 				static_cast<System::Int32>(static_cast<System::Byte>(128)));
-			this->button9->Location = System::Drawing::Point(312, 348);
+			this->button9->Location = System::Drawing::Point(494, 348);
 			this->button9->Name = L"button9";
 			this->button9->Size = System::Drawing::Size(93, 39);
 			this->button9->TabIndex = 18;
@@ -345,12 +319,12 @@ namespace GamePlay {
 			this->lblUsername->Name = L"lblUsername";
 			this->lblUsername->Size = System::Drawing::Size(0, 13);
 			this->lblUsername->TabIndex = 19;
-			this->lblUsername->Text = getUsername();
 			// 
 			// HomeForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->AutoScroll = true;
 			this->ClientSize = System::Drawing::Size(744, 399);
 			this->Controls->Add(this->lblUsername);
 			this->Controls->Add(this->button9);
@@ -365,11 +339,9 @@ namespace GamePlay {
 			this->Controls->Add(this->lblbingo);
 			this->Controls->Add(this->lblKviz);
 			this->Controls->Add(this->button1);
-			this->Controls->Add(this->btnSettings);
 			this->Controls->Add(this->btnStartGame1);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);
-			this->Controls->Add(this->btnSave);
 			this->Controls->Add(this->menuStrip1);
 			this->MainMenuStrip = this->menuStrip1;
 			this->Name = L"HomeForm";
@@ -383,13 +355,7 @@ namespace GamePlay {
 		}
 #pragma endregion
 	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
-		const char *XMLFileName = "ScoreBoard.xml";
-
-		if (makeXMLScoreFileSafe(XMLFileName) == 0) {
-			System::Windows::Forms::MessageBox::Show("ScoreXML file already exists", "ScoreXML - Statistics", System::Windows::Forms::MessageBoxButtons::OK, System::Windows::Forms::MessageBoxIcon::Information);
-		}
-		makeXMLSettingsFile();
-
+	
 	}
 	private: System::Void btnGame1_Click(System::Object^  sender, System::EventArgs^  e) {
 		insertDataIntoStats(1, 10);

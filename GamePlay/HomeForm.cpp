@@ -7,6 +7,8 @@ using namespace GamePlay;
 
 int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 {
+	makeXMLSettingsFileSave();
+	makeXMLScoreFileSafe();
 	Application::EnableVisualStyles();
 	Application::SetCompatibleTextRenderingDefault(false);
 	if (isUserNameSet()) {

@@ -16,13 +16,14 @@ void delXMLFile();
 void readXMLFile(const char* XMLFileName, int game);
 
 
-int makeXMLScoreFileSafe(const char *XMLFileName);
+int makeXMLScoreFileSafe();
 void makeXMLSroreFile(const char *XMLFileName);
 bool insertDataIntoStats(int game, int score);
 void deleteDataFromStats(const char* XMLFileName, int game);
 void sortGameResults(const char* XMLFileName);
 // Settings
 bool makeXMLSettingsFile();
+int makeXMLSettingsFileSave();
 bool isUserNameSet();
 bool setUserName(std::string);
 System::String^ getUsername();

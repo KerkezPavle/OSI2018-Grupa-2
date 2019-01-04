@@ -144,7 +144,8 @@ void readXMLFile(const char* XMLFileName, int game) {
 	@parm: Name of the file
 	@tested: works
 */
-int makeXMLScoreFileSafe(const char *XMLFileName) {
+int makeXMLScoreFileSafe() {
+	const char *XMLFileName = "ScoreBoard.xml";
 	tinyxml2::XMLDocument xmlDoc;
 	if (xmlDoc.LoadFile(XMLFileName) == 3) {
 		makeXMLSroreFile(XMLFileName);
@@ -170,6 +171,30 @@ void makeXMLSroreFile(const char *XMLFileName) {
 	pRoot->InsertEndChild(pThirdGame);
 	pRoot->InsertEndChild(pFourthGame);
 	xmlDoc.SaveFile(XMLFileName);
+}
+
+int makeXMLSettingsFileSave() {
+	const char* XMLFileName = "Settings.xml";
+	tinyxml2::XMLDocument xmlDoc;
+	if (xmlDoc.LoadFile(XMLFileName) == 3) {
+		makeXMLSettingsFile();
+		return 1;
+	}
+	return 0;
+}
+
+
+bool makeXMLSettingsFile() {
+	const char* XMLFileName = "Settings.xml";
+	tinyxml2::XMLDocument xmlDoc;
+	XMLNode *pRoot = xmlDoc.NewElement("Settings");
+	xmlDoc.InsertFirstChild(pRoot);
+	XMLElement *username = xmlDoc.NewElement("Username");
+	XMLElement *activeScore = xmlDoc.NewElement("ActiveScore");
+	pRoot->InsertFirstChild(username);
+	pRoot->InsertEndChild(activeScore);
+	xmlDoc.SaveFile(XMLFileName);
+	return true;
 }
 
 /*
@@ -223,18 +248,6 @@ bool insertDataIntoStats(int game, int score) {
 	return true;
 }
 
-bool makeXMLSettingsFile() {
-	const char* XMLFileName = "Settings.xml";
-	tinyxml2::XMLDocument xmlDoc;
-	XMLNode *pRoot = xmlDoc.NewElement("Settings");
-	xmlDoc.InsertFirstChild(pRoot);
-	XMLElement *username = xmlDoc.NewElement("Username");
-	XMLElement *activeScore = xmlDoc.NewElement("ActiveScore");
-	pRoot->InsertFirstChild(username);
-	pRoot->InsertEndChild(activeScore);
-	xmlDoc.SaveFile(XMLFileName);
-	return true;
-}
 
 bool isUserNameSet() {
 	const char* XMLFileName = "Settings.xml";
