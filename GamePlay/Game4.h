@@ -36,7 +36,7 @@ private:
 		bool has_mine() const { return isMine; }
 		void set_close_mines (int count) ;
 		void draw_square(bool) const; // bool data shows if the square should be revealed no matter what (in case of losing)
-		void set_close_mines(int);
+		//void set_close_mines(int);
 		void make_revealed() { state = State::Revealed; }
 		
 

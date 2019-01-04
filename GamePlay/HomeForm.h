@@ -2,6 +2,7 @@
 #include <Windows.h>
 #include "Username.h"
 #include "XMLDataFile.h"
+#include "EnterCodeForm.h"
 
 
 namespace GamePlay {
@@ -48,9 +49,11 @@ namespace GamePlay {
 
 	private: System::Windows::Forms::Label^  label2;
 	private: System::Windows::Forms::Button^  btnStartGame1;
+	private: System::Windows::Forms::Button^  btnUGame1;
 
 
-	private: System::Windows::Forms::Button^  button1;
+
+
 	private: System::Windows::Forms::MenuStrip^  menuStrip1;
 	private: System::Windows::Forms::ToolStripMenuItem^  toolStripMenuItem1;
 	private: System::Windows::Forms::ToolStripMenuItem^  exitToolStripMenuItem;
@@ -58,12 +61,15 @@ namespace GamePlay {
 	private: System::Windows::Forms::Label^  lblKviz;
 	private: System::Windows::Forms::Label^  lblbingo;
 	private: System::Windows::Forms::Label^  label5;
-	private: System::Windows::Forms::Button^  button2;
-	private: System::Windows::Forms::Button^  button3;
-	private: System::Windows::Forms::Button^  button4;
-	private: System::Windows::Forms::Button^  btnStartBingo;
+	private: System::Windows::Forms::Button^  btnUGame2;
 
-	private: System::Windows::Forms::Button^  button6;
+	private: System::Windows::Forms::Button^  button3;
+	private: System::Windows::Forms::Button^  btnUGame3;
+
+	private: System::Windows::Forms::Button^  btnStartBingo;
+	private: System::Windows::Forms::Button^  btnUGame4;
+
+
 	private: System::Windows::Forms::Button^  button7;
 	private: System::Windows::Forms::Button^  button8;
 	private: System::Windows::Forms::Button^  button9;
@@ -88,7 +94,7 @@ namespace GamePlay {
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->btnStartGame1 = (gcnew System::Windows::Forms::Button());
-			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->btnUGame1 = (gcnew System::Windows::Forms::Button());
 			this->menuStrip1 = (gcnew System::Windows::Forms::MenuStrip());
 			this->toolStripMenuItem1 = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->exitToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
@@ -98,11 +104,11 @@ namespace GamePlay {
 			this->lblKviz = (gcnew System::Windows::Forms::Label());
 			this->lblbingo = (gcnew System::Windows::Forms::Label());
 			this->label5 = (gcnew System::Windows::Forms::Label());
-			this->button2 = (gcnew System::Windows::Forms::Button());
+			this->btnUGame2 = (gcnew System::Windows::Forms::Button());
 			this->button3 = (gcnew System::Windows::Forms::Button());
-			this->button4 = (gcnew System::Windows::Forms::Button());
+			this->btnUGame3 = (gcnew System::Windows::Forms::Button());
 			this->btnStartBingo = (gcnew System::Windows::Forms::Button());
-			this->button6 = (gcnew System::Windows::Forms::Button());
+			this->btnUGame4 = (gcnew System::Windows::Forms::Button());
 			this->button7 = (gcnew System::Windows::Forms::Button());
 			this->button8 = (gcnew System::Windows::Forms::Button());
 			this->button9 = (gcnew System::Windows::Forms::Button());
@@ -145,14 +151,15 @@ namespace GamePlay {
 			this->btnStartGame1->UseVisualStyleBackColor = true;
 			this->btnStartGame1->Click += gcnew System::EventHandler(this, &HomeForm::btnGame1_Click);
 			// 
-			// button1
+			// btnUGame1
 			// 
-			this->button1->Location = System::Drawing::Point(50, 172);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(109, 37);
-			this->button1->TabIndex = 6;
-			this->button1->Text = L"Otkljucaj igru";
-			this->button1->UseVisualStyleBackColor = true;
+			this->btnUGame1->Location = System::Drawing::Point(50, 172);
+			this->btnUGame1->Name = L"btnUGame1";
+			this->btnUGame1->Size = System::Drawing::Size(109, 37);
+			this->btnUGame1->TabIndex = 6;
+			this->btnUGame1->Text = L"Otkljucaj igru";
+			this->btnUGame1->UseVisualStyleBackColor = true;
+			this->btnUGame1->Click += gcnew System::EventHandler(this, &HomeForm::button1_Click_1);
 			// 
 			// menuStrip1
 			// 
@@ -233,14 +240,15 @@ namespace GamePlay {
 			this->label5->TabIndex = 10;
 			this->label5->Text = L"Minolovac";
 			// 
-			// button2
+			// btnUGame2
 			// 
-			this->button2->Location = System::Drawing::Point(234, 172);
-			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(109, 37);
-			this->button2->TabIndex = 11;
-			this->button2->Text = L"Otkljucaj igru";
-			this->button2->UseVisualStyleBackColor = true;
+			this->btnUGame2->Location = System::Drawing::Point(234, 172);
+			this->btnUGame2->Name = L"btnUGame2";
+			this->btnUGame2->Size = System::Drawing::Size(109, 37);
+			this->btnUGame2->TabIndex = 11;
+			this->btnUGame2->Text = L"Otkljucaj igru";
+			this->btnUGame2->UseVisualStyleBackColor = true;
+			this->btnUGame2->Click += gcnew System::EventHandler(this, &HomeForm::button2_Click);
 			// 
 			// button3
 			// 
@@ -251,14 +259,15 @@ namespace GamePlay {
 			this->button3->Text = L"START";
 			this->button3->UseVisualStyleBackColor = true;
 			// 
-			// button4
+			// btnUGame3
 			// 
-			this->button4->Location = System::Drawing::Point(411, 172);
-			this->button4->Name = L"button4";
-			this->button4->Size = System::Drawing::Size(109, 37);
-			this->button4->TabIndex = 13;
-			this->button4->Text = L"Otkljucaj igru";
-			this->button4->UseVisualStyleBackColor = true;
+			this->btnUGame3->Location = System::Drawing::Point(411, 172);
+			this->btnUGame3->Name = L"btnUGame3";
+			this->btnUGame3->Size = System::Drawing::Size(109, 37);
+			this->btnUGame3->TabIndex = 13;
+			this->btnUGame3->Text = L"Otkljucaj igru";
+			this->btnUGame3->UseVisualStyleBackColor = true;
+			this->btnUGame3->Click += gcnew System::EventHandler(this, &HomeForm::button4_Click);
 			// 
 			// btnStartBingo
 			// 
@@ -270,14 +279,15 @@ namespace GamePlay {
 			this->btnStartBingo->UseVisualStyleBackColor = true;
 			this->btnStartBingo->Click += gcnew System::EventHandler(this, &HomeForm::button5_Click);
 			// 
-			// button6
+			// btnUGame4
 			// 
-			this->button6->Location = System::Drawing::Point(592, 172);
-			this->button6->Name = L"button6";
-			this->button6->Size = System::Drawing::Size(96, 37);
-			this->button6->TabIndex = 15;
-			this->button6->Text = L"Otkljucaj igru";
-			this->button6->UseVisualStyleBackColor = true;
+			this->btnUGame4->Location = System::Drawing::Point(592, 172);
+			this->btnUGame4->Name = L"btnUGame4";
+			this->btnUGame4->Size = System::Drawing::Size(96, 37);
+			this->btnUGame4->TabIndex = 15;
+			this->btnUGame4->Text = L"Otkljucaj igru";
+			this->btnUGame4->UseVisualStyleBackColor = true;
+			this->btnUGame4->Click += gcnew System::EventHandler(this, &HomeForm::button6_Click);
 			// 
 			// button7
 			// 
@@ -317,8 +327,10 @@ namespace GamePlay {
 			this->lblUsername->AutoSize = true;
 			this->lblUsername->Location = System::Drawing::Point(222, 60);
 			this->lblUsername->Name = L"lblUsername";
-			this->lblUsername->Size = System::Drawing::Size(0, 13);
+			this->lblUsername->Size = System::Drawing::Size(30, 13);
 			this->lblUsername->TabIndex = 19;
+			this->lblUsername->Text = L"temp";
+			this->lblUsername->Text = getUsername();
 			// 
 			// HomeForm
 			// 
@@ -330,15 +342,15 @@ namespace GamePlay {
 			this->Controls->Add(this->button9);
 			this->Controls->Add(this->button8);
 			this->Controls->Add(this->button7);
-			this->Controls->Add(this->button6);
+			this->Controls->Add(this->btnUGame4);
 			this->Controls->Add(this->btnStartBingo);
-			this->Controls->Add(this->button4);
+			this->Controls->Add(this->btnUGame3);
 			this->Controls->Add(this->button3);
-			this->Controls->Add(this->button2);
+			this->Controls->Add(this->btnUGame2);
 			this->Controls->Add(this->label5);
 			this->Controls->Add(this->lblbingo);
 			this->Controls->Add(this->lblKviz);
-			this->Controls->Add(this->button1);
+			this->Controls->Add(this->btnUGame1);
 			this->Controls->Add(this->btnStartGame1);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);
@@ -383,6 +395,27 @@ private: System::Void clearUsernameToolStripMenuItem_Click(System::Object^  send
 	clearUsername();
 	this->lblUsername->Text = getUsername();
 	HomeForm::Show();
+}
+private: System::Void button1_Click_1(System::Object^  sender, System::EventArgs^  e) {
+	EnterCodeForm frm;
+	setActiveScore(75);
+	frm.GameCode = System::Convert::ToString(getActiveScore());
+	frm.ShowDialog();
+}
+private: System::Void button2_Click(System::Object^  sender, System::EventArgs^  e) {
+	EnterCodeForm frm;
+	frm.GameCode = "2";
+	frm.ShowDialog();
+}
+private: System::Void button4_Click(System::Object^  sender, System::EventArgs^  e) {
+	EnterCodeForm frm;
+	frm.GameCode = "3";
+	frm.ShowDialog();
+}
+private: System::Void button6_Click(System::Object^  sender, System::EventArgs^  e) {
+	EnterCodeForm frm;
+	frm.GameCode = "4";
+	frm.ShowDialog();
 }
 };
 }

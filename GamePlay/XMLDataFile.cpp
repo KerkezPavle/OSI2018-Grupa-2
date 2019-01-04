@@ -5,7 +5,8 @@
 #include <time.h>
 #include <iostream>
 #include <string>
-#include <vcclr.h>
+#include <sstream>
+//#include <vcclr.h>
 #include "loto.h"
 using namespace tinyxml2;
 
@@ -290,6 +291,31 @@ void clearUsername() {
 	xmlDoc.SaveFile(SettingsXMLFile);
 	GamePlay::Username frm;
 	frm.ShowDialog();
+}
+
+int getActiveScore() {
+	const char *c;
+	const char* SettingsXMLFile = "Settings.xml";
+	tinyxml2::XMLDocument xmlDoc;
+	xmlDoc.LoadFile(SettingsXMLFile);
+	c = xmlDoc.FirstChildElement("Settings")->FirstChildElement("ActiveScore")->GetText();
+	xmlDoc.SaveFile(SettingsXMLFile);
+	std::stringstream strValue;
+	strValue << c;
+	unsigned int intValue;
+	strValue >> intValue;
+	xmlDoc.SaveFile(SettingsXMLFile);
+	return intValue;
+}
+
+void setActiveScore(int val) {
+
+	const char* SettingsXMLFile = "Settings.xml";
+	tinyxml2::XMLDocument xmlDoc;
+	xmlDoc.LoadFile(SettingsXMLFile);
+	XMLElement *element = xmlDoc.FirstChildElement("Settings")->FirstChildElement("ActiveScore");
+	element->SetText(val);
+	xmlDoc.SaveFile(SettingsXMLFile);
 }
 
 /*

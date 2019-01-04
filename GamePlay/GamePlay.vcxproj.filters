@@ -33,7 +33,7 @@
     <ClCompile Include="Game2.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-	<ClCompile Include="EnterCodeForm.cpp">
+    <ClCompile Include="EnterCodeForm.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Game4.cpp">
@@ -73,5 +73,16 @@
     <EmbeddedResource Include="HomeForm.resx">
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
+    <EmbeddedResource Include="EnterCodeForm.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="ScoreBoard.xml">
+      <Filter>Resource Files</Filter>
+    </Xml>
+    <Xml Include="Settings.xml">
+      <Filter>Resource Files</Filter>
+    </Xml>
   </ItemGroup>
 </Project>

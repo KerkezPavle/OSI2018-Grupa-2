@@ -28,5 +28,7 @@ bool isUserNameSet();
 bool setUserName(std::string);
 System::String^ getUsername();
 void clearUsername();
+int getActiveScore();
+void setActiveScore(int);
 void testFun();
 void testTest(); 

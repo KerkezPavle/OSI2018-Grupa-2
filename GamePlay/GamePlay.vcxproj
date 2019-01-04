@@ -167,6 +167,10 @@
       <DependentUpon>Username.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup>
+    <Xml Include="ScoreBoard.xml" />
+    <Xml Include="Settings.xml" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
