@@ -3,6 +3,7 @@
 #include "Username.h"
 #include "XMLDataFile.h"
 #include "EnterCodeForm.h"
+#include "ShowStatistics.h"
 #include "csvfile.h"
 #include <string>
 
@@ -80,6 +81,7 @@ namespace GamePlay {
 	private: System::Windows::Forms::ToolStripMenuItem^  optionsToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^  clearUsernameToolStripMenuItem;
 	private: System::Windows::Forms::Button^  btnStats;
+	private: System::Windows::Forms::ToolStripMenuItem^  saveStatisticsToCSVToolStripMenuItem;
 
 
 	private:
@@ -116,6 +118,7 @@ namespace GamePlay {
 			this->button7 = (gcnew System::Windows::Forms::Button());
 			this->lblUsername = (gcnew System::Windows::Forms::Label());
 			this->btnStats = (gcnew System::Windows::Forms::Button());
+			this->saveStatisticsToCSVToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->menuStrip1->SuspendLayout();
 			this->SuspendLayout();
 			// 
@@ -192,7 +195,10 @@ namespace GamePlay {
 			// 
 			// optionsToolStripMenuItem
 			// 
-			this->optionsToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->clearUsernameToolStripMenuItem });
+			this->optionsToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(2) {
+				this->saveStatisticsToCSVToolStripMenuItem,
+					this->clearUsernameToolStripMenuItem
+			});
 			this->optionsToolStripMenuItem->Name = L"optionsToolStripMenuItem";
 			this->optionsToolStripMenuItem->Size = System::Drawing::Size(61, 20);
 			this->optionsToolStripMenuItem->Text = L"Options";
@@ -200,7 +206,7 @@ namespace GamePlay {
 			// clearUsernameToolStripMenuItem
 			// 
 			this->clearUsernameToolStripMenuItem->Name = L"clearUsernameToolStripMenuItem";
-			this->clearUsernameToolStripMenuItem->Size = System::Drawing::Size(157, 22);
+			this->clearUsernameToolStripMenuItem->Size = System::Drawing::Size(184, 22);
 			this->clearUsernameToolStripMenuItem->Text = L"Clear Username";
 			this->clearUsernameToolStripMenuItem->Click += gcnew System::EventHandler(this, &HomeForm::clearUsernameToolStripMenuItem_Click);
 			// 
@@ -320,6 +326,13 @@ namespace GamePlay {
 			this->btnStats->UseVisualStyleBackColor = true;
 			this->btnStats->Click += gcnew System::EventHandler(this, &HomeForm::btnStats_Click);
 			// 
+			// saveStatisticsToCSVToolStripMenuItem
+			// 
+			this->saveStatisticsToCSVToolStripMenuItem->Name = L"saveStatisticsToCSVToolStripMenuItem";
+			this->saveStatisticsToCSVToolStripMenuItem->Size = System::Drawing::Size(184, 22);
+			this->saveStatisticsToCSVToolStripMenuItem->Text = L"Save statistics to CSV";
+			this->saveStatisticsToCSVToolStripMenuItem->Click += gcnew System::EventHandler(this, &HomeForm::saveStatisticsToCSVToolStripMenuItem_Click);
+			// 
 			// HomeForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -385,8 +398,7 @@ private: System::Void clearUsernameToolStripMenuItem_Click(System::Object^  send
 }
 private: System::Void button1_Click_1(System::Object^  sender, System::EventArgs^  e) {
 	EnterCodeForm frm;
-	setActiveScore(75);
-	frm.GameCode = System::Convert::ToString(getActiveScore());
+	frm.GameCode = "1";
 	frm.ShowDialog();
 }
 private: System::Void button2_Click(System::Object^  sender, System::EventArgs^  e) {
@@ -399,20 +411,28 @@ private: System::Void button4_Click(System::Object^  sender, System::EventArgs^ 
 	frm.GameCode = "3";
 	frm.ShowDialog();
 }
-private: System::Void button6_Click(System::Object^  sender, System::EventArgs^  e) {
-	EnterCodeForm frm;
-	frm.GameCode = "4";
-	frm.ShowDialog();
-}
-private: System::Void btnStats_Click(System::Object^  sender, System::EventArgs^  e) {
+private: void SaveStatisticsCSV() {
 	SaveFileDialog^ saveFileDialog1 = gcnew SaveFileDialog();
 	saveFileDialog1->Filter = "File|*.csv";
 	saveFileDialog1->Title = "Save Score To";
 	System::String^ name = getUsername();
 	saveFileDialog1->FileName = name;
 	saveFileDialog1->AddExtension = ".csv";
-	if(saveFileDialog1->ShowDialog() == System::Windows::Forms::DialogResult::OK)
+	if (saveFileDialog1->ShowDialog() == System::Windows::Forms::DialogResult::OK)
 		MakeCSV((char*)(void*)Marshal::StringToHGlobalAnsi(saveFileDialog1->FileName));
+}
+private: System::Void button6_Click(System::Object^  sender, System::EventArgs^  e) {
+	EnterCodeForm frm;
+	frm.GameCode = "4";
+	frm.ShowDialog();
+}
+private: System::Void btnStats_Click(System::Object^  sender, System::EventArgs^  e) {
+	ShowStatistics frm;
+	frm.seedData();
+	frm.ShowDialog();
+}
+private: System::Void saveStatisticsToCSVToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
+	SaveStatisticsCSV();
 }
 };
 }

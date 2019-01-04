@@ -31,6 +31,14 @@ namespace GamePlay {
 
 			void set(System::String^ text) {
 				lblGameCode->Text = text;
+				if (text == "1")
+					lblGameName->Text = "Guess the Number";
+				else if(text == "2")
+					lblGameName->Text = "Quiz";
+				else if(text == "3")
+					lblGameName->Text = "Bingo";
+				else if(text == "4")
+					lblGameName->Text = "Minesweeper";
 			}
 		}
 
@@ -60,6 +68,7 @@ namespace GamePlay {
 	private: System::Windows::Forms::Button^  button2;
 	private: System::Windows::Forms::Label^  lblEnterCode;
 	private: System::Windows::Forms::Label^  lblGameCode;
+	private: System::Windows::Forms::Label^  lblGameName;
 
 
 	protected:
@@ -77,6 +86,7 @@ namespace GamePlay {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(EnterCodeForm::typeid));
 			this->txtCode1 = (gcnew System::Windows::Forms::TextBox());
 			this->txtCode2 = (gcnew System::Windows::Forms::TextBox());
 			this->txtCode3 = (gcnew System::Windows::Forms::TextBox());
@@ -85,6 +95,7 @@ namespace GamePlay {
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->lblEnterCode = (gcnew System::Windows::Forms::Label());
 			this->lblGameCode = (gcnew System::Windows::Forms::Label());
+			this->lblGameName = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
 			// 
 			// txtCode1
@@ -126,48 +137,68 @@ namespace GamePlay {
 			// 
 			// button1
 			// 
+			this->button1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button1.Image")));
+			this->button1->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
 			this->button1->Location = System::Drawing::Point(103, 198);
 			this->button1->Name = L"button1";
+			this->button1->Padding = System::Windows::Forms::Padding(5, 0, 0, 0);
 			this->button1->Size = System::Drawing::Size(91, 37);
 			this->button1->TabIndex = 4;
-			this->button1->Text = L"Unlock";
+			this->button1->Text = L"   Unlock";
 			this->button1->UseVisualStyleBackColor = true;
 			this->button1->Click += gcnew System::EventHandler(this, &EnterCodeForm::button1_Click);
 			// 
 			// button2
 			// 
+			this->button2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button2.Image")));
+			this->button2->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
 			this->button2->Location = System::Drawing::Point(223, 198);
 			this->button2->Name = L"button2";
+			this->button2->Padding = System::Windows::Forms::Padding(5, 0, 0, 0);
 			this->button2->Size = System::Drawing::Size(92, 37);
 			this->button2->TabIndex = 5;
-			this->button2->Text = L"Cancel";
+			this->button2->Text = L"   Cancel";
 			this->button2->UseVisualStyleBackColor = true;
 			this->button2->Click += gcnew System::EventHandler(this, &EnterCodeForm::button2_Click);
 			// 
 			// lblEnterCode
 			// 
 			this->lblEnterCode->AutoSize = true;
-			this->lblEnterCode->Location = System::Drawing::Point(115, 20);
+			this->lblEnterCode->Font = (gcnew System::Drawing::Font(L"Cambria", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->lblEnterCode->Location = System::Drawing::Point(14, 37);
 			this->lblEnterCode->Name = L"lblEnterCode";
-			this->lblEnterCode->Size = System::Drawing::Size(107, 13);
+			this->lblEnterCode->Size = System::Drawing::Size(180, 22);
 			this->lblEnterCode->TabIndex = 6;
 			this->lblEnterCode->Text = L"Enter Code for game:";
 			// 
 			// lblGameCode
 			// 
 			this->lblGameCode->AutoSize = true;
-			this->lblGameCode->Location = System::Drawing::Point(263, 19);
+			this->lblGameCode->Font = (gcnew System::Drawing::Font(L"Cambria", 14.25F));
+			this->lblGameCode->Location = System::Drawing::Point(197, 37);
 			this->lblGameCode->Name = L"lblGameCode";
-			this->lblGameCode->Size = System::Drawing::Size(35, 13);
+			this->lblGameCode->Size = System::Drawing::Size(21, 22);
 			this->lblGameCode->TabIndex = 7;
-			this->lblGameCode->Text = L"label1";
+			this->lblGameCode->Text = L"1";
 			this->lblGameCode->Click += gcnew System::EventHandler(this, &EnterCodeForm::lblGameCode_Click);
+			// 
+			// lblGameName
+			// 
+			this->lblGameName->AutoSize = true;
+			this->lblGameName->Font = (gcnew System::Drawing::Font(L"Cambria", 14.25F));
+			this->lblGameName->Location = System::Drawing::Point(224, 37);
+			this->lblGameName->Name = L"lblGameName";
+			this->lblGameName->Size = System::Drawing::Size(59, 22);
+			this->lblGameName->TabIndex = 8;
+			this->lblGameName->Text = L"label1";
 			// 
 			// EnterCodeForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(422, 261);
+			this->Controls->Add(this->lblGameName);
 			this->Controls->Add(this->lblGameCode);
 			this->Controls->Add(this->lblEnterCode);
 			this->Controls->Add(this->button2);

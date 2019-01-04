@@ -54,24 +54,21 @@ void sortGameResults(const char* XMLFileName) {
 		for (int j = 0; j < count; j++) {
 			int a = std::stoi(arr[i]->FirstChildElement("value")->GetText());
 			int b = std::stoi(arr[j]->FirstChildElement("value")->GetText());
-			if (a < b) {
+			if (a > b) {
 				temp = arr[i];
 				arr[i] = arr[j];
 				arr[j] = temp;
 			}
 		}
 	}
+	for (int i = 0; i < count; i++) {
+		if (parentGame->FirstChild() == NULL)
+			parentGame->InsertFirstChild(arr[i]);
+		else
+			parentGame->InsertEndChild(arr[i]);
+	}
 
-	std::cout << arr[0]->FirstChildElement("value")->GetText() << std::endl;
-	std::cout << arr[1]->FirstChildElement("value")->GetText() << std::endl;
-	std::cout << arr[2]->FirstChildElement("value")->GetText() << std::endl;
-	std::cout << arr[3]->FirstChildElement("value")->GetText() << std::endl;
-	std::cout << arr[4]->FirstChildElement("value")->GetText() << std::endl;
-	std::cout << arr[5]->FirstChildElement("value")->GetText() << std::endl;
-	std::cout << arr[6]->FirstChildElement("value")->GetText() << std::endl;
-	std::cout << arr[7]->FirstChildElement("value")->GetText() << std::endl;
-	std::cout << arr[8]->FirstChildElement("value")->GetText() << std::endl;
-	std::cout << arr[9]->FirstChildElement("value")->GetText() << std::endl;
+	xmlDoc.SaveFile(XMLFileName);
 }
 
 /*
@@ -245,7 +242,7 @@ bool insertDataIntoStats(int game, int score) {
 		}
 		xmlDoc.SaveFile(XMLFileName);
 	}
-
+	sortGameResults(XMLFileName);
 	return true;
 }
 
