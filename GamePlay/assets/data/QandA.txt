@@ -1,0 +1,16 @@
+Welcome_to_the_quiz!
+Play 1 (Stating_points) 0 Quit 0 Awnser_41 0
+Jim(smart)_is_looking_at_Hugh(unknown)_who_is_looking_at_Phil(dumb)._Is_a_smart_person_looking_at_a_dumb_person?
+Yes 1 No 0 Impossible_to_determine 0 What? 0
+How_many_letter_are_there_in_the_alphabet?
+26 1 30 0 11 0 8 0
+What_is_heavier?_A_kg_of_steel_or_a_kg_of_feathers.
+1kg_of_feathers 0 Neither 0 1kg_of_steel 1 Both 0
+Some_months_have_31_days,_others_have_30_days._How_many_have_28_days?
+All_13_of_them 0 Only_february 1 12 0 0 0
+What_is_the_next_number_in_this_series?_6,_14,_36,_98,_276,_?
+482 0 794 1 348 0 942 0
+What_is_the_next_number_in_this_series,_1,_11,_21,_1211,_111221,_312211,_?
+3111221 0 132221 0 13112221 1 Five 0
+B2CD,_____,_BCD4,_B5CD,_BC6D
+B2C2D 0 BC3D 1 B2C3D 0 BCD7 0
