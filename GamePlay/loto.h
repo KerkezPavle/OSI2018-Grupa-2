@@ -66,21 +66,22 @@ int calculateScore(int *userCombination, int *randomCombination)
         }
     return finalScore;
 }
-void lotoGame(void)
+int lotoGame(int currentNUmberOfPoints, double inputPercentage)
 {
     int userScore = 0;
     int *userCombination = new int[NUMBER];
     int *randomCombination = new int[RANDNUMBER];
-    std::cout<<"-------------------------------------------------------------"<<std::endl;
-    std::cout<<"|                           BINGO                           |"<<std::endl;
-    std::cout<<"-------------------------------------------------------------"<<std::endl;
-
+    double factor =(inputPercentage/100)*currentNUmberOfPoints;
     loadUserCombination(userCombination);
     do{
         generateRandomCombination(randomCombination);
         userScore = calculateScore(userCombination,randomCombination);
-    }while(userScore>60);
+    }while(userScore>factor);
 
+    std::cout<<"-------------------------------------------------------------"<<std::endl;
+    std::cout<<"|                           BINGO                           |"<<std::endl;
+    std::cout<<"-------------------------------------------------------------"<<std::endl;
+    std::cout<<"TRENUTNI BROJ BODOVA: ";std::cout<<currentNUmberOfPoints<<std::endl;
     std::cout<<"-------------------------------------------------------------"<<std::endl;
     std::cout<<"VAŠA KOBINACIJA: "; printCombination(userCombination,NUMBER);
     std::cout<<"-------------------------------------------------------------"<<std::endl;
@@ -88,10 +89,14 @@ void lotoGame(void)
     std::cout<<"-------------------------------------------------------------"<<std::endl;
     std::cout<<"OSVOJENI BODOVI: "<< userScore << std::endl;
     std::cout<<"-------------------------------------------------------------"<<std::endl;
-    std::cout<<"|                           KRAJ                           |"<<std::endl;
+    std::cout<<"UKUPAN BROJ BODOVA: "<< userScore + currentNUmberOfPoints << std::endl;
+    std::cout<<"-------------------------------------------------------------"<<std::endl;
+    std::cout<<"|                           KRAJ                            |"<<std::endl;
     std::cout<<"-------------------------------------------------------------"<<std::endl;
     delete[] userCombination;
     delete[] randomCombination;
+
+    return currentNUmberOfPoints+userScore;
 }
 
 
