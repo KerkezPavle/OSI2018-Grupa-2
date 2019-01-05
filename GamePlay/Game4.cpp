@@ -1,4 +1,4 @@
-#include "pch.h"
+
 #include "Game4.h"
 #include <iostream>
 #include <random>
@@ -297,7 +297,7 @@ void Game4(int points, int percentToLose)
 				std::cout << "Ups! Stali ste na minu. Izgubili ste " << board.how_many_left() << " poena. Vise srece drugi put! \n";
 			}
 
-			return 0;
+		
 		}
 		else
 		{

@@ -21,6 +21,7 @@ public:
 	int how_many_left() const { return squaresLeft; } // daje podatak koliko je polja ostalo neotkriveno
 	static bool index_in_range(int, int, int, int); //provjera korisnickog unosa
 	int count_close_mines(int,int);
+	int count_hidden(int row, int col);
 	bool surrounded_by_hidden(int, int);// provjerava da li je polje okruzeno skrivenim poljima
 	int get_width() { return width; }
 	int get_height() { return height; }
