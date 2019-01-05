@@ -379,7 +379,7 @@ void testFun() {
 	freopen("CONOUT$", "w", stdout);
 	freopen("CONOUT$", "w", stderr);
 	//lotoGame();
-	Game4(50, 50);
+	Game4(50, 20);
 	system("pause");
 	fclose(stdin);
 	fclose(stdout);

@@ -1,6 +1,18 @@
 <Statistics>
     <FirstGame>
         <Score>
+            <date>Sat Jan  5 00:30:33 2019</date>
+            <value>40</value>
+        </Score>
+        <Score>
+            <date>Sat Jan  5 20:58:29 2019</date>
+            <value>40</value>
+        </Score>
+        <Score>
+            <date>Sat Jan  5 02:02:37 2019</date>
+            <value>40</value>
+        </Score>
+        <Score>
             <date>Sat Jan  5 00:09:55 2019</date>
             <value>40</value>
         </Score>
@@ -13,31 +25,19 @@
             <value>40</value>
         </Score>
         <Score>
-            <date>Sat Jan  5 00:30:33 2019</date>
+            <date>Sat Jan  5 22:04:35 2019</date>
             <value>40</value>
-        </Score>
-        <Score>
-            <date>Sat Jan  5 02:02:37 2019</date>
-            <value>40</value>
-        </Score>
-        <Score>
-            <date>Sat Jan  5 00:09:52 2019</date>
-            <value>30</value>
-        </Score>
-        <Score>
-            <date>Sat Jan  5 00:30:33 2019</date>
-            <value>30</value>
-        </Score>
-        <Score>
-            <date>Sat Jan  5 00:11:31 2019</date>
-            <value>30</value>
-        </Score>
-        <Score>
-            <date>Sat Jan  5 02:02:37 2019</date>
-            <value>30</value>
         </Score>
         <Score>
             <date>Sat Jan  5 00:09:55 2019</date>
+            <value>30</value>
+        </Score>
+        <Score>
+            <date>Sat Jan  5 00:30:33 2019</date>
+            <value>30</value>
+        </Score>
+        <Score>
+            <date>Sat Jan  5 02:02:37 2019</date>
             <value>30</value>
         </Score>
     </FirstGame>
