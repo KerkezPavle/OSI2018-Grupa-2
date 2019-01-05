@@ -36,11 +36,11 @@ Mineboard::Mineboard(int width, int height, bool) :width(width), height(height)
 
 Mineboard::~Mineboard()
 {
-	
-	for (int i = 0; i < width; i++)
+
+	/*for (int i = 0; i < width; i++)
 		delete[] board[i];
-	delete board;
-	
+	delete board;*/
+
 }
 
 void Mineboard::draw_board(bool should_reveal)
@@ -116,30 +116,37 @@ bool Mineboard::index_in_range(int row, int col, int width, int height)
 
 void Mineboard::place_mines(int row, int col, int numberOfMines)
 {
-	this->draw_board(true);
+
 	square_at(row, col).put_mine();
 	numberOfMines--;
-	for (int i = 0; i < width; i++) //dodavanje mina da se zadovolje jedinice koje su prikazane korisniku
+	for (int i = 0; i < height; i++) //dodavanje mina da se zadovolje jedinice koje su prikazane korisniku
 	{
-		for (int j = 0; j < height; j++)
+		for (int j = 0; j < width; j++)
 		{
 			Square& currSquare = square_at(i, j);
-			if (currSquare.closeMines == 1)
+			if (currSquare.closeMines == 1 && count_close_mines(i, j) != 1)
 			{
 				for (int k = -1; k < 2 && count_close_mines(i, j) != 1; k++)
 					for (int l = -1; l < 2 && count_close_mines(i, j) != 1; l++)
 					{
-						if (index_in_range(i + k, l + j, this->width, this->height) && k != 0 && l != 0) // provjera da li je index u opsegu tj da li postoji ta plocica na tabli
+
+						if (index_in_range(i + k, l + j, this->width, this->height)) // provjera da li je index u opsegu tj da li postoji ta plocica na tabli
 						{
-							square_at(k + i, l + j).put_mine();
-							numberOfMines--;
+							if (k == l && k == 0) {}
+							else
+								// provjerava da li je u okolini vec drugi broj na koji bi to moglo uticati
+								if (!square_at(i + k, l + j).is_revealed())
+									if (count_hidden(i + k, j + l) > 6)
+									{
+										square_at(k + i, l + j).put_mine();
+										numberOfMines--;
+									}
 						}
 					}
 			}
 
 		}
 	}
-	this->draw_board(true);
 
 	int x, y;
 
@@ -148,8 +155,8 @@ void Mineboard::place_mines(int row, int col, int numberOfMines)
 		do // provjera da li vec na toj plocici (kvadraticu) postoji mina i da li je sakriveno sa svih strana
 		{
 
-			x = rand() % width;
-			y = rand() % height;
+			x = rand() % height;
+			y = rand() % width;
 
 
 		} while (square_at(x, y).has_mine() || !surrounded_by_hidden(x, y) || square_at(x, y).state == Mineboard::Square::State::Revealed);
@@ -242,13 +249,17 @@ int Mineboard::count_hidden(int row, int col)
 		for (int j = -1; j < 2; j++)
 		{
 
+
 			if (index_in_range(row + i, col + j, this->width, this->height)) // provjera da li je index u opsegu tj da li postoji ta plocica na tabli
 			{
-				if (square_at(row + i, col + j).state == Mineboard::Square::State::Hidden && i != 0 && j != 0)
+				if (square_at(row + i, col + j).state == Mineboard::Square::State::Hidden)
 				{
-					count++;
+					if (i == j && i == 0) {}
+					else
+						count++;
 				}
 			}
+			else count++;
 		}
 	return count;
 
@@ -260,23 +271,31 @@ int Mineboard::count_hidden(int row, int col)
 
 
 void Game4(int points, int percentToLose)
-{   
+{
 	{
-		int pointsToLose = ((points * percentToLose) / 100) + 1;
+		int pointsToLose = ((points * percentToLose) / 100);//izmjena
 
 		if (percentToLose == 0)// ako nema potrebe za gubitkom poena igrac igra igru neometano
 		{
 			Mineboard board(STANDARDSIZE, STANDARDSIZE);
-			board.draw_board(false); 
+			board.draw_board(false);
 			bool loss = false; // sadrzi info da li je igrac izgubio
-			std::cout << "Dobrodosli! Igracete igru na tabli velicine " << STANDARDSIZE << "x" << STANDARDSIZE << " koja sadrzi " << (STANDARDSIZE*STANDARDSIZE) / 6 << " sakrivenih mina. Srecno! \n" << std::endl;
+			std::cout << std::endl << "Dobrodosli! Igracete igru na tabli velicine " << STANDARDSIZE << "x" << STANDARDSIZE << " koja sadrzi " << (STANDARDSIZE*STANDARDSIZE) / 6 << " sakrivenih mina. Srecno! \n" << std::endl;
 
-			for (loss; !(board.how_many_left() == (board.get_width()* (board.get_height())) / 6) && !loss; board.draw_board(loss)) 
+			for (loss; !(board.how_many_left() == (board.get_width()* (board.get_height())) / 6) && !loss; board.draw_board(loss))
 			{
-				std::cout << "Unesite red i kolonu: ";
+
 				int row;
 				int  col;
-				std::cin >> row >> col;
+
+				do
+				{
+					std::cout << "Unesite red i kolonu: ";
+
+					std::cin >> row >> col;
+
+				} while (!Mineboard::index_in_range(row, col, board.get_width(), board.get_height()) || board.square_at(row, col).is_revealed());
+
 
 				if (Mineboard::index_in_range(row, col, board.get_width(), board.get_height()))
 
@@ -297,17 +316,18 @@ void Game4(int points, int percentToLose)
 				std::cout << "Ups! Stali ste na minu. Izgubili ste " << board.how_many_left() << " poena. Vise srece drugi put! \n";
 			}
 
-		
+
 		}
 		else
 		{
 
 			int width, height, numberOfMines;
 			calculate_dimension(pointsToLose, numberOfMines, width, height); //preracunavaju se dimenzije tabele najpogodnije za zeljeni rezultat
-			std::cout << "Dobrodosli! Igracete igru na tabli velicine  " << width << "x" << height << " koja sadrzi " << numberOfMines << " sakrivenih mina. Srecno! \n" << std::endl;
 
 			Mineboard board(width, height, true);
 			board.draw_board(true);
+			std::cout << std::endl << "Dobrodosli! Igracete igru na tabli velicine " << width << "x" << height << " koja sadrzi " << numberOfMines << " sakrivenih mina. Srecno! \n" << std::endl;
+
 			int row;
 			int  col;
 			for (int i = 0; i < 2; i++) // prividno normalno igranje igre i izbor polja
@@ -317,11 +337,10 @@ void Game4(int points, int percentToLose)
 					std::cout << "Unesite red i kolonu: ";
 
 					std::cin >> row >> col;
-					board.squaresLeft--;
-				}
 
-				while (!Mineboard::index_in_range(row, col, board.get_width(), board.get_height()));
+				} while (!Mineboard::index_in_range(row, col, board.get_width(), board.get_height()) || board.square_at(row, col).is_revealed());
 
+				board.squaresLeft--;
 				board.square_at(row, col).set_close_mines(1); board.square_at(row, col).make_revealed();
 				board.draw_board(false);
 			}
@@ -331,19 +350,17 @@ void Game4(int points, int percentToLose)
 				std::cout << "Unesite red i kolonu: ";
 
 				std::cin >> row >> col;
-			}
 
-			while (!Mineboard::index_in_range(row, col, board.get_width(), board.get_height()));
+			} while (!Mineboard::index_in_range(row, col, board.get_width(), board.get_height()) || board.square_at(row, col).is_revealed());
 
+			board.squaresLeft--;
 			board.place_mines(row, col, numberOfMines); //popunjavanje minama u skladu sa dosadasnjim prikazanim stanjem
-
 			board.draw_board(true);
-
 			std::cout << "Ups! Stali ste na minu. Izgubili ste " << width * height - numberOfMines - 2 << " poena. Vise srece drugi put! \n";
 
 
 		}
 	}
-	
+
 }
 
