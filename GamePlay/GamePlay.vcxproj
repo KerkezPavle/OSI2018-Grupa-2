@@ -131,21 +131,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="EnterCodeForm.cpp" />
     <ClCompile Include="Game2.cpp" />
     <ClCompile Include="Game4.cpp" />
     <ClCompile Include="HomeForm.cpp" />
+    <ClCompile Include="ShowStatistics.cpp" />
     <ClCompile Include="Test.cpp" />
     <ClCompile Include="tinyxml2.cpp" />
     <ClCompile Include="Username.cpp" />
     <ClCompile Include="XMLDataFile.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="csvfile.h" />
+    <ClInclude Include="EnterCodeForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="Game2.h" />
     <ClInclude Include="Game4.h" />
     <ClInclude Include="HomeForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="loto.h" />
+    <ClInclude Include="ShowStatistics.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="tinyxml2.h" />
     <ClInclude Include="Username.h">
       <FileType>CppForm</FileType>
@@ -153,12 +162,23 @@
     <ClInclude Include="XMLDataFile.h" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="EnterCodeForm.resx">
+      <DependentUpon>EnterCodeForm.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="HomeForm.resx">
       <DependentUpon>HomeForm.h</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShowStatistics.resx">
+      <DependentUpon>ShowStatistics.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Username.resx">
       <DependentUpon>Username.h</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="ScoreBoard.xml" />
+    <Xml Include="Settings.xml" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

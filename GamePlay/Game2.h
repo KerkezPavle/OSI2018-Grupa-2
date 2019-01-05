@@ -16,9 +16,11 @@ class Question {
 	int queNum;
 public:
 	static int counter;
+	void draw();
+	int answerIt();
 	Question(difficulty);
 	Question();
 	~Question();
 };
 
-void game2(int, double);
+int game2(int, double);

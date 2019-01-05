@@ -15,17 +15,21 @@ void delXMLFile();
 */
 void readXMLFile(const char* XMLFileName, int game);
 
-
-int makeXMLScoreFileSafe(const char *XMLFileName);
+tinyxml2::XMLElement* getParentGame(tinyxml2::XMLDocument& xmlDoc, int game);
+int makeXMLScoreFileSafe();
 void makeXMLSroreFile(const char *XMLFileName);
 bool insertDataIntoStats(int game, int score);
 void deleteDataFromStats(const char* XMLFileName, int game);
 void sortGameResults(const char* XMLFileName);
 // Settings
 bool makeXMLSettingsFile();
+int makeXMLSettingsFileSave();
 bool isUserNameSet();
 bool setUserName(std::string);
 System::String^ getUsername();
 void clearUsername();
+int getActiveScore();
+void setActiveScore(int);
+const char* getCSVFileNameChar();
 void testFun();
 void testTest(); 
