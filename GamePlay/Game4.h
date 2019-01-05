@@ -19,7 +19,7 @@ public:
 	void draw_board(bool);// bool u slucaju da je igrac izgubio funkciji govori da otkrije sva polja
 	void uncover_square(int, int);// otkriva dato polje i susjedna polja ako je potrebno
 	int how_many_left() const { return squaresLeft; } // daje podatak koliko je polja ostalo neotkriveno
-	static bool index_in_range(int, int); //provjera korisnickog unosa
+	static bool index_in_range(int, int, int, int); //provjera korisnickog unosa
 	int count_close_mines(int,int);
 	bool surrounded_by_hidden(int, int);// provjerava da li je polje okruzeno skrivenim poljima
 	int get_width() { return width; }
