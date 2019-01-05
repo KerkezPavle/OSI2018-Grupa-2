@@ -5,6 +5,51 @@
 #include <iomanip>
 #include <string>
 
+
+void ClearScreen()
+{
+	HANDLE                     hStdOut;
+	CONSOLE_SCREEN_BUFFER_INFO csbi;
+	DWORD                      count;
+	DWORD                      cellCount;
+	COORD                      homeCoords = { 0, 0 };
+
+	hStdOut = GetStdHandle(STD_OUTPUT_HANDLE);
+	if (hStdOut == INVALID_HANDLE_VALUE) return;
+
+	/* Get the number of cells in the current buffer */
+	if (!GetConsoleScreenBufferInfo(hStdOut, &csbi)) return;
+	cellCount = csbi.dwSize.X *csbi.dwSize.Y;
+
+	/* Fill the entire buffer with spaces */
+	if (!FillConsoleOutputCharacter(
+		hStdOut,
+		(TCHAR) ' ',
+		cellCount,
+		homeCoords,
+		&count
+	)) return;
+
+	/* Fill the entire buffer with the current colors and attributes */
+	if (!FillConsoleOutputAttribute(
+		hStdOut,
+		csbi.wAttributes,
+		cellCount,
+		homeCoords,
+		&count
+	)) return;
+
+	/* Move the cursor home */
+	SetConsoleCursorPosition(hStdOut, homeCoords);
+}
+
+
+void setcolor(int color)
+{
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), color);
+	return;
+}
+
 Mineboard::Mineboard(int width, int height) :width(width), height(height)
 {
 	board = allocate(width, height);
@@ -46,9 +91,11 @@ Mineboard::~Mineboard()
 void Mineboard::draw_board(bool should_reveal)
 {
 	static const std::string line(4 * width, '-');
+
 	if (width*height != how_many_left())
-		std::cout << CLEAR << "   ";
+		ClearScreen();
 	// crtaju se ose i njihove labele na ekranu
+	std::cout << "   ";
 	for (int j = 0; j < width; ++j)
 		std::cout << std::setw(3) << j << ' ';
 	std::cout << "\n";
@@ -59,7 +106,7 @@ void Mineboard::draw_board(bool should_reveal)
 		for (int j = 0; j < width; ++j)
 		{
 			square_at(i, j).draw_square(should_reveal);
-			std::cout << RESET << '|';
+			std::cout << '|';
 		}
 		std::cout << "\n";
 	}
@@ -220,6 +267,7 @@ bool Mineboard::are_neighbours(int row1, int col1, int row2, int col2)
 		}
 		else
 			return false;
+	return false;
 }
 
 void Mineboard::Square::set_close_mines(int count)
@@ -283,14 +331,26 @@ void Mineboard::Square::draw_square(bool should_reveal) const
 {
 
 	if (has_mine() && should_reveal)
-		std::cout << RED << ' ' << '#' << ' ';
+	{
+		setcolor(16 * 0 + 12);
+		std::cout << ' ' << '#' << ' ';
+		setcolor(16 * 0 + 7);
+	}
+
 	else if (state == State::Revealed && !has_mine())
 	{
-		std::cout << GREEN << ' ' << (char)(closeMines + 48) << ' ';
+		setcolor(10);
+		std::cout << ' ' << (char)(closeMines + 48) << ' ';
+		setcolor(7);
 	}
 
 	else
-		std::cout << TILE << ' ' << '+' << ' ';
+	{
+		setcolor(16 * 7 + 0);
+		std::cout << ' ' << '+' << ' ';
+		setcolor(7);
+	}
+
 
 
 }
@@ -420,4 +480,6 @@ void Game4(int points, int percentToLose)
 	}
 
 }
+
+
 
