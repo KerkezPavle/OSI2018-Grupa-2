@@ -8,6 +8,7 @@
 #include <sstream>
 //#include <vcclr.h>
 #include "loto.h"
+#include "Game4.h"
 using namespace tinyxml2;
 
 
@@ -377,7 +378,8 @@ void testFun() {
 	freopen("CONIN$", "r", stdin);
 	freopen("CONOUT$", "w", stdout);
 	freopen("CONOUT$", "w", stderr);
-	lotoGame();
+	//lotoGame();
+	Game4(50, 50);
 	system("pause");
 	fclose(stdin);
 	fclose(stdout);

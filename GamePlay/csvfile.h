@@ -46,7 +46,7 @@ void MakeCSV(const char * filename)
 	//Fourth game
 	myfile << "Rourth game:\n";
 	myfile << ", Place, Score, Date\n";
-	parentGame = getParentGame(xmlDoc, 1);
+	parentGame = getParentGame(xmlDoc, 4);
 	counter = 1;
 	for (XMLElement *child = parentGame->FirstChildElement(); child != NULL; child = child->NextSiblingElement()) {
 		myfile << "," << counter++ << "," << child->FirstChildElement("value")->GetText() << "," << child->FirstChildElement("date")->GetText() << "\n";

@@ -105,6 +105,7 @@ namespace GamePlay {
 			this->toolStripMenuItem1 = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->exitToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->optionsToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->saveStatisticsToCSVToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->clearUsernameToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->aboutToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->lblKviz = (gcnew System::Windows::Forms::Label());
@@ -118,7 +119,6 @@ namespace GamePlay {
 			this->button7 = (gcnew System::Windows::Forms::Button());
 			this->lblUsername = (gcnew System::Windows::Forms::Label());
 			this->btnStats = (gcnew System::Windows::Forms::Button());
-			this->saveStatisticsToCSVToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->menuStrip1->SuspendLayout();
 			this->SuspendLayout();
 			// 
@@ -127,11 +127,11 @@ namespace GamePlay {
 			this->label1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->label1->AutoSize = true;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Adobe Fan Heiti Std B", 21.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->label1->Font = (gcnew System::Drawing::Font(L"Cambria", 21.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label1->Location = System::Drawing::Point(12, 38);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(147, 36);
+			this->label1->Size = System::Drawing::Size(148, 34);
 			this->label1->TabIndex = 1;
 			this->label1->Text = L"GamePlay";
 			// 
@@ -142,9 +142,9 @@ namespace GamePlay {
 				static_cast<System::Byte>(0)));
 			this->label2->Location = System::Drawing::Point(47, 125);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(112, 16);
+			this->label2->Size = System::Drawing::Size(118, 16);
 			this->label2->TabIndex = 3;
-			this->label2->Text = L"Pogadjanje broja";
+			this->label2->Text = L"Guess the number";
 			this->label2->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// btnStartGame1
@@ -163,7 +163,7 @@ namespace GamePlay {
 			this->btnUGame1->Name = L"btnUGame1";
 			this->btnUGame1->Size = System::Drawing::Size(109, 37);
 			this->btnUGame1->TabIndex = 6;
-			this->btnUGame1->Text = L"Otkljucaj igru";
+			this->btnUGame1->Text = L"Unlock the game";
 			this->btnUGame1->UseVisualStyleBackColor = true;
 			this->btnUGame1->Click += gcnew System::EventHandler(this, &HomeForm::button1_Click_1);
 			// 
@@ -203,6 +203,13 @@ namespace GamePlay {
 			this->optionsToolStripMenuItem->Size = System::Drawing::Size(61, 20);
 			this->optionsToolStripMenuItem->Text = L"Options";
 			// 
+			// saveStatisticsToCSVToolStripMenuItem
+			// 
+			this->saveStatisticsToCSVToolStripMenuItem->Name = L"saveStatisticsToCSVToolStripMenuItem";
+			this->saveStatisticsToCSVToolStripMenuItem->Size = System::Drawing::Size(184, 22);
+			this->saveStatisticsToCSVToolStripMenuItem->Text = L"Save statistics to CSV";
+			this->saveStatisticsToCSVToolStripMenuItem->Click += gcnew System::EventHandler(this, &HomeForm::saveStatisticsToCSVToolStripMenuItem_Click);
+			// 
 			// clearUsernameToolStripMenuItem
 			// 
 			this->clearUsernameToolStripMenuItem->Name = L"clearUsernameToolStripMenuItem";
@@ -223,9 +230,9 @@ namespace GamePlay {
 				static_cast<System::Byte>(0)));
 			this->lblKviz->Location = System::Drawing::Point(274, 125);
 			this->lblKviz->Name = L"lblKviz";
-			this->lblKviz->Size = System::Drawing::Size(32, 16);
+			this->lblKviz->Size = System::Drawing::Size(34, 16);
 			this->lblKviz->TabIndex = 8;
-			this->lblKviz->Text = L"Kviz";
+			this->lblKviz->Text = L"Quiz";
 			// 
 			// lblbingo
 			// 
@@ -243,11 +250,11 @@ namespace GamePlay {
 			this->label5->AutoSize = true;
 			this->label5->Font = (gcnew System::Drawing::Font(L"Adobe Fan Heiti Std B", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label5->Location = System::Drawing::Point(610, 124);
+			this->label5->Location = System::Drawing::Point(598, 125);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(69, 16);
+			this->label5->Size = System::Drawing::Size(87, 16);
 			this->label5->TabIndex = 10;
-			this->label5->Text = L"Minolovac";
+			this->label5->Text = L"Minesweeper";
 			// 
 			// btnUGame2
 			// 
@@ -255,7 +262,7 @@ namespace GamePlay {
 			this->btnUGame2->Name = L"btnUGame2";
 			this->btnUGame2->Size = System::Drawing::Size(109, 37);
 			this->btnUGame2->TabIndex = 11;
-			this->btnUGame2->Text = L"Otkljucaj igru";
+			this->btnUGame2->Text = L"Unlock the game";
 			this->btnUGame2->UseVisualStyleBackColor = true;
 			this->btnUGame2->Click += gcnew System::EventHandler(this, &HomeForm::button2_Click);
 			// 
@@ -274,7 +281,7 @@ namespace GamePlay {
 			this->btnUGame3->Name = L"btnUGame3";
 			this->btnUGame3->Size = System::Drawing::Size(109, 37);
 			this->btnUGame3->TabIndex = 13;
-			this->btnUGame3->Text = L"Otkljucaj igru";
+			this->btnUGame3->Text = L"Unlock the game";
 			this->btnUGame3->UseVisualStyleBackColor = true;
 			this->btnUGame3->Click += gcnew System::EventHandler(this, &HomeForm::button4_Click);
 			// 
@@ -294,7 +301,7 @@ namespace GamePlay {
 			this->btnUGame4->Name = L"btnUGame4";
 			this->btnUGame4->Size = System::Drawing::Size(96, 37);
 			this->btnUGame4->TabIndex = 15;
-			this->btnUGame4->Text = L"Otkljucaj igru";
+			this->btnUGame4->Text = L"Unlock the game";
 			this->btnUGame4->UseVisualStyleBackColor = true;
 			this->btnUGame4->Click += gcnew System::EventHandler(this, &HomeForm::button6_Click);
 			// 
@@ -310,11 +317,13 @@ namespace GamePlay {
 			// lblUsername
 			// 
 			this->lblUsername->AutoSize = true;
-			this->lblUsername->Location = System::Drawing::Point(222, 60);
+			this->lblUsername->Font = (gcnew System::Drawing::Font(L"Cambria", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->lblUsername->Location = System::Drawing::Point(194, 48);
 			this->lblUsername->Name = L"lblUsername";
-			this->lblUsername->Size = System::Drawing::Size(30, 13);
+			this->lblUsername->Size = System::Drawing::Size(60, 22);
 			this->lblUsername->TabIndex = 19;
-			this->lblUsername->Text = L"temp";
+			this->lblUsername->Text = L"Hello, " + getUsername();
 			// 
 			// btnStats
 			// 
@@ -325,13 +334,6 @@ namespace GamePlay {
 			this->btnStats->Text = L"Statistics";
 			this->btnStats->UseVisualStyleBackColor = true;
 			this->btnStats->Click += gcnew System::EventHandler(this, &HomeForm::btnStats_Click);
-			// 
-			// saveStatisticsToCSVToolStripMenuItem
-			// 
-			this->saveStatisticsToCSVToolStripMenuItem->Name = L"saveStatisticsToCSVToolStripMenuItem";
-			this->saveStatisticsToCSVToolStripMenuItem->Size = System::Drawing::Size(184, 22);
-			this->saveStatisticsToCSVToolStripMenuItem->Text = L"Save statistics to CSV";
-			this->saveStatisticsToCSVToolStripMenuItem->Click += gcnew System::EventHandler(this, &HomeForm::saveStatisticsToCSVToolStripMenuItem_Click);
 			// 
 			// HomeForm
 			// 
@@ -393,7 +395,7 @@ namespace GamePlay {
 private: System::Void clearUsernameToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
 	HomeForm::Hide();
 	clearUsername();
-	this->lblUsername->Text = getUsername();
+	this->lblUsername->Text = "Hello, " + getUsername();
 	HomeForm::Show();
 }
 private: System::Void button1_Click_1(System::Object^  sender, System::EventArgs^  e) {
