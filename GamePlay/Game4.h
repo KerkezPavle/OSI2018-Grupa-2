@@ -41,7 +41,7 @@ private:
 		bool has_mine() const { return isMine; }
 		void set_close_mines (int count) ;
 		void draw_square(bool) const; 
-		void set_close_mines(int);
+		//void set_close_mines(int);
 		void make_revealed() { state = State::Revealed; }
 		
 		
