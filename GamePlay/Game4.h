@@ -1,13 +1,8 @@
 #pragma once
+#pragma once
 #define STANDARDSIZE 8
+#include <Windows.h>
 
-//koristi se za manipulaciju izlaza, promjenu boje teksta i pozadine
-static constexpr auto RED = "\x1b[31;1m";
-static constexpr auto GREEN = "\x1b[32;1m";
-static constexpr auto BLUE = "\x1b[34;1m";
-static constexpr auto TILE = "\x1b[30;47m";
-static constexpr auto RESET = "\x1b[0m";
-static constexpr auto CLEAR = "\x1b[2J";
 
 class Mineboard
 {
@@ -26,6 +21,9 @@ public:
 	int get_width() { return width; }
 	int get_height() { return height; }
 	void place_mines(int, int, int);
+	bool are_neighbours(int, int, int, int);// provjerava da li su unesena mjesta za jedinice
+
+	//susjedna i ako jesu stavlja minu na potrebno mjesto da bi se odrzao logicki poredak na tabeli
 
 
 
@@ -77,5 +75,7 @@ private:
 
 void calculate_dimension(int, int&, int&, int&); //funkcija za izracunavanje optimalne dimenzije tabele i broja mina za zadani broj bodova
 void Game4(int, int);
+void ClearScreen(); // funkcije koje se koriste za bojenje teksta i ciscenja ekrana
+void setcolor(int);
 
 #pragma once
