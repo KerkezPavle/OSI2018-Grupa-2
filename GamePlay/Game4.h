@@ -26,6 +26,9 @@ public:
 	int get_width() { return width; }
 	int get_height() { return height; }
 	void place_mines(int, int, int);
+	bool are_neighbours(int, int, int, int);// provjerava da li su unesena mjesta za jedinice
+
+	//susjedna i ako jesu stavlja minu na potrebno mjesto da bi se odrzao logicki poredak na tabeli
 
 
 
