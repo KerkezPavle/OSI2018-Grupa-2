@@ -16,7 +16,7 @@ class Question {
 	int queNum;
 public:
 	static int counter;
-	void draw();
+	void draw(int);
 	int answerIt();
 	Question(difficulty);
 	Question();

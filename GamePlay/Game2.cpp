@@ -3,11 +3,51 @@
 #include<iostream>
 #include<random>
 #include <iomanip>
+#include<windows.h>
 
 constexpr int num_of_Q = 5;
 const int num_of_AQ = 7;
 const int width = 45;
 int Question::counter = 0;
+
+
+
+void ClearScreen()// all credits go to the person Marija stole this code from
+{
+	HANDLE                     hStdOut;
+	CONSOLE_SCREEN_BUFFER_INFO csbi;
+	DWORD                      count;
+	DWORD                      cellCount;
+	COORD                      homeCoords = { 0, 0 };
+
+	hStdOut = GetStdHandle(STD_OUTPUT_HANDLE);
+	if (hStdOut == INVALID_HANDLE_VALUE) return;
+
+	/* Get the number of cells in the current buffer */
+	if (!GetConsoleScreenBufferInfo(hStdOut, &csbi)) return;
+	cellCount = csbi.dwSize.X *csbi.dwSize.Y;
+
+	/* Fill the entire buffer with spaces */
+	if (!FillConsoleOutputCharacter(
+		hStdOut,
+		(TCHAR) ' ',
+		cellCount,
+		homeCoords,
+		&count
+	)) return;
+
+	/* Fill the entire buffer with the current colors and attributes */
+	if (!FillConsoleOutputAttribute(
+		hStdOut,
+		csbi.wAttributes,
+		cellCount,
+		homeCoords,
+		&count
+	)) return;
+
+	/* Move the cursor home */
+	SetConsoleCursorPosition(hStdOut, homeCoords);
+}
 
 Question::Question(difficulty MODE) :mode(MODE) {
 	queNum = counter++;
@@ -47,19 +87,23 @@ int Question::chooseQuestion() {
 }
 
 void color_Text(std::string text, int color) {
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), color);
 	std::cout << text;
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 15);
 }
 
 void frame(std::string text, char mode = ' ') {
 	char letter[3] = { mode,(mode == ' ') ? ' ' : 58 };
 	std::string s(letter);
-	if ((mode >= '0') && (mode <= '9'))std::cout << "      " << std::fixed << std::setw(2 * width - 1) << std::setfill('_') << "" << std::endl;
-	if ((mode >= '0') && (mode <= '9'))std::cout << "     |" << std::fixed << std::setw(2 * width) << std::setfill(' ') << "|" << std::endl;
+	if ((mode >= '0') && (mode <= '9')) {
+		std::cout << "      " << std::fixed << std::setw(2 * width - 1) << std::setfill('_') << "" << std::endl;
+		std::cout << "     |" << std::fixed << std::setw(2 * width) << std::setfill(' ') << "|" << std::endl;
+	}
 	std::cout << "     |" << std::fixed << std::setw(2 * width) << std::setfill(' ') << "|" << std::endl;
 	if ((mode >= '0') && (mode <= '9'))std::cout << "     |" << std::fixed << std::setw(2 * width) << std::setfill(' ') << "|" << std::endl;
 	if (text.length() < 2 * width) {
 		std::cout << "     |" << std::fixed << std::setw(width + (text.length() / 2)) << std::setfill(' ');
-		color_Text(s + text, ((mode >= '0') && (mode <= '9')) ? 15 : mode % 14); std::cout << std::setw(width - (text.length() / 2)) << "|" << std::endl;
+		color_Text(s + text, ((mode >= '0') && (mode <= '9')) ? 15 : (mode + 6) % 15 + 1); std::cout << std::setw(width - (text.length() / 2)) << "|" << std::endl;
 	}
 	else {
 		std::cout << "     |" << std::fixed << std::setw(width + (text.length() / 4)) << std::setfill(' ');
@@ -72,10 +116,10 @@ void frame(std::string text, char mode = ' ') {
 	std::cout << "      " << std::fixed << std::setw(2 * width) << std::setfill('~') << " " << std::endl;
 }
 
-void Question::draw() {
+void Question::draw(int p = 0) {
 	frame(text, (char)48 + queNum);
 	frame(answer[0].text, 'A');
-	frame(answer[1].text, 'B');
+	if (queNum)frame(answer[1].text, 'B'); else frame(answer[1].text + ": " + std::to_string(p), ' ');
 	frame(answer[2].text, 'C');
 }
 
@@ -86,10 +130,10 @@ int Question::answerIt() {
 	index = (ans < 'Z') ? ans - 'A' : ans - 'a';
 	if ((index > 2) || (index < 0)) { std::cout << "Try again buddy:" << std::endl; return answerIt(); }
 	if (queNum == 0)return index;
-	std::cout << "Are you sure "; color_Text(answer[index].text, index + 6); std::cout << "  is the right answser(y/n):";
+	std::cout << "Are you sure "; color_Text(answer[index].text, index + 4); std::cout << "  is the right answer(y/n):";
 	std::cin >> ans;
 	if ((ans == 'y') || (ans == 'Y')) {
-		std::cout << "You chose.... ";
+		std::cout << "You choose.... ";
 		if (answer[index].is_Correct) {
 			std::string tmp("wisely");
 			color_Text(tmp, 2); return 20;
@@ -107,18 +151,19 @@ int Question::answerIt() {
 int game2(int points, double percentage) {
 	int offset = 0; int sch;
 	Question start{};
-	start.draw(); sch = start.answerIt();
+	start.draw(points); sch = start.answerIt();
 	if (sch == 2)return 0;
-	else if (sch == 1) {
-		std::cout << std::endl << "Your starting points are:" << points << std::endl;
-		start.draw(); sch = start.answerIt();
-	}
+	ClearScreen();
 	Question q[num_of_Q];
 	for (int i = 0; i < num_of_Q; ++i) {
 		q[i].draw();
 		offset += q[i].answerIt();
 		std::cout << std::endl;
 		std::cout << "Points:" << points + offset << std::endl;
+		std::cin.ignore(-1, '\n');
+		std::cin.get();
+		std::cin.get();
+		ClearScreen();
 	}
 	if (offset == 100)offset += 50;
 	return points + offset;
