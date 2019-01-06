@@ -1,0 +1,28 @@
+Welcome_to_the_quiz!
+Play 1 (Stating_points) 0 Quit 0 Easter_Egg 0
+Jim(smart)_is_looking_at_Hugh(unknown)_who_is_looking_at_Phil(dumb)._Is_a_smart_person_looking_at_a_dumb_person?
+Yes 1 No 0 Impossible_to_determine 0 What? 0
+How_many_letter_are_there_in_the_alphabet?
+26 1 30 0 11 0 8 0
+What_is_heavier?_A_kg_of_steel_or_a_kg_of_feathers.
+1kg_of_feathers 0 Neither 0 1kg_of_steel 1 Both 0
+Some_months_have_31_days,_others_have_30_days._How_many_have_28_days?
+All_13_of_them 0 Only_february 1 12 0 0 0
+What_is_the_next_number_in_this_series?_6,_14,_36,_98,_276,_?
+482 0 794 1 348 0 942 0
+What_is_the_next_number_in_this_series,_1,_11,_21,_1211,_111221,_312211,_?
+3111221 0 132221 0 13112221 1 Five 0
+B2CD,_____,_BCD4,_B5CD,_BC6D
+B2C2D 0 BC3D 1 B2C3D 0 C3P0 0
+What_is_the_difference_between_Ping_Pong_and_Table_Tennis?
+The_Names 0 Table_Tennis_is_objectively_worse 1 The_scoring_system 0 The_perception_of_the_games 0
+In_which_of_the_four_canonical_texts_of_Hinduism_is_Yoga_mentioned?
+Samaveda 0 Rigveda 1 Atharvaveda 0
+You're_standing_on_the_south_pole,_how_would_you_move_westward?
+By_rotating_you_body_clockwise 0 By_rotating_you_body_counter_clockwise 1 Embrace_hypothermia 0 Via_the_Origon_trail 1
+How_many_ribs_does_a_male_human_have?
+A_set_of_11 0 A_set_of_12 1 23_all_together 0 0 0
+A_Utah(Nevell)_teapot_is_used_in?
+A_kitchen. 0 Modeling 1 Warfare 0
+How_many_unique_3x3_rubik's_cube_combinations_are_there?
+(8!*12!*(212)*(38))/(3*2*2) 1 8!_*_12!_*_3^9_*_2^12. 0 3,674,160 0  9 0
