@@ -6,7 +6,7 @@
 #include<windows.h>
 
 constexpr int num_of_Q = 5;
-const int num_of_AQ = 7;
+const int num_of_AQ = 13;
 const int width = 45;
 int Question::counter = 0;
 
