@@ -4,7 +4,7 @@
 #include <Windows.h>
 
 using namespace GamePlay;
-
+[STAThreadAttribute]
 int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 {
 	makeXMLSettingsFileSave();

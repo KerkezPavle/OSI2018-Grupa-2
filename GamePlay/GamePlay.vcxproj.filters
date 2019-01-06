@@ -39,6 +39,9 @@
     <ClCompile Include="Game4.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="ShowStatistics.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="HomeForm.h">
@@ -63,6 +66,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="EnterCodeForm.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="csvfile.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ShowStatistics.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
