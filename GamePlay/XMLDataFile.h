@@ -31,5 +31,5 @@ void clearUsername();
 int getActiveScore();
 void setActiveScore(int);
 const char* getCSVFileNameChar();
-void testFun();
+void testFun(int);
 void testTest(); 

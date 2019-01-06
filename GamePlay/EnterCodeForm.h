@@ -207,9 +207,11 @@ namespace GamePlay {
 			this->Controls->Add(this->txtCode3);
 			this->Controls->Add(this->txtCode2);
 			this->Controls->Add(this->txtCode1);
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
+			this->MaximizeBox = false;
 			this->Name = L"EnterCodeForm";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterParent;
-			this->Text = L"EnterCodeForm";
+			this->Text = L"Unlock you game";
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -230,7 +232,13 @@ private: System::Void button1_Click(System::Object^  sender, System::EventArgs^ 
 
 	}
 	else {
-		System::Windows::Forms::MessageBox::Show(s, "Game " + num, System::Windows::Forms::MessageBoxButtons::OK, System::Windows::Forms::MessageBoxIcon::Information);
+		
+		if (false) {
+			System::Windows::Forms::MessageBox::Show("Game successfully unlocked!", "Success", System::Windows::Forms::MessageBoxButtons::OK, System::Windows::Forms::MessageBoxIcon::Information);
+		}
+		else {
+			System::Windows::Forms::MessageBox::Show("The code you have enterd is not valid!", "Error", System::Windows::Forms::MessageBoxButtons::RetryCancel, System::Windows::Forms::MessageBoxIcon::Error);
+		}
 		this->Close();
 	}
 

@@ -6,9 +6,11 @@
 #include <iostream>
 #include <string>
 #include <sstream>
-//#include <vcclr.h>
 #include "loto.h"
 #include "Game4.h"
+#include "Game1.h"
+#include "Game2.h"
+#include <functional>
 using namespace tinyxml2;
 
 
@@ -372,14 +374,16 @@ BOOL WINAPI CtrlHandler(DWORD fdwCtrlType)
 }
 
 
-void testFun() {
+void testFun(int n) {
 	AllocConsole();
 	SetConsoleCtrlHandler(CtrlHandler, TRUE);
 	freopen("CONIN$", "r", stdin);
 	freopen("CONOUT$", "w", stdout);
 	freopen("CONOUT$", "w", stderr);
-	//lotoGame();
-	Game4(50, 20);
+	if (n == 1) game1(50, 20);
+	if (n == 2) game2(50, 20.0);
+	if (n == 3) lotoGame(50, 0.2);
+	if (n == 4) Game4(50,20);
 	system("pause");
 	fclose(stdin);
 	fclose(stdout);

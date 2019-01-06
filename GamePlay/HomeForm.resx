@@ -117,7 +117,163 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnStartGame1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
+        xgAAAMYBsHSbxQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAEMSURBVDhPpVO7
+        DcIwEDUNC7AAcqIoEvsgsQElTEB2yKVgBGgRBbLTI2UFoGSEKJ255zjIROYjUrzIfvfufO8cC2PMCyTp
+        JM5VFpM+RLm+A1iDQ6yv9xcjSeUqIl0zGkbF2DpgDa6GBtqXAiAiUkcWmIjKXUp60gk6gEOs1agjclwu
+        2rYnG5mXSz8pBGislnOwt57RGqr3xe/gOmE7OhEYDm+aftvMXXDKLNuPfR5o7ehGFuVG2GnzkPoi5tir
+        xTUmNQ/EK+QKe1U86YCgK2AhSZ2n+Sn14lvk/lyAUQULfLPAg7qx1wWTz7t38dbCpyHGhVp/HeLgawQx
+        6Edyn2G/slv8/5h8wNfvz9mIB0YygSbWYj5UAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="btnUGame1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAE
+        GgAABBoBC0NBTQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAFWSURBVDhPY/j/
+        /z8GDs6q9g3JqtgWklX5HIIrtoHEsKnFEAjJrpwH1PQ5OKuqJTSrwgOEQWyQGEgOXT0KJzSrMhmo8E1w
+        ZoUSsjgIg8RAciA1yOIoioAKToRmV2YiiyFjkBxIDbIYioLgrMr7QCerIIsh4+CMCkOgN36GhoYyw8RQ
+        FIQWFnIi89FxcE6lBtAF/xMSGjhgYnDJEydO8B07eSz5xKkTFcj49v37O2D4zMUr+xomzLp69Og5eXQD
+        GI+fOn4LiP+j4+dv3mLgRy9e/ALqYYIbcPTUUQNsmo+eOPr/6cvXWA25eedOONwAoPMtsBmQm5f/v7S8
+        ErsBt2+nEDQgOjruf3x8EvkGJCQk/U9NyyDfgHUb1/8/ceYs+QaAMDbNIIxugDhQ8W90zSCMTfOz12/+
+        X7tzRwduAAgfP3m8DKjhNSEDnr56/ffOgwdbIfr+MwAAcBwAdAjtHm8AAAAASUVORK5CYII=
+</value>
+  </data>
   <metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="btnUGame2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAE
+        GgAABBoBC0NBTQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAFWSURBVDhPY/j/
+        /z8GDs6q9g3JqtgWklX5HIIrtoHEsKnFEAjJrpwH1PQ5OKuqJTSrwgOEQWyQGEgOXT0KJzSrMhmo8E1w
+        ZoUSsjgIg8RAciA1yOIoioAKToRmV2YiiyFjkBxIDbIYioLgrMr7QCerIIsh4+CMCkOgN36GhoYyw8RQ
+        FIQWFnIi89FxcE6lBtAF/xMSGjhgYnDJEydO8B07eSz5xKkTFcj49v37O2D4zMUr+xomzLp69Og5eXQD
+        GI+fOn4LiP+j4+dv3mLgRy9e/ALqYYIbcPTUUQNsmo+eOPr/6cvXWA25eedOONwAoPMtsBmQm5f/v7S8
+        ErsBt2+nEDQgOjruf3x8EvkGJCQk/U9NyyDfgHUb1/8/ceYs+QaAMDbNIIxugDhQ8W90zSCMTfOz12/+
+        X7tzRwduAAgfP3m8DKjhNSEDnr56/ffOgwdbIfr+MwAAcBwAdAjtHm8AAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="btnStartGame2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
+        xgAAAMYBsHSbxQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAEMSURBVDhPpVO7
+        DcIwEDUNC7AAcqIoEvsgsQElTEB2yKVgBGgRBbLTI2UFoGSEKJ255zjIROYjUrzIfvfufO8cC2PMCyTp
+        JM5VFpM+RLm+A1iDQ6yv9xcjSeUqIl0zGkbF2DpgDa6GBtqXAiAiUkcWmIjKXUp60gk6gEOs1agjclwu
+        2rYnG5mXSz8pBGislnOwt57RGqr3xe/gOmE7OhEYDm+aftvMXXDKLNuPfR5o7ehGFuVG2GnzkPoi5tir
+        xTUmNQ/EK+QKe1U86YCgK2AhSZ2n+Sn14lvk/lyAUQULfLPAg7qx1wWTz7t38dbCpyHGhVp/HeLgawQx
+        6Edyn2G/slv8/5h8wNfvz9mIB0YygSbWYj5UAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="btnUGame3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAE
+        GgAABBoBC0NBTQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAFWSURBVDhPY/j/
+        /z8GDs6q9g3JqtgWklX5HIIrtoHEsKnFEAjJrpwH1PQ5OKuqJTSrwgOEQWyQGEgOXT0KJzSrMhmo8E1w
+        ZoUSsjgIg8RAciA1yOIoioAKToRmV2YiiyFjkBxIDbIYioLgrMr7QCerIIsh4+CMCkOgN36GhoYyw8RQ
+        FIQWFnIi89FxcE6lBtAF/xMSGjhgYnDJEydO8B07eSz5xKkTFcj49v37O2D4zMUr+xomzLp69Og5eXQD
+        GI+fOn4LiP+j4+dv3mLgRy9e/ALqYYIbcPTUUQNsmo+eOPr/6cvXWA25eedOONwAoPMtsBmQm5f/v7S8
+        ErsBt2+nEDQgOjruf3x8EvkGJCQk/U9NyyDfgHUb1/8/ceYs+QaAMDbNIIxugDhQ8W90zSCMTfOz12/+
+        X7tzRwduAAgfP3m8DKjhNSEDnr56/ffOgwdbIfr+MwAAcBwAdAjtHm8AAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="btnStartGame3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
+        xgAAAMYBsHSbxQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAEMSURBVDhPpVO7
+        DcIwEDUNC7AAcqIoEvsgsQElTEB2yKVgBGgRBbLTI2UFoGSEKJ255zjIROYjUrzIfvfufO8cC2PMCyTp
+        JM5VFpM+RLm+A1iDQ6yv9xcjSeUqIl0zGkbF2DpgDa6GBtqXAiAiUkcWmIjKXUp60gk6gEOs1agjclwu
+        2rYnG5mXSz8pBGislnOwt57RGqr3xe/gOmE7OhEYDm+aftvMXXDKLNuPfR5o7ehGFuVG2GnzkPoi5tir
+        xTUmNQ/EK+QKe1U86YCgK2AhSZ2n+Sn14lvk/lyAUQULfLPAg7qx1wWTz7t38dbCpyHGhVp/HeLgawQx
+        6Edyn2G/slv8/5h8wNfvz9mIB0YygSbWYj5UAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="btnUGame4.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAE
+        GgAABBoBC0NBTQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAFWSURBVDhPY/j/
+        /z8GDs6q9g3JqtgWklX5HIIrtoHEsKnFEAjJrpwH1PQ5OKuqJTSrwgOEQWyQGEgOXT0KJzSrMhmo8E1w
+        ZoUSsjgIg8RAciA1yOIoioAKToRmV2YiiyFjkBxIDbIYioLgrMr7QCerIIsh4+CMCkOgN36GhoYyw8RQ
+        FIQWFnIi89FxcE6lBtAF/xMSGjhgYnDJEydO8B07eSz5xKkTFcj49v37O2D4zMUr+xomzLp69Og5eXQD
+        GI+fOn4LiP+j4+dv3mLgRy9e/ALqYYIbcPTUUQNsmo+eOPr/6cvXWA25eedOONwAoPMtsBmQm5f/v7S8
+        ErsBt2+nEDQgOjruf3x8EvkGJCQk/U9NyyDfgHUb1/8/ceYs+QaAMDbNIIxugDhQ8W90zSCMTfOz12/+
+        X7tzRwduAAgfP3m8DKjhNSEDnr56/ffOgwdbIfr+MwAAcBwAdAjtHm8AAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="btnStartGame4.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
+        xgAAAMYBsHSbxQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAEMSURBVDhPpVO7
+        DcIwEDUNC7AAcqIoEvsgsQElTEB2yKVgBGgRBbLTI2UFoGSEKJ255zjIROYjUrzIfvfufO8cC2PMCyTp
+        JM5VFpM+RLm+A1iDQ6yv9xcjSeUqIl0zGkbF2DpgDa6GBtqXAiAiUkcWmIjKXUp60gk6gEOs1agjclwu
+        2rYnG5mXSz8pBGislnOwt57RGqr3xe/gOmE7OhEYDm+aftvMXXDKLNuPfR5o7ehGFuVG2GnzkPoi5tir
+        xTUmNQ/EK+QKe1U86YCgK2AhSZ2n+Sn14lvk/lyAUQULfLPAg7qx1wWTz7t38dbCpyHGhVp/HeLgawQx
+        6Edyn2G/slv8/5h8wNfvz9mIB0YygSbWYj5UAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="btnStats.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
+        bwAAAG8B8aLcQwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAHcSURBVDhPnZG/
+        S1tRFMdPiJJAQytV62BrI7QoGUwCUqlTcJFUE0TIJhTaKdagIDg4ufofCIKKFBxKAw3qUBAFK0QbCeKP
+        RAdbTFqlRGxRMdi8+/W8G/KSvLzJ4cPlnnu+Hw7nEn6QVZJ+50R6BHqUVaogF3P1YZYzDGGPwJzhoDZT
+        KRg2FCBcc8HhMwaqIAvw+Xu0VS8QCS/EYqUgF29/IzOzlCXsU5pxlwmO30Ike6FsPAY+EsQSB7/qBWTK
+        C/ZogZksFYijfihrVbJZHRNzLFnWCWaoi9+ShO+WFuyYMkg0hLQJVMnOK00gwsWwyu2m28n1CDNB8His
+        GOpUEKu+Rip4qQm2HRBxJ8RnFnwqhsX6AwVTpn8Ys2bgqbflBT4f0NcDfBk41aY4GZSnDK6UCCL2Gzie
+        8AqaGDt/Y0Gg0u/f4tCBJikICuFvj7KoaY7lw0YCny+K89BD/BqZ5rBSFJggtuxJHL5uBD2PGgmEDKtw
+        WfJn0Ibk0yss1QnsdjRodSmQEpEXeL0W+P1BBAJmFoS0RpV9+ot5EmU1agqByAx6FgS9sBQfjDAS6DAs
+        atxLkP5Qy8uLMj+Req8o6zYw/8VG3WU27nqp7y+7SE6Gu9XtFyj9RsTbxsv7QXcV87F4B7TlTQAAAABJ
+        RU5ErkJggg==
+</value>
+  </data>
+  <data name="btnCancelGame1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
+        hQAAAIUB4uz/wQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAE8SURBVDhPnZNN
+        TsMwEIXNIYB1RYVdqUdBSE6Ve/QGzWm4AGIFt+BnXXXRTRdJf5SteW/iSe3QKhKLJyf2vM8zY9uEEDId
+        vHusC1fVC/eKcSvqviuuDePPP8bc1MVs2RSuhcIVtYxhbA7AROPtRx/o3Qv+y6a0ExG/OdeD7JtCBBB3
+        1sXN6Xl+rzukQglPiNkxTjLBnNSMiZi23XTj7GcEws1aerG7q2QCKdJE8xhEy9kXbmXY4Q5gSy6mkNq7
+        76N/uPsLQE+4Di8z2AoAzdIAQmi+BpHGcg3eiwCKJoUg1a8UkgMGJaSiieYeUk5vBTAooW/iEEClEOiT
+        kKyJ6THyiC5CaIKZMdA6jt0xMiC5SLsRiJrPF0kCeJVxPXVRUmSdbBbF75h21Ht2lRUSM/nHY0rEutjY
+        +IRHnnMwvwFkVii3TGCuAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="btnCancelGame2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
+        hQAAAIUB4uz/wQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAE8SURBVDhPnZNN
+        TsMwEIXNIYB1RYVdqUdBSE6Ve/QGzWm4AGIFt+BnXXXRTRdJf5SteW/iSe3QKhKLJyf2vM8zY9uEEDId
+        vHusC1fVC/eKcSvqviuuDePPP8bc1MVs2RSuhcIVtYxhbA7AROPtRx/o3Qv+y6a0ExG/OdeD7JtCBBB3
+        1sXN6Xl+rzukQglPiNkxTjLBnNSMiZi23XTj7GcEws1aerG7q2QCKdJE8xhEy9kXbmXY4Q5gSy6mkNq7
+        76N/uPsLQE+4Di8z2AoAzdIAQmi+BpHGcg3eiwCKJoUg1a8UkgMGJaSiieYeUk5vBTAooW/iEEClEOiT
+        kKyJ6THyiC5CaIKZMdA6jt0xMiC5SLsRiJrPF0kCeJVxPXVRUmSdbBbF75h21Ht2lRUSM/nHY0rEutjY
+        +IRHnnMwvwFkVii3TGCuAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="btnCancelGame3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
+        hQAAAIUB4uz/wQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAE8SURBVDhPnZNN
+        TsMwEIXNIYB1RYVdqUdBSE6Ve/QGzWm4AGIFt+BnXXXRTRdJf5SteW/iSe3QKhKLJyf2vM8zY9uEEDId
+        vHusC1fVC/eKcSvqviuuDePPP8bc1MVs2RSuhcIVtYxhbA7AROPtRx/o3Qv+y6a0ExG/OdeD7JtCBBB3
+        1sXN6Xl+rzukQglPiNkxTjLBnNSMiZi23XTj7GcEws1aerG7q2QCKdJE8xhEy9kXbmXY4Q5gSy6mkNq7
+        76N/uPsLQE+4Di8z2AoAzdIAQmi+BpHGcg3eiwCKJoUg1a8UkgMGJaSiieYeUk5vBTAooW/iEEClEOiT
+        kKyJ6THyiC5CaIKZMdA6jt0xMiC5SLsRiJrPF0kCeJVxPXVRUmSdbBbF75h21Ht2lRUSM/nHY0rEutjY
+        +IRHnnMwvwFkVii3TGCuAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="btnCancelGame4.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
+        hQAAAIUB4uz/wQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAE8SURBVDhPnZNN
+        TsMwEIXNIYB1RYVdqUdBSE6Ve/QGzWm4AGIFt+BnXXXRTRdJf5SteW/iSe3QKhKLJyf2vM8zY9uEEDId
+        vHusC1fVC/eKcSvqviuuDePPP8bc1MVs2RSuhcIVtYxhbA7AROPtRx/o3Qv+y6a0ExG/OdeD7JtCBBB3
+        1sXN6Xl+rzukQglPiNkxTjLBnNSMiZi23XTj7GcEws1aerG7q2QCKdJE8xhEy9kXbmXY4Q5gSy6mkNq7
+        76N/uPsLQE+4Di8z2AoAzdIAQmi+BpHGcg3eiwCKJoUg1a8UkgMGJaSiieYeUk5vBTAooW/iEEClEOiT
+        kKyJ6THyiC5CaIKZMdA6jt0xMiC5SLsRiJrPF0kCeJVxPXVRUmSdbBbF75h21Ht2lRUSM/nHY0rEutjY
+        +IRHnnMwvwFkVii3TGCuAAAAAElFTkSuQmCC
+</value>
+  </data>
 </root>

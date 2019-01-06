@@ -67,15 +67,18 @@ namespace GamePlay {
 	private: System::Windows::Forms::Label^  lblbingo;
 	private: System::Windows::Forms::Label^  label5;
 	private: System::Windows::Forms::Button^  btnUGame2;
+	private: System::Windows::Forms::Button^  btnStartGame2;
 
-	private: System::Windows::Forms::Button^  button3;
+
 	private: System::Windows::Forms::Button^  btnUGame3;
+	private: System::Windows::Forms::Button^  btnStartGame3;
 
-	private: System::Windows::Forms::Button^  btnStartBingo;
+
 	private: System::Windows::Forms::Button^  btnUGame4;
+	private: System::Windows::Forms::Button^  btnStartGame4;
 
 
-	private: System::Windows::Forms::Button^  button7;
+
 
 
 	private: System::Windows::Forms::Label^  lblUsername;
@@ -83,10 +86,14 @@ namespace GamePlay {
 	private: System::Windows::Forms::ToolStripMenuItem^  clearUsernameToolStripMenuItem;
 	private: System::Windows::Forms::Button^  btnStats;
 	private: System::Windows::Forms::ToolStripMenuItem^  saveStatisticsToCSVToolStripMenuItem;
-	private: System::Windows::Forms::Button^  button1;
-	private: System::Windows::Forms::Button^  button2;
-	private: System::Windows::Forms::Button^  button4;
-	private: System::Windows::Forms::Button^  button5;
+	private: System::Windows::Forms::Button^  btnCancelGame1;
+	private: System::Windows::Forms::Button^  btnCancelGame2;
+	private: System::Windows::Forms::Button^  btnCancelGame3;
+	private: System::Windows::Forms::Button^  btnCancelGame4;
+
+
+
+
 
 
 	private:
@@ -102,6 +109,7 @@ namespace GamePlay {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(HomeForm::typeid));
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->btnStartGame1 = (gcnew System::Windows::Forms::Button());
@@ -117,17 +125,17 @@ namespace GamePlay {
 			this->lblbingo = (gcnew System::Windows::Forms::Label());
 			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->btnUGame2 = (gcnew System::Windows::Forms::Button());
-			this->button3 = (gcnew System::Windows::Forms::Button());
+			this->btnStartGame2 = (gcnew System::Windows::Forms::Button());
 			this->btnUGame3 = (gcnew System::Windows::Forms::Button());
-			this->btnStartBingo = (gcnew System::Windows::Forms::Button());
+			this->btnStartGame3 = (gcnew System::Windows::Forms::Button());
 			this->btnUGame4 = (gcnew System::Windows::Forms::Button());
-			this->button7 = (gcnew System::Windows::Forms::Button());
+			this->btnStartGame4 = (gcnew System::Windows::Forms::Button());
 			this->lblUsername = (gcnew System::Windows::Forms::Label());
 			this->btnStats = (gcnew System::Windows::Forms::Button());
-			this->button1 = (gcnew System::Windows::Forms::Button());
-			this->button2 = (gcnew System::Windows::Forms::Button());
-			this->button4 = (gcnew System::Windows::Forms::Button());
-			this->button5 = (gcnew System::Windows::Forms::Button());
+			this->btnCancelGame1 = (gcnew System::Windows::Forms::Button());
+			this->btnCancelGame2 = (gcnew System::Windows::Forms::Button());
+			this->btnCancelGame3 = (gcnew System::Windows::Forms::Button());
+			this->btnCancelGame4 = (gcnew System::Windows::Forms::Button());
 			this->menuStrip1->SuspendLayout();
 			this->SuspendLayout();
 			// 
@@ -149,7 +157,7 @@ namespace GamePlay {
 			this->label2->AutoSize = true;
 			this->label2->Font = (gcnew System::Drawing::Font(L"Adobe Fan Heiti Std B", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label2->Location = System::Drawing::Point(62, 125);
+			this->label2->Location = System::Drawing::Point(45, 129);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(118, 16);
 			this->label2->TabIndex = 3;
@@ -158,8 +166,11 @@ namespace GamePlay {
 			// 
 			// btnStartGame1
 			// 
-			this->btnStartGame1->Location = System::Drawing::Point(50, 225);
+			this->btnStartGame1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnStartGame1.Image")));
+			this->btnStartGame1->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			this->btnStartGame1->Location = System::Drawing::Point(29, 176);
 			this->btnStartGame1->Name = L"btnStartGame1";
+			this->btnStartGame1->Padding = System::Windows::Forms::Padding(10, 0, 0, 0);
 			this->btnStartGame1->Size = System::Drawing::Size(139, 46);
 			this->btnStartGame1->TabIndex = 4;
 			this->btnStartGame1->Text = L" START";
@@ -168,11 +179,14 @@ namespace GamePlay {
 			// 
 			// btnUGame1
 			// 
-			this->btnUGame1->Location = System::Drawing::Point(50, 172);
+			this->btnUGame1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnUGame1.Image")));
+			this->btnUGame1->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			this->btnUGame1->Location = System::Drawing::Point(29, 234);
 			this->btnUGame1->Name = L"btnUGame1";
+			this->btnUGame1->Padding = System::Windows::Forms::Padding(2, 0, 0, 0);
 			this->btnUGame1->Size = System::Drawing::Size(69, 37);
 			this->btnUGame1->TabIndex = 6;
-			this->btnUGame1->Text = L"Unlock";
+			this->btnUGame1->Text = L"      Unlock";
 			this->btnUGame1->UseVisualStyleBackColor = true;
 			this->btnUGame1->Click += gcnew System::EventHandler(this, &HomeForm::button1_Click_1);
 			// 
@@ -237,7 +251,7 @@ namespace GamePlay {
 			this->lblKviz->AutoSize = true;
 			this->lblKviz->Font = (gcnew System::Drawing::Font(L"Adobe Fan Heiti Std B", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->lblKviz->Location = System::Drawing::Point(288, 125);
+			this->lblKviz->Location = System::Drawing::Point(271, 129);
 			this->lblKviz->Name = L"lblKviz";
 			this->lblKviz->Size = System::Drawing::Size(34, 16);
 			this->lblKviz->TabIndex = 8;
@@ -248,7 +262,7 @@ namespace GamePlay {
 			this->lblbingo->AutoSize = true;
 			this->lblbingo->Font = (gcnew System::Drawing::Font(L"Adobe Fan Heiti Std B", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->lblbingo->Location = System::Drawing::Point(462, 125);
+			this->lblbingo->Location = System::Drawing::Point(445, 129);
 			this->lblbingo->Name = L"lblbingo";
 			this->lblbingo->Size = System::Drawing::Size(43, 16);
 			this->lblbingo->TabIndex = 9;
@@ -259,7 +273,7 @@ namespace GamePlay {
 			this->label5->AutoSize = true;
 			this->label5->Font = (gcnew System::Drawing::Font(L"Adobe Fan Heiti Std B", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label5->Location = System::Drawing::Point(619, 125);
+			this->label5->Location = System::Drawing::Point(602, 129);
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(87, 16);
 			this->label5->TabIndex = 10;
@@ -267,61 +281,81 @@ namespace GamePlay {
 			// 
 			// btnUGame2
 			// 
-			this->btnUGame2->Location = System::Drawing::Point(234, 172);
+			this->btnUGame2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnUGame2.Image")));
+			this->btnUGame2->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			this->btnUGame2->Location = System::Drawing::Point(217, 238);
 			this->btnUGame2->Name = L"btnUGame2";
+			this->btnUGame2->Padding = System::Windows::Forms::Padding(2, 0, 0, 0);
 			this->btnUGame2->Size = System::Drawing::Size(69, 37);
 			this->btnUGame2->TabIndex = 11;
-			this->btnUGame2->Text = L"Unlock";
+			this->btnUGame2->Text = L"      Unlock";
 			this->btnUGame2->UseVisualStyleBackColor = true;
 			this->btnUGame2->Click += gcnew System::EventHandler(this, &HomeForm::button2_Click);
 			// 
-			// button3
+			// btnStartGame2
 			// 
-			this->button3->Location = System::Drawing::Point(234, 225);
-			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(139, 46);
-			this->button3->TabIndex = 12;
-			this->button3->Text = L"START";
-			this->button3->UseVisualStyleBackColor = true;
+			this->btnStartGame2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnStartGame2.Image")));
+			this->btnStartGame2->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			this->btnStartGame2->Location = System::Drawing::Point(217, 176);
+			this->btnStartGame2->Name = L"btnStartGame2";
+			this->btnStartGame2->Padding = System::Windows::Forms::Padding(10, 0, 0, 0);
+			this->btnStartGame2->Size = System::Drawing::Size(139, 46);
+			this->btnStartGame2->TabIndex = 12;
+			this->btnStartGame2->Text = L"START";
+			this->btnStartGame2->UseVisualStyleBackColor = true;
+			this->btnStartGame2->Click += gcnew System::EventHandler(this, &HomeForm::btnStartGame2_Click);
 			// 
 			// btnUGame3
 			// 
-			this->btnUGame3->Location = System::Drawing::Point(411, 172);
+			this->btnUGame3->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnUGame3.Image")));
+			this->btnUGame3->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			this->btnUGame3->Location = System::Drawing::Point(394, 238);
 			this->btnUGame3->Name = L"btnUGame3";
+			this->btnUGame3->Padding = System::Windows::Forms::Padding(2, 0, 0, 0);
 			this->btnUGame3->Size = System::Drawing::Size(69, 37);
 			this->btnUGame3->TabIndex = 13;
-			this->btnUGame3->Text = L"Unlock";
+			this->btnUGame3->Text = L"      Unlock";
 			this->btnUGame3->UseVisualStyleBackColor = true;
 			this->btnUGame3->Click += gcnew System::EventHandler(this, &HomeForm::button4_Click);
 			// 
-			// btnStartBingo
+			// btnStartGame3
 			// 
-			this->btnStartBingo->Location = System::Drawing::Point(411, 225);
-			this->btnStartBingo->Name = L"btnStartBingo";
-			this->btnStartBingo->Size = System::Drawing::Size(139, 46);
-			this->btnStartBingo->TabIndex = 14;
-			this->btnStartBingo->Text = L"START";
-			this->btnStartBingo->UseVisualStyleBackColor = true;
-			this->btnStartBingo->Click += gcnew System::EventHandler(this, &HomeForm::button5_Click);
+			this->btnStartGame3->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnStartGame3.Image")));
+			this->btnStartGame3->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			this->btnStartGame3->Location = System::Drawing::Point(394, 176);
+			this->btnStartGame3->Name = L"btnStartGame3";
+			this->btnStartGame3->Padding = System::Windows::Forms::Padding(10, 0, 0, 0);
+			this->btnStartGame3->Size = System::Drawing::Size(139, 46);
+			this->btnStartGame3->TabIndex = 14;
+			this->btnStartGame3->Text = L"START";
+			this->btnStartGame3->UseVisualStyleBackColor = true;
+			this->btnStartGame3->Click += gcnew System::EventHandler(this, &HomeForm::button5_Click);
 			// 
 			// btnUGame4
 			// 
-			this->btnUGame4->Location = System::Drawing::Point(592, 172);
+			this->btnUGame4->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnUGame4.Image")));
+			this->btnUGame4->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			this->btnUGame4->Location = System::Drawing::Point(575, 238);
 			this->btnUGame4->Name = L"btnUGame4";
+			this->btnUGame4->Padding = System::Windows::Forms::Padding(2, 0, 0, 0);
 			this->btnUGame4->Size = System::Drawing::Size(69, 37);
 			this->btnUGame4->TabIndex = 15;
-			this->btnUGame4->Text = L"Unlock";
+			this->btnUGame4->Text = L"      Unlock";
 			this->btnUGame4->UseVisualStyleBackColor = true;
 			this->btnUGame4->Click += gcnew System::EventHandler(this, &HomeForm::button6_Click);
 			// 
-			// button7
+			// btnStartGame4
 			// 
-			this->button7->Location = System::Drawing::Point(592, 225);
-			this->button7->Name = L"button7";
-			this->button7->Size = System::Drawing::Size(139, 46);
-			this->button7->TabIndex = 16;
-			this->button7->Text = L"START";
-			this->button7->UseVisualStyleBackColor = true;
+			this->btnStartGame4->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnStartGame4.Image")));
+			this->btnStartGame4->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			this->btnStartGame4->Location = System::Drawing::Point(576, 176);
+			this->btnStartGame4->Name = L"btnStartGame4";
+			this->btnStartGame4->Padding = System::Windows::Forms::Padding(10, 0, 0, 0);
+			this->btnStartGame4->Size = System::Drawing::Size(139, 46);
+			this->btnStartGame4->TabIndex = 16;
+			this->btnStartGame4->Text = L"START";
+			this->btnStartGame4->UseVisualStyleBackColor = true;
+			this->btnStartGame4->Click += gcnew System::EventHandler(this, &HomeForm::btnStartGame4_Click);
 			// 
 			// lblUsername
 			// 
@@ -336,49 +370,64 @@ namespace GamePlay {
 			// 
 			// btnStats
 			// 
-			this->btnStats->Location = System::Drawing::Point(592, 334);
+			this->btnStats->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnStats.Image")));
+			this->btnStats->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			this->btnStats->Location = System::Drawing::Point(593, 334);
 			this->btnStats->Name = L"btnStats";
-			this->btnStats->Size = System::Drawing::Size(96, 38);
+			this->btnStats->Padding = System::Windows::Forms::Padding(5, 0, 0, 0);
+			this->btnStats->Size = System::Drawing::Size(138, 38);
 			this->btnStats->TabIndex = 20;
 			this->btnStats->Text = L"Statistics";
 			this->btnStats->UseVisualStyleBackColor = true;
 			this->btnStats->Click += gcnew System::EventHandler(this, &HomeForm::btnStats_Click);
 			// 
-			// button1
+			// btnCancelGame1
 			// 
-			this->button1->Location = System::Drawing::Point(120, 172);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(69, 37);
-			this->button1->TabIndex = 21;
-			this->button1->Text = L"Cancel";
-			this->button1->UseVisualStyleBackColor = true;
+			this->btnCancelGame1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnCancelGame1.Image")));
+			this->btnCancelGame1->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			this->btnCancelGame1->Location = System::Drawing::Point(99, 234);
+			this->btnCancelGame1->Name = L"btnCancelGame1";
+			this->btnCancelGame1->Padding = System::Windows::Forms::Padding(2, 0, 0, 0);
+			this->btnCancelGame1->Size = System::Drawing::Size(69, 37);
+			this->btnCancelGame1->TabIndex = 21;
+			this->btnCancelGame1->Text = L"      Cancel";
+			this->btnCancelGame1->UseVisualStyleBackColor = true;
 			// 
-			// button2
+			// btnCancelGame2
 			// 
-			this->button2->Location = System::Drawing::Point(304, 172);
-			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(69, 37);
-			this->button2->TabIndex = 22;
-			this->button2->Text = L"Cancel";
-			this->button2->UseVisualStyleBackColor = true;
+			this->btnCancelGame2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnCancelGame2.Image")));
+			this->btnCancelGame2->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			this->btnCancelGame2->Location = System::Drawing::Point(287, 238);
+			this->btnCancelGame2->Name = L"btnCancelGame2";
+			this->btnCancelGame2->Padding = System::Windows::Forms::Padding(2, 0, 0, 0);
+			this->btnCancelGame2->Size = System::Drawing::Size(69, 37);
+			this->btnCancelGame2->TabIndex = 22;
+			this->btnCancelGame2->Text = L"      Cancel";
+			this->btnCancelGame2->UseVisualStyleBackColor = true;
 			// 
-			// button4
+			// btnCancelGame3
 			// 
-			this->button4->Location = System::Drawing::Point(481, 172);
-			this->button4->Name = L"button4";
-			this->button4->Size = System::Drawing::Size(69, 37);
-			this->button4->TabIndex = 23;
-			this->button4->Text = L"Cancel";
-			this->button4->UseVisualStyleBackColor = true;
+			this->btnCancelGame3->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnCancelGame3.Image")));
+			this->btnCancelGame3->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			this->btnCancelGame3->Location = System::Drawing::Point(464, 238);
+			this->btnCancelGame3->Name = L"btnCancelGame3";
+			this->btnCancelGame3->Padding = System::Windows::Forms::Padding(2, 0, 0, 0);
+			this->btnCancelGame3->Size = System::Drawing::Size(69, 37);
+			this->btnCancelGame3->TabIndex = 23;
+			this->btnCancelGame3->Text = L"      Cancel";
+			this->btnCancelGame3->UseVisualStyleBackColor = true;
 			// 
-			// button5
+			// btnCancelGame4
 			// 
-			this->button5->Location = System::Drawing::Point(662, 172);
-			this->button5->Name = L"button5";
-			this->button5->Size = System::Drawing::Size(69, 37);
-			this->button5->TabIndex = 24;
-			this->button5->Text = L"Cancel";
-			this->button5->UseVisualStyleBackColor = true;
+			this->btnCancelGame4->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnCancelGame4.Image")));
+			this->btnCancelGame4->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			this->btnCancelGame4->Location = System::Drawing::Point(645, 238);
+			this->btnCancelGame4->Name = L"btnCancelGame4";
+			this->btnCancelGame4->Padding = System::Windows::Forms::Padding(2, 0, 0, 0);
+			this->btnCancelGame4->Size = System::Drawing::Size(69, 37);
+			this->btnCancelGame4->TabIndex = 24;
+			this->btnCancelGame4->Text = L"      Cancel";
+			this->btnCancelGame4->UseVisualStyleBackColor = true;
 			// 
 			// HomeForm
 			// 
@@ -386,17 +435,17 @@ namespace GamePlay {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->AutoScroll = true;
 			this->ClientSize = System::Drawing::Size(744, 399);
-			this->Controls->Add(this->button5);
-			this->Controls->Add(this->button4);
-			this->Controls->Add(this->button2);
-			this->Controls->Add(this->button1);
+			this->Controls->Add(this->btnCancelGame4);
+			this->Controls->Add(this->btnCancelGame3);
+			this->Controls->Add(this->btnCancelGame2);
+			this->Controls->Add(this->btnCancelGame1);
 			this->Controls->Add(this->btnStats);
 			this->Controls->Add(this->lblUsername);
-			this->Controls->Add(this->button7);
+			this->Controls->Add(this->btnStartGame4);
 			this->Controls->Add(this->btnUGame4);
-			this->Controls->Add(this->btnStartBingo);
+			this->Controls->Add(this->btnStartGame3);
 			this->Controls->Add(this->btnUGame3);
-			this->Controls->Add(this->button3);
+			this->Controls->Add(this->btnStartGame2);
 			this->Controls->Add(this->btnUGame2);
 			this->Controls->Add(this->label5);
 			this->Controls->Add(this->lblbingo);
@@ -406,10 +455,13 @@ namespace GamePlay {
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->menuStrip1);
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
 			this->MainMenuStrip = this->menuStrip1;
+			this->MaximizeBox = false;
 			this->Name = L"HomeForm";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"GamePlay";
+			this->Load += gcnew System::EventHandler(this, &HomeForm::HomeForm_Load);
 			this->menuStrip1->ResumeLayout(false);
 			this->menuStrip1->PerformLayout();
 			this->ResumeLayout(false);
@@ -421,10 +473,7 @@ namespace GamePlay {
 	
 	}
 	private: System::Void btnGame1_Click(System::Object^  sender, System::EventArgs^  e) {
-		insertDataIntoStats(1, 10);
-		insertDataIntoStats(1, 20);
-		insertDataIntoStats(1, 30);
-		insertDataIntoStats(1, 40);
+		testFun(1);
 		
 	}
 	private: System::Void btnSettings_Click(System::Object^  sender, System::EventArgs^  e) {
@@ -439,7 +488,7 @@ namespace GamePlay {
 
 	}
 	private: System::Void button5_Click(System::Object^  sender, System::EventArgs^  e) {
-		testFun();
+		testFun(3);
 	}
 private: System::Void clearUsernameToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
 	HomeForm::Hide();
@@ -484,6 +533,29 @@ private: System::Void btnStats_Click(System::Object^  sender, System::EventArgs^
 }
 private: System::Void saveStatisticsToCSVToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
 	SaveStatisticsCSV();
+}
+private: System::Void HomeForm_Load(System::Object^  sender, System::EventArgs^  e) {
+	btnStartGame1->Enabled = true;
+	btnStartGame2->Enabled = true;
+	btnStartGame3->Enabled = true;
+	btnStartGame4->Enabled = true;
+
+	btnCancelGame1->Enabled = true;
+	btnCancelGame2->Enabled = true;
+	btnCancelGame3->Enabled = true;
+	btnCancelGame4->Enabled = true;
+
+	btnUGame1->Enabled = false;
+	btnUGame2->Enabled = false;
+	btnUGame3->Enabled = false;
+	btnUGame4->Enabled = false;
+
+}
+private: System::Void btnStartGame4_Click(System::Object^  sender, System::EventArgs^  e) {
+	testFun(4);
+}
+private: System::Void btnStartGame2_Click(System::Object^  sender, System::EventArgs^  e) {
+	testFun(2);
 }
 };
 }

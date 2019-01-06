@@ -56,10 +56,10 @@ int game1(int brb, int br_igranja)
 	int prag = brb;
 
 	std::cout << "Pravila igre: " << std::endl;
-	std::cout << "Aplikacija ce prvo na slucajan nacin izabrati odredjeni broj."<<std::endl;
-	std::cout << "Korisnik ima 5 pokusaja da ga pogodi tako sto unosi broj"<<std::endl;
-	std::cout << "Aplikacija nakon svakog pokusaja prikazuje poruku:" << std::endl <<"\"Broj koji trazite je[veci | manji] od unesenog broja\""<<std::endl;
-	std::cout << "Ako korisnik pogodi trazeni broj dobija"<<std::endl<< "100 / broj_pokusaja bodova za svoj profil. " << std::endl << std::endl << std::endl;
+	std::cout << "Aplikacija ce prvo na slucajan nacin izabrati odredjeni broj." << std::endl;
+	std::cout << "Korisnik ima 5 pokusaja da ga pogodi tako sto unosi broj" << std::endl;
+	std::cout << "Aplikacija nakon svakog pokusaja prikazuje poruku:" << std::endl << "\"Broj koji trazite je[veci | manji] od unesenog broja\"" << std::endl;
+	std::cout << "Ako korisnik pogodi trazeni broj dobija" << std::endl << "100 / broj_pokusaja bodova za svoj profil. " << std::endl << std::endl << std::endl;
 
 	while (true)
 	{

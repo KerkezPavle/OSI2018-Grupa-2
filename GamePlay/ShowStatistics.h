@@ -145,25 +145,26 @@ namespace GamePlay {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(ShowStatistics::typeid));
 			this->Statistics = (gcnew System::Windows::Forms::Label());
 			this->tabControl1 = (gcnew System::Windows::Forms::TabControl());
 			this->tabPage1 = (gcnew System::Windows::Forms::TabPage());
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
-			this->tabPage2 = (gcnew System::Windows::Forms::TabPage());
-			this->dataGridView2 = (gcnew System::Windows::Forms::DataGridView());
-			this->tabPage3 = (gcnew System::Windows::Forms::TabPage());
-			this->dataGridView3 = (gcnew System::Windows::Forms::DataGridView());
-			this->tabPage4 = (gcnew System::Windows::Forms::TabPage());
-			this->dataGridView4 = (gcnew System::Windows::Forms::DataGridView());
 			this->num = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->score = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->date = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->tabPage2 = (gcnew System::Windows::Forms::TabPage());
+			this->dataGridView2 = (gcnew System::Windows::Forms::DataGridView());
 			this->dataGridViewTextBoxColumn1 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->dataGridViewTextBoxColumn2 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->dataGridViewTextBoxColumn3 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->tabPage3 = (gcnew System::Windows::Forms::TabPage());
+			this->dataGridView3 = (gcnew System::Windows::Forms::DataGridView());
 			this->dataGridViewTextBoxColumn4 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->dataGridViewTextBoxColumn5 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->dataGridViewTextBoxColumn6 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->tabPage4 = (gcnew System::Windows::Forms::TabPage());
+			this->dataGridView4 = (gcnew System::Windows::Forms::DataGridView());
 			this->dataGridViewTextBoxColumn7 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->dataGridViewTextBoxColumn8 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->dataGridViewTextBoxColumn9 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
@@ -233,6 +234,26 @@ namespace GamePlay {
 			this->dataGridView1->Size = System::Drawing::Size(402, 258);
 			this->dataGridView1->TabIndex = 1;
 			// 
+			// num
+			// 
+			this->num->HeaderText = L"No.";
+			this->num->Name = L"num";
+			this->num->ReadOnly = true;
+			this->num->Width = 50;
+			// 
+			// score
+			// 
+			this->score->HeaderText = L"Score";
+			this->score->Name = L"score";
+			this->score->ReadOnly = true;
+			// 
+			// date
+			// 
+			this->date->HeaderText = L"Date";
+			this->date->Name = L"date";
+			this->date->ReadOnly = true;
+			this->date->Width = 200;
+			// 
 			// tabPage2
 			// 
 			this->tabPage2->Controls->Add(this->dataGridView2);
@@ -262,6 +283,26 @@ namespace GamePlay {
 			this->dataGridView2->ReadOnly = true;
 			this->dataGridView2->Size = System::Drawing::Size(402, 258);
 			this->dataGridView2->TabIndex = 2;
+			// 
+			// dataGridViewTextBoxColumn1
+			// 
+			this->dataGridViewTextBoxColumn1->HeaderText = L"No.";
+			this->dataGridViewTextBoxColumn1->Name = L"dataGridViewTextBoxColumn1";
+			this->dataGridViewTextBoxColumn1->ReadOnly = true;
+			this->dataGridViewTextBoxColumn1->Width = 50;
+			// 
+			// dataGridViewTextBoxColumn2
+			// 
+			this->dataGridViewTextBoxColumn2->HeaderText = L"Score";
+			this->dataGridViewTextBoxColumn2->Name = L"dataGridViewTextBoxColumn2";
+			this->dataGridViewTextBoxColumn2->ReadOnly = true;
+			// 
+			// dataGridViewTextBoxColumn3
+			// 
+			this->dataGridViewTextBoxColumn3->HeaderText = L"Date";
+			this->dataGridViewTextBoxColumn3->Name = L"dataGridViewTextBoxColumn3";
+			this->dataGridViewTextBoxColumn3->ReadOnly = true;
+			this->dataGridViewTextBoxColumn3->Width = 200;
 			// 
 			// tabPage3
 			// 
@@ -293,6 +334,26 @@ namespace GamePlay {
 			this->dataGridView3->Size = System::Drawing::Size(402, 258);
 			this->dataGridView3->TabIndex = 2;
 			// 
+			// dataGridViewTextBoxColumn4
+			// 
+			this->dataGridViewTextBoxColumn4->HeaderText = L"No.";
+			this->dataGridViewTextBoxColumn4->Name = L"dataGridViewTextBoxColumn4";
+			this->dataGridViewTextBoxColumn4->ReadOnly = true;
+			this->dataGridViewTextBoxColumn4->Width = 50;
+			// 
+			// dataGridViewTextBoxColumn5
+			// 
+			this->dataGridViewTextBoxColumn5->HeaderText = L"Score";
+			this->dataGridViewTextBoxColumn5->Name = L"dataGridViewTextBoxColumn5";
+			this->dataGridViewTextBoxColumn5->ReadOnly = true;
+			// 
+			// dataGridViewTextBoxColumn6
+			// 
+			this->dataGridViewTextBoxColumn6->HeaderText = L"Date";
+			this->dataGridViewTextBoxColumn6->Name = L"dataGridViewTextBoxColumn6";
+			this->dataGridViewTextBoxColumn6->ReadOnly = true;
+			this->dataGridViewTextBoxColumn6->Width = 200;
+			// 
 			// tabPage4
 			// 
 			this->tabPage4->Controls->Add(this->dataGridView4);
@@ -323,66 +384,6 @@ namespace GamePlay {
 			this->dataGridView4->Size = System::Drawing::Size(402, 254);
 			this->dataGridView4->TabIndex = 3;
 			// 
-			// num
-			// 
-			this->num->HeaderText = L"No.";
-			this->num->Name = L"num";
-			this->num->ReadOnly = true;
-			this->num->Width = 50;
-			// 
-			// score
-			// 
-			this->score->HeaderText = L"Score";
-			this->score->Name = L"score";
-			this->score->ReadOnly = true;
-			// 
-			// date
-			// 
-			this->date->HeaderText = L"Date";
-			this->date->Name = L"date";
-			this->date->ReadOnly = true;
-			this->date->Width = 200;
-			// 
-			// dataGridViewTextBoxColumn1
-			// 
-			this->dataGridViewTextBoxColumn1->HeaderText = L"No.";
-			this->dataGridViewTextBoxColumn1->Name = L"dataGridViewTextBoxColumn1";
-			this->dataGridViewTextBoxColumn1->ReadOnly = true;
-			this->dataGridViewTextBoxColumn1->Width = 50;
-			// 
-			// dataGridViewTextBoxColumn2
-			// 
-			this->dataGridViewTextBoxColumn2->HeaderText = L"Score";
-			this->dataGridViewTextBoxColumn2->Name = L"dataGridViewTextBoxColumn2";
-			this->dataGridViewTextBoxColumn2->ReadOnly = true;
-			// 
-			// dataGridViewTextBoxColumn3
-			// 
-			this->dataGridViewTextBoxColumn3->HeaderText = L"Date";
-			this->dataGridViewTextBoxColumn3->Name = L"dataGridViewTextBoxColumn3";
-			this->dataGridViewTextBoxColumn3->ReadOnly = true;
-			this->dataGridViewTextBoxColumn3->Width = 200;
-			// 
-			// dataGridViewTextBoxColumn4
-			// 
-			this->dataGridViewTextBoxColumn4->HeaderText = L"No.";
-			this->dataGridViewTextBoxColumn4->Name = L"dataGridViewTextBoxColumn4";
-			this->dataGridViewTextBoxColumn4->ReadOnly = true;
-			this->dataGridViewTextBoxColumn4->Width = 50;
-			// 
-			// dataGridViewTextBoxColumn5
-			// 
-			this->dataGridViewTextBoxColumn5->HeaderText = L"Score";
-			this->dataGridViewTextBoxColumn5->Name = L"dataGridViewTextBoxColumn5";
-			this->dataGridViewTextBoxColumn5->ReadOnly = true;
-			// 
-			// dataGridViewTextBoxColumn6
-			// 
-			this->dataGridViewTextBoxColumn6->HeaderText = L"Date";
-			this->dataGridViewTextBoxColumn6->Name = L"dataGridViewTextBoxColumn6";
-			this->dataGridViewTextBoxColumn6->ReadOnly = true;
-			this->dataGridViewTextBoxColumn6->Width = 200;
-			// 
 			// dataGridViewTextBoxColumn7
 			// 
 			this->dataGridViewTextBoxColumn7->HeaderText = L"No.";
@@ -410,6 +411,9 @@ namespace GamePlay {
 			this->ClientSize = System::Drawing::Size(428, 375);
 			this->Controls->Add(this->tabControl1);
 			this->Controls->Add(this->Statistics);
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
+			this->MaximizeBox = false;
 			this->Name = L"ShowStatistics";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterParent;
 			this->Text = L"ShowStatistics";
