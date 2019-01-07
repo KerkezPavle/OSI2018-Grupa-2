@@ -10,6 +10,7 @@
 #include "Game4.h"
 #include "Game1.h"
 #include "Game2.h"
+#include "PointsManipulation.h"
 #include <functional>
 using namespace tinyxml2;
 
