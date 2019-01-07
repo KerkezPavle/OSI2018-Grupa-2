@@ -60,8 +60,8 @@ namespace GamePlay {
 
 
 	private: System::Windows::Forms::MenuStrip^  menuStrip1;
-	private: System::Windows::Forms::ToolStripMenuItem^  toolStripMenuItem1;
-	private: System::Windows::Forms::ToolStripMenuItem^  exitToolStripMenuItem;
+
+
 	private: System::Windows::Forms::ToolStripMenuItem^  aboutToolStripMenuItem;
 	private: System::Windows::Forms::Label^  lblKviz;
 	private: System::Windows::Forms::Label^  lblbingo;
@@ -90,6 +90,9 @@ namespace GamePlay {
 	private: System::Windows::Forms::Button^  btnCancelGame2;
 	private: System::Windows::Forms::Button^  btnCancelGame3;
 	private: System::Windows::Forms::Button^  btnCancelGame4;
+	private: System::Windows::Forms::ToolStripMenuItem^  izlazToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^  oAplikacijiToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^  oAutorimaToolStripMenuItem;
 
 
 
@@ -115,12 +118,13 @@ namespace GamePlay {
 			this->btnStartGame1 = (gcnew System::Windows::Forms::Button());
 			this->btnUGame1 = (gcnew System::Windows::Forms::Button());
 			this->menuStrip1 = (gcnew System::Windows::Forms::MenuStrip());
-			this->toolStripMenuItem1 = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->exitToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->optionsToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->saveStatisticsToCSVToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->clearUsernameToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->izlazToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->aboutToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->oAplikacijiToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->oAutorimaToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->lblKviz = (gcnew System::Windows::Forms::Label());
 			this->lblbingo = (gcnew System::Windows::Forms::Label());
 			this->label5 = (gcnew System::Windows::Forms::Label());
@@ -157,21 +161,21 @@ namespace GamePlay {
 			this->label2->AutoSize = true;
 			this->label2->Font = (gcnew System::Drawing::Font(L"Adobe Fan Heiti Std B", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label2->Location = System::Drawing::Point(45, 129);
+			this->label2->Location = System::Drawing::Point(69, 129);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(118, 16);
+			this->label2->Size = System::Drawing::Size(91, 16);
 			this->label2->TabIndex = 3;
-			this->label2->Text = L"Guess the number";
+			this->label2->Text = L"Pogodite broj";
 			this->label2->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// btnStartGame1
 			// 
 			this->btnStartGame1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnStartGame1.Image")));
 			this->btnStartGame1->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->btnStartGame1->Location = System::Drawing::Point(29, 176);
+			this->btnStartGame1->Location = System::Drawing::Point(20, 176);
 			this->btnStartGame1->Name = L"btnStartGame1";
 			this->btnStartGame1->Padding = System::Windows::Forms::Padding(10, 0, 0, 0);
-			this->btnStartGame1->Size = System::Drawing::Size(139, 46);
+			this->btnStartGame1->Size = System::Drawing::Size(181, 46);
 			this->btnStartGame1->TabIndex = 4;
 			this->btnStartGame1->Text = L" START";
 			this->btnStartGame1->UseVisualStyleBackColor = true;
@@ -181,88 +185,97 @@ namespace GamePlay {
 			// 
 			this->btnUGame1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnUGame1.Image")));
 			this->btnUGame1->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->btnUGame1->Location = System::Drawing::Point(29, 234);
+			this->btnUGame1->Location = System::Drawing::Point(20, 234);
 			this->btnUGame1->Name = L"btnUGame1";
 			this->btnUGame1->Padding = System::Windows::Forms::Padding(2, 0, 0, 0);
-			this->btnUGame1->Size = System::Drawing::Size(69, 37);
+			this->btnUGame1->Size = System::Drawing::Size(86, 37);
 			this->btnUGame1->TabIndex = 6;
-			this->btnUGame1->Text = L"      Unlock";
+			this->btnUGame1->Text = L"      Otkljucajte";
 			this->btnUGame1->UseVisualStyleBackColor = true;
 			this->btnUGame1->Click += gcnew System::EventHandler(this, &HomeForm::button1_Click_1);
 			// 
 			// menuStrip1
 			// 
-			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(3) {
-				this->toolStripMenuItem1,
-					this->optionsToolStripMenuItem, this->aboutToolStripMenuItem
+			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(2) {
+				this->optionsToolStripMenuItem,
+					this->aboutToolStripMenuItem
 			});
 			this->menuStrip1->Location = System::Drawing::Point(0, 0);
 			this->menuStrip1->Name = L"menuStrip1";
-			this->menuStrip1->Size = System::Drawing::Size(744, 24);
+			this->menuStrip1->Size = System::Drawing::Size(838, 24);
 			this->menuStrip1->TabIndex = 7;
 			this->menuStrip1->Text = L"menuStrip1";
 			// 
-			// toolStripMenuItem1
-			// 
-			this->toolStripMenuItem1->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->exitToolStripMenuItem });
-			this->toolStripMenuItem1->Name = L"toolStripMenuItem1";
-			this->toolStripMenuItem1->Size = System::Drawing::Size(37, 20);
-			this->toolStripMenuItem1->Text = L"File";
-			// 
-			// exitToolStripMenuItem
-			// 
-			this->exitToolStripMenuItem->Name = L"exitToolStripMenuItem";
-			this->exitToolStripMenuItem->Size = System::Drawing::Size(92, 22);
-			this->exitToolStripMenuItem->Text = L"Exit";
-			this->exitToolStripMenuItem->Click += gcnew System::EventHandler(this, &HomeForm::exitToolStripMenuItem_Click);
-			// 
 			// optionsToolStripMenuItem
 			// 
-			this->optionsToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(2) {
+			this->optionsToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(3) {
 				this->saveStatisticsToCSVToolStripMenuItem,
-					this->clearUsernameToolStripMenuItem
+					this->clearUsernameToolStripMenuItem, this->izlazToolStripMenuItem
 			});
 			this->optionsToolStripMenuItem->Name = L"optionsToolStripMenuItem";
-			this->optionsToolStripMenuItem->Size = System::Drawing::Size(61, 20);
-			this->optionsToolStripMenuItem->Text = L"Options";
+			this->optionsToolStripMenuItem->Size = System::Drawing::Size(53, 20);
+			this->optionsToolStripMenuItem->Text = L"Opcije";
 			// 
 			// saveStatisticsToCSVToolStripMenuItem
 			// 
 			this->saveStatisticsToCSVToolStripMenuItem->Name = L"saveStatisticsToCSVToolStripMenuItem";
-			this->saveStatisticsToCSVToolStripMenuItem->Size = System::Drawing::Size(184, 22);
-			this->saveStatisticsToCSVToolStripMenuItem->Text = L"Save statistics to CSV";
+			this->saveStatisticsToCSVToolStripMenuItem->Size = System::Drawing::Size(210, 22);
+			this->saveStatisticsToCSVToolStripMenuItem->Text = L"Sacuvajte statistiku u CSV";
 			this->saveStatisticsToCSVToolStripMenuItem->Click += gcnew System::EventHandler(this, &HomeForm::saveStatisticsToCSVToolStripMenuItem_Click);
 			// 
 			// clearUsernameToolStripMenuItem
 			// 
 			this->clearUsernameToolStripMenuItem->Name = L"clearUsernameToolStripMenuItem";
-			this->clearUsernameToolStripMenuItem->Size = System::Drawing::Size(184, 22);
-			this->clearUsernameToolStripMenuItem->Text = L"Clear Username";
+			this->clearUsernameToolStripMenuItem->Size = System::Drawing::Size(210, 22);
+			this->clearUsernameToolStripMenuItem->Text = L"Restartujte korisnicko ime";
 			this->clearUsernameToolStripMenuItem->Click += gcnew System::EventHandler(this, &HomeForm::clearUsernameToolStripMenuItem_Click);
+			// 
+			// izlazToolStripMenuItem
+			// 
+			this->izlazToolStripMenuItem->Name = L"izlazToolStripMenuItem";
+			this->izlazToolStripMenuItem->Size = System::Drawing::Size(210, 22);
+			this->izlazToolStripMenuItem->Text = L"Izlaz";
+			this->izlazToolStripMenuItem->Click += gcnew System::EventHandler(this, &HomeForm::izlazToolStripMenuItem_Click);
 			// 
 			// aboutToolStripMenuItem
 			// 
+			this->aboutToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(2) {
+				this->oAplikacijiToolStripMenuItem,
+					this->oAutorimaToolStripMenuItem
+			});
 			this->aboutToolStripMenuItem->Name = L"aboutToolStripMenuItem";
-			this->aboutToolStripMenuItem->Size = System::Drawing::Size(52, 20);
-			this->aboutToolStripMenuItem->Text = L"About";
+			this->aboutToolStripMenuItem->Size = System::Drawing::Size(79, 20);
+			this->aboutToolStripMenuItem->Text = L"Informacije";
+			// 
+			// oAplikacijiToolStripMenuItem
+			// 
+			this->oAplikacijiToolStripMenuItem->Name = L"oAplikacijiToolStripMenuItem";
+			this->oAplikacijiToolStripMenuItem->Size = System::Drawing::Size(134, 22);
+			this->oAplikacijiToolStripMenuItem->Text = L"O aplikaciji";
+			// 
+			// oAutorimaToolStripMenuItem
+			// 
+			this->oAutorimaToolStripMenuItem->Name = L"oAutorimaToolStripMenuItem";
+			this->oAutorimaToolStripMenuItem->Size = System::Drawing::Size(134, 22);
+			this->oAutorimaToolStripMenuItem->Text = L"O autorima";
 			// 
 			// lblKviz
 			// 
 			this->lblKviz->AutoSize = true;
 			this->lblKviz->Font = (gcnew System::Drawing::Font(L"Adobe Fan Heiti Std B", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->lblKviz->Location = System::Drawing::Point(271, 129);
+			this->lblKviz->Location = System::Drawing::Point(301, 129);
 			this->lblKviz->Name = L"lblKviz";
-			this->lblKviz->Size = System::Drawing::Size(34, 16);
+			this->lblKviz->Size = System::Drawing::Size(32, 16);
 			this->lblKviz->TabIndex = 8;
-			this->lblKviz->Text = L"Quiz";
+			this->lblKviz->Text = L"Kviz";
 			// 
 			// lblbingo
 			// 
 			this->lblbingo->AutoSize = true;
 			this->lblbingo->Font = (gcnew System::Drawing::Font(L"Adobe Fan Heiti Std B", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->lblbingo->Location = System::Drawing::Point(445, 129);
+			this->lblbingo->Location = System::Drawing::Point(496, 129);
 			this->lblbingo->Name = L"lblbingo";
 			this->lblbingo->Size = System::Drawing::Size(43, 16);
 			this->lblbingo->TabIndex = 9;
@@ -273,22 +286,22 @@ namespace GamePlay {
 			this->label5->AutoSize = true;
 			this->label5->Font = (gcnew System::Drawing::Font(L"Adobe Fan Heiti Std B", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label5->Location = System::Drawing::Point(602, 129);
+			this->label5->Location = System::Drawing::Point(687, 129);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(87, 16);
+			this->label5->Size = System::Drawing::Size(69, 16);
 			this->label5->TabIndex = 10;
-			this->label5->Text = L"Minesweeper";
+			this->label5->Text = L"Minolovac";
 			// 
 			// btnUGame2
 			// 
 			this->btnUGame2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnUGame2.Image")));
 			this->btnUGame2->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->btnUGame2->Location = System::Drawing::Point(217, 238);
+			this->btnUGame2->Location = System::Drawing::Point(224, 234);
 			this->btnUGame2->Name = L"btnUGame2";
 			this->btnUGame2->Padding = System::Windows::Forms::Padding(2, 0, 0, 0);
-			this->btnUGame2->Size = System::Drawing::Size(69, 37);
+			this->btnUGame2->Size = System::Drawing::Size(88, 37);
 			this->btnUGame2->TabIndex = 11;
-			this->btnUGame2->Text = L"      Unlock";
+			this->btnUGame2->Text = L"      Otkljucajte";
 			this->btnUGame2->UseVisualStyleBackColor = true;
 			this->btnUGame2->Click += gcnew System::EventHandler(this, &HomeForm::button2_Click);
 			// 
@@ -296,10 +309,10 @@ namespace GamePlay {
 			// 
 			this->btnStartGame2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnStartGame2.Image")));
 			this->btnStartGame2->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->btnStartGame2->Location = System::Drawing::Point(217, 176);
+			this->btnStartGame2->Location = System::Drawing::Point(224, 176);
 			this->btnStartGame2->Name = L"btnStartGame2";
 			this->btnStartGame2->Padding = System::Windows::Forms::Padding(10, 0, 0, 0);
-			this->btnStartGame2->Size = System::Drawing::Size(139, 46);
+			this->btnStartGame2->Size = System::Drawing::Size(181, 46);
 			this->btnStartGame2->TabIndex = 12;
 			this->btnStartGame2->Text = L"START";
 			this->btnStartGame2->UseVisualStyleBackColor = true;
@@ -309,12 +322,12 @@ namespace GamePlay {
 			// 
 			this->btnUGame3->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnUGame3.Image")));
 			this->btnUGame3->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->btnUGame3->Location = System::Drawing::Point(394, 238);
+			this->btnUGame3->Location = System::Drawing::Point(428, 234);
 			this->btnUGame3->Name = L"btnUGame3";
 			this->btnUGame3->Padding = System::Windows::Forms::Padding(2, 0, 0, 0);
-			this->btnUGame3->Size = System::Drawing::Size(69, 37);
+			this->btnUGame3->Size = System::Drawing::Size(88, 37);
 			this->btnUGame3->TabIndex = 13;
-			this->btnUGame3->Text = L"      Unlock";
+			this->btnUGame3->Text = L"      Otkljucajte";
 			this->btnUGame3->UseVisualStyleBackColor = true;
 			this->btnUGame3->Click += gcnew System::EventHandler(this, &HomeForm::button4_Click);
 			// 
@@ -322,10 +335,10 @@ namespace GamePlay {
 			// 
 			this->btnStartGame3->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnStartGame3.Image")));
 			this->btnStartGame3->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->btnStartGame3->Location = System::Drawing::Point(394, 176);
+			this->btnStartGame3->Location = System::Drawing::Point(428, 176);
 			this->btnStartGame3->Name = L"btnStartGame3";
 			this->btnStartGame3->Padding = System::Windows::Forms::Padding(10, 0, 0, 0);
-			this->btnStartGame3->Size = System::Drawing::Size(139, 46);
+			this->btnStartGame3->Size = System::Drawing::Size(181, 46);
 			this->btnStartGame3->TabIndex = 14;
 			this->btnStartGame3->Text = L"START";
 			this->btnStartGame3->UseVisualStyleBackColor = true;
@@ -335,12 +348,12 @@ namespace GamePlay {
 			// 
 			this->btnUGame4->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnUGame4.Image")));
 			this->btnUGame4->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->btnUGame4->Location = System::Drawing::Point(575, 238);
+			this->btnUGame4->Location = System::Drawing::Point(632, 234);
 			this->btnUGame4->Name = L"btnUGame4";
 			this->btnUGame4->Padding = System::Windows::Forms::Padding(2, 0, 0, 0);
-			this->btnUGame4->Size = System::Drawing::Size(69, 37);
+			this->btnUGame4->Size = System::Drawing::Size(88, 37);
 			this->btnUGame4->TabIndex = 15;
-			this->btnUGame4->Text = L"      Unlock";
+			this->btnUGame4->Text = L"      Otkljucajte";
 			this->btnUGame4->UseVisualStyleBackColor = true;
 			this->btnUGame4->Click += gcnew System::EventHandler(this, &HomeForm::button6_Click);
 			// 
@@ -348,10 +361,10 @@ namespace GamePlay {
 			// 
 			this->btnStartGame4->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnStartGame4.Image")));
 			this->btnStartGame4->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->btnStartGame4->Location = System::Drawing::Point(576, 176);
+			this->btnStartGame4->Location = System::Drawing::Point(632, 176);
 			this->btnStartGame4->Name = L"btnStartGame4";
 			this->btnStartGame4->Padding = System::Windows::Forms::Padding(10, 0, 0, 0);
-			this->btnStartGame4->Size = System::Drawing::Size(139, 46);
+			this->btnStartGame4->Size = System::Drawing::Size(181, 46);
 			this->btnStartGame4->TabIndex = 16;
 			this->btnStartGame4->Text = L"START";
 			this->btnStartGame4->UseVisualStyleBackColor = true;
@@ -364,20 +377,20 @@ namespace GamePlay {
 				static_cast<System::Byte>(0)));
 			this->lblUsername->Location = System::Drawing::Point(194, 48);
 			this->lblUsername->Name = L"lblUsername";
-			this->lblUsername->Size = System::Drawing::Size(60, 22);
+			this->lblUsername->Size = System::Drawing::Size(76, 22);
 			this->lblUsername->TabIndex = 19;
-			this->lblUsername->Text = L"Hello, ";
+			this->lblUsername->Text = L"Zdravo, ";
 			// 
 			// btnStats
 			// 
 			this->btnStats->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnStats.Image")));
 			this->btnStats->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->btnStats->Location = System::Drawing::Point(593, 334);
+			this->btnStats->Location = System::Drawing::Point(632, 330);
 			this->btnStats->Name = L"btnStats";
 			this->btnStats->Padding = System::Windows::Forms::Padding(5, 0, 0, 0);
-			this->btnStats->Size = System::Drawing::Size(138, 38);
+			this->btnStats->Size = System::Drawing::Size(181, 46);
 			this->btnStats->TabIndex = 20;
-			this->btnStats->Text = L"Statistics";
+			this->btnStats->Text = L"Statistika";
 			this->btnStats->UseVisualStyleBackColor = true;
 			this->btnStats->Click += gcnew System::EventHandler(this, &HomeForm::btnStats_Click);
 			// 
@@ -385,48 +398,48 @@ namespace GamePlay {
 			// 
 			this->btnCancelGame1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnCancelGame1.Image")));
 			this->btnCancelGame1->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->btnCancelGame1->Location = System::Drawing::Point(99, 234);
+			this->btnCancelGame1->Location = System::Drawing::Point(113, 234);
 			this->btnCancelGame1->Name = L"btnCancelGame1";
 			this->btnCancelGame1->Padding = System::Windows::Forms::Padding(2, 0, 0, 0);
-			this->btnCancelGame1->Size = System::Drawing::Size(69, 37);
+			this->btnCancelGame1->Size = System::Drawing::Size(88, 37);
 			this->btnCancelGame1->TabIndex = 21;
-			this->btnCancelGame1->Text = L"      Cancel";
+			this->btnCancelGame1->Text = L"      Ponistite";
 			this->btnCancelGame1->UseVisualStyleBackColor = true;
 			// 
 			// btnCancelGame2
 			// 
 			this->btnCancelGame2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnCancelGame2.Image")));
 			this->btnCancelGame2->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->btnCancelGame2->Location = System::Drawing::Point(287, 238);
+			this->btnCancelGame2->Location = System::Drawing::Point(318, 234);
 			this->btnCancelGame2->Name = L"btnCancelGame2";
 			this->btnCancelGame2->Padding = System::Windows::Forms::Padding(2, 0, 0, 0);
-			this->btnCancelGame2->Size = System::Drawing::Size(69, 37);
+			this->btnCancelGame2->Size = System::Drawing::Size(88, 37);
 			this->btnCancelGame2->TabIndex = 22;
-			this->btnCancelGame2->Text = L"      Cancel";
+			this->btnCancelGame2->Text = L"      Ponistite";
 			this->btnCancelGame2->UseVisualStyleBackColor = true;
 			// 
 			// btnCancelGame3
 			// 
 			this->btnCancelGame3->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnCancelGame3.Image")));
 			this->btnCancelGame3->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->btnCancelGame3->Location = System::Drawing::Point(464, 238);
+			this->btnCancelGame3->Location = System::Drawing::Point(522, 234);
 			this->btnCancelGame3->Name = L"btnCancelGame3";
 			this->btnCancelGame3->Padding = System::Windows::Forms::Padding(2, 0, 0, 0);
-			this->btnCancelGame3->Size = System::Drawing::Size(69, 37);
+			this->btnCancelGame3->Size = System::Drawing::Size(88, 37);
 			this->btnCancelGame3->TabIndex = 23;
-			this->btnCancelGame3->Text = L"      Cancel";
+			this->btnCancelGame3->Text = L"      Ponistite";
 			this->btnCancelGame3->UseVisualStyleBackColor = true;
 			// 
 			// btnCancelGame4
 			// 
 			this->btnCancelGame4->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnCancelGame4.Image")));
 			this->btnCancelGame4->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->btnCancelGame4->Location = System::Drawing::Point(645, 238);
+			this->btnCancelGame4->Location = System::Drawing::Point(726, 234);
 			this->btnCancelGame4->Name = L"btnCancelGame4";
 			this->btnCancelGame4->Padding = System::Windows::Forms::Padding(2, 0, 0, 0);
-			this->btnCancelGame4->Size = System::Drawing::Size(69, 37);
+			this->btnCancelGame4->Size = System::Drawing::Size(88, 37);
 			this->btnCancelGame4->TabIndex = 24;
-			this->btnCancelGame4->Text = L"      Cancel";
+			this->btnCancelGame4->Text = L"      Ponistite";
 			this->btnCancelGame4->UseVisualStyleBackColor = true;
 			// 
 			// HomeForm
@@ -434,7 +447,7 @@ namespace GamePlay {
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->AutoScroll = true;
-			this->ClientSize = System::Drawing::Size(744, 399);
+			this->ClientSize = System::Drawing::Size(838, 399);
 			this->Controls->Add(this->btnCancelGame4);
 			this->Controls->Add(this->btnCancelGame3);
 			this->Controls->Add(this->btnCancelGame2);
@@ -493,7 +506,7 @@ namespace GamePlay {
 private: System::Void clearUsernameToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
 	HomeForm::Hide();
 	clearUsername();
-	this->lblUsername->Text = "Hello, " + getUsername();
+	this->lblUsername->Text = "Zdravo, " + getUsername();
 	HomeForm::Show();
 }
 private: System::Void button1_Click_1(System::Object^  sender, System::EventArgs^  e) {
@@ -550,12 +563,17 @@ private: System::Void HomeForm_Load(System::Object^  sender, System::EventArgs^ 
 	btnUGame3->Enabled = false;
 	btnUGame4->Enabled = false;
 
+	this->lblUsername->Text = L"Zdravo, " + getUsername();
+
 }
 private: System::Void btnStartGame4_Click(System::Object^  sender, System::EventArgs^  e) {
 	testFun(4);
 }
 private: System::Void btnStartGame2_Click(System::Object^  sender, System::EventArgs^  e) {
 	testFun(2);
+}
+private: System::Void izlazToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
+	Application::Exit();
 }
 };
 }

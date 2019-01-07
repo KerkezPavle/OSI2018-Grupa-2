@@ -186,9 +186,9 @@ namespace GamePlay {
 				static_cast<System::Byte>(0)));
 			this->Statistics->Location = System::Drawing::Point(13, 13);
 			this->Statistics->Name = L"Statistics";
-			this->Statistics->Size = System::Drawing::Size(80, 22);
+			this->Statistics->Size = System::Drawing::Size(83, 22);
 			this->Statistics->TabIndex = 1;
-			this->Statistics->Text = L"Statistics";
+			this->Statistics->Text = L"Statistika";
 			// 
 			// tabControl1
 			// 
@@ -212,7 +212,7 @@ namespace GamePlay {
 			this->tabPage1->Padding = System::Windows::Forms::Padding(3);
 			this->tabPage1->Size = System::Drawing::Size(398, 254);
 			this->tabPage1->TabIndex = 0;
-			this->tabPage1->Text = L"First Game";
+			this->tabPage1->Text = L"Prva igra";
 			this->tabPage1->UseVisualStyleBackColor = true;
 			// 
 			// dataGridView1
@@ -262,7 +262,7 @@ namespace GamePlay {
 			this->tabPage2->Padding = System::Windows::Forms::Padding(3);
 			this->tabPage2->Size = System::Drawing::Size(398, 254);
 			this->tabPage2->TabIndex = 1;
-			this->tabPage2->Text = L"Second Game";
+			this->tabPage2->Text = L"Druga igra";
 			this->tabPage2->UseVisualStyleBackColor = true;
 			// 
 			// dataGridView2
@@ -312,7 +312,7 @@ namespace GamePlay {
 			this->tabPage3->Padding = System::Windows::Forms::Padding(3);
 			this->tabPage3->Size = System::Drawing::Size(398, 254);
 			this->tabPage3->TabIndex = 2;
-			this->tabPage3->Text = L"Third Game";
+			this->tabPage3->Text = L"Treca igra";
 			this->tabPage3->UseVisualStyleBackColor = true;
 			// 
 			// dataGridView3
@@ -362,7 +362,7 @@ namespace GamePlay {
 			this->tabPage4->Padding = System::Windows::Forms::Padding(3);
 			this->tabPage4->Size = System::Drawing::Size(398, 254);
 			this->tabPage4->TabIndex = 3;
-			this->tabPage4->Text = L"Fourth Game";
+			this->tabPage4->Text = L"Cetrvra igra";
 			this->tabPage4->UseVisualStyleBackColor = true;
 			// 
 			// dataGridView4
@@ -416,7 +416,7 @@ namespace GamePlay {
 			this->MaximizeBox = false;
 			this->Name = L"ShowStatistics";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterParent;
-			this->Text = L"ShowStatistics";
+			this->Text = L"Prikaz statstike";
 			this->tabControl1->ResumeLayout(false);
 			this->tabPage1->ResumeLayout(false);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();

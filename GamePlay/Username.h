@@ -74,17 +74,17 @@ namespace GamePlay {
 			this->label1->AutoSize = true;
 			this->label1->Font = (gcnew System::Drawing::Font(L"Adobe Heiti Std R", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(128)));
-			this->label1->Location = System::Drawing::Point(14, 104);
+			this->label1->Location = System::Drawing::Point(14, 101);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(118, 19);
+			this->label1->Size = System::Drawing::Size(102, 19);
 			this->label1->TabIndex = 0;
-			this->label1->Text = L"Enter Username";
+			this->label1->Text = L"Korisniko ime";
 			// 
 			// txtUsername
 			// 
 			this->txtUsername->Font = (gcnew System::Drawing::Font(L"Adobe Gurmukhi", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->txtUsername->Location = System::Drawing::Point(151, 97);
+			this->txtUsername->Location = System::Drawing::Point(151, 96);
 			this->txtUsername->MaximumSize = System::Drawing::Size(116, 27);
 			this->txtUsername->Name = L"txtUsername";
 			this->txtUsername->Size = System::Drawing::Size(116, 27);
@@ -98,12 +98,12 @@ namespace GamePlay {
 				static_cast<System::Byte>(0)));
 			this->btnSetUsername->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnSetUsername.Image")));
 			this->btnSetUsername->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->btnSetUsername->Location = System::Drawing::Point(35, 161);
+			this->btnSetUsername->Location = System::Drawing::Point(18, 161);
 			this->btnSetUsername->Name = L"btnSetUsername";
 			this->btnSetUsername->Padding = System::Windows::Forms::Padding(10, 0, 0, 0);
-			this->btnSetUsername->Size = System::Drawing::Size(92, 35);
+			this->btnSetUsername->Size = System::Drawing::Size(113, 35);
 			this->btnSetUsername->TabIndex = 2;
-			this->btnSetUsername->Text = L"      Next";
+			this->btnSetUsername->Text = L"      Dalje";
 			this->btnSetUsername->UseVisualStyleBackColor = true;
 			this->btnSetUsername->Click += gcnew System::EventHandler(this, &Username::button1_Click);
 			// 
@@ -124,12 +124,12 @@ namespace GamePlay {
 				static_cast<System::Byte>(0)));
 			this->btnCancel->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnCancel.Image")));
 			this->btnCancel->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->btnCancel->Location = System::Drawing::Point(160, 161);
+			this->btnCancel->Location = System::Drawing::Point(154, 161);
 			this->btnCancel->Name = L"btnCancel";
 			this->btnCancel->Padding = System::Windows::Forms::Padding(2, 0, 0, 0);
-			this->btnCancel->Size = System::Drawing::Size(92, 35);
+			this->btnCancel->Size = System::Drawing::Size(113, 35);
 			this->btnCancel->TabIndex = 4;
-			this->btnCancel->Text = L"      Cancel";
+			this->btnCancel->Text = L"      Odustani";
 			this->btnCancel->UseVisualStyleBackColor = true;
 			this->btnCancel->Click += gcnew System::EventHandler(this, &Username::btnCancel_Click);
 			// 
@@ -160,7 +160,7 @@ namespace GamePlay {
 	}
 	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
 		if (txtUsername->TextLength == 0) {
-			System::Windows::Forms::MessageBox::Show("Username not valid!", "Username", System::Windows::Forms::MessageBoxButtons::OK, System::Windows::Forms::MessageBoxIcon::Error);
+			System::Windows::Forms::MessageBox::Show("Niste unijeli korisnicko ime!", "Greska", System::Windows::Forms::MessageBoxButtons::OK, System::Windows::Forms::MessageBoxIcon::Error);
 		}
 		else {
 			System::String^ managedString = txtUsername->Text;

@@ -144,7 +144,7 @@ namespace GamePlay {
 			this->button1->Padding = System::Windows::Forms::Padding(5, 0, 0, 0);
 			this->button1->Size = System::Drawing::Size(91, 37);
 			this->button1->TabIndex = 4;
-			this->button1->Text = L"   Unlock";
+			this->button1->Text = L"   Otkljucajte";
 			this->button1->UseVisualStyleBackColor = true;
 			this->button1->Click += gcnew System::EventHandler(this, &EnterCodeForm::button1_Click);
 			// 
@@ -157,7 +157,7 @@ namespace GamePlay {
 			this->button2->Padding = System::Windows::Forms::Padding(5, 0, 0, 0);
 			this->button2->Size = System::Drawing::Size(92, 37);
 			this->button2->TabIndex = 5;
-			this->button2->Text = L"   Cancel";
+			this->button2->Text = L"     Odustanite";
 			this->button2->UseVisualStyleBackColor = true;
 			this->button2->Click += gcnew System::EventHandler(this, &EnterCodeForm::button2_Click);
 			// 
@@ -168,9 +168,9 @@ namespace GamePlay {
 				static_cast<System::Byte>(0)));
 			this->lblEnterCode->Location = System::Drawing::Point(14, 37);
 			this->lblEnterCode->Name = L"lblEnterCode";
-			this->lblEnterCode->Size = System::Drawing::Size(180, 22);
+			this->lblEnterCode->Size = System::Drawing::Size(169, 22);
 			this->lblEnterCode->TabIndex = 6;
-			this->lblEnterCode->Text = L"Enter Code for game:";
+			this->lblEnterCode->Text = L"Unesite kod za igru:";
 			// 
 			// lblGameCode
 			// 
@@ -211,7 +211,7 @@ namespace GamePlay {
 			this->MaximizeBox = false;
 			this->Name = L"EnterCodeForm";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterParent;
-			this->Text = L"Unlock you game";
+			this->Text = L"Otkljucajte igru";
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -228,16 +228,16 @@ private: System::Void button1_Click(System::Object^  sender, System::EventArgs^ 
 	System::String^ s4 = txtCode4->Text;
 	System::String^ s = s1 + s2 + s3 + s4;
 	if (s->Length < 16) {
-		System::Windows::Forms::MessageBox::Show("Code is not corretly filled", "Game " + num, System::Windows::Forms::MessageBoxButtons::RetryCancel, System::Windows::Forms::MessageBoxIcon::Error);
+		System::Windows::Forms::MessageBox::Show("Kod koji ste unijeli nije ispravan", "Igra " + num, System::Windows::Forms::MessageBoxButtons::RetryCancel, System::Windows::Forms::MessageBoxIcon::Error);
 
 	}
 	else {
 		
 		if (false) {
-			System::Windows::Forms::MessageBox::Show("Game successfully unlocked!", "Success", System::Windows::Forms::MessageBoxButtons::OK, System::Windows::Forms::MessageBoxIcon::Information);
+			System::Windows::Forms::MessageBox::Show("Igra uspjesno otkljucana!", "Uspjesno otkljucana!", System::Windows::Forms::MessageBoxButtons::OK, System::Windows::Forms::MessageBoxIcon::Information);
 		}
 		else {
-			System::Windows::Forms::MessageBox::Show("The code you have enterd is not valid!", "Error", System::Windows::Forms::MessageBoxButtons::RetryCancel, System::Windows::Forms::MessageBoxIcon::Error);
+			System::Windows::Forms::MessageBox::Show("Kod koji ste unijei nije validan!", "Greska", System::Windows::Forms::MessageBoxButtons::RetryCancel, System::Windows::Forms::MessageBoxIcon::Error);
 		}
 		this->Close();
 	}

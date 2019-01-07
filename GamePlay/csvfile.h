@@ -10,15 +10,15 @@ void MakeCSV(const char * filename)
 {
 	std::ofstream myfile;
 	myfile.open(filename);
-	myfile << "Username: " << PtrToStringChars(getUsername()) <<  "\n";
+	myfile << "Korisnicko ime: " << PtrToStringChars(getUsername()) <<  "\n";
 	const char *XMLFileName = "ScoreBoard.xml";
 	tinyxml2::XMLDocument xmlDoc;
 	int counter;
 	xmlDoc.LoadFile(XMLFileName);
 	XMLElement *parentGame;
 	//First game
-	myfile << "First game:\n";
-	myfile << ", Place, Score, Date\n";
+	myfile << "Prva igra:\n";
+	myfile << ", Rang, Rezultat, Datum\n";
 	parentGame = getParentGame(xmlDoc, 1);
 	counter = 1;
 	for (XMLElement *child = parentGame->FirstChildElement(); child != NULL; child = child->NextSiblingElement()) {
@@ -26,8 +26,8 @@ void MakeCSV(const char * filename)
 	}
 	myfile << "\n\n";
 	//Secod game
-	myfile << "Second game:\n";
-	myfile << ", Place, Score, Date\n";
+	myfile << "Druga igra:\n";
+	myfile << ", Rang, Rezultat, Datum\n";
 	parentGame = getParentGame(xmlDoc, 2);
 	counter = 1;
 	for (XMLElement *child = parentGame->FirstChildElement(); child != NULL; child = child->NextSiblingElement()) {
@@ -35,8 +35,8 @@ void MakeCSV(const char * filename)
 	}
 	myfile << "\n\n";
 	//Third game
-	myfile << "Third game:\n";
-	myfile << ", Place, Score, Date\n";
+	myfile << "Treca igra:\n";
+	myfile << ", Rang, Rezultat, Datum\n";
 	parentGame = getParentGame(xmlDoc, 3);
 	counter = 1;
 	for (XMLElement *child = parentGame->FirstChildElement(); child != NULL; child = child->NextSiblingElement()) {
@@ -44,8 +44,8 @@ void MakeCSV(const char * filename)
 	}
 	myfile << "\n\n";
 	//Fourth game
-	myfile << "Rourth game:\n";
-	myfile << ", Place, Score, Date\n";
+	myfile << "Cetvrta igra:\n";
+	myfile << ", Rang, Rezultat, Datum\n";
 	parentGame = getParentGame(xmlDoc, 4);
 	counter = 1;
 	for (XMLElement *child = parentGame->FirstChildElement(); child != NULL; child = child->NextSiblingElement()) {
