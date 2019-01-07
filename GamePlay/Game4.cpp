@@ -479,6 +479,3 @@ int Game4(int points, int percentToLose)
 	}
 
 }
-
-
-
