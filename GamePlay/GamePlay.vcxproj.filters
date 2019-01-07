@@ -45,6 +45,12 @@
     <ClCompile Include="Game1.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="InfoAboutUs.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="InfoAboutApp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="HomeForm.h">
@@ -83,6 +89,12 @@
     <ClInclude Include="PointsManipulation.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="InfoAboutUs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="InfoAboutApp.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Username.resx">
@@ -95,6 +107,9 @@
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
     <EmbeddedResource Include="ShowStatistics.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InfoAboutUs.resx">
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
   </ItemGroup>

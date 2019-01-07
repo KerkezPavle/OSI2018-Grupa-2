@@ -7,6 +7,7 @@
 #include "csvfile.h"
 #include <string>
 #include <cstdlib>
+#include "InfoAboutUs.h"
 
 
 namespace GamePlay {
@@ -250,14 +251,15 @@ namespace GamePlay {
 			// oAplikacijiToolStripMenuItem
 			// 
 			this->oAplikacijiToolStripMenuItem->Name = L"oAplikacijiToolStripMenuItem";
-			this->oAplikacijiToolStripMenuItem->Size = System::Drawing::Size(134, 22);
+			this->oAplikacijiToolStripMenuItem->Size = System::Drawing::Size(180, 22);
 			this->oAplikacijiToolStripMenuItem->Text = L"O aplikaciji";
 			// 
 			// oAutorimaToolStripMenuItem
 			// 
 			this->oAutorimaToolStripMenuItem->Name = L"oAutorimaToolStripMenuItem";
-			this->oAutorimaToolStripMenuItem->Size = System::Drawing::Size(134, 22);
+			this->oAutorimaToolStripMenuItem->Size = System::Drawing::Size(180, 22);
 			this->oAutorimaToolStripMenuItem->Text = L"O autorima";
+			this->oAutorimaToolStripMenuItem->Click += gcnew System::EventHandler(this, &HomeForm::oAutorimaToolStripMenuItem_Click);
 			// 
 			// lblKviz
 			// 
@@ -574,6 +576,10 @@ private: System::Void btnStartGame2_Click(System::Object^  sender, System::Event
 }
 private: System::Void izlazToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
 	Application::Exit();
+}
+private: System::Void oAutorimaToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
+	InfoAboutUs frm;
+	frm.ShowDialog();
 }
 };
 }

@@ -358,7 +358,7 @@ BOOL WINAPI CtrlHandler(DWORD fdwCtrlType)
 		// CTRL-CLOSE: confirm that the user wants to exit. 
 	case CTRL_CLOSE_EVENT:
 		Beep(600, 200);
-		system("start ./GamePlay.exe");
+		system("start ../x64/Debug/GamePlay.exe");
 		return TRUE;
 
 		// Pass other signals to the next handler. 
