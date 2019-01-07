@@ -33,10 +33,8 @@ int ucitajBrojIgranja()
 	int br;
 	FILE* fp;
 	if ((fp = fopen("brIgranja.txt", "r")) != nullptr)
-	{
 		fscanf(fp, "%d", &br);
-		fclose(fp);
-	}
+	fclose(fp);
 	return br;
 }
 
@@ -44,25 +42,25 @@ void upisiBrojIgranja(int br)
 {
 	FILE* fp;
 	if ((fp = fopen("brIgranja.txt", "w")) != nullptr)
-	{
 		fprintf(fp, "%d", br);
-		fclose(fp);
-	}
+	fclose(fp);
+	return;
 }
 
 
-int game1(int brb)
+int game1(int brb,int percentage)
 {
 	int br_igranja;
+	int sbrb = brb;
 	br_igranja = ucitajBrojIgranja();
 	int n, a, b;
 
-	std::cout << "Pravila igre: " << std::endl;
+	/*std::cout << "Pravila igre: " << std::endl;
 	std::cout << "Aplikacija ce prvo na slucajan nacin izabrati odredjeni broj." << std::endl;
 	std::cout << "Korisnik ima 5 pokusaja da ga pogodi tako sto unosi broj" << std::endl;
 	std::cout << "Aplikacija nakon svakog pokusaja prikazuje poruku:" << std::endl << "\"Broj koji trazite je[veci | manji] od unesenog broja\"" << std::endl;
 	std::cout << "Ako korisnik pogodi trazeni broj dobija" << std::endl << "100 / broj_pokusaja bodova za svoj profil. " << std::endl << std::endl << std::endl;
-
+	*/
 		a = 100;
 		b = 0;
 
@@ -83,9 +81,6 @@ int game1(int brb)
 					brb = brb + 100 / br_pokusaja;
 					std::cout << std::endl << "Pogodili ste trazeni broj i dobili " << (100 / br_pokusaja) << " bodova" << std::endl;
 
-					//IZLAZ IZ IGRE
-					insertDataIntoStats(1,brb);
-					setActiveScore(brb);
 					upisiBrojIgranja(br_igranja + 1);
 					return brb;//vracam ukupan broj bodova iz funkcije
 					
@@ -96,9 +91,6 @@ int game1(int brb)
 					{
 						std::cout << std::endl << "Niste pogodili, trazeni broj je bio " << trazeni_br << "." << std::endl;
 
-						//IZLAZ IZ IGRE
-						insertDataIntoStats(1,brb);
-						setActiveScore(brb);
 						upisiBrojIgranja(br_igranja + 1);
 						return brb;//vracam ukupan broj bodova iz funkcije
 					}
@@ -115,8 +107,6 @@ int game1(int brb)
 				}
 			}
 		}
-
-
 		//Namjesteni dio igre, dobija
 		if (br_igranja < 3)
 		{
@@ -134,9 +124,6 @@ int game1(int brb)
 
 					std::cout << std::endl << "Pogodili ste trazeni broj i dobili Namjesteno" << (100 / br_pokusaja) << " bodova" << std::endl;
 					
-					//IZLAZ IZ IGRE
-					insertDataIntoStats(1,brb);
-					setActiveScore(brb);
 					upisiBrojIgranja(br_igranja+1);
 					return brb; //vracam ukupan broj bodova iz funkcije
 				}
@@ -155,6 +142,4 @@ int game1(int brb)
 				}
 			}
 		}
-
 }
-
