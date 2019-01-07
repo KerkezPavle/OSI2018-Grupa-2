@@ -32,19 +32,22 @@ int ucitajBrojIgranja()
 {
 	int br;
 	FILE* fp;
-	if ((fp = fopen("brIgranja.txt", "r")) != nullptr)
+	if ((fp = fopen("assets//data//GameOneData.txt", "r")) != nullptr)
+	{
 		fscanf(fp, "%d", &br);
-	fclose(fp);
+		fclose(fp);
+	}
 	return br;
 }
 
 void upisiBrojIgranja(int br)
 {
 	FILE* fp;
-	if ((fp = fopen("brIgranja.txt", "w")) != nullptr)
+	if ((fp = fopen("assets//data//GameOneData.txt", "w")) != nullptr)
+	{
 		fprintf(fp, "%d", br);
-	fclose(fp);
-	return;
+		fclose(fp);
+	}
 }
 
 
@@ -81,6 +84,9 @@ int game1(int brb,int percentage)
 					brb = brb + 100 / br_pokusaja;
 					std::cout << std::endl << "Pogodili ste trazeni broj i dobili " << (100 / br_pokusaja) << " bodova" << std::endl;
 
+					//IZLAZ IZ IGRE
+					insertDataIntoStats(1,brb);
+					setActiveScore(brb);
 					upisiBrojIgranja(br_igranja + 1);
 					return brb;//vracam ukupan broj bodova iz funkcije
 					
@@ -91,6 +97,9 @@ int game1(int brb,int percentage)
 					{
 						std::cout << std::endl << "Niste pogodili, trazeni broj je bio " << trazeni_br << "." << std::endl;
 
+						//IZLAZ IZ IGRE
+						insertDataIntoStats(1,brb);
+						setActiveScore(brb);
 						upisiBrojIgranja(br_igranja + 1);
 						return brb;//vracam ukupan broj bodova iz funkcije
 					}
@@ -124,6 +133,9 @@ int game1(int brb,int percentage)
 
 					std::cout << std::endl << "Pogodili ste trazeni broj i dobili Namjesteno" << (100 / br_pokusaja) << " bodova" << std::endl;
 					
+					//IZLAZ IZ IGRE
+					insertDataIntoStats(1,brb);
+					setActiveScore(brb);
 					upisiBrojIgranja(br_igranja+1);
 					return brb; //vracam ukupan broj bodova iz funkcije
 				}
