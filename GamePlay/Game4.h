@@ -74,7 +74,7 @@ private:
 };
 
 void calculate_dimension(int, int&, int&, int&); //funkcija za izracunavanje optimalne dimenzije tabele i broja mina za zadani broj bodova
-void Game4(int, int);
+int Game4(int, int);
 void ClearScreen(); // funkcije koje se koriste za bojenje teksta i ciscenja ekrana
 void setcolor(int);
 

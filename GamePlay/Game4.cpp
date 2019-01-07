@@ -381,10 +381,10 @@ int Mineboard::count_hidden(int row, int col)
 }
 
 
-void Game4(int points, int percentToLose)
+int Game4(int points, int percentToLose)
 {
 	{
-		int pointsToLose = ((points * percentToLose) / 100);//izmjena
+		int pointsToLose = ((points * percentToLose) / 100);
 
 		if (percentToLose == 0)// ako nema potrebe za gubitkom poena igrac igra igru neometano
 		{
@@ -421,10 +421,12 @@ void Game4(int points, int percentToLose)
 			if (board.how_many_left() == (board.get_width()*board.get_height() / 6))
 			{
 				std::cout << "Cestitamo! Osvojili ste 100 poena!\n";
+				return points + 100; //ako pobijedi dodaje mu se sto poena na trenutno stanje
 			}
 			else
-			{
-				std::cout << "Ups! Stali ste na minu. Izgubili ste " << board.how_many_left() << " poena. Vise srece drugi put! \n";
+			{                                                          // izracunavanje broja cistih polja
+				std::cout << "Ups! Stali ste na minu. Izgubili ste " << board.how_many_left()-(STANDARDSIZE*STANDARDSIZE)/6 << " poena. Vise srece drugi put! \n";
+				return points + (board.how_many_left() - (STANDARDSIZE*STANDARDSIZE) / 6); // od trenutnog broja poena oduzima se broj preostalih cisth polja
 			}
 
 
@@ -471,7 +473,7 @@ void Game4(int points, int percentToLose)
 			board.place_mines(row, col, numberOfMines); //popunjavanje minama u skladu sa dosadasnjim prikazanim stanjem
 			board.draw_board(true);
 			std::cout << "Ups! Stali ste na minu. Izgubili ste " << width * height - numberOfMines - 1 << " poena. Vise srece drugi put! \n";
-
+			return points + pointsToLose;
 
 		}
 	}
