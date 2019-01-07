@@ -26,7 +26,6 @@ void loadUserCombination(int *combinationArray)
 {
     std::cout<<"Please, enter your combination:"<<std::endl;
     int tmp=-1;
-    int errorFlag=0;
     for(int i=0;i<NUMBER;i++)
     {
         do
