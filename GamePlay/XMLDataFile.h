@@ -33,3 +33,4 @@ void setActiveScore(int);
 const char* getCSVFileNameChar();
 void testFun(int);
 void testTest(); 
+const char* getUsernameChars();

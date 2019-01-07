@@ -10,7 +10,6 @@ void MakeCSV(const char * filename)
 {
 	std::ofstream myfile;
 	myfile.open(filename);
-	myfile << "Korisnicko ime: " << PtrToStringChars(getUsername()) <<  "\n";
 	const char *XMLFileName = "ScoreBoard.xml";
 	tinyxml2::XMLDocument xmlDoc;
 	int counter;

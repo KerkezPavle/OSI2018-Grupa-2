@@ -193,6 +193,7 @@ bool makeXMLSettingsFile() {
 	xmlDoc.InsertFirstChild(pRoot);
 	XMLElement *username = xmlDoc.NewElement("Username");
 	XMLElement *activeScore = xmlDoc.NewElement("ActiveScore");
+	activeScore->SetText(10);
 	pRoot->InsertFirstChild(username);
 	pRoot->InsertEndChild(activeScore);
 	xmlDoc.SaveFile(XMLFileName);
@@ -299,6 +300,13 @@ System::String^ getUsername() {
 	return strNew;
 }
 
+const char* getUsernameChars() {
+	const char* SettingsXMLFile = "Settings.xml";
+	tinyxml2::XMLDocument xmlDoc;
+	xmlDoc.LoadFile(SettingsXMLFile);
+	return xmlDoc.FirstChildElement("Settings")->FirstChildElement("Username")->GetText();
+}
+
 void clearUsername() {
 	const char* SettingsXMLFile = "Settings.xml";
 	tinyxml2::XMLDocument xmlDoc;
@@ -350,7 +358,7 @@ BOOL WINAPI CtrlHandler(DWORD fdwCtrlType)
 		// CTRL-CLOSE: confirm that the user wants to exit. 
 	case CTRL_CLOSE_EVENT:
 		Beep(600, 200);
-		system("start ../x64/Debug/GamePlay.exe");
+		system("start ./GamePlay.exe");
 		return TRUE;
 
 		// Pass other signals to the next handler. 

@@ -41,7 +41,22 @@
             <value>40</value>
         </Score>
     </FirstGame>
-    <SecondGame/>
-    <ThirdGame/>
-    <FourthGame/>
+    <SecondGame>
+        <Score>
+            <date>Mon Jan  7 22:10:53 2019</date>
+            <value>0</value>
+        </Score>
+    </SecondGame>
+    <ThirdGame>
+        <Score>
+            <date>Mon Jan  7 22:11:09 2019</date>
+            <value>30</value>
+        </Score>
+    </ThirdGame>
+    <FourthGame>
+        <Score>
+            <date>Mon Jan  7 22:11:01 2019</date>
+            <value>105</value>
+        </Score>
+    </FourthGame>
 </Statistics>
