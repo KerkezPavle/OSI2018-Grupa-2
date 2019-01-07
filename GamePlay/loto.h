@@ -3,7 +3,7 @@
 
 #define NUMBER 7
 #define RANDNUMBER 20
-#define FACTOR 30
+#define FACTOR 100
 #include <random>
 #include <iostream>
 
@@ -95,7 +95,7 @@ int lotoGame(int currentNUmberOfPoints, double inputPercentage)
     delete[] userCombination;
     delete[] randomCombination;
 
-    return currentNUmberOfPoints+userScore;
+    return currentNUmberOfPoints+userScore-FACTOR; //trenutni-uplata(100)+osvojeni
 }
 
 

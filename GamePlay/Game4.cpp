@@ -381,9 +381,6 @@ int Mineboard::count_hidden(int row, int col)
 }
 
 
-
-
-
 void Game4(int points, int percentToLose)
 {
 	{
