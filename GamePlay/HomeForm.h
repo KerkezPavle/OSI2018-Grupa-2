@@ -529,8 +529,8 @@ private: void SaveStatisticsCSV() {
 	saveFileDialog1->Filter = "File|*.csv";
 	saveFileDialog1->Title = "Save Score To";
 	System::String^ name = getUsername();
-	saveFileDialog1->FileName = name;
-	saveFileDialog1->AddExtension = ".csv";
+	saveFileDialog1->FileName = name + ".csv";
+	//saveFileDialog1->AddExtension = ".csv";
 	if (saveFileDialog1->ShowDialog() == System::Windows::Forms::DialogResult::OK)
 		MakeCSV((char*)(void*)Marshal::StringToHGlobalAnsi(saveFileDialog1->FileName));
 }
