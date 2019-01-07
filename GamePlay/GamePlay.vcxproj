@@ -154,6 +154,7 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="loto.h" />
+    <ClInclude Include="PointsManipulation.h" />
     <ClInclude Include="ShowStatistics.h">
       <FileType>CppForm</FileType>
     </ClInclude>

@@ -380,7 +380,7 @@ void testFun(int n) {
 	freopen("CONIN$", "r", stdin);
 	freopen("CONOUT$", "w", stdout);
 	freopen("CONOUT$", "w", stderr);
-	if (n == 1) game1(50, 20);
+	if (n == 1) game1(50);
 	if (n == 2) game2(50, 20.0);
 	if (n == 3) lotoGame(50, 0.2);
 	if (n == 4) Game4(50,20);

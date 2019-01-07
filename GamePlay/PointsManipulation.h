@@ -5,7 +5,7 @@
 #include "loto.h"
 #include "Game4.h"
 #define CRITICAL 100
-void game_call (int gameNum, int currentPoints)
+void game_call(int gameNum, int currentPoints)
 {
 	int newPoints;
 	if (gameNum == 1)
@@ -20,7 +20,7 @@ void game_call (int gameNum, int currentPoints)
 
 		}
 		insertDataIntoStats(1, newPoints - currentPoints);
-		setActiveScore(newPoints); 
+		setActiveScore(newPoints);
 	}
 	else if (gameNum == 2)
 	{
@@ -41,7 +41,7 @@ void game_call (int gameNum, int currentPoints)
 		else if (currentPoints > 200 && currentPoints <= 250) percentage = 40;
 		else if (currentPoints > 150 && currentPoints <= 200) percentage = 35;
 		else if (currentPoints > 100 && currentPoints <= 150) percentage = 30;
-		else if (currentPoints > 50  && currentPoints <= 100) percentage = 25;
+		else if (currentPoints > 50 && currentPoints <= 100) percentage = 25;
 		else if (currentPoints <= 50 && currentPoints > 20) percentage = 10;
 		else percentage = 0;
 		newPoints = Game4(currentPoints, percentage);
