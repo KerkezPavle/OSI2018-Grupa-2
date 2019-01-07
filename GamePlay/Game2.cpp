@@ -88,20 +88,20 @@ void Question::draw(int p = 0) {
 
 int Question::answerIt() {
 	char ans; int index;
-	std::cout << "The answer is: "; std::cin >> ans;
+	std::cout << "Odgovor je na: "; std::cin >> ans;
 	index = (ans < 'Z') ? ans - 'A' : ans - 'a';
-	if ((index > 2) || (index < 0)) { std::cout << "Try again buddy:" << std::endl; return answerIt(); }
+	if ((index > 2) || (index < 0)) { std::cout << "Pokusaj ponovo:" << std::endl; return answerIt(); }
 	if (queNum == 0)return index;
-	std::cout << "Are you sure "; color_Text(answer[index].text, index + 4); std::cout << "  is the right answer(y/n):";
+	std::cout << "Jeste li sigurni\""; color_Text(answer[index].text, index + 4); std::cout << "\" je ispravan odgovor?(y/n):";
 	std::cin >> ans;
 	if ((ans == 'y') || (ans == 'Y')) {
-		std::cout << "You choose.... ";
+		std::cout << "Odgovor je.... ";
 		if (answer[index].is_Correct) {
-			std::string tmp("wisely");
+			std::string tmp("tacan.");
 			color_Text(tmp, 2); return 20;
 		}
 		else {
-			std::string tmp("poorly");
+			std::string tmp("netacan.");
 			color_Text(tmp, 7); return -30;
 		}
 	}
@@ -114,14 +114,14 @@ int game2(int points, double percentage) {
 	int offset = 0; int sch;
 	Question start{};
 	start.draw(points); sch = start.answerIt();
-	if (sch == 2)return 0;
+	if (sch == 2)return points;
 	ClearScreen();
 	Question q[num_of_Q];
 	for (int i = 0; i < num_of_Q; ++i) {
 		q[i].draw();
 		offset += q[i].answerIt();
 		std::cout << std::endl;
-		std::cout << "Points:" << points + offset << std::endl;
+		std::cout << "Poeni:" << points + offset << std::endl;
 		std::cin.ignore(-1, '\n');
 		std::cin.get();
 		std::cin.get();
