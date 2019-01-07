@@ -147,7 +147,7 @@ void readXMLFile(const char* XMLFileName, int game) {
 	@tested: works
 */
 int makeXMLScoreFileSafe() {
-	const char *XMLFileName = "ScoreBoard.xml";
+	const char *XMLFileName = "assets/config/ScoreBoard.xml";
 	tinyxml2::XMLDocument xmlDoc;
 	if (xmlDoc.LoadFile(XMLFileName) == 3) {
 		makeXMLSroreFile(XMLFileName);
@@ -176,7 +176,7 @@ void makeXMLSroreFile(const char *XMLFileName) {
 }
 
 int makeXMLSettingsFileSave() {
-	const char* XMLFileName = "Settings.xml";
+	const char* XMLFileName = "assets/config/Settings.xml";
 	tinyxml2::XMLDocument xmlDoc;
 	if (xmlDoc.LoadFile(XMLFileName) == 3) {
 		makeXMLSettingsFile();
@@ -187,7 +187,7 @@ int makeXMLSettingsFileSave() {
 
 
 bool makeXMLSettingsFile() {
-	const char* XMLFileName = "Settings.xml";
+	const char* XMLFileName = "assets/config/Settings.xml";
 	tinyxml2::XMLDocument xmlDoc;
 	XMLNode *pRoot = xmlDoc.NewElement("Settings");
 	xmlDoc.InsertFirstChild(pRoot);
@@ -206,7 +206,7 @@ bool makeXMLSettingsFile() {
 	@tested: working
 */
 bool insertDataIntoStats(int game, int score) {
-	const char* XMLFileName = "ScoreBoard.xml";
+	const char* XMLFileName = "assets/config/ScoreBoard.xml";
 	tinyxml2::XMLDocument xmlDoc;
 	xmlDoc.LoadFile(XMLFileName);
 	XMLElement* parentGame = getParentGame(xmlDoc, game);
@@ -253,7 +253,7 @@ bool insertDataIntoStats(int game, int score) {
 
 
 bool isUserNameSet() {
-	const char* XMLFileName = "Settings.xml";
+	const char* XMLFileName = "assets/config/Settings.xml";
 	tinyxml2::XMLDocument xmlDoc;
 	xmlDoc.LoadFile(XMLFileName);
 	if (xmlDoc.FirstChildElement("Settings")->FirstChildElement("Username")->GetText() == nullptr)
@@ -265,7 +265,7 @@ bool isUserNameSet() {
 
 bool setUserName(std::string username)
 {
-	const char* SettingsXMLFile = "Settings.xml";
+	const char* SettingsXMLFile = "assets/config/Settings.xml";
 	tinyxml2::XMLDocument xmlDoc;
 	xmlDoc.LoadFile(SettingsXMLFile);
 	XMLElement *element = xmlDoc.FirstChildElement("Settings")->FirstChildElement("Username");
@@ -276,7 +276,7 @@ bool setUserName(std::string username)
 
 const char* getCSVFileNameChar() {
 	const char *c;
-	const char* SettingsXMLFile = "Settings.xml";
+	const char* SettingsXMLFile = "assets/config/Settings.xml";
 	tinyxml2::XMLDocument xmlDoc;
 	xmlDoc.LoadFile(SettingsXMLFile);
 	c = xmlDoc.FirstChildElement("Settings")->FirstChildElement("Username")->GetText();
@@ -291,7 +291,7 @@ const char* getCSVFileNameChar() {
 
 System::String^ getUsername() {
 	const char *c;
-	const char* SettingsXMLFile = "Settings.xml";
+	const char* SettingsXMLFile = "assets/config/Settings.xml";
 	tinyxml2::XMLDocument xmlDoc;
 	xmlDoc.LoadFile(SettingsXMLFile);
 	c = xmlDoc.FirstChildElement("Settings")->FirstChildElement("Username")->GetText();
@@ -301,14 +301,14 @@ System::String^ getUsername() {
 }
 
 const char* getUsernameChars() {
-	const char* SettingsXMLFile = "Settings.xml";
+	const char* SettingsXMLFile = "assets/config/Settings.xml";
 	tinyxml2::XMLDocument xmlDoc;
 	xmlDoc.LoadFile(SettingsXMLFile);
 	return xmlDoc.FirstChildElement("Settings")->FirstChildElement("Username")->GetText();
 }
 
 void clearUsername() {
-	const char* SettingsXMLFile = "Settings.xml";
+	const char* SettingsXMLFile = "assets/config/Settings.xml";
 	tinyxml2::XMLDocument xmlDoc;
 	xmlDoc.LoadFile(SettingsXMLFile);
 	xmlDoc.FirstChildElement("Settings")->FirstChildElement("Username")->SetText("");
@@ -319,7 +319,7 @@ void clearUsername() {
 
 int getActiveScore() {
 	const char *c;
-	const char* SettingsXMLFile = "Settings.xml";
+	const char* SettingsXMLFile = "assets/config/Settings.xml";
 	tinyxml2::XMLDocument xmlDoc;
 	xmlDoc.LoadFile(SettingsXMLFile);
 	c = xmlDoc.FirstChildElement("Settings")->FirstChildElement("ActiveScore")->GetText();
@@ -334,7 +334,7 @@ int getActiveScore() {
 
 void setActiveScore(int val) {
 
-	const char* SettingsXMLFile = "Settings.xml";
+	const char* SettingsXMLFile = "assets/config/Settings.xml";
 	tinyxml2::XMLDocument xmlDoc;
 	xmlDoc.LoadFile(SettingsXMLFile);
 	XMLElement *element = xmlDoc.FirstChildElement("Settings")->FirstChildElement("ActiveScore");

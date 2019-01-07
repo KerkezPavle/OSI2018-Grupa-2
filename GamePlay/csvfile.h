@@ -10,7 +10,7 @@ void MakeCSV(const char * filename)
 {
 	std::ofstream myfile;
 	myfile.open(filename);
-	const char *XMLFileName = "ScoreBoard.xml";
+	const char *XMLFileName = "assets/config/ScoreBoard.xml";
 	tinyxml2::XMLDocument xmlDoc;
 	int counter;
 	xmlDoc.LoadFile(XMLFileName);

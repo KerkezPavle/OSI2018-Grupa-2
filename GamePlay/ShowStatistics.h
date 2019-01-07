@@ -97,7 +97,7 @@ namespace GamePlay {
 		System::ComponentModel::Container ^components;
 
 	public: void seedData() {
-		const char *XMLFileName = "ScoreBoard.xml";
+		const char *XMLFileName = "assets/config/ScoreBoard.xml";
 		tinyxml2::XMLDocument xmlDoc;
 		int counter;
 		xmlDoc.LoadFile(XMLFileName);
