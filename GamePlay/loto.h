@@ -3,6 +3,7 @@
 
 #define NUMBER 7
 #define RANDNUMBER 20
+#define FACTOR 30
 #include <random>
 #include <iostream>
 
@@ -23,14 +24,14 @@ void printCombination(int *array, int size)
 }
 void loadUserCombination(int *combinationArray)
 {
-    std::cout<<"Unesite vašu kombinaciju:"<<std::endl;
+    std::cout<<"Please, enter your combination:"<<std::endl;
     int tmp=-1;
     int errorFlag=0;
     for(int i=0;i<NUMBER;i++)
     {
         do
         {
-            std::cout<<"\t"<<i+1<<". broj--->";
+            std::cout<<"\t"<<i+1<<". number--->";
             char c ;
             if( !( std::cin >>tmp ) || ( std::cin.get(c) && !std::isspace(c) ) )
             {
@@ -71,27 +72,26 @@ int lotoGame(int currentNUmberOfPoints, double inputPercentage)
     int userScore = 0;
     int *userCombination = new int[NUMBER];
     int *randomCombination = new int[RANDNUMBER];
-    double factor =(inputPercentage/100)*currentNUmberOfPoints;
     loadUserCombination(userCombination);
     do{
         generateRandomCombination(randomCombination);
         userScore = calculateScore(userCombination,randomCombination);
-    }while(userScore>factor);
+    }while(userScore>FACTOR);
 
     std::cout<<"-------------------------------------------------------------"<<std::endl;
     std::cout<<"|                           BINGO                           |"<<std::endl;
     std::cout<<"-------------------------------------------------------------"<<std::endl;
-    std::cout<<"TRENUTNI BROJ BODOVA: ";std::cout<<currentNUmberOfPoints<<std::endl;
+    std::cout<<"CURRENT NUMBER OF POINTS: ";std::cout<<currentNUmberOfPoints<<std::endl;
     std::cout<<"-------------------------------------------------------------"<<std::endl;
-    std::cout<<"VAŠA KOBINACIJA: "; printCombination(userCombination,NUMBER);
+    std::cout<<"YOUR COMBINATION: "; printCombination(userCombination,NUMBER);
     std::cout<<"-------------------------------------------------------------"<<std::endl;
-    std::cout<<"DOBITNA KOBINACIJA: "<<std::endl; printCombination(randomCombination,RANDNUMBER);
+    std::cout<<"WINNING COMBINATION: "<<std::endl; printCombination(randomCombination,RANDNUMBER);
     std::cout<<"-------------------------------------------------------------"<<std::endl;
-    std::cout<<"OSVOJENI BODOVI: "<< userScore << std::endl;
+    std::cout<<"YOUR SCORE: "<< userScore << std::endl;
     std::cout<<"-------------------------------------------------------------"<<std::endl;
-    std::cout<<"UKUPAN BROJ BODOVA: "<< userScore + currentNUmberOfPoints << std::endl;
+    std::cout<<"TOTAL NUMBER OF POINTS: "<< userScore + currentNUmberOfPoints << std::endl;
     std::cout<<"-------------------------------------------------------------"<<std::endl;
-    std::cout<<"|                           KRAJ                            |"<<std::endl;
+    std::cout<<"|                           THE END                         |"<<std::endl;
     std::cout<<"-------------------------------------------------------------"<<std::endl;
     delete[] userCombination;
     delete[] randomCombination;
