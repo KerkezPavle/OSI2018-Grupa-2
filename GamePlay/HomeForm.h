@@ -598,6 +598,8 @@ private: System::Void oAutorimaToolStripMenuItem_Click(System::Object^  sender, 
 private: void ButtonManagementControll() {
 	// Game 1
 	std::string s = "assets/data/igra.txt";
+
+
 	if (isActive(s, 1)) {
 		btnStartGame1->Enabled = true;
 		btnCancelGame1->Enabled = true;
@@ -614,9 +616,27 @@ private: void ButtonManagementControll() {
 		}
 	}
 
-	if (isActive(s, 3)) {
+	// Game 2
+	if (isActive("assets/data/igra.txt", 2)) {
+		btnStartGame2->Enabled = true;
+		btnCancelGame2->Enabled = true;
+		btnUGame2->Enabled = false;
+	}
+	else {
+		btnStartGame2->Enabled = false;
+		btnCancelGame2->Enabled = false;
+		if (true) {
+			btnUGame2->Enabled = false;
+		}
+		else {
+			btnUGame2->Enabled = true;
+		}
+	}
+
+	// Game 3
+	if (isActive("assets/data/igra.txt", 3)) {
 		btnStartGame3->Enabled = true;
-		btnCancelGame4->Enabled = true;
+		btnCancelGame3->Enabled = true;
 		btnUGame3->Enabled = false;
 	}
 	else {
@@ -630,6 +650,22 @@ private: void ButtonManagementControll() {
 		}
 	}
 
+	// Game 4
+	if (isActive("assets/data/igra.txt", 4)) {
+		btnStartGame4->Enabled = true;
+		btnCancelGame4->Enabled = true;
+		btnUGame4->Enabled = false;
+	}
+	else {
+		btnStartGame4->Enabled = false;
+		btnCancelGame4->Enabled = false;
+		if (true) {
+			btnUGame4->Enabled = false;
+		}
+		else {
+			btnUGame4->Enabled = true;
+		}
+	}
 
 
 
