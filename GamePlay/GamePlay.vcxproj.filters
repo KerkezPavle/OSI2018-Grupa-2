@@ -51,6 +51,9 @@
     <ClCompile Include="InfoAboutApp.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="KeysValidation.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="HomeForm.h">
@@ -95,6 +98,9 @@
     <ClInclude Include="InfoAboutApp.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="KeysValidation.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Username.resx">
@@ -110,6 +116,9 @@
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
     <EmbeddedResource Include="InfoAboutUs.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InfoAboutApp.resx">
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
   </ItemGroup>

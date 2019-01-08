@@ -1,5 +1,7 @@
 #pragma once
 #include <cctype>
+#include "KeysValidation.h"
+#include <msclr\marshal_cppstd.h>
 
 namespace GamePlay {
 
@@ -9,6 +11,7 @@ namespace GamePlay {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+	using namespace msclr::interop;
 
 	/// <summary>
 	/// Summary for EnterCodeForm
@@ -227,13 +230,14 @@ private: System::Void button1_Click(System::Object^  sender, System::EventArgs^ 
 	System::String^ s3 = txtCode3->Text;
 	System::String^ s4 = txtCode4->Text;
 	System::String^ s = s1 + s2 + s3 + s4;
+	std::string code = marshal_as<std::string>(s);
 	if (s->Length < 16) {
 		System::Windows::Forms::MessageBox::Show("Kod koji ste unijeli nije ispravan", "Igra " + num, System::Windows::Forms::MessageBoxButtons::RetryCancel, System::Windows::Forms::MessageBoxIcon::Error);
 
 	}
 	else {
 		
-		if (false) {
+		if (otkljucaj_igru("assets/data/kodovi.txt","assets/data/igra.txt", code, num)) { //ducinfija(s, num); pokreni sad
 			System::Windows::Forms::MessageBox::Show("Igra uspjesno otkljucana!", "Uspjesno otkljucana!", System::Windows::Forms::MessageBoxButtons::OK, System::Windows::Forms::MessageBoxIcon::Information);
 		}
 		else {

@@ -1,6 +1,25 @@
 <Statistics>
-    <FirstGame/>
+    <FirstGame>
+        <Score>
+            <date>Tue Jan  8 20:08:33 2019</date>
+            <value>43</value>
+        </Score>
+        <Score>
+            <date>Tue Jan  8 20:08:33 2019</date>
+            <value>33</value>
+        </Score>
+    </FirstGame>
     <SecondGame/>
-    <ThirdGame/>
-    <FourthGame/>
+    <ThirdGame>
+        <Score>
+            <date>Tue Jan  8 20:12:42 2019</date>
+            <value>10</value>
+        </Score>
+    </ThirdGame>
+    <FourthGame>
+        <Score>
+            <date>Tue Jan  8 20:13:39 2019</date>
+            <value>141</value>
+        </Score>
+    </FourthGame>
 </Statistics>
