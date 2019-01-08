@@ -614,21 +614,21 @@ private: void ButtonManagementControll() {
 		}
 	}
 
-	//if (isActive(s, 3)) {
-	//	btnStartGame1->Enabled = true;
-	//	btnCancelGame1->Enabled = true;
-	//	btnUGame1->Enabled = false;
-	//}
-	//else {
-	//	btnStartGame1->Enabled = false;
-	//	btnCancelGame1->Enabled = false;
-	//	if (true) {
-	//		btnUGame1->Enabled = false;
-	//	}
-	//	else {
-	//		btnUGame1->Enabled = true;
-	//	}
-	//}
+	if (isActive(s, 3)) {
+		btnStartGame3->Enabled = true;
+		btnCancelGame4->Enabled = true;
+		btnUGame3->Enabled = false;
+	}
+	else {
+		btnStartGame3->Enabled = false;
+		btnCancelGame3->Enabled = false;
+		if (true) {
+			btnUGame3->Enabled = false;
+		}
+		else {
+			btnUGame3->Enabled = true;
+		}
+	}
 
 
 
@@ -644,16 +644,19 @@ private: System::Void btnCancelGame1_Click(System::Object^  sender, System::Even
 private: System::Void btnCancelGame2_Click(System::Object^  sender, System::EventArgs^  e) {
 	if (System::Windows::Forms::MessageBox::Show("Jeste li sigurni?", "Otkazivanje igre 1", System::Windows::Forms::MessageBoxButtons::OKCancel, System::Windows::Forms::MessageBoxIcon::Information) == System::Windows::Forms::DialogResult::OK) {
 		deaktivirajIgru(2);
+		ButtonManagementControll();
 	}
 }
 private: System::Void btnCancelGame3_Click(System::Object^  sender, System::EventArgs^  e) {
 	if (System::Windows::Forms::MessageBox::Show("Jeste li sigurni?", "Otkazivanje igre 1", System::Windows::Forms::MessageBoxButtons::OKCancel, System::Windows::Forms::MessageBoxIcon::Information) == System::Windows::Forms::DialogResult::OK) {
 		deaktivirajIgru(3);
+		ButtonManagementControll();
 	}
 }
 private: System::Void btnCancelGame4_Click(System::Object^  sender, System::EventArgs^  e) {
 	if (System::Windows::Forms::MessageBox::Show("Jeste li sigurni?", "Otkazivanje igre 1", System::Windows::Forms::MessageBoxButtons::OKCancel, System::Windows::Forms::MessageBoxIcon::Information) == System::Windows::Forms::DialogResult::OK) {
 		deaktivirajIgru(4);
+		ButtonManagementControll();
 	}
 }
 };
