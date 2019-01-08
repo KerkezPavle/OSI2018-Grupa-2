@@ -94,6 +94,7 @@ namespace GamePlay {
 	private: System::Windows::Forms::ToolStripMenuItem^  izlazToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^  oAplikacijiToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^  oAutorimaToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^  pomocToolStripMenuItem;
 
 
 
@@ -141,6 +142,7 @@ namespace GamePlay {
 			this->btnCancelGame2 = (gcnew System::Windows::Forms::Button());
 			this->btnCancelGame3 = (gcnew System::Windows::Forms::Button());
 			this->btnCancelGame4 = (gcnew System::Windows::Forms::Button());
+			this->pomocToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->menuStrip1->SuspendLayout();
 			this->SuspendLayout();
 			// 
@@ -197,9 +199,9 @@ namespace GamePlay {
 			// 
 			// menuStrip1
 			// 
-			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(2) {
+			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(3) {
 				this->optionsToolStripMenuItem,
-					this->aboutToolStripMenuItem
+					this->aboutToolStripMenuItem, this->pomocToolStripMenuItem
 			});
 			this->menuStrip1->Location = System::Drawing::Point(0, 0);
 			this->menuStrip1->Name = L"menuStrip1";
@@ -251,13 +253,13 @@ namespace GamePlay {
 			// oAplikacijiToolStripMenuItem
 			// 
 			this->oAplikacijiToolStripMenuItem->Name = L"oAplikacijiToolStripMenuItem";
-			this->oAplikacijiToolStripMenuItem->Size = System::Drawing::Size(180, 22);
+			this->oAplikacijiToolStripMenuItem->Size = System::Drawing::Size(134, 22);
 			this->oAplikacijiToolStripMenuItem->Text = L"O aplikaciji";
 			// 
 			// oAutorimaToolStripMenuItem
 			// 
 			this->oAutorimaToolStripMenuItem->Name = L"oAutorimaToolStripMenuItem";
-			this->oAutorimaToolStripMenuItem->Size = System::Drawing::Size(180, 22);
+			this->oAutorimaToolStripMenuItem->Size = System::Drawing::Size(134, 22);
 			this->oAutorimaToolStripMenuItem->Text = L"O autorima";
 			this->oAutorimaToolStripMenuItem->Click += gcnew System::EventHandler(this, &HomeForm::oAutorimaToolStripMenuItem_Click);
 			// 
@@ -443,6 +445,12 @@ namespace GamePlay {
 			this->btnCancelGame4->TabIndex = 24;
 			this->btnCancelGame4->Text = L"      Ponistite";
 			this->btnCancelGame4->UseVisualStyleBackColor = true;
+			// 
+			// pomocToolStripMenuItem
+			// 
+			this->pomocToolStripMenuItem->Name = L"pomocToolStripMenuItem";
+			this->pomocToolStripMenuItem->Size = System::Drawing::Size(57, 20);
+			this->pomocToolStripMenuItem->Text = L"Pomoc";
 			// 
 			// HomeForm
 			// 
