@@ -561,10 +561,10 @@ private: System::Void HomeForm_Load(System::Object^  sender, System::EventArgs^ 
 	btnCancelGame3->Enabled = true;
 	btnCancelGame4->Enabled = true;
 
-	btnUGame1->Enabled = false;
-	btnUGame2->Enabled = false;
-	btnUGame3->Enabled = false;
-	btnUGame4->Enabled = false;
+	btnUGame1->Enabled = true;
+	btnUGame2->Enabled = true;
+	btnUGame3->Enabled = true;
+	btnUGame4->Enabled = true;
 
 	this->lblUsername->Text = L"Zdravo, " + getUsername();
 

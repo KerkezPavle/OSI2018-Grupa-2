@@ -1,5 +1,5 @@
-#include "KeysValidation.h"
 #define _CRT_SECURE_NO_DEPRECATE
+#include "KeysValidation.h"
 #include <fstream>
 #include <string>
 #include <time.h>
@@ -26,7 +26,7 @@ void deaktivirajIgru(int igra)
 	string* niz = nullptr;
 	niz = new string[4];
 	int indeks_niza;
-	ifstream datoteka("igra.txt");
+	ifstream datoteka("assets/data/igra.txt");
 	if (datoteka.is_open())
 	{
 		while (getline(datoteka, s))
@@ -35,13 +35,12 @@ void deaktivirajIgru(int igra)
 		}
 		datoteka.close();
 	}
-	else cout << "ne";
 	for (int j = 0; j < i; j++)
 	{
 		if (niz[j][0] - '0' == igra)niz[j][2] = 50;
 	}
 	ofstream datoteka2;
-	datoteka2.open("igra.txt", fstream::out);
+	datoteka2.open("assets/data/igra.txt", fstream::out);
 	for (int j = 0; j < i; j++)datoteka2 << niz[j] << "\n";
 	datoteka2.close();
 }
@@ -50,7 +49,7 @@ void deaktivirajIgru(int igra)
 
 bool provjeraPonavljanjaKoda(string kod)
 {
-	ifstream datoteka("iskoristeni_kodovi.txt");
+	ifstream datoteka("assets/data/used_codes.txt");
 	if (datoteka.is_open())
 	{
 		string t;
@@ -64,7 +63,7 @@ bool provjeraPonavljanjaKoda(string kod)
 	return true;
 }
 
-bool igra_otkljucana(std::string datoteka, std::string igra, std::string kod, int broj_igre)
+bool otkljucaj_igru(std::string datoteka, std::string igra, std::string kod, int broj_igre)
 {
 	if (broj_igre < 0 || broj_igre>4)return false;
 	if (!provjeraPonavljanjaKoda(kod))return false;
@@ -88,7 +87,6 @@ bool igra_otkljucana(std::string datoteka, std::string igra, std::string kod, in
 		}
 		provjera.close();
 	}
-	cout << "RADI " << radi;
 	if (radi)
 	{
 		if (myfile.is_open())
@@ -99,7 +97,8 @@ bool igra_otkljucana(std::string datoteka, std::string igra, std::string kod, in
 				{
 					pronadjen = true;
 					ofstream datoteka;
-					datoteka.open("iskoristeni_kodovi.txt", fstream::app);
+					datoteka.open
+					("assets/data/used_codes.txt", fstream::app);
 					datoteka << temp << "\n";
 					datoteka.close();
 					break;
@@ -110,19 +109,16 @@ bool igra_otkljucana(std::string datoteka, std::string igra, std::string kod, in
 				(file.open(igra, fstream::app));
 				{
 					t = currentDateTime();
-					file << broj_igre << " " << 1 << " " << t << "\n";
-					cout << "IGRA OTKLJUCANA";
+					file << broj_igre << " " <<1 << " " << t << "\n";
 				}
 				file.close();
 			}
 			else
 			{
-				cout << "INVALID CODE";
 				return false;
 			}
 			myfile.close();
 		}
-		else cout << "DATOTEKA NIJE OTVORENA";
 		return true;
 	}
 	return false;
@@ -130,7 +126,8 @@ bool igra_otkljucana(std::string datoteka, std::string igra, std::string kod, in
 
 bool vratiRazliku(string vrijeme, int razlika)
 {
-	int godina = (vrijeme[4] - '0') * 1000 + (vrijeme[5] - '0') * 100 + (vrijeme[6] - '0') * 10 + vrijeme[7] - '0';
+	int godina = (vrijeme[4] - '0') * 1000 + (vrijeme[5] - '0')
+		* 100 + (vrijeme[6] - '0') * 10 + vrijeme[7] - '0';
 	int mjesec = (vrijeme[9] - '0') * 10 + vrijeme[10] - '0';
 	int dan = (vrijeme[12] - '0') * 10 + vrijeme[13] - '0';
 	int sat = (vrijeme[15] - '0') * 10 + vrijeme[16] - '0';
@@ -140,8 +137,10 @@ bool vratiRazliku(string vrijeme, int razlika)
 	struct tm y2k = { 0 };
 	double seconds;
 	int godina_razlika = godina - 1900;
-	y2k.tm_hour = sat;   y2k.tm_min = minut; y2k.tm_sec = sekund;
-	y2k.tm_year = godina_razlika; y2k.tm_mon = mjesec - 1; y2k.tm_mday = dan;
+	y2k.tm_hour = sat;   y2k.tm_min = minut; y2k.tm_sec =
+		sekund;
+	y2k.tm_year = godina_razlika; y2k.tm_mon = mjesec - 1;
+	y2k.tm_mday = dan;
 	time(&timer);
 	seconds = difftime(timer, mktime(&y2k));
 	if (seconds > razlika)return false;
@@ -152,7 +151,7 @@ bool isActive(std::string datoteka, int igra)
 {
 	int pronadjen = 0;
 	string ss;
-	ifstream datoteka2("igra.txt");
+	ifstream datoteka2("assets/data/igra.txt");
 	if (datoteka2.is_open())
 	{
 		while (getline(datoteka2, ss))
@@ -179,13 +178,11 @@ bool isActive(std::string datoteka, int igra)
 		}
 		myfile.close();
 	}
-	else cout << "NIJE OTVORENA DATOTEKA";
 	if (pronadjen == 0)return false;
 	if (igra == 4)
 	{
 		if ((temp[0] - '0') == 4)return true;
 	}
-	else return false;
 	if (igra == 1)
 	{
 		if (vratiRazliku(temp, SAT))return true;

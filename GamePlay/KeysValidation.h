@@ -1,7 +1,9 @@
 #pragma once
 #include <iostream>
+#define _CRT_SECURE_NO_DEPRECATE
 
-bool igra_otkljucana(std::string, std::string, std::string igra, int);
+bool otkljucaj_igru(std::string, std::string, std::string igra,
+	int);
 
 bool isActive(std::string, int);
 
@@ -12,4 +14,3 @@ bool provjeraPonavljanjaKoda(std::string);
 bool vratiRazliku(std::string, int);
 
 void deaktivirajIgru(int);
-
