@@ -96,6 +96,7 @@ namespace GamePlay {
 	private: System::Windows::Forms::ToolStripMenuItem^  oAplikacijiToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^  oAutorimaToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^  pomocToolStripMenuItem;
+	private: System::Windows::Forms::Label^  label3;
 
 
 
@@ -144,6 +145,7 @@ namespace GamePlay {
 			this->btnCancelGame2 = (gcnew System::Windows::Forms::Button());
 			this->btnCancelGame3 = (gcnew System::Windows::Forms::Button());
 			this->btnCancelGame4 = (gcnew System::Windows::Forms::Button());
+			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->menuStrip1->SuspendLayout();
 			this->SuspendLayout();
 			// 
@@ -457,12 +459,24 @@ namespace GamePlay {
 			this->btnCancelGame4->UseVisualStyleBackColor = true;
 			this->btnCancelGame4->Click += gcnew System::EventHandler(this, &HomeForm::btnCancelGame4_Click);
 			// 
+			// label3
+			// 
+			this->label3->AutoSize = true;
+			this->label3->Font = (gcnew System::Drawing::Font(L"Cambria", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label3->Location = System::Drawing::Point(766, 38);
+			this->label3->Name = L"label3";
+			this->label3->Size = System::Drawing::Size(48, 25);
+			this->label3->TabIndex = 25;
+			this->label3->Text = L"100";
+			// 
 			// HomeForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->AutoScroll = true;
 			this->ClientSize = System::Drawing::Size(838, 399);
+			this->Controls->Add(this->label3);
 			this->Controls->Add(this->btnCancelGame4);
 			this->Controls->Add(this->btnCancelGame3);
 			this->Controls->Add(this->btnCancelGame2);
@@ -498,11 +512,11 @@ namespace GamePlay {
 		}
 #pragma endregion
 	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
-	
+
 	}
 	private: System::Void btnGame1_Click(System::Object^  sender, System::EventArgs^  e) {
 		testFun(1);
-		
+
 	}
 	private: System::Void btnSettings_Click(System::Object^  sender, System::EventArgs^  e) {
 
@@ -563,21 +577,7 @@ private: System::Void saveStatisticsToCSVToolStripMenuItem_Click(System::Object^
 	SaveStatisticsCSV();
 }
 private: System::Void HomeForm_Load(System::Object^  sender, System::EventArgs^  e) {
-	btnStartGame1->Enabled = true;
-	btnStartGame2->Enabled = true;
-	btnStartGame3->Enabled = true;
-	btnStartGame4->Enabled = true;
-
-	btnCancelGame1->Enabled = true;
-	btnCancelGame2->Enabled = true;
-	btnCancelGame3->Enabled = true;
-	btnCancelGame4->Enabled = true;
-
-	btnUGame1->Enabled = true;
-	btnUGame2->Enabled = true;
-	btnUGame3->Enabled = true;
-	btnUGame4->Enabled = true;
-
+	ButtonManagementControll();
 	this->lblUsername->Text = L"Zdravo, " + getUsername();
 
 }
@@ -594,17 +594,67 @@ private: System::Void oAutorimaToolStripMenuItem_Click(System::Object^  sender, 
 	InfoAboutUs frm;
 	frm.ShowDialog();
 }
+
+private: void ButtonManagementControll() {
+	// Game 1
+	std::string s = "assets/data/igra.txt";
+	if (isActive(s, 1)) {
+		btnStartGame1->Enabled = true;
+		btnCancelGame1->Enabled = true;
+		btnUGame1->Enabled = false;
+	}
+	else {
+		btnStartGame1->Enabled = false;
+		btnCancelGame1->Enabled = false;
+		if (true) {
+			btnUGame1->Enabled = false;
+		}
+		else {
+			btnUGame1->Enabled = true;
+		}
+	}
+
+	//if (isActive(s, 3)) {
+	//	btnStartGame1->Enabled = true;
+	//	btnCancelGame1->Enabled = true;
+	//	btnUGame1->Enabled = false;
+	//}
+	//else {
+	//	btnStartGame1->Enabled = false;
+	//	btnCancelGame1->Enabled = false;
+	//	if (true) {
+	//		btnUGame1->Enabled = false;
+	//	}
+	//	else {
+	//		btnUGame1->Enabled = true;
+	//	}
+	//}
+
+
+
+
+}
 private: System::Void btnCancelGame1_Click(System::Object^  sender, System::EventArgs^  e) {
+	if (System::Windows::Forms::MessageBox::Show("Jeste li sigurni?", "Otkazivanje igre 1", System::Windows::Forms::MessageBoxButtons::OKCancel, System::Windows::Forms::MessageBoxIcon::Information) == System::Windows::Forms::DialogResult::OK){
 	deaktivirajIgru(1);
+	ButtonManagementControll();
+}
+	
 }
 private: System::Void btnCancelGame2_Click(System::Object^  sender, System::EventArgs^  e) {
-	deaktivirajIgru(2);
+	if (System::Windows::Forms::MessageBox::Show("Jeste li sigurni?", "Otkazivanje igre 1", System::Windows::Forms::MessageBoxButtons::OKCancel, System::Windows::Forms::MessageBoxIcon::Information) == System::Windows::Forms::DialogResult::OK) {
+		deaktivirajIgru(2);
+	}
 }
 private: System::Void btnCancelGame3_Click(System::Object^  sender, System::EventArgs^  e) {
-	deaktivirajIgru(3);
+	if (System::Windows::Forms::MessageBox::Show("Jeste li sigurni?", "Otkazivanje igre 1", System::Windows::Forms::MessageBoxButtons::OKCancel, System::Windows::Forms::MessageBoxIcon::Information) == System::Windows::Forms::DialogResult::OK) {
+		deaktivirajIgru(3);
+	}
 }
 private: System::Void btnCancelGame4_Click(System::Object^  sender, System::EventArgs^  e) {
-	deaktivirajIgru(4);
+	if (System::Windows::Forms::MessageBox::Show("Jeste li sigurni?", "Otkazivanje igre 1", System::Windows::Forms::MessageBoxButtons::OKCancel, System::Windows::Forms::MessageBoxIcon::Information) == System::Windows::Forms::DialogResult::OK) {
+		deaktivirajIgru(4);
+	}
 }
 };
 }
