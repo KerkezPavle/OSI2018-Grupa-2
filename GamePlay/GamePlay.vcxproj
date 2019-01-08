@@ -138,6 +138,7 @@
     <ClCompile Include="HomeForm.cpp" />
     <ClCompile Include="InfoAboutApp.cpp" />
     <ClCompile Include="InfoAboutUs.cpp" />
+    <ClCompile Include="KeysValidation.cpp" />
     <ClCompile Include="ShowStatistics.cpp" />
     <ClCompile Include="Test.cpp" />
     <ClCompile Include="tinyxml2.cpp" />
@@ -161,6 +162,7 @@
     <ClInclude Include="InfoAboutUs.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="KeysValidation.h" />
     <ClInclude Include="loto.h" />
     <ClInclude Include="PointsManipulation.h" />
     <ClInclude Include="ShowStatistics.h">

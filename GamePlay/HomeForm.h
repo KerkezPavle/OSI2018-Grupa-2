@@ -8,6 +8,7 @@
 #include <string>
 #include <cstdlib>
 #include "InfoAboutUs.h"
+#include "KeysValidation.h"
 
 
 namespace GamePlay {

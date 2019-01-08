@@ -1,0 +1,1 @@
+Otvaras ih isto, samo dodas ispred imena "assets/data/imeDatoteke.txt" ? da
