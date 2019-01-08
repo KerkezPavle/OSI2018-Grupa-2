@@ -128,6 +128,7 @@ namespace GamePlay {
 			this->aboutToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->oAplikacijiToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->oAutorimaToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->pomocToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->lblKviz = (gcnew System::Windows::Forms::Label());
 			this->lblbingo = (gcnew System::Windows::Forms::Label());
 			this->label5 = (gcnew System::Windows::Forms::Label());
@@ -143,7 +144,6 @@ namespace GamePlay {
 			this->btnCancelGame2 = (gcnew System::Windows::Forms::Button());
 			this->btnCancelGame3 = (gcnew System::Windows::Forms::Button());
 			this->btnCancelGame4 = (gcnew System::Windows::Forms::Button());
-			this->pomocToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->menuStrip1->SuspendLayout();
 			this->SuspendLayout();
 			// 
@@ -263,6 +263,12 @@ namespace GamePlay {
 			this->oAutorimaToolStripMenuItem->Size = System::Drawing::Size(134, 22);
 			this->oAutorimaToolStripMenuItem->Text = L"O autorima";
 			this->oAutorimaToolStripMenuItem->Click += gcnew System::EventHandler(this, &HomeForm::oAutorimaToolStripMenuItem_Click);
+			// 
+			// pomocToolStripMenuItem
+			// 
+			this->pomocToolStripMenuItem->Name = L"pomocToolStripMenuItem";
+			this->pomocToolStripMenuItem->Size = System::Drawing::Size(57, 20);
+			this->pomocToolStripMenuItem->Text = L"Pomoc";
 			// 
 			// lblKviz
 			// 
@@ -410,6 +416,7 @@ namespace GamePlay {
 			this->btnCancelGame1->TabIndex = 21;
 			this->btnCancelGame1->Text = L"      Ponistite";
 			this->btnCancelGame1->UseVisualStyleBackColor = true;
+			this->btnCancelGame1->Click += gcnew System::EventHandler(this, &HomeForm::btnCancelGame1_Click);
 			// 
 			// btnCancelGame2
 			// 
@@ -422,6 +429,7 @@ namespace GamePlay {
 			this->btnCancelGame2->TabIndex = 22;
 			this->btnCancelGame2->Text = L"      Ponistite";
 			this->btnCancelGame2->UseVisualStyleBackColor = true;
+			this->btnCancelGame2->Click += gcnew System::EventHandler(this, &HomeForm::btnCancelGame2_Click);
 			// 
 			// btnCancelGame3
 			// 
@@ -434,6 +442,7 @@ namespace GamePlay {
 			this->btnCancelGame3->TabIndex = 23;
 			this->btnCancelGame3->Text = L"      Ponistite";
 			this->btnCancelGame3->UseVisualStyleBackColor = true;
+			this->btnCancelGame3->Click += gcnew System::EventHandler(this, &HomeForm::btnCancelGame3_Click);
 			// 
 			// btnCancelGame4
 			// 
@@ -446,12 +455,7 @@ namespace GamePlay {
 			this->btnCancelGame4->TabIndex = 24;
 			this->btnCancelGame4->Text = L"      Ponistite";
 			this->btnCancelGame4->UseVisualStyleBackColor = true;
-			// 
-			// pomocToolStripMenuItem
-			// 
-			this->pomocToolStripMenuItem->Name = L"pomocToolStripMenuItem";
-			this->pomocToolStripMenuItem->Size = System::Drawing::Size(57, 20);
-			this->pomocToolStripMenuItem->Text = L"Pomoc";
+			this->btnCancelGame4->Click += gcnew System::EventHandler(this, &HomeForm::btnCancelGame4_Click);
 			// 
 			// HomeForm
 			// 
@@ -589,6 +593,18 @@ private: System::Void izlazToolStripMenuItem_Click(System::Object^  sender, Syst
 private: System::Void oAutorimaToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
 	InfoAboutUs frm;
 	frm.ShowDialog();
+}
+private: System::Void btnCancelGame1_Click(System::Object^  sender, System::EventArgs^  e) {
+	deaktivirajIgru(1);
+}
+private: System::Void btnCancelGame2_Click(System::Object^  sender, System::EventArgs^  e) {
+	deaktivirajIgru(2);
+}
+private: System::Void btnCancelGame3_Click(System::Object^  sender, System::EventArgs^  e) {
+	deaktivirajIgru(3);
+}
+private: System::Void btnCancelGame4_Click(System::Object^  sender, System::EventArgs^  e) {
+	deaktivirajIgru(4);
 }
 };
 }
