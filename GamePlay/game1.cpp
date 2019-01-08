@@ -131,7 +131,7 @@ int game1(int brb,int percentage)
 				{							//onda je "pogodio" broj
 					brb = brb + 100 / br_pokusaja; //povecava se br bodova
 
-					std::cout << std::endl << "Pogodili ste trazeni broj i dobili Namjesteno" << (100 / br_pokusaja) << " bodova" << std::endl;
+					std::cout << std::endl << "Pogodili ste trazeni broj i dobili " << (100 / br_pokusaja) << " bodova" << std::endl;
 					
 					//IZLAZ IZ IGRE
 					insertDataIntoStats(1,brb);
