@@ -150,21 +150,6 @@ bool vratiRazliku(string vrijeme, int razlika)
 bool isActive(std::string datoteka, int igra)
 {
 	int pronadjen = 0;
-	string ss;
-	ifstream datoteka2("assets/data/igra.txt");
-	if (datoteka2.is_open())
-	{
-		while (getline(datoteka2, ss))
-		{
-			if ((ss[0] - '0') == igra)
-			{
-				if (ss[2] == 50)return false;
-			}
-		}
-		datoteka2.close();
-	}
-	else return false;
-
 	string pomocni_niz;
 	string temp;
 	ifstream myfile(datoteka);
@@ -172,13 +157,16 @@ bool isActive(std::string datoteka, int igra)
 	{
 		while (getline(myfile, pomocni_niz))
 		{
-			if (((pomocni_niz[0] - '0') - igra) == 0)
+			if ((pomocni_niz[0] - '0') == igra)
+			{
 				temp = pomocni_niz;
-			pronadjen = 1;
+				pronadjen = 1;
+			}
 		}
 		myfile.close();
 	}
 	if (pronadjen == 0)return false;
+	if ((temp[2] - '0') == 2)return false;
 	if (igra == 4)
 	{
 		if ((temp[0] - '0') == 4)return true;
@@ -222,7 +210,7 @@ bool isDeactivated(int igra)
 			{
 				datoteka.close();
 				delete[]niz;
-				return true;
+				 return true;
 			}
 		}
 	}
