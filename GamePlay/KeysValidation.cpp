@@ -198,3 +198,35 @@ bool isActive(std::string datoteka, int igra)
 	}
 	return false;
 }
+
+bool isDeactivated(int igra)
+{
+	ifstream datoteka("assets/data/igra.txt");
+	string* niz = nullptr;
+	niz = new string[4];
+	string s;
+	int i = 0;
+	if (datoteka.is_open())
+	{
+		while (getline(datoteka, s))
+		{
+			niz[i++] = s;
+		}
+		datoteka.close();
+	}
+	for (int j = 0; j < i; j++)
+	{
+		if (niz[j][0] - '0' == igra)
+		{
+			if (niz[j][2] - '0' == 2)
+			{
+				datoteka.close();
+				delete[]niz;
+				return true;
+			}
+		}
+	}
+	datoteka.close();
+	delete[]niz;
+	return false;
+}
