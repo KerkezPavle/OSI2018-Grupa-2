@@ -613,26 +613,6 @@ private: void ButtonManagementControll() {
 			btnUGame1->Enabled = true;
 		}
 	}
-
-	//if (isActive(s, 3)) {
-	//	btnStartGame1->Enabled = true;
-	//	btnCancelGame1->Enabled = true;
-	//	btnUGame1->Enabled = false;
-	//}
-	//else {
-	//	btnStartGame1->Enabled = false;
-	//	btnCancelGame1->Enabled = false;
-	//	if (true) {
-	//		btnUGame1->Enabled = false;
-	//	}
-	//	else {
-	//		btnUGame1->Enabled = true;
-	//	}
-	//}
-
-
-
-
 }
 private: System::Void btnCancelGame1_Click(System::Object^  sender, System::EventArgs^  e) {
 	if (System::Windows::Forms::MessageBox::Show("Jeste li sigurni?", "Otkazivanje igre 1", System::Windows::Forms::MessageBoxButtons::OKCancel, System::Windows::Forms::MessageBoxIcon::Information) == System::Windows::Forms::DialogResult::OK){
