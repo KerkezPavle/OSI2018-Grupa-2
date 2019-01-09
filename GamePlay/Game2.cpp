@@ -7,7 +7,7 @@
 #include"Game4.h"
 
 constexpr int num_of_Q = 5;
-const int num_of_AQ = 13;
+const int num_of_AQ = 15;
 const int width = 45;
 int Question::counter = 0;
 
@@ -88,7 +88,7 @@ void Question::draw(int p = 0) {
 
 int Question::answerIt() {
 	char ans; int index;
-	std::cout << "Odgovor je na: "; std::cin >> ans;
+	std::cout << "Odgovor je pod: "; std::cin >> ans;
 	index = (ans < 'Z') ? ans - 'A' : ans - 'a';
 	if ((index > 2) || (index < 0)) { std::cout << "Pokusaj ponovo:" << std::endl; return answerIt(); }
 	if (queNum == 0)return index;
