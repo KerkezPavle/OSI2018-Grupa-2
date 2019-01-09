@@ -148,10 +148,10 @@ namespace GamePlay {
 		}
 #pragma endregion
 	private: System::Void linkLabelCSV_LinkClicked(System::Object^  sender, System::Windows::Forms::LinkLabelLinkClickedEventArgs^  e) {
-		ShellExecute(NULL, NULL, L"https://www.hesa.ac.uk/support/user-guides/import-csv?fbclid=IwAR1VWmfvpfIZ6PE1mV0oaeoQpXebCPKHeT4kg8T_LZffX_XHxMGcunEck30", NULL, NULL, SW_RESTORE);
+		//ShellExecute(NULL, NULL, L"https://www.hesa.ac.uk/support/user-guides/import-csv?fbclid=IwAR1VWmfvpfIZ6PE1mV0oaeoQpXebCPKHeT4kg8T_LZffX_XHxMGcunEck30", NULL, NULL, SW_RESTORE);
 	}
 	private: System::Void linkLabel1_LinkClicked(System::Object^  sender, System::Windows::Forms::LinkLabelLinkClickedEventArgs^  e) {
-		ShellExecute(NULL, NULL, L"mailto: kerkezpavle@yahoo.com", NULL, NULL, SW_RESTORE);
+		//ShellExecute(NULL, NULL, L"mailto: kerkezpavle@yahoo.com", NULL, NULL, SW_RESTORE);
 	}
 };
 }
