@@ -9,7 +9,7 @@
 int ucitaj_br(int a, int b)
 {
 	int n;
-	std::cout << "Unesite broj iz opsega" << a << "-" << b << ":" << std::endl;
+	std::cout << "Unesite broj iz opsega" << b << "-" << a << ":" << std::endl;
 	do
 	{
 		std::cin >> n;
