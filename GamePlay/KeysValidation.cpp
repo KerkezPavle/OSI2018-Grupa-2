@@ -218,3 +218,44 @@ bool isDeactivated(int igra)
 	delete[]niz;
 	return false;
 }
+
+
+bool isExpired(int igra)
+{
+	bool pronadjen = false;
+	string pomocni_niz;
+	string temp;
+	ifstream myfile("assets/data/igra.txt");
+	if (myfile.is_open())
+	{
+		while (getline(myfile, pomocni_niz))
+		{
+			if ((pomocni_niz[0] - '0') == igra)
+				temp = pomocni_niz;
+			pronadjen = true;
+		}
+		myfile.close();
+	}
+	if (!pronadjen)return false;
+	if (igra == 4)
+	{
+		return false;
+	}
+	if (igra == 1)
+	{
+		if (vratiRazliku(temp, SAT))return false;
+		else return true;
+	}
+	if (igra == 2)
+	{
+
+		if (vratiRazliku(temp, DAN))return false;
+		else return true;
+	}
+	if (igra == 3)
+	{
+		if (vratiRazliku(temp, SEDAM))return false;
+		else return true;
+	}
+	return false;
+}
