@@ -136,7 +136,6 @@
     <ClCompile Include="Game2.cpp" />
     <ClCompile Include="Game4.cpp" />
     <ClCompile Include="HomeForm.cpp" />
-    <ClCompile Include="InfoAboutApp.cpp" />
     <ClCompile Include="InfoAboutUs.cpp" />
     <ClCompile Include="KeysValidation.cpp" />
     <ClCompile Include="ShowStatistics.cpp" />
@@ -154,9 +153,6 @@
     <ClInclude Include="Game2.h" />
     <ClInclude Include="Game4.h" />
     <ClInclude Include="HomeForm.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
-    <ClInclude Include="InfoAboutApp.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="InfoAboutUs.h">
@@ -181,9 +177,6 @@
     <EmbeddedResource Include="HomeForm.resx">
       <DependentUpon>HomeForm.h</DependentUpon>
       <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="InfoAboutApp.resx">
-      <DependentUpon>InfoAboutApp.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InfoAboutUs.resx">
       <DependentUpon>InfoAboutUs.h</DependentUpon>

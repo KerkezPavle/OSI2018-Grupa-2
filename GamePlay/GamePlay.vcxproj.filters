@@ -48,9 +48,6 @@
     <ClCompile Include="InfoAboutUs.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="InfoAboutApp.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="KeysValidation.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -93,9 +90,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="InfoAboutUs.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="InfoAboutApp.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="KeysValidation.h">

@@ -41,6 +41,8 @@ namespace GamePlay {
 	private: System::Windows::Forms::Label^  label3;
 	private: System::Windows::Forms::Label^  label4;
 	private: System::Windows::Forms::PictureBox^  pictureBox1;
+	private: System::Windows::Forms::Label^  label5;
+
 	protected:
 
 	private:
@@ -56,30 +58,31 @@ namespace GamePlay {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			System::Windows::Forms::ListViewItem^  listViewItem1 = (gcnew System::Windows::Forms::ListViewItem(gcnew cli::array< System::String^  >(1) { L"Dusko Djudjic" },
+			System::Windows::Forms::ListViewItem^  listViewItem25 = (gcnew System::Windows::Forms::ListViewItem(gcnew cli::array< System::String^  >(1) { L"Dusko Djudjic" },
 				-1, System::Drawing::Color::Empty, System::Drawing::Color::Empty, (gcnew System::Drawing::Font(L"Cambria", 12))));
-			System::Windows::Forms::ListViewItem^  listViewItem2 = (gcnew System::Windows::Forms::ListViewItem(gcnew cli::array< System::String^  >(1) { L"Zeljko Illic" },
+			System::Windows::Forms::ListViewItem^  listViewItem26 = (gcnew System::Windows::Forms::ListViewItem(gcnew cli::array< System::String^  >(1) { L"Zeljko Illic" },
 				-1, System::Drawing::Color::Empty, System::Drawing::Color::Empty, (gcnew System::Drawing::Font(L"Cambria", 12))));
-			System::Windows::Forms::ListViewItem^  listViewItem3 = (gcnew System::Windows::Forms::ListViewItem(gcnew cli::array< System::String^  >(1) { L"Samuel Karic" },
+			System::Windows::Forms::ListViewItem^  listViewItem27 = (gcnew System::Windows::Forms::ListViewItem(gcnew cli::array< System::String^  >(1) { L"Samuel Karic" },
 				-1, System::Drawing::Color::Empty, System::Drawing::Color::Empty, (gcnew System::Drawing::Font(L"Cambria", 12))));
-			System::Windows::Forms::ListViewItem^  listViewItem4 = (gcnew System::Windows::Forms::ListViewItem(gcnew cli::array< System::String^  >(1) { L"Pavle Kerkez" },
+			System::Windows::Forms::ListViewItem^  listViewItem28 = (gcnew System::Windows::Forms::ListViewItem(gcnew cli::array< System::String^  >(1) { L"Pavle Kerkez" },
 				-1, System::Drawing::Color::Empty, System::Drawing::Color::Empty, (gcnew System::Drawing::Font(L"Cambria", 12))));
-			System::Windows::Forms::ListViewItem^  listViewItem5 = (gcnew System::Windows::Forms::ListViewItem(gcnew cli::array< System::String^  >(1) { L"Marija Kovac" },
+			System::Windows::Forms::ListViewItem^  listViewItem29 = (gcnew System::Windows::Forms::ListViewItem(gcnew cli::array< System::String^  >(1) { L"Marija Kovac" },
 				-1, System::Drawing::Color::Empty, System::Drawing::Color::Empty, (gcnew System::Drawing::Font(L"Cambria", 12))));
-			System::Windows::Forms::ListViewItem^  listViewItem6 = (gcnew System::Windows::Forms::ListViewItem(gcnew cli::array< System::String^  >(1) { L"Zelimir Maletic" },
+			System::Windows::Forms::ListViewItem^  listViewItem30 = (gcnew System::Windows::Forms::ListViewItem(gcnew cli::array< System::String^  >(1) { L"Zelimir Maletic" },
 				-1, System::Drawing::Color::Empty, System::Drawing::Color::Empty, (gcnew System::Drawing::Font(L"Cambria", 12))));
-			System::Windows::Forms::ListViewItem^  listViewItem7 = (gcnew System::Windows::Forms::ListViewItem(gcnew cli::array< System::String^  >(1) { L"Ratko Rajkovic" },
+			System::Windows::Forms::ListViewItem^  listViewItem31 = (gcnew System::Windows::Forms::ListViewItem(gcnew cli::array< System::String^  >(1) { L"Ratko Rajkovic" },
 				-1, System::Drawing::Color::Empty, System::Drawing::Color::Empty, (gcnew System::Drawing::Font(L"Cambria", 12))));
-			System::Windows::Forms::ListViewItem^  listViewItem8 = (gcnew System::Windows::Forms::ListViewItem(gcnew cli::array< System::String^  >(1) { L"Ognjen Stefanovic" },
+			System::Windows::Forms::ListViewItem^  listViewItem32 = (gcnew System::Windows::Forms::ListViewItem(gcnew cli::array< System::String^  >(1) { L"Ognjen Stefanovic" },
 				-1, System::Drawing::Color::Empty, System::Drawing::Color::Empty, (gcnew System::Drawing::Font(L"Cambria", 12))));
 			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(InfoAboutUs::typeid));
 			this->listView1 = (gcnew System::Windows::Forms::ListView());
-			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->columnHeader1 = (gcnew System::Windows::Forms::ColumnHeader());
+			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
+			this->label5 = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -87,8 +90,8 @@ namespace GamePlay {
 			// 
 			this->listView1->Columns->AddRange(gcnew cli::array< System::Windows::Forms::ColumnHeader^  >(1) { this->columnHeader1 });
 			this->listView1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ListViewItem^  >(8) {
-				listViewItem1, listViewItem2,
-					listViewItem3, listViewItem4, listViewItem5, listViewItem6, listViewItem7, listViewItem8
+				listViewItem25, listViewItem26,
+					listViewItem27, listViewItem28, listViewItem29, listViewItem30, listViewItem31, listViewItem32
 			});
 			this->listView1->Location = System::Drawing::Point(12, 130);
 			this->listView1->Name = L"listView1";
@@ -100,38 +103,44 @@ namespace GamePlay {
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Cambria", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label1->Font = (gcnew System::Drawing::Font(L"Cambria", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(13, 13);
+			this->label1->Location = System::Drawing::Point(12, 12);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(144, 32);
-			this->label1->TabIndex = 1;
-			this->label1->Text = L"O autorima";
+			this->label1->Size = System::Drawing::Size(249, 28);
+			this->label1->TabIndex = 9;
+			this->label1->Text = L"Informacije o aplikaciji";
 			// 
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(16, 100);
+			this->label2->Font = (gcnew System::Drawing::Font(L"Cambria", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label2->Location = System::Drawing::Point(15, 107);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(133, 13);
+			this->label2->Size = System::Drawing::Size(45, 15);
 			this->label2->TabIndex = 2;
-			this->label2->Text = L"Ovu aplikaciju su napravili:";
+			this->label2->Text = L"Autori:";
 			// 
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(19, 49);
+			this->label3->Font = (gcnew System::Drawing::Font(L"Cambria", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label3->Location = System::Drawing::Point(15, 54);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(202, 13);
+			this->label3->Size = System::Drawing::Size(239, 15);
 			this->label3->TabIndex = 3;
-			this->label3->Text = L"Grupa 2 - Osnovi softwerskog inzinjerstva";
+			this->label3->Text = L"Grupa 2 - Osnovi softverskog inzinjerstva";
 			// 
 			// label4
 			// 
 			this->label4->AutoSize = true;
-			this->label4->Location = System::Drawing::Point(16, 73);
+			this->label4->Font = (gcnew System::Drawing::Font(L"Cambria", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label4->Location = System::Drawing::Point(15, 73);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(101, 13);
+			this->label4->Size = System::Drawing::Size(115, 15);
 			this->label4->TabIndex = 4;
 			this->label4->Text = L"2018 / 2019 godina";
 			// 
@@ -145,18 +154,32 @@ namespace GamePlay {
 			this->pictureBox1->TabIndex = 5;
 			this->pictureBox1->TabStop = false;
 			// 
+			// label5
+			// 
+			this->label5->AutoSize = true;
+			this->label5->ForeColor = System::Drawing::Color::Silver;
+			this->label5->Location = System::Drawing::Point(15, 30);
+			this->label5->Name = L"label5";
+			this->label5->Size = System::Drawing::Size(241, 13);
+			this->label5->TabIndex = 6;
+			this->label5->Text = L"_______________________________________";
+			this->label5->Click += gcnew System::EventHandler(this, &InfoAboutUs::label5_Click);
+			// 
 			// InfoAboutUs
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(532, 261);
+			this->Controls->Add(this->label1);
+			this->Controls->Add(this->label5);
 			this->Controls->Add(this->pictureBox1);
 			this->Controls->Add(this->label4);
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->label2);
-			this->Controls->Add(this->label1);
 			this->Controls->Add(this->listView1);
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Name = L"InfoAboutUs";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterParent;
 			this->Text = L"O autorima";
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->ResumeLayout(false);
@@ -164,5 +187,7 @@ namespace GamePlay {
 
 		}
 #pragma endregion
-	};
+	private: System::Void label5_Click(System::Object^  sender, System::EventArgs^  e) {
+	}
+};
 }

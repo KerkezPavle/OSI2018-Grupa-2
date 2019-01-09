@@ -52,7 +52,7 @@ namespace GamePlay {
 	protected:
 
 	protected:
-	private: System::Windows::Forms::Label^  label1;
+
 
 	private: System::Windows::Forms::Label^  label2;
 	private: System::Windows::Forms::Button^  btnStartGame1;
@@ -93,10 +93,13 @@ namespace GamePlay {
 	private: System::Windows::Forms::Button^  btnCancelGame3;
 	private: System::Windows::Forms::Button^  btnCancelGame4;
 	private: System::Windows::Forms::ToolStripMenuItem^  izlazToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^  oAplikacijiToolStripMenuItem;
+
 	private: System::Windows::Forms::ToolStripMenuItem^  oAutorimaToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^  pomocToolStripMenuItem;
+
 	private: System::Windows::Forms::Label^  lblScore;
+	private: System::Windows::Forms::ToolStripMenuItem^  pomocToolStripMenuItem;
+	private: System::Windows::Forms::StatusStrip^  statusStrip1;
+	private: System::Windows::Forms::ToolStripStatusLabel^  toolStripStatusLabel1;
 
 
 
@@ -118,7 +121,6 @@ namespace GamePlay {
 		void InitializeComponent(void)
 		{
 			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(HomeForm::typeid));
-			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->btnStartGame1 = (gcnew System::Windows::Forms::Button());
 			this->btnUGame1 = (gcnew System::Windows::Forms::Button());
@@ -128,7 +130,6 @@ namespace GamePlay {
 			this->clearUsernameToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->izlazToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->aboutToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->oAplikacijiToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->oAutorimaToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->pomocToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->lblKviz = (gcnew System::Windows::Forms::Label());
@@ -147,21 +148,11 @@ namespace GamePlay {
 			this->btnCancelGame3 = (gcnew System::Windows::Forms::Button());
 			this->btnCancelGame4 = (gcnew System::Windows::Forms::Button());
 			this->lblScore = (gcnew System::Windows::Forms::Label());
+			this->statusStrip1 = (gcnew System::Windows::Forms::StatusStrip());
+			this->toolStripStatusLabel1 = (gcnew System::Windows::Forms::ToolStripStatusLabel());
 			this->menuStrip1->SuspendLayout();
+			this->statusStrip1->SuspendLayout();
 			this->SuspendLayout();
-			// 
-			// label1
-			// 
-			this->label1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
-				| System::Windows::Forms::AnchorStyles::Right));
-			this->label1->AutoSize = true;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Cambria", 21.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(12, 38);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(148, 34);
-			this->label1->TabIndex = 1;
-			this->label1->Text = L"GamePlay";
 			// 
 			// label2
 			// 
@@ -203,9 +194,9 @@ namespace GamePlay {
 			// 
 			// menuStrip1
 			// 
-			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(3) {
+			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(2) {
 				this->optionsToolStripMenuItem,
-					this->aboutToolStripMenuItem, this->pomocToolStripMenuItem
+					this->aboutToolStripMenuItem
 			});
 			this->menuStrip1->Location = System::Drawing::Point(0, 0);
 			this->menuStrip1->Name = L"menuStrip1";
@@ -247,30 +238,24 @@ namespace GamePlay {
 			// aboutToolStripMenuItem
 			// 
 			this->aboutToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(2) {
-				this->oAplikacijiToolStripMenuItem,
-					this->oAutorimaToolStripMenuItem
+				this->oAutorimaToolStripMenuItem,
+					this->pomocToolStripMenuItem
 			});
 			this->aboutToolStripMenuItem->Name = L"aboutToolStripMenuItem";
 			this->aboutToolStripMenuItem->Size = System::Drawing::Size(79, 20);
 			this->aboutToolStripMenuItem->Text = L"Informacije";
 			// 
-			// oAplikacijiToolStripMenuItem
-			// 
-			this->oAplikacijiToolStripMenuItem->Name = L"oAplikacijiToolStripMenuItem";
-			this->oAplikacijiToolStripMenuItem->Size = System::Drawing::Size(134, 22);
-			this->oAplikacijiToolStripMenuItem->Text = L"O aplikaciji";
-			// 
 			// oAutorimaToolStripMenuItem
 			// 
 			this->oAutorimaToolStripMenuItem->Name = L"oAutorimaToolStripMenuItem";
-			this->oAutorimaToolStripMenuItem->Size = System::Drawing::Size(134, 22);
-			this->oAutorimaToolStripMenuItem->Text = L"O autorima";
+			this->oAutorimaToolStripMenuItem->Size = System::Drawing::Size(132, 22);
+			this->oAutorimaToolStripMenuItem->Text = L"O aplikaciji";
 			this->oAutorimaToolStripMenuItem->Click += gcnew System::EventHandler(this, &HomeForm::oAutorimaToolStripMenuItem_Click);
 			// 
 			// pomocToolStripMenuItem
 			// 
 			this->pomocToolStripMenuItem->Name = L"pomocToolStripMenuItem";
-			this->pomocToolStripMenuItem->Size = System::Drawing::Size(57, 20);
+			this->pomocToolStripMenuItem->Size = System::Drawing::Size(132, 22);
 			this->pomocToolStripMenuItem->Text = L"Pomoc";
 			// 
 			// lblKviz
@@ -399,7 +384,7 @@ namespace GamePlay {
 			// 
 			this->btnStats->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnStats.Image")));
 			this->btnStats->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->btnStats->Location = System::Drawing::Point(632, 330);
+			this->btnStats->Location = System::Drawing::Point(632, 310);
 			this->btnStats->Name = L"btnStats";
 			this->btnStats->Padding = System::Windows::Forms::Padding(5, 0, 0, 0);
 			this->btnStats->Size = System::Drawing::Size(181, 46);
@@ -471,12 +456,29 @@ namespace GamePlay {
 			this->lblScore->TabIndex = 25;
 			this->lblScore->Text = L"100";
 			// 
+			// statusStrip1
+			// 
+			this->statusStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->toolStripStatusLabel1 });
+			this->statusStrip1->Location = System::Drawing::Point(0, 377);
+			this->statusStrip1->Name = L"statusStrip1";
+			this->statusStrip1->Size = System::Drawing::Size(838, 22);
+			this->statusStrip1->TabIndex = 26;
+			this->statusStrip1->Text = L"statusStrip1";
+			// 
+			// toolStripStatusLabel1
+			// 
+			this->toolStripStatusLabel1->Name = L"toolStripStatusLabel1";
+			this->toolStripStatusLabel1->Padding = System::Windows::Forms::Padding(10, 0, 0, 0);
+			this->toolStripStatusLabel1->Size = System::Drawing::Size(131, 17);
+			this->toolStripStatusLabel1->Text = L"ETF Banja Luka - 2019";
+			// 
 			// HomeForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->AutoScroll = true;
 			this->ClientSize = System::Drawing::Size(838, 399);
+			this->Controls->Add(this->statusStrip1);
 			this->Controls->Add(this->lblScore);
 			this->Controls->Add(this->btnCancelGame4);
 			this->Controls->Add(this->btnCancelGame3);
@@ -496,7 +498,6 @@ namespace GamePlay {
 			this->Controls->Add(this->btnUGame1);
 			this->Controls->Add(this->btnStartGame1);
 			this->Controls->Add(this->label2);
-			this->Controls->Add(this->label1);
 			this->Controls->Add(this->menuStrip1);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
 			this->MainMenuStrip = this->menuStrip1;
@@ -507,6 +508,8 @@ namespace GamePlay {
 			this->Load += gcnew System::EventHandler(this, &HomeForm::HomeForm_Load);
 			this->menuStrip1->ResumeLayout(false);
 			this->menuStrip1->PerformLayout();
+			this->statusStrip1->ResumeLayout(false);
+			this->statusStrip1->PerformLayout();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
