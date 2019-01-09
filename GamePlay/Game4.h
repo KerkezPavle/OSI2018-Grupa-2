@@ -1,5 +1,6 @@
 #pragma once
 #pragma once
+#pragma once
 #define STANDARDSIZE 8
 #include <Windows.h>
 
@@ -23,8 +24,8 @@ public:
 	void place_mines(int, int, int);
 	bool are_neighbours(int, int, int, int);// provjerava da li su unesena mjesta za jedinice
 
-	//susjedna i ako jesu stavlja minu na potrebno mjesto da bi se odrzao logicki poredak na tabeli
-
+											//susjedna i ako jesu stavlja minu na potrebno mjesto da bi se odrzao logicki poredak na tabeli
+	bool count_matches_mines(int, int); // provjerava da li brojac za mine odgovara stvarnom broju mina oko polja
 
 
 private:
