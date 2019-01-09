@@ -128,5 +128,6 @@ int game2(int points, double percentage) {
 		ClearScreen();
 	}
 	if (offset == 100)offset += 50;
+	std::cout << "Ukupno osvojeni poeni:" << offset << std::endl;
 	return points + offset;
 }

@@ -88,7 +88,7 @@ int lotoGame(int currentNUmberOfPoints, double inputPercentage)
     std::cout<<"-------------------------------------------------------------"<<std::endl;
     std::cout<<"VAS REZULTAT: "<< userScore << std::endl;
     std::cout<<"-------------------------------------------------------------"<<std::endl;
-    std::cout<<"UKUPAN BROJ BODOVA: "<< userScore + currentNUmberOfPoints << std::endl;
+    std::cout<<"UKUPAN BROJ BODOVA: "<< currentNUmberOfPoints + userScore - FACTOR << std::endl;
     std::cout<<"-------------------------------------------------------------"<<std::endl;
     std::cout<<"|                           KRAJ                            |"<<std::endl;
     std::cout<<"-------------------------------------------------------------"<<std::endl;
