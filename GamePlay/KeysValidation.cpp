@@ -236,8 +236,10 @@ bool isExpired(int igra)
 		while (getline(myfile, pomocni_niz))
 		{
 			if ((pomocni_niz[0] - '0') == igra)
+			{
 				temp = pomocni_niz;
-			pronadjen = true;
+				pronadjen = true;
+			}
 		}
 		myfile.close();
 	}
