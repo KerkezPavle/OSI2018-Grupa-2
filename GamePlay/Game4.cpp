@@ -4,6 +4,7 @@
 #include <random>
 #include <iomanip>
 #include <string>
+#include <ctime>
 
 
 void ClearScreen()
@@ -59,7 +60,7 @@ Mineboard::Mineboard(int width, int height) :width(width), height(height)
 	{
 		do // provjera da li vec na toj plocici (kvadraticu) postoji mina
 		{
-
+			srand(time(0));
 			x = rand() % width;
 			y = rand() % height;
 
@@ -413,10 +414,23 @@ int Game4(int points, int percentToLose)
 
 				do
 				{
-					std::cout << "Unesite red i kolonu: ";
-
-					std::cin >> row >> col;
-
+					try {
+						std::string input;
+						std::cout << "Unesite red:";
+						std::getline(std::cin, input);
+						row = std::stoi(input);
+						std::cout << "Unesite kolonu:";
+						std::getline(std::cin, input);
+						col = std::stoi(input);
+					}
+					catch (std::invalid_argument ex) {
+						std::cout << "Na ulazu mora biti broj! Pokusajte ponovo.\n";
+						row = col = -1;
+					}
+					catch (std::out_of_range ex) {
+						std::cout << "Na ulazu mora biti broj! Pokusajte ponovo.\n";
+						row = col = -1;
+					}
 				} while (!Mineboard::index_in_range(row, col, board.get_width(), board.get_height()) || board.square_at(row, col).is_revealed());
 
 
@@ -438,7 +452,7 @@ int Game4(int points, int percentToLose)
 			else
 			{                                                          // izracunavanje broja cistih polja
 				std::cout << "Ups! Stali ste na minu. Izgubili ste " << board.how_many_left() - (STANDARDSIZE*STANDARDSIZE) / 6 << " poena. Vise srece drugi put! \n";
-				return points - (board.how_many_left() - (STANDARDSIZE*STANDARDSIZE) / 6); // od trenutnog broja poena oduzima se broj preostalih cisth polja
+				return points + (board.how_many_left() - (STANDARDSIZE*STANDARDSIZE) / 6); // od trenutnog broja poena oduzima se broj preostalih cisth polja
 			}
 
 
@@ -461,19 +475,29 @@ int Game4(int points, int percentToLose)
 
 			do
 			{
-				std::cout << "Unesite red i kolonu: ";
-
-				std::cin >> row >> col;
+				try {
+					std::string input;
+					std::cout << "Unesite red:";
+					std::getline(std::cin, input);
+					row = std::stoi(input);
+					std::cout << "Unesite kolonu:";
+					std::getline(std::cin, input);
+					col = std::stoi(input);
+				}
+				catch (std::invalid_argument ex) {
+					std::cout << "Na ulazu mora biti broj! Pokusajte ponovo.\n";
+					row = col = -1;
+				}
+				catch (std::out_of_range ex) {
+					std::cout << "Na ulazu mora biti broj! Pokusajte ponovo.\n";
+					row = col = -1;
+				}
 
 			} while (!Mineboard::index_in_range(row, col, board.get_width(), board.get_height()) || board.square_at(row, col).is_revealed());
 			board.squaresLeft--;
 
 			if (pointsToLose < 7)
-			{
-
 				board.square_at(row, col).set_close_mines(width*height - pointsToLose - 1);
-
-			}
 
 
 			else
@@ -502,10 +526,23 @@ int Game4(int points, int percentToLose)
 
 			do
 			{
-				std::cout << "Unesite red i kolonu: ";
-
-				std::cin >> row >> col;
-
+				try {
+					std::string input;
+					std::cout << "Unesite red:";
+					std::getline(std::cin, input);
+					row = std::stoi(input);
+					std::cout << "Unesite kolonu:";
+					std::getline(std::cin, input);
+					col = std::stoi(input);
+				}
+				catch (std::invalid_argument ex) {
+					std::cout << "Na ulazu mora biti broj! Pokusajte ponovo.\n";
+					row = col = -1;
+				}
+				catch (std::out_of_range ex) {
+					std::cout << "Na ulazu mora biti broj! Pokusajte ponovo.\n";
+					row = col = -1;
+				}
 			} while (!Mineboard::index_in_range(row, col, board.get_width(), board.get_height()) || board.square_at(row, col).is_revealed());
 
 
@@ -513,7 +550,7 @@ int Game4(int points, int percentToLose)
 			board.place_mines(row, col, numberOfMines); //popunjavanje minama u skladu sa dosadasnjim prikazanim stanjem
 			board.draw_board(true);
 			std::cout << "Ups! Stali ste na minu. Izgubili ste " << width * height - numberOfMines - 1 << " poena. Vise srece drugi put! \n";
-			return points - pointsToLose;
+			return points + pointsToLose;
 
 		}
 	}
