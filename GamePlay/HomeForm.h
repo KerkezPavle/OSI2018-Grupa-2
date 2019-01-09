@@ -96,7 +96,8 @@ namespace GamePlay {
 	private: System::Windows::Forms::ToolStripMenuItem^  oAplikacijiToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^  oAutorimaToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^  pomocToolStripMenuItem;
-	private: System::Windows::Forms::Label^  label3;
+	private: System::Windows::Forms::Label^  lblScore;
+
 
 
 
@@ -145,7 +146,7 @@ namespace GamePlay {
 			this->btnCancelGame2 = (gcnew System::Windows::Forms::Button());
 			this->btnCancelGame3 = (gcnew System::Windows::Forms::Button());
 			this->btnCancelGame4 = (gcnew System::Windows::Forms::Button());
-			this->label3 = (gcnew System::Windows::Forms::Label());
+			this->lblScore = (gcnew System::Windows::Forms::Label());
 			this->menuStrip1->SuspendLayout();
 			this->SuspendLayout();
 			// 
@@ -459,16 +460,16 @@ namespace GamePlay {
 			this->btnCancelGame4->UseVisualStyleBackColor = true;
 			this->btnCancelGame4->Click += gcnew System::EventHandler(this, &HomeForm::btnCancelGame4_Click);
 			// 
-			// label3
+			// lblScore
 			// 
-			this->label3->AutoSize = true;
-			this->label3->Font = (gcnew System::Drawing::Font(L"Cambria", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->lblScore->AutoSize = true;
+			this->lblScore->Font = (gcnew System::Drawing::Font(L"Cambria", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label3->Location = System::Drawing::Point(766, 38);
-			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(48, 25);
-			this->label3->TabIndex = 25;
-			this->label3->Text = L"100";
+			this->lblScore->Location = System::Drawing::Point(766, 38);
+			this->lblScore->Name = L"lblScore";
+			this->lblScore->Size = System::Drawing::Size(48, 25);
+			this->lblScore->TabIndex = 25;
+			this->lblScore->Text = L"100";
 			// 
 			// HomeForm
 			// 
@@ -476,7 +477,7 @@ namespace GamePlay {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->AutoScroll = true;
 			this->ClientSize = System::Drawing::Size(838, 399);
-			this->Controls->Add(this->label3);
+			this->Controls->Add(this->lblScore);
 			this->Controls->Add(this->btnCancelGame4);
 			this->Controls->Add(this->btnCancelGame3);
 			this->Controls->Add(this->btnCancelGame2);
@@ -542,16 +543,19 @@ private: System::Void button1_Click_1(System::Object^  sender, System::EventArgs
 	EnterCodeForm frm;
 	frm.GameCode = "1";
 	frm.ShowDialog();
+	ButtonManagementControll();
 }
 private: System::Void button2_Click(System::Object^  sender, System::EventArgs^  e) {
 	EnterCodeForm frm;
 	frm.GameCode = "2";
 	frm.ShowDialog();
+	ButtonManagementControll();
 }
 private: System::Void button4_Click(System::Object^  sender, System::EventArgs^  e) {
 	EnterCodeForm frm;
 	frm.GameCode = "3";
 	frm.ShowDialog();
+	ButtonManagementControll();
 }
 private: void SaveStatisticsCSV() {
 	SaveFileDialog^ saveFileDialog1 = gcnew SaveFileDialog();
@@ -567,6 +571,7 @@ private: System::Void button6_Click(System::Object^  sender, System::EventArgs^ 
 	EnterCodeForm frm;
 	frm.GameCode = "4";
 	frm.ShowDialog();
+	ButtonManagementControll();
 }
 private: System::Void btnStats_Click(System::Object^  sender, System::EventArgs^  e) {
 	ShowStatistics frm;
@@ -579,6 +584,7 @@ private: System::Void saveStatisticsToCSVToolStripMenuItem_Click(System::Object^
 private: System::Void HomeForm_Load(System::Object^  sender, System::EventArgs^  e) {
 	ButtonManagementControll();
 	this->lblUsername->Text = L"Zdravo, " + getUsername();
+	lblScore->Text = System::Convert::ToString(getActiveScore());
 
 }
 private: System::Void btnStartGame4_Click(System::Object^  sender, System::EventArgs^  e) {
@@ -608,7 +614,7 @@ private: void ButtonManagementControll() {
 	else {
 		btnStartGame1->Enabled = false;
 		btnCancelGame1->Enabled = false;
-		if (true) {
+		if (isDeactivated(1)) {
 			btnUGame1->Enabled = false;
 		}
 		else {
@@ -625,7 +631,7 @@ private: void ButtonManagementControll() {
 	else {
 		btnStartGame2->Enabled = false;
 		btnCancelGame2->Enabled = false;
-		if (true) {
+		if (isDeactivated(2)) {
 			btnUGame2->Enabled = false;
 		}
 		else {
@@ -642,7 +648,7 @@ private: void ButtonManagementControll() {
 	else {
 		btnStartGame3->Enabled = false;
 		btnCancelGame3->Enabled = false;
-		if (true) {
+		if (isDeactivated(3)) {
 			btnUGame3->Enabled = false;
 		}
 		else {
@@ -659,7 +665,7 @@ private: void ButtonManagementControll() {
 	else {
 		btnStartGame4->Enabled = false;
 		btnCancelGame4->Enabled = false;
-		if (true) {
+		if (isDeactivated(4)) {
 			btnUGame4->Enabled = false;
 		}
 		else {

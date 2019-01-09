@@ -123,10 +123,10 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Xml Include="ScoreBoard.xml">
+    <Xml Include="assets\config\ScoreBoard.xml">
       <Filter>Resource Files</Filter>
     </Xml>
-    <Xml Include="Settings.xml">
+    <Xml Include="assets\config\Settings.xml">
       <Filter>Resource Files</Filter>
     </Xml>
   </ItemGroup>

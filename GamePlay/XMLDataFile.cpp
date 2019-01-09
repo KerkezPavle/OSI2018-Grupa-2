@@ -351,9 +351,9 @@ BOOL WINAPI CtrlHandler(DWORD fdwCtrlType)
 	switch (fdwCtrlType)
 	{
 		// Handle the CTRL-C signal. 
-	case CTRL_C_EVENT:
-		Beep(750, 300);
-		return TRUE;
+	//case CTRL_C_EVENT:
+	//	Beep(750, 300);
+	//	return TRUE;
 
 		// CTRL-CLOSE: confirm that the user wants to exit. 
 	case CTRL_CLOSE_EVENT:

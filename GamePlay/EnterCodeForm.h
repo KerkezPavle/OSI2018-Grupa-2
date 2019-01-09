@@ -72,6 +72,9 @@ namespace GamePlay {
 	private: System::Windows::Forms::Label^  lblEnterCode;
 	private: System::Windows::Forms::Label^  lblGameCode;
 	private: System::Windows::Forms::Label^  lblGameName;
+	private: System::Windows::Forms::Label^  label1;
+	private: System::Windows::Forms::Label^  label2;
+	private: System::Windows::Forms::Label^  label3;
 
 
 	protected:
@@ -99,6 +102,9 @@ namespace GamePlay {
 			this->lblEnterCode = (gcnew System::Windows::Forms::Label());
 			this->lblGameCode = (gcnew System::Windows::Forms::Label());
 			this->lblGameName = (gcnew System::Windows::Forms::Label());
+			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->label2 = (gcnew System::Windows::Forms::Label());
+			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
 			// 
 			// txtCode1
@@ -196,11 +202,47 @@ namespace GamePlay {
 			this->lblGameName->TabIndex = 8;
 			this->lblGameName->Text = L"label1";
 			// 
+			// label1
+			// 
+			this->label1->AutoSize = true;
+			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label1->Location = System::Drawing::Point(96, 112);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(14, 20);
+			this->label1->TabIndex = 9;
+			this->label1->Text = L"-";
+			// 
+			// label2
+			// 
+			this->label2->AutoSize = true;
+			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label2->Location = System::Drawing::Point(201, 113);
+			this->label2->Name = L"label2";
+			this->label2->Size = System::Drawing::Size(14, 20);
+			this->label2->TabIndex = 10;
+			this->label2->Text = L"-";
+			// 
+			// label3
+			// 
+			this->label3->AutoSize = true;
+			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label3->Location = System::Drawing::Point(306, 113);
+			this->label3->Name = L"label3";
+			this->label3->Size = System::Drawing::Size(14, 20);
+			this->label3->TabIndex = 11;
+			this->label3->Text = L"-";
+			// 
 			// EnterCodeForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(422, 261);
+			this->Controls->Add(this->label3);
+			this->Controls->Add(this->label2);
+			this->Controls->Add(this->label1);
 			this->Controls->Add(this->lblGameName);
 			this->Controls->Add(this->lblGameCode);
 			this->Controls->Add(this->lblEnterCode);
@@ -239,11 +281,12 @@ private: System::Void button1_Click(System::Object^  sender, System::EventArgs^ 
 		
 		if (otkljucaj_igru("assets/data/kodovi.txt","assets/data/igra.txt", code, num)) { //ducinfija(s, num); pokreni sad
 			System::Windows::Forms::MessageBox::Show("Igra uspjesno otkljucana!", "Uspjesno otkljucana!", System::Windows::Forms::MessageBoxButtons::OK, System::Windows::Forms::MessageBoxIcon::Information);
+			this->Close();
 		}
 		else {
 			System::Windows::Forms::MessageBox::Show("Kod koji ste unijei nije validan!", "Greska", System::Windows::Forms::MessageBoxButtons::RetryCancel, System::Windows::Forms::MessageBoxIcon::Error);
 		}
-		this->Close();
+		
 	}
 
 }
