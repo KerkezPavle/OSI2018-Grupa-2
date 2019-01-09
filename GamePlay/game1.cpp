@@ -4,19 +4,40 @@
 #include <stdio.h>
 #include <iostream>
 #include <ctime>
+#include <string>
+#include <cctype>
+#include <algorithm>
+
+bool is_number(const std::string& s)
+{
+	return !s.empty() && std::find_if(s.begin(), s.end(), [](char c) {return !std::isdigit(c); }) == s.end();
+}
 
 //a-veci br, b-manji br
 int ucitaj_br(int a, int b)
 {
+	
 	int n;
+	std::string s;
 	std::cout << "Unesite broj iz opsega" << b << "-" << a << ":" << std::endl;
 	do
 	{
-		std::cin >> n;
-		if (n > a || n < b)
-			std::cout << "Taj broj nije iz dozvoljenog opsega, unesite ponovo broj." << std::endl;
+		std::cin >> s;
+		if (is_number(s))
+		{
+			n = std::stoi(s);
+		}
+		else
+		{
+			std::cout << "Niste unijeli broj, unesite ponovo";
+			n = -1;
+		}
+		if (n>=0)
+			if (n > a || n < b)
+				std::cout << "Taj broj nije iz dozvoljenog opsega, unesite ponovo broj." << std::endl;
 	} while (n > a || n < b);
 	return n;
+	
 }
 
 //a i b su interval od a do b
