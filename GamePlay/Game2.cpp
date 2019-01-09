@@ -6,33 +6,28 @@
 #include<windows.h>
 #include"Game4.h"
 
-constexpr int num_of_Q = 5;
-const int num_of_AQ = 15;
-const int width = 45;
+constexpr int NUM_OF_Q = 5;
+const int NUM_OF_AQ = 15;
+const int WIDTH = 45;
 int Question::counter = 0;
 
-Question::Question(difficulty MODE) :mode(MODE) {
-	queNum = counter++;
+Question::Question() :queNum(counter++) {
 	chooseQuestion();
 }
 
-Question::Question() : Question(difficulty::hard) {}
-
-Question::~Question() {}
-
-int Question::chooseQuestion() {
-	std::string tmp; int num;
-	static int used[num_of_Q] = { -1,-1,-1,-1,-1 };
+int Question::chooseQuestion() {  //odabir i ucitavanje pitanja iz .txt fajla
+	std::string tmp;
 	std::random_device rd;
-	if (queNum)num = rd() % (num_of_AQ)+1; else num = 0;
+	int Qnum; static int used[NUM_OF_Q] = { -1,-1,-1,-1,-1 };
+	Qnum = (queNum) ? rd() % (NUM_OF_AQ)+1 : 0;
 	for (int i : used) {
-		if (num == i) return chooseQuestion();
+		if (Qnum == i) return chooseQuestion();
 	}
-	used[queNum] = num;
+	used[queNum] = Qnum;
 	std::string location = "assets//data//QandA.txt";
 	std::ifstream file(location);
 	if (file.is_open()) {
-		for (int i = 0; i < num * 2; i++) {
+		for (int i = 0; i < Qnum * 2; i++) {
 			std::getline(file, tmp);
 		}
 		file >> text;
@@ -44,41 +39,50 @@ int Question::chooseQuestion() {
 		file.close();
 		return 1;
 	}
-	else std::cout << "File did not open!!!";
+	else {
+		std::cout << "File did not open!!!";
+	}
 	return 0;
 }
 
-void color_Text(std::string text, int color) {
+void color_Text(std::string text, int color) {	//oboji string na std::out
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), color);
 	std::cout << text;
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 15);
 }
 
-void frame(std::string text, char mode = ' ') {
-	char letter[3] = { mode,(mode == ' ') ? ' ' : 58 };
-	std::string s(letter);
-	if ((mode >= '0') && (mode <= '9')) {
-		std::cout << "      " << std::fixed << std::setw(2 * width - 1) << std::setfill('_') << "" << std::endl;
-		std::cout << "     |" << std::fixed << std::setw(2 * width) << std::setfill(' ') << "|" << std::endl;
-	}
-	std::cout << "     |" << std::fixed << std::setw(2 * width) << std::setfill(' ') << "|" << std::endl;
-	if ((mode >= '0') && (mode <= '9'))std::cout << "     |" << std::fixed << std::setw(2 * width) << std::setfill(' ') << "|" << std::endl;
-	if (text.length() < 2 * width) {
-		std::cout << "     |" << std::fixed << std::setw(width + (text.length() / 2)) << std::setfill(' ');
-		color_Text(s + text, ((mode >= '0') && (mode <= '9')) ? 15 : (mode + 6) % 15 + 1); std::cout << std::setw(width - (text.length() / 2)) << "|" << std::endl;
-	}
-	else {
-		std::cout << "     |" << std::fixed << std::setw(width + (text.length() / 4)) << std::setfill(' ');
-		color_Text((s + " " + text.substr(0, (double)text.length() / 2)), ((mode >= '0') && (mode <= '9')) ? 15 : mode % 14); std::cout << std::setw(width - (text.length() / 4)) << "|" << std::endl;
-		std::cout << "     |" << std::fixed << std::setw(width + (text.length() / 4)) << std::setfill(' ');
-		color_Text((text.substr((double)(text.length() / 2), text.length())), ((mode >= '0') && (mode <= '9')) ? 15 : mode % 14); std::cout << std::setw(width - (text.length() / 4)) << "|" << std::endl;
-	}
-	std::cout << "     |" << std::fixed << std::setw(2 * width) << std::setfill(' ') << "|" << std::endl;
-	if ((mode >= '0') && (mode <= '9'))std::cout << "     |" << std::fixed << std::setw(2 * width) << std::setfill(' ') << "|" << std::endl;
-	std::cout << "      " << std::fixed << std::setw(2 * width) << std::setfill('~') << " " << std::endl;
+void recuringLine() { //cesto se ponavlja kod
+	std::cout << "     |" << std::fixed << std::setw(2 * WIDTH) << std::setfill(' ') << "|" << std::endl;
 }
 
-void Question::draw(int p = 0) {
+void frame(std::string text, char mode = ' ') {		//tipovi okvira
+	char letter[3] = { mode,(mode == ' ') ? ' ' : 58 };
+	bool isQuestion = (mode >= '0') && (mode <= '9');
+	std::string s(letter);
+	if (isQuestion) {
+		std::cout << "      " << std::fixed << std::setw(2 * WIDTH - 1) << std::setfill('_') << "" << std::endl;
+		recuringLine();
+	}
+	recuringLine();
+	if (isQuestion)	recuringLine();
+	if (text.length() < 2 * WIDTH) {
+		std::cout << "     |" << std::fixed << std::setw(WIDTH + (text.length() / 2)) << std::setfill(' ');
+		color_Text(s + text, (isQuestion) ? 15 : (mode + 6) % 15 + 1); std::cout << std::setw(WIDTH - (text.length() / 2)) << "|" << std::endl;
+	}
+	else {
+		std::cout << "     |" << std::fixed << std::setw(WIDTH + (text.length() / 4)) << std::setfill(' ');
+		color_Text((s + " " + text.substr(0, (double)text.length() / 2)), (isQuestion) ? 15 : mode % 14);
+		std::cout << std::setw(WIDTH - (text.length() / 4)) << "|" << std::endl;
+		std::cout << "     |" << std::fixed << std::setw(WIDTH + (text.length() / 4)) << std::setfill(' ');
+		color_Text((text.substr((double)(text.length() / 2), text.length())), (isQuestion) ? 15 : mode % 14);
+		std::cout << std::setw(WIDTH - (text.length() / 4)) << "|" << std::endl;
+	}
+	recuringLine();
+	if (isQuestion)	recuringLine();
+	std::cout << "      " << std::fixed << std::setw(2 * WIDTH) << std::setfill('~') << " " << std::endl;
+}
+
+void Question::draw(int p = 0) {		//ispis pitanja i odgovora
 	frame(text, (char)48 + queNum);
 	frame(answer[0].text, 'A');
 	if (queNum)frame(answer[1].text, 'B'); else frame(answer[1].text + ": " + std::to_string(p), ' ');
@@ -86,13 +90,17 @@ void Question::draw(int p = 0) {
 }
 
 
-int Question::answerIt() {
+int Question::answerIt() {	// odgovor na pitanje
 	char ans; int index;
-	std::cout << "Odgovor je pod: "; std::cin >> ans;
+	std::cout << "Odgovor je pod: ";
+	std::cin >> ans;
 	index = (ans < 'Z') ? ans - 'A' : ans - 'a';
-	if ((index > 2) || (index < 0)) { std::cout << "Pokusaj ponovo:" << std::endl; return answerIt(); }
-	if (queNum == 0)return index;
-	std::cout << "Jeste li sigurni\""; color_Text(answer[index].text, index + 4); std::cout << "\" je ispravan odgovor?(y/n):";
+	if ((index > 2) || (index < 0)) {
+		std::cout << "Pokusaj ponovo:" << std::endl;
+		return answerIt();
+	}
+	if (queNum == 0) return index;
+	std::cout << "Jeste li sigurni \""; color_Text(answer[index].text, index + 4); std::cout << "\" je ispravan odgovor?(y/n):";
 	std::cin >> ans;
 	if ((ans == 'y') || (ans == 'Y')) {
 		std::cout << "Odgovor je.... ";
@@ -110,24 +118,25 @@ int Question::answerIt() {
 	return 0;
 }
 
-int game2(int points, double percentage) {
-	int offset = 0; int sch;
+int game2(int points, double percentage) { //glavna funkcija
+	int offset = 0;
 	Question start{};
-	start.draw(points); sch = start.answerIt();
-	if (sch == 2)return points;
+	start.draw(points);
+	if (start.answerIt() == 2) {
+		return points;
+	}
 	ClearScreen();
-	Question q[num_of_Q];
-	for (int i = 0; i < num_of_Q; ++i) {
+	Question q[NUM_OF_Q];
+	for (int i = 0; i < NUM_OF_Q; ++i) { //osnovni game loop
 		q[i].draw();
 		offset += q[i].answerIt();
 		std::cout << std::endl;
-		std::cout << "Osvojeni poeni:" << offset << std::endl;
+		std::cout << "Poeni:" << points + offset << std::endl;
 		std::cin.ignore(-1, '\n');
 		std::cin.get();
 		std::cin.get();
 		ClearScreen();
 	}
 	if (offset == 100)offset += 50;
-	std::cout << "Ukupno osvojeni poeni:" << offset << std::endl;
 	return points + offset;
 }
