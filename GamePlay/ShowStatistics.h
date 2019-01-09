@@ -79,6 +79,7 @@ namespace GamePlay {
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBoxColumn7;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBoxColumn8;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBoxColumn9;
+	private: System::Windows::Forms::Button^  button1;
 
 
 
@@ -168,6 +169,7 @@ namespace GamePlay {
 			this->dataGridViewTextBoxColumn7 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->dataGridViewTextBoxColumn8 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->dataGridViewTextBoxColumn9 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->tabControl1->SuspendLayout();
 			this->tabPage1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
@@ -184,7 +186,7 @@ namespace GamePlay {
 			this->Statistics->AutoSize = true;
 			this->Statistics->Font = (gcnew System::Drawing::Font(L"Cambria", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->Statistics->Location = System::Drawing::Point(13, 13);
+			this->Statistics->Location = System::Drawing::Point(12, 23);
 			this->Statistics->Name = L"Statistics";
 			this->Statistics->Size = System::Drawing::Size(83, 22);
 			this->Statistics->TabIndex = 1;
@@ -404,11 +406,24 @@ namespace GamePlay {
 			this->dataGridViewTextBoxColumn9->ReadOnly = true;
 			this->dataGridViewTextBoxColumn9->Width = 200;
 			// 
+			// button1
+			// 
+			this->button1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button1.Image")));
+			this->button1->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			this->button1->Location = System::Drawing::Point(310, 23);
+			this->button1->Name = L"button1";
+			this->button1->Padding = System::Windows::Forms::Padding(3, 0, 0, 0);
+			this->button1->Size = System::Drawing::Size(104, 41);
+			this->button1->TabIndex = 3;
+			this->button1->Text = L"Preuzmite statistiku";
+			this->button1->UseVisualStyleBackColor = true;
+			// 
 			// ShowStatistics
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(428, 375);
+			this->Controls->Add(this->button1);
 			this->Controls->Add(this->tabControl1);
 			this->Controls->Add(this->Statistics);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;

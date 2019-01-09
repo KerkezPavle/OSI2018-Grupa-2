@@ -100,6 +100,8 @@ namespace GamePlay {
 	private: System::Windows::Forms::ToolStripMenuItem^  pomocToolStripMenuItem;
 	private: System::Windows::Forms::StatusStrip^  statusStrip1;
 	private: System::Windows::Forms::ToolStripStatusLabel^  toolStripStatusLabel1;
+	private: System::Windows::Forms::PictureBox^  pictureBox1;
+	private: System::Windows::Forms::Label^  label1;
 
 
 
@@ -150,16 +152,20 @@ namespace GamePlay {
 			this->lblScore = (gcnew System::Windows::Forms::Label());
 			this->statusStrip1 = (gcnew System::Windows::Forms::StatusStrip());
 			this->toolStripStatusLabel1 = (gcnew System::Windows::Forms::ToolStripStatusLabel());
+			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
+			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->menuStrip1->SuspendLayout();
 			this->statusStrip1->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// label2
 			// 
 			this->label2->AutoSize = true;
+			this->label2->BackColor = System::Drawing::Color::Transparent;
 			this->label2->Font = (gcnew System::Drawing::Font(L"Adobe Fan Heiti Std B", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label2->Location = System::Drawing::Point(69, 129);
+			this->label2->Location = System::Drawing::Point(69, 171);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(91, 16);
 			this->label2->TabIndex = 3;
@@ -170,7 +176,7 @@ namespace GamePlay {
 			// 
 			this->btnStartGame1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnStartGame1.Image")));
 			this->btnStartGame1->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->btnStartGame1->Location = System::Drawing::Point(20, 176);
+			this->btnStartGame1->Location = System::Drawing::Point(20, 218);
 			this->btnStartGame1->Name = L"btnStartGame1";
 			this->btnStartGame1->Padding = System::Windows::Forms::Padding(10, 0, 0, 0);
 			this->btnStartGame1->Size = System::Drawing::Size(181, 46);
@@ -183,7 +189,7 @@ namespace GamePlay {
 			// 
 			this->btnUGame1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnUGame1.Image")));
 			this->btnUGame1->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->btnUGame1->Location = System::Drawing::Point(20, 234);
+			this->btnUGame1->Location = System::Drawing::Point(20, 276);
 			this->btnUGame1->Name = L"btnUGame1";
 			this->btnUGame1->Padding = System::Windows::Forms::Padding(2, 0, 0, 0);
 			this->btnUGame1->Size = System::Drawing::Size(86, 37);
@@ -261,9 +267,10 @@ namespace GamePlay {
 			// lblKviz
 			// 
 			this->lblKviz->AutoSize = true;
+			this->lblKviz->BackColor = System::Drawing::Color::Transparent;
 			this->lblKviz->Font = (gcnew System::Drawing::Font(L"Adobe Fan Heiti Std B", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->lblKviz->Location = System::Drawing::Point(301, 129);
+			this->lblKviz->Location = System::Drawing::Point(301, 171);
 			this->lblKviz->Name = L"lblKviz";
 			this->lblKviz->Size = System::Drawing::Size(32, 16);
 			this->lblKviz->TabIndex = 8;
@@ -272,9 +279,10 @@ namespace GamePlay {
 			// lblbingo
 			// 
 			this->lblbingo->AutoSize = true;
+			this->lblbingo->BackColor = System::Drawing::Color::Transparent;
 			this->lblbingo->Font = (gcnew System::Drawing::Font(L"Adobe Fan Heiti Std B", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->lblbingo->Location = System::Drawing::Point(496, 129);
+			this->lblbingo->Location = System::Drawing::Point(496, 171);
 			this->lblbingo->Name = L"lblbingo";
 			this->lblbingo->Size = System::Drawing::Size(43, 16);
 			this->lblbingo->TabIndex = 9;
@@ -283,9 +291,10 @@ namespace GamePlay {
 			// label5
 			// 
 			this->label5->AutoSize = true;
+			this->label5->BackColor = System::Drawing::Color::Transparent;
 			this->label5->Font = (gcnew System::Drawing::Font(L"Adobe Fan Heiti Std B", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label5->Location = System::Drawing::Point(687, 129);
+			this->label5->Location = System::Drawing::Point(687, 171);
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(69, 16);
 			this->label5->TabIndex = 10;
@@ -295,7 +304,7 @@ namespace GamePlay {
 			// 
 			this->btnUGame2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnUGame2.Image")));
 			this->btnUGame2->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->btnUGame2->Location = System::Drawing::Point(224, 234);
+			this->btnUGame2->Location = System::Drawing::Point(224, 276);
 			this->btnUGame2->Name = L"btnUGame2";
 			this->btnUGame2->Padding = System::Windows::Forms::Padding(2, 0, 0, 0);
 			this->btnUGame2->Size = System::Drawing::Size(88, 37);
@@ -308,7 +317,7 @@ namespace GamePlay {
 			// 
 			this->btnStartGame2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnStartGame2.Image")));
 			this->btnStartGame2->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->btnStartGame2->Location = System::Drawing::Point(224, 176);
+			this->btnStartGame2->Location = System::Drawing::Point(224, 218);
 			this->btnStartGame2->Name = L"btnStartGame2";
 			this->btnStartGame2->Padding = System::Windows::Forms::Padding(10, 0, 0, 0);
 			this->btnStartGame2->Size = System::Drawing::Size(181, 46);
@@ -321,7 +330,7 @@ namespace GamePlay {
 			// 
 			this->btnUGame3->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnUGame3.Image")));
 			this->btnUGame3->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->btnUGame3->Location = System::Drawing::Point(428, 234);
+			this->btnUGame3->Location = System::Drawing::Point(428, 276);
 			this->btnUGame3->Name = L"btnUGame3";
 			this->btnUGame3->Padding = System::Windows::Forms::Padding(2, 0, 0, 0);
 			this->btnUGame3->Size = System::Drawing::Size(88, 37);
@@ -334,7 +343,7 @@ namespace GamePlay {
 			// 
 			this->btnStartGame3->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnStartGame3.Image")));
 			this->btnStartGame3->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->btnStartGame3->Location = System::Drawing::Point(428, 176);
+			this->btnStartGame3->Location = System::Drawing::Point(428, 218);
 			this->btnStartGame3->Name = L"btnStartGame3";
 			this->btnStartGame3->Padding = System::Windows::Forms::Padding(10, 0, 0, 0);
 			this->btnStartGame3->Size = System::Drawing::Size(181, 46);
@@ -347,7 +356,7 @@ namespace GamePlay {
 			// 
 			this->btnUGame4->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnUGame4.Image")));
 			this->btnUGame4->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->btnUGame4->Location = System::Drawing::Point(632, 234);
+			this->btnUGame4->Location = System::Drawing::Point(632, 276);
 			this->btnUGame4->Name = L"btnUGame4";
 			this->btnUGame4->Padding = System::Windows::Forms::Padding(2, 0, 0, 0);
 			this->btnUGame4->Size = System::Drawing::Size(88, 37);
@@ -360,7 +369,7 @@ namespace GamePlay {
 			// 
 			this->btnStartGame4->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnStartGame4.Image")));
 			this->btnStartGame4->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->btnStartGame4->Location = System::Drawing::Point(632, 176);
+			this->btnStartGame4->Location = System::Drawing::Point(632, 218);
 			this->btnStartGame4->Name = L"btnStartGame4";
 			this->btnStartGame4->Padding = System::Windows::Forms::Padding(10, 0, 0, 0);
 			this->btnStartGame4->Size = System::Drawing::Size(181, 46);
@@ -372,9 +381,10 @@ namespace GamePlay {
 			// lblUsername
 			// 
 			this->lblUsername->AutoSize = true;
+			this->lblUsername->BackColor = System::Drawing::Color::Transparent;
 			this->lblUsername->Font = (gcnew System::Drawing::Font(L"Cambria", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->lblUsername->Location = System::Drawing::Point(194, 48);
+			this->lblUsername->Location = System::Drawing::Point(603, 40);
 			this->lblUsername->Name = L"lblUsername";
 			this->lblUsername->Size = System::Drawing::Size(76, 22);
 			this->lblUsername->TabIndex = 19;
@@ -384,7 +394,7 @@ namespace GamePlay {
 			// 
 			this->btnStats->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnStats.Image")));
 			this->btnStats->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->btnStats->Location = System::Drawing::Point(632, 310);
+			this->btnStats->Location = System::Drawing::Point(632, 352);
 			this->btnStats->Name = L"btnStats";
 			this->btnStats->Padding = System::Windows::Forms::Padding(5, 0, 0, 0);
 			this->btnStats->Size = System::Drawing::Size(181, 46);
@@ -397,7 +407,7 @@ namespace GamePlay {
 			// 
 			this->btnCancelGame1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnCancelGame1.Image")));
 			this->btnCancelGame1->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->btnCancelGame1->Location = System::Drawing::Point(113, 234);
+			this->btnCancelGame1->Location = System::Drawing::Point(113, 276);
 			this->btnCancelGame1->Name = L"btnCancelGame1";
 			this->btnCancelGame1->Padding = System::Windows::Forms::Padding(2, 0, 0, 0);
 			this->btnCancelGame1->Size = System::Drawing::Size(88, 37);
@@ -410,7 +420,7 @@ namespace GamePlay {
 			// 
 			this->btnCancelGame2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnCancelGame2.Image")));
 			this->btnCancelGame2->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->btnCancelGame2->Location = System::Drawing::Point(318, 234);
+			this->btnCancelGame2->Location = System::Drawing::Point(318, 276);
 			this->btnCancelGame2->Name = L"btnCancelGame2";
 			this->btnCancelGame2->Padding = System::Windows::Forms::Padding(2, 0, 0, 0);
 			this->btnCancelGame2->Size = System::Drawing::Size(88, 37);
@@ -423,7 +433,7 @@ namespace GamePlay {
 			// 
 			this->btnCancelGame3->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnCancelGame3.Image")));
 			this->btnCancelGame3->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->btnCancelGame3->Location = System::Drawing::Point(522, 234);
+			this->btnCancelGame3->Location = System::Drawing::Point(522, 276);
 			this->btnCancelGame3->Name = L"btnCancelGame3";
 			this->btnCancelGame3->Padding = System::Windows::Forms::Padding(2, 0, 0, 0);
 			this->btnCancelGame3->Size = System::Drawing::Size(88, 37);
@@ -436,7 +446,7 @@ namespace GamePlay {
 			// 
 			this->btnCancelGame4->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnCancelGame4.Image")));
 			this->btnCancelGame4->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->btnCancelGame4->Location = System::Drawing::Point(726, 234);
+			this->btnCancelGame4->Location = System::Drawing::Point(726, 276);
 			this->btnCancelGame4->Name = L"btnCancelGame4";
 			this->btnCancelGame4->Padding = System::Windows::Forms::Padding(2, 0, 0, 0);
 			this->btnCancelGame4->Size = System::Drawing::Size(88, 37);
@@ -448,9 +458,10 @@ namespace GamePlay {
 			// lblScore
 			// 
 			this->lblScore->AutoSize = true;
+			this->lblScore->BackColor = System::Drawing::Color::Transparent;
 			this->lblScore->Font = (gcnew System::Drawing::Font(L"Cambria", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->lblScore->Location = System::Drawing::Point(766, 38);
+			this->lblScore->Location = System::Drawing::Point(778, 79);
 			this->lblScore->Name = L"lblScore";
 			this->lblScore->Size = System::Drawing::Size(48, 25);
 			this->lblScore->TabIndex = 25;
@@ -459,7 +470,7 @@ namespace GamePlay {
 			// statusStrip1
 			// 
 			this->statusStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->toolStripStatusLabel1 });
-			this->statusStrip1->Location = System::Drawing::Point(0, 377);
+			this->statusStrip1->Location = System::Drawing::Point(0, 419);
 			this->statusStrip1->Name = L"statusStrip1";
 			this->statusStrip1->Size = System::Drawing::Size(838, 22);
 			this->statusStrip1->TabIndex = 26;
@@ -472,12 +483,37 @@ namespace GamePlay {
 			this->toolStripStatusLabel1->Size = System::Drawing::Size(131, 17);
 			this->toolStripStatusLabel1->Text = L"ETF Banja Luka - 2019";
 			// 
+			// pictureBox1
+			// 
+			this->pictureBox1->BackColor = System::Drawing::Color::Transparent;
+			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
+			this->pictureBox1->Location = System::Drawing::Point(20, 40);
+			this->pictureBox1->Name = L"pictureBox1";
+			this->pictureBox1->Size = System::Drawing::Size(221, 88);
+			this->pictureBox1->TabIndex = 27;
+			this->pictureBox1->TabStop = false;
+			// 
+			// label1
+			// 
+			this->label1->AutoSize = true;
+			this->label1->BackColor = System::Drawing::Color::Transparent;
+			this->label1->Font = (gcnew System::Drawing::Font(L"Cambria", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label1->Location = System::Drawing::Point(603, 81);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(153, 22);
+			this->label1->TabIndex = 28;
+			this->label1->Text = L"Trenutni rezultat:";
+			// 
 			// HomeForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->AutoScroll = true;
-			this->ClientSize = System::Drawing::Size(838, 399);
+			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
+			this->ClientSize = System::Drawing::Size(838, 441);
+			this->Controls->Add(this->label1);
+			this->Controls->Add(this->pictureBox1);
 			this->Controls->Add(this->statusStrip1);
 			this->Controls->Add(this->lblScore);
 			this->Controls->Add(this->btnCancelGame4);
@@ -500,6 +536,7 @@ namespace GamePlay {
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->menuStrip1);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->MainMenuStrip = this->menuStrip1;
 			this->MaximizeBox = false;
 			this->Name = L"HomeForm";
@@ -510,6 +547,7 @@ namespace GamePlay {
 			this->menuStrip1->PerformLayout();
 			this->statusStrip1->ResumeLayout(false);
 			this->statusStrip1->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
