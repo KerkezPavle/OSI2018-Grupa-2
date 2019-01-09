@@ -517,6 +517,7 @@ namespace GamePlay {
 	}
 	private: System::Void btnGame1_Click(System::Object^  sender, System::EventArgs^  e) {
 		testFun(1);
+		HomeFormActiveScoreLoad();
 
 	}
 	private: System::Void btnSettings_Click(System::Object^  sender, System::EventArgs^  e) {
@@ -532,6 +533,7 @@ namespace GamePlay {
 	}
 	private: System::Void button5_Click(System::Object^  sender, System::EventArgs^  e) {
 		testFun(3);
+		HomeFormActiveScoreLoad();
 	}
 private: System::Void clearUsernameToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
 	HomeForm::Hide();
@@ -584,14 +586,16 @@ private: System::Void saveStatisticsToCSVToolStripMenuItem_Click(System::Object^
 private: System::Void HomeForm_Load(System::Object^  sender, System::EventArgs^  e) {
 	ButtonManagementControll();
 	this->lblUsername->Text = L"Zdravo, " + getUsername();
-	lblScore->Text = System::Convert::ToString(getActiveScore());
+	HomeFormActiveScoreLoad();
 
 }
 private: System::Void btnStartGame4_Click(System::Object^  sender, System::EventArgs^  e) {
 	testFun(4);
+	HomeFormActiveScoreLoad();
 }
 private: System::Void btnStartGame2_Click(System::Object^  sender, System::EventArgs^  e) {
 	testFun(2);
+	HomeFormActiveScoreLoad();
 }
 private: System::Void izlazToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
 	Application::Exit();
@@ -645,7 +649,7 @@ private: void ButtonManagementControll() {
 		}
 	}
 
-	/*if (isActive(s, 3)) {
+	if (isActive(s, 3)) {
 		btnStartGame3->Enabled = true;
 		btnCancelGame3->Enabled = true;
 		btnUGame3->Enabled = false;
@@ -662,7 +666,7 @@ private: void ButtonManagementControll() {
 		else {
 			btnUGame3->Enabled = true;
 		}
-	}*/
+	}
 
 	if (isActive(s, 4)) {
 		btnStartGame4->Enabled = true;
@@ -685,6 +689,10 @@ private: void ButtonManagementControll() {
 
 
 
+}
+
+private: void HomeFormActiveScoreLoad() {
+	lblScore->Text = System::Convert::ToString(getActiveScore());
 }
 private: System::Void btnCancelGame1_Click(System::Object^  sender, System::EventArgs^  e) {
 	if (System::Windows::Forms::MessageBox::Show("Jeste li sigurni?", "Otkazivanje igre 1", System::Windows::Forms::MessageBoxButtons::OKCancel, System::Windows::Forms::MessageBoxIcon::Information) == System::Windows::Forms::DialogResult::OK){
