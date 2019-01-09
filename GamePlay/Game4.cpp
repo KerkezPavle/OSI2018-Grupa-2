@@ -82,9 +82,9 @@ Mineboard::Mineboard(int width, int height, bool) :width(width), height(height)
 Mineboard::~Mineboard()
 {
 
-	/*for (int i = 0; i < width; i++)
+	for (int i = 0; i < width; i++)
 		delete[] board[i];
-	delete board;*/
+	delete[] board;
 
 }
 
@@ -173,10 +173,10 @@ void Mineboard::place_mines(int row, int col, int numberOfMines)
 		for (int j = 0; j < width; j++)
 		{
 			Square& currSquare = square_at(i, j);
-			if (currSquare.closeMines == 1 && count_close_mines(i, j) != 1)
+			if (currSquare.closeMines != '/' && !count_matches_mines(i, j)) // ako trenutno polje ima neki broj kao vrijednost i ako taj broj ne odgovara dosadasnjem stanju na tabli
 			{
-				for (int k = -1; k < 2 && count_close_mines(i, j) != 1; k++)
-					for (int l = -1; l < 2 && count_close_mines(i, j) != 1; l++)
+				for (int k = -1; k < 2 && !count_matches_mines(i, j); k++)
+					for (int l = -1; l < 2 && count_matches_mines(i, j) != 1; l++)
 					{
 
 						if (index_in_range(i + k, l + j, this->width, this->height)) // provjera da li je index u opsegu tj da li postoji ta plocica na tabli
@@ -268,6 +268,15 @@ bool Mineboard::are_neighbours(int row1, int col1, int row2, int col2)
 		else
 			return false;
 	return false;
+}
+
+bool Mineboard::count_matches_mines(int row, int col)
+{
+	Square& currSquare = square_at(row, col);
+	if (count_close_mines(row, col) == 0)
+		return currSquare.closeMines == ' ' - 48;
+	else return count_close_mines(row, col) == currSquare.closeMines;
+
 }
 
 void Mineboard::Square::set_close_mines(int count)
@@ -386,6 +395,9 @@ int Game4(int points, int percentToLose)
 	{
 		int pointsToLose = ((points * percentToLose) / 100);
 
+		if (pointsToLose < 5) // da tabla ne bi bila previse mala
+			pointsToLose = 5;
+
 		if (percentToLose == 0)// ako nema potrebe za gubitkom poena igrac igra igru neometano
 		{
 			Mineboard board(STANDARDSIZE, STANDARDSIZE);
@@ -425,8 +437,8 @@ int Game4(int points, int percentToLose)
 			}
 			else
 			{                                                          // izracunavanje broja cistih polja
-				std::cout << "Ups! Stali ste na minu. Izgubili ste " << board.how_many_left()-(STANDARDSIZE*STANDARDSIZE)/6 << " poena. Vise srece drugi put! \n";
-				return points + (board.how_many_left() - (STANDARDSIZE*STANDARDSIZE) / 6); // od trenutnog broja poena oduzima se broj preostalih cisth polja
+				std::cout << "Ups! Stali ste na minu. Izgubili ste " << board.how_many_left() - (STANDARDSIZE*STANDARDSIZE) / 6 << " poena. Vise srece drugi put! \n";
+				return points - (board.how_many_left() - (STANDARDSIZE*STANDARDSIZE) / 6); // od trenutnog broja poena oduzima se broj preostalih cisth polja
 			}
 
 
@@ -454,10 +466,38 @@ int Game4(int points, int percentToLose)
 				std::cin >> row >> col;
 
 			} while (!Mineboard::index_in_range(row, col, board.get_width(), board.get_height()) || board.square_at(row, col).is_revealed());
-
 			board.squaresLeft--;
-			board.square_at(row, col).set_close_mines(1); board.square_at(row, col).make_revealed();
+
+			if (pointsToLose < 7)
+			{
+
+				board.square_at(row, col).set_close_mines(width*height - pointsToLose - 1);
+
+			}
+
+
+			else
+			{
+				srand(time(NULL));
+				int random = rand() % 4 + 1;
+				int edge = 0; // provjera na koliko ivica se nalazi izabrano polje (npr. u cosku table -2 ivice)
+				edge += Mineboard::index_in_range(row - 1, col, width, height);
+				edge += Mineboard::index_in_range(row + 1, col, width, height);
+				edge += Mineboard::index_in_range(row, col - 1, width, height);
+				edge += Mineboard::index_in_range(row, col + 1, width, height);
+
+				if (edge == 2 && random > 3)
+					random = 3;
+
+				if (random > numberOfMines)
+					random = numberOfMines;
+
+				board.square_at(row, col).set_close_mines(random);
+			}
+
+			board.square_at(row, col).make_revealed();
 			board.draw_board(false);
+
 
 
 			do
@@ -473,7 +513,7 @@ int Game4(int points, int percentToLose)
 			board.place_mines(row, col, numberOfMines); //popunjavanje minama u skladu sa dosadasnjim prikazanim stanjem
 			board.draw_board(true);
 			std::cout << "Ups! Stali ste na minu. Izgubili ste " << width * height - numberOfMines - 1 << " poena. Vise srece drugi put! \n";
-			return points + pointsToLose;
+			return points - pointsToLose;
 
 		}
 	}
