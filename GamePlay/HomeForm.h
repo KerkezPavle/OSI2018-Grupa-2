@@ -617,13 +617,16 @@ private: void ButtonManagementControll() {
 		if (isDeactivated(1)) {
 			btnUGame1->Enabled = false;
 		}
+		else if (isExpired(1)) {
+			btnUGame1->Enabled = false;
+		}
 		else {
 			btnUGame1->Enabled = true;
 		}
 	}
 
-	// Game 2
-	if (isActive("assets/data/igra.txt", 2)) {
+
+	if (isActive(s, 2)) {
 		btnStartGame2->Enabled = true;
 		btnCancelGame2->Enabled = true;
 		btnUGame2->Enabled = false;
@@ -634,13 +637,15 @@ private: void ButtonManagementControll() {
 		if (isDeactivated(2)) {
 			btnUGame2->Enabled = false;
 		}
+		else if (isExpired(2)) {
+			btnUGame2->Enabled = false;
+		}
 		else {
 			btnUGame2->Enabled = true;
 		}
 	}
 
-	// Game 3
-	if (isActive("assets/data/igra.txt", 3)) {
+	if (isActive(s, 3)) {
 		btnStartGame3->Enabled = true;
 		btnCancelGame3->Enabled = true;
 		btnUGame3->Enabled = false;
@@ -651,13 +656,15 @@ private: void ButtonManagementControll() {
 		if (isDeactivated(3)) {
 			btnUGame3->Enabled = false;
 		}
+		else if (isExpired(3)) {
+			btnUGame3->Enabled = false;
+		}
 		else {
 			btnUGame3->Enabled = true;
 		}
 	}
 
-	// Game 4
-	if (isActive("assets/data/igra.txt", 4)) {
+	if (isActive(s, 4)) {
 		btnStartGame4->Enabled = true;
 		btnCancelGame4->Enabled = true;
 		btnUGame4->Enabled = false;
@@ -666,6 +673,9 @@ private: void ButtonManagementControll() {
 		btnStartGame4->Enabled = false;
 		btnCancelGame4->Enabled = false;
 		if (isDeactivated(4)) {
+			btnUGame4->Enabled = false;
+		}
+		else if (isExpired(4)) {
 			btnUGame4->Enabled = false;
 		}
 		else {

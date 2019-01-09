@@ -97,7 +97,8 @@ bool otkljucaj_igru(std::string datoteka, std::string igra, std::string kod, int
 				{
 					pronadjen = true;
 					ofstream datoteka;
-					datoteka.open
+					datoteka.open
+
 					("assets/data/used_codes.txt", fstream::app);
 					datoteka << temp << "\n";
 					datoteka.close();
@@ -126,7 +127,8 @@ bool otkljucaj_igru(std::string datoteka, std::string igra, std::string kod, int
 
 bool vratiRazliku(string vrijeme, int razlika)
 {
-	int godina = (vrijeme[4] - '0') * 1000 + (vrijeme[5] - '0')
+	int godina = (vrijeme[4] - '0') * 1000 + (vrijeme[5] - '0')
+
 		* 100 + (vrijeme[6] - '0') * 10 + vrijeme[7] - '0';
 	int mjesec = (vrijeme[9] - '0') * 10 + vrijeme[10] - '0';
 	int dan = (vrijeme[12] - '0') * 10 + vrijeme[13] - '0';
@@ -137,9 +139,11 @@ bool vratiRazliku(string vrijeme, int razlika)
 	struct tm y2k = { 0 };
 	double seconds;
 	int godina_razlika = godina - 1900;
-	y2k.tm_hour = sat;   y2k.tm_min = minut; y2k.tm_sec =
+	y2k.tm_hour = sat;   y2k.tm_min = minut; y2k.tm_sec =
+
 		sekund;
-	y2k.tm_year = godina_razlika; y2k.tm_mon = mjesec - 1;
+	y2k.tm_year = godina_razlika; y2k.tm_mon = mjesec - 1;
+
 	y2k.tm_mday = dan;
 	time(&timer);
 	seconds = difftime(timer, mktime(&y2k));
@@ -204,6 +208,7 @@ bool isDeactivated(int igra)
 	}
 	for (int j = 0; j < i; j++)
 	{
+		if (i == 0)return false;
 		if (niz[j][0] - '0' == igra)
 		{
 			if (niz[j][2] - '0' == 2)
