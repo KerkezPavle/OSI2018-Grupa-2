@@ -84,9 +84,6 @@ int game1(int brb,int percentage)
 					brb = brb + 100 / br_pokusaja;
 					std::cout << std::endl << "Pogodili ste trazeni broj i dobili " << (100 / br_pokusaja) << " bodova" << std::endl;
 
-					//IZLAZ IZ IGRE
-					insertDataIntoStats(1,brb);
-					setActiveScore(brb);
 					upisiBrojIgranja(br_igranja + 1);
 					return brb;//vracam ukupan broj bodova iz funkcije
 					
@@ -97,9 +94,7 @@ int game1(int brb,int percentage)
 					{
 						std::cout << std::endl << "Niste pogodili, trazeni broj je bio " << trazeni_br << "." << std::endl;
 
-						//IZLAZ IZ IGRE
-						insertDataIntoStats(1,brb);
-						setActiveScore(brb);
+						
 						upisiBrojIgranja(br_igranja + 1);
 						return brb;//vracam ukupan broj bodova iz funkcije
 					}
@@ -133,9 +128,7 @@ int game1(int brb,int percentage)
 
 					std::cout << std::endl << "Pogodili ste trazeni broj i dobili " << (100 / br_pokusaja) << " bodova" << std::endl;
 					
-					//IZLAZ IZ IGRE
-					insertDataIntoStats(1,brb);
-					setActiveScore(brb);
+					
 					upisiBrojIgranja(br_igranja+1);
 					return brb; //vracam ukupan broj bodova iz funkcije
 				}
