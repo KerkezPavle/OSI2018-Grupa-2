@@ -147,3 +147,53 @@ int game1(int brb,int percentage)
 			}
 		}
 }
+
+
+
+/*
+//NAMJESTENO, GUBI
+
+prag ti je taj neki uslov da treba izgubiti (ja sam koristio prag kao br bodova) nez kako si osmislio ugl u uslov pisi taj uslov sto ti  treba
+ovo dole sve fercera, i obrisi negdje taj prag ako sam mjenjao
+
+i vracanje bodova podesi, dok je bio ovaj kod nisu se vracali bodovi tako
+mozda ima neka sitna greska al bi trebalo da fercera
+
+		if ((br_igranja > 3) && (prag < 20))
+		{
+			int br_pokusaja = 0;
+			while (true)
+			{
+				if (br_pokusaja <= 4)
+				{
+					n = ucitaj_br(a, b);
+					br_pokusaja++;
+					if (n >= ((a + b) / 2))
+					{
+						std::cout << std::endl << "Broj koji trazite je manji od navedenog broja." << std::endl;
+						a = n - 1;
+					}
+					if (n < (a + b) / 2)
+					{
+						std::cout << std::endl << "Broj koji trazite je veci od navedenog broja." << std::endl;
+						b = n + 1;
+					}
+				}
+				else
+				{
+					std::cout << std::endl << "Niste pogodili, trazeni broj je bio " << slucajan_br(a, b) << "." << std::endl;
+					if (izlaz_iz_igre(brb) == 2) //ako zeli napustiti igru vraca broj bodova i prekida while petlju
+					{
+						return brb;//vracam ukupan broj bodova iz funkcije
+					}
+					else //inace vraca se br pokusaja na 0
+					{
+						br_pokusaja = 0;
+						a = 100;
+						b = 0;
+						break;
+					}
+				}
+			}
+		}
+*/
