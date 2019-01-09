@@ -10,15 +10,7 @@ void game_call(int gameNum, int currentPoints)
 	int newPoints;
 	if (gameNum == 1)
 	{
-		int numPlayed;
 		newPoints = game1(currentPoints, 0);
-		numPlayed = ucitajBrojIgranja() - 1;
-		if (numPlayed >= 3)
-		{
-			if (newPoints > currentPoints)
-				newPoints *= 0.95;
-
-		}
 		insertDataIntoStats(1, newPoints - currentPoints);
 		setActiveScore(newPoints);
 	}
