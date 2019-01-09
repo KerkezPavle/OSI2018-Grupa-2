@@ -121,7 +121,7 @@ int game2(int points, double percentage) {
 		q[i].draw();
 		offset += q[i].answerIt();
 		std::cout << std::endl;
-		std::cout << "Poeni:" << points + offset << std::endl;
+		std::cout << "Osvojeni poeni:" << offset << std::endl;
 		std::cin.ignore(-1, '\n');
 		std::cin.get();
 		std::cin.get();
