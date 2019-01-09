@@ -1,11 +1,11 @@
-Dobrodošli_u_Kviz!
+Dobrodosli_u_Kviz!
 Igraj 1 (Pocetni_poeni) 0 Izlaz 0 nope 0
-Stefan(pametan)_gleda_Ivana(nepoznate_inteligencije)_koji_gleda_Filipa(glup)._Da_li_pametna_osoba_gleda_u_glupu?
+Stefan(pametan)_gleda_Ivana(nepoznate_inteligencije)_______koji_gleda_Filipa(glup)._Da_li_pametna_osoba_gleda_u_glupu?
 Da 1 Ne 0 Nemoguce_znati 0 nope 0
 Koliko_ima_slova_u_abecedi?
-26 0 30 7 0 8 0
-Sta_je_teže?_kg_celika_ili_kg_perija.
-kg_perija 0 Iste_si_težine 0 kg_celika 1 nope 0
+26 0 30 1 7 0 8 0
+Sta_je_teze?_kg_celika_ili_kg_vune.
+kg_vune 0 Iste_si_težine 0 kg_celika 1 nope 0
 Nastavi_niz:_6,_14,_36,_98,_276,_?
 482 0 794 1 348 0 942 0
 Nastavi_niz:_1,_11,_21,_1211,_111221,_312211,_?
@@ -13,12 +13,12 @@ Nastavi_niz:_1,_11,_21,_1211,_111221,_312211,_?
 B2CD,_____,_BCD4,_B5CD,_BC6D
 B2C2D 0 BC3D 1 B2C3D 0 C3P0 0
 Koja_je_razlika_izmedju_Ping_Ponga_i_Stonog_Tenisa?
-Nazivi 0 Table_Tennis_ima_bolju_javnu_percepciju 1 Sistem_bodovanja 0 nope 0
+Nazivi 0 Stoni_Tenis_ima_bolju_javnu_percepciju 1 Sistem_bodovanja 0 nope 0
 U_kojem_od_cetiri_kanonska_teksta_Hinduizma_je_Joga_spomenuta?
 Samaveda 0 Rigveda 1 Atharvaveda 0
-Ako_stojiš_na_juznom_polu,_kako_se_pomijerati_zapadno?
-Rotaciom_u_smijeru_kazaljke_na_satu 0 Rotaciom_suprotno_smijeru_kazaljke_na_satu 1 Pratiš_put_suza 0 nope 0
-Koliko_rebara_ima_muškarac?
+Ako_stojis_na_juznom_polu,_kako_se_pomijerati_zapadno?
+Rotaciom_u_smijeru_kazaljke_na_satu 0 Rotaciom_suprotno_smijeru_kazaljke_na_satu 1 Pratis_put_suza 0 nope 0
+Koliko_rebara_ima_muskarac?
 11_pari 0 12_pari 1 23_sve_zajedno 0 0 0
 Utah(Nevell)_teapot_se_koristi_u?
 Kuhinj 0 Modelovanju 1 Ratovanju 0 nope 0
