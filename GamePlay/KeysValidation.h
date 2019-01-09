@@ -15,3 +15,5 @@ bool provjeraPonavljanjaKoda(std::string);
 bool vratiRazliku(std::string, int);
 
 void deaktivirajIgru(int);
+
+bool isExpired(int);
