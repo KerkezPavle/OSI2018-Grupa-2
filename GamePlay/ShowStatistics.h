@@ -1,6 +1,7 @@
 #pragma once
 #include "tinyxml2.h"
 #include "XMLDataFile.h"
+#include "csvfile.h"
 #include <string>
 
 namespace GamePlay {
@@ -12,6 +13,7 @@ namespace GamePlay {
 	using namespace System::Data;
 	using namespace System::Drawing;
 	using namespace tinyxml2;
+	using namespace System::Runtime::InteropServices;
 
 	/// <summary>
 	/// Summary for ShowStatistics
@@ -417,6 +419,7 @@ namespace GamePlay {
 			this->button1->TabIndex = 3;
 			this->button1->Text = L"Preuzmite statistiku";
 			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &ShowStatistics::button1_Click);
 			// 
 			// ShowStatistics
 			// 
@@ -446,7 +449,17 @@ namespace GamePlay {
 
 		}
 #pragma endregion
-	};
+	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
+		SaveFileDialog^ saveFileDialog1 = gcnew SaveFileDialog();
+		saveFileDialog1->Filter = "File|*.csv";
+		saveFileDialog1->Title = "Save Score To";
+		System::String^ name = getUsername();
+		saveFileDialog1->FileName = name + ".csv";
+		//saveFileDialog1->AddExtension = ".csv";
+		if (saveFileDialog1->ShowDialog() == System::Windows::Forms::DialogResult::OK)
+			MakeCSV((char*)(void*)Marshal::StringToHGlobalAnsi(saveFileDialog1->FileName));
+	}
+};
 
 	
 }

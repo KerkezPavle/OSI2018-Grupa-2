@@ -40,8 +40,9 @@ namespace GamePlay {
 	private: System::Windows::Forms::Label^  label1;
 	private: System::Windows::Forms::TextBox^  txtUsername;
 	private: System::Windows::Forms::Button^  btnSetUsername;
-	private: System::Windows::Forms::Label^  lblTitle;
+
 	private: System::Windows::Forms::Button^  btnCancel;
+	private: System::Windows::Forms::PictureBox^  pictureBox1;
 
 
 	protected:
@@ -65,16 +66,18 @@ namespace GamePlay {
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->txtUsername = (gcnew System::Windows::Forms::TextBox());
 			this->btnSetUsername = (gcnew System::Windows::Forms::Button());
-			this->lblTitle = (gcnew System::Windows::Forms::Label());
 			this->btnCancel = (gcnew System::Windows::Forms::Button());
+			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// label1
 			// 
 			this->label1->AutoSize = true;
+			this->label1->BackColor = System::Drawing::Color::Transparent;
 			this->label1->Font = (gcnew System::Drawing::Font(L"Adobe Heiti Std R", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(128)));
-			this->label1->Location = System::Drawing::Point(14, 101);
+			this->label1->Location = System::Drawing::Point(17, 124);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(102, 19);
 			this->label1->TabIndex = 0;
@@ -84,7 +87,7 @@ namespace GamePlay {
 			// 
 			this->txtUsername->Font = (gcnew System::Drawing::Font(L"Adobe Gurmukhi", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->txtUsername->Location = System::Drawing::Point(151, 96);
+			this->txtUsername->Location = System::Drawing::Point(147, 119);
 			this->txtUsername->MaximumSize = System::Drawing::Size(116, 27);
 			this->txtUsername->Name = L"txtUsername";
 			this->txtUsername->Size = System::Drawing::Size(116, 27);
@@ -98,7 +101,7 @@ namespace GamePlay {
 				static_cast<System::Byte>(0)));
 			this->btnSetUsername->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnSetUsername.Image")));
 			this->btnSetUsername->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->btnSetUsername->Location = System::Drawing::Point(18, 161);
+			this->btnSetUsername->Location = System::Drawing::Point(21, 171);
 			this->btnSetUsername->Name = L"btnSetUsername";
 			this->btnSetUsername->Padding = System::Windows::Forms::Padding(10, 0, 0, 0);
 			this->btnSetUsername->Size = System::Drawing::Size(113, 35);
@@ -107,24 +110,13 @@ namespace GamePlay {
 			this->btnSetUsername->UseVisualStyleBackColor = true;
 			this->btnSetUsername->Click += gcnew System::EventHandler(this, &Username::button1_Click);
 			// 
-			// lblTitle
-			// 
-			this->lblTitle->AutoSize = true;
-			this->lblTitle->Font = (gcnew System::Drawing::Font(L"Adobe Fan Heiti Std B", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->lblTitle->Location = System::Drawing::Point(97, 23);
-			this->lblTitle->Name = L"lblTitle";
-			this->lblTitle->Size = System::Drawing::Size(96, 24);
-			this->lblTitle->TabIndex = 3;
-			this->lblTitle->Text = L"GamePlay";
-			// 
 			// btnCancel
 			// 
 			this->btnCancel->Font = (gcnew System::Drawing::Font(L"Adobe Fan Heiti Std B", 11.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->btnCancel->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnCancel.Image")));
 			this->btnCancel->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->btnCancel->Location = System::Drawing::Point(154, 161);
+			this->btnCancel->Location = System::Drawing::Point(150, 171);
 			this->btnCancel->Name = L"btnCancel";
 			this->btnCancel->Padding = System::Windows::Forms::Padding(2, 0, 0, 0);
 			this->btnCancel->Size = System::Drawing::Size(113, 35);
@@ -133,6 +125,17 @@ namespace GamePlay {
 			this->btnCancel->UseVisualStyleBackColor = true;
 			this->btnCancel->Click += gcnew System::EventHandler(this, &Username::btnCancel_Click);
 			// 
+			// pictureBox1
+			// 
+			this->pictureBox1->BackColor = System::Drawing::Color::Transparent;
+			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
+			this->pictureBox1->Location = System::Drawing::Point(93, 15);
+			this->pictureBox1->Name = L"pictureBox1";
+			this->pictureBox1->Size = System::Drawing::Size(93, 85);
+			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			this->pictureBox1->TabIndex = 5;
+			this->pictureBox1->TabStop = false;
+			// 
 			// Username
 			// 
 			this->AcceptButton = this->btnSetUsername;
@@ -140,9 +143,11 @@ namespace GamePlay {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->AutoValidate = System::Windows::Forms::AutoValidate::EnablePreventFocusChange;
 			this->BackColor = System::Drawing::SystemColors::Control;
+			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
+			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->ClientSize = System::Drawing::Size(288, 225);
+			this->Controls->Add(this->pictureBox1);
 			this->Controls->Add(this->btnCancel);
-			this->Controls->Add(this->lblTitle);
 			this->Controls->Add(this->btnSetUsername);
 			this->Controls->Add(this->txtUsername);
 			this->Controls->Add(this->label1);
@@ -151,6 +156,7 @@ namespace GamePlay {
 			this->Padding = System::Windows::Forms::Padding(1);
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Username";
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 

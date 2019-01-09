@@ -73,6 +73,90 @@ void sortGameResults(const char* XMLFileName) {
 	}
 
 	xmlDoc.SaveFile(XMLFileName);
+
+	xmlDoc.LoadFile(XMLFileName);
+	parentGame = getParentGame(xmlDoc, 2);
+	arr[10] = {NULL};
+	count = 0;
+	for (XMLElement *child = parentGame->FirstChildElement(); child != NULL; child = child->NextSiblingElement()) {
+		arr[count++] = child;
+	}
+
+	for (int i = 0; i < count; i++) {
+		for (int j = 0; j < count; j++) {
+			int a = std::stoi(arr[i]->FirstChildElement("value")->GetText());
+			int b = std::stoi(arr[j]->FirstChildElement("value")->GetText());
+			if (a > b) {
+				temp = arr[i];
+				arr[i] = arr[j];
+				arr[j] = temp;
+			}
+		}
+	}
+	for (int i = 0; i < count; i++) {
+		if (parentGame->FirstChild() == NULL)
+			parentGame->InsertFirstChild(arr[i]);
+		else
+			parentGame->InsertEndChild(arr[i]);
+	}
+
+	xmlDoc.SaveFile(XMLFileName);
+
+	xmlDoc.LoadFile(XMLFileName);
+	parentGame = getParentGame(xmlDoc, 3);
+	arr[10] = { NULL };
+	count = 0;
+	for (XMLElement *child = parentGame->FirstChildElement(); child != NULL; child = child->NextSiblingElement()) {
+		arr[count++] = child;
+	}
+
+	for (int i = 0; i < count; i++) {
+		for (int j = 0; j < count; j++) {
+			int a = std::stoi(arr[i]->FirstChildElement("value")->GetText());
+			int b = std::stoi(arr[j]->FirstChildElement("value")->GetText());
+			if (a > b) {
+				temp = arr[i];
+				arr[i] = arr[j];
+				arr[j] = temp;
+			}
+		}
+	}
+	for (int i = 0; i < count; i++) {
+		if (parentGame->FirstChild() == NULL)
+			parentGame->InsertFirstChild(arr[i]);
+		else
+			parentGame->InsertEndChild(arr[i]);
+	}
+
+	xmlDoc.SaveFile(XMLFileName);
+
+	xmlDoc.LoadFile(XMLFileName);
+	parentGame = getParentGame(xmlDoc, 4);
+	arr[10] = { NULL };
+	count = 0;
+	for (XMLElement *child = parentGame->FirstChildElement(); child != NULL; child = child->NextSiblingElement()) {
+		arr[count++] = child;
+	}
+
+	for (int i = 0; i < count; i++) {
+		for (int j = 0; j < count; j++) {
+			int a = std::stoi(arr[i]->FirstChildElement("value")->GetText());
+			int b = std::stoi(arr[j]->FirstChildElement("value")->GetText());
+			if (a > b) {
+				temp = arr[i];
+				arr[i] = arr[j];
+				arr[j] = temp;
+			}
+		}
+	}
+	for (int i = 0; i < count; i++) {
+		if (parentGame->FirstChild() == NULL)
+			parentGame->InsertFirstChild(arr[i]);
+		else
+			parentGame->InsertEndChild(arr[i]);
+	}
+
+	xmlDoc.SaveFile(XMLFileName);
 }
 
 /*

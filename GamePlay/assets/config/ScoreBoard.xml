@@ -1,34 +1,60 @@
 <Statistics>
     <FirstGame>
         <Score>
-            <date>Wed Jan  9 18:17:32 2019</date>
+            <date>Wed Jan  9 20:10:38 2019</date>
+            <value>50</value>
+        </Score>
+        <Score>
+            <date>Wed Jan  9 20:12:25 2019</date>
+            <value>25</value>
+        </Score>
+        <Score>
+            <date>Wed Jan  9 20:12:53 2019</date>
+            <value>25</value>
+        </Score>
+        <Score>
+            <date>Wed Jan  9 20:14:26 2019</date>
+            <value>25</value>
+        </Score>
+        <Score>
+            <date>Wed Jan  9 20:11:30 2019</date>
+            <value>25</value>
+        </Score>
+        <Score>
+            <date>Wed Jan  9 20:14:02 2019</date>
+            <value>25</value>
+        </Score>
+        <Score>
+            <date>Wed Jan  9 20:12:07 2019</date>
+            <value>20</value>
+        </Score>
+        <Score>
+            <date>Wed Jan  9 20:18:27 2019</date>
+            <value>20</value>
+        </Score>
+        <Score>
+            <date>Wed Jan  9 20:14:41 2019</date>
+            <value>20</value>
+        </Score>
+        <Score>
+            <date>Wed Jan  9 20:16:14 2019</date>
+            <value>10</value>
+        </Score>
+    </FirstGame>
+    <SecondGame/>
+    <ThirdGame>
+        <Score>
+            <date>Wed Jan  9 20:07:35 2019</date>
             <value>100</value>
         </Score>
         <Score>
-            <date>Wed Jan  9 18:17:47 2019</date>
-            <value>0</value>
-        </Score>
-    </FirstGame>
-    <SecondGame>
-        <Score>
-            <date>Wed Jan  9 18:01:42 2019</date>
-            <value>150</value>
-        </Score>
-    </SecondGame>
-    <ThirdGame>
-        <Score>
-            <date>Wed Jan  9 18:08:16 2019</date>
+            <date>Wed Jan  9 20:08:04 2019</date>
             <value>60</value>
         </Score>
         <Score>
-            <date>Wed Jan  9 18:08:28 2019</date>
-            <value>60</value>
+            <date>Wed Jan  9 20:07:49 2019</date>
+            <value>30</value>
         </Score>
     </ThirdGame>
-    <FourthGame>
-        <Score>
-            <date>Wed Jan  9 18:15:14 2019</date>
-            <value>-20</value>
-        </Score>
-    </FourthGame>
+    <FourthGame/>
 </Statistics>
