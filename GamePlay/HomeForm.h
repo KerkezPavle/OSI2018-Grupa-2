@@ -9,6 +9,7 @@
 #include <cstdlib>
 #include "InfoAboutUs.h"
 #include "KeysValidation.h"
+#include "HelpForm.h"
 
 
 namespace GamePlay {
@@ -102,6 +103,10 @@ namespace GamePlay {
 	private: System::Windows::Forms::ToolStripStatusLabel^  toolStripStatusLabel1;
 	private: System::Windows::Forms::PictureBox^  pictureBox1;
 	private: System::Windows::Forms::Label^  label1;
+	private: System::Windows::Forms::Label^  lblInfoG1;
+	private: System::Windows::Forms::Label^  lblInfoG2;
+	private: System::Windows::Forms::Label^  lblInfoG3;
+	private: System::Windows::Forms::Label^  lblInfoG4;
 
 
 
@@ -154,6 +159,10 @@ namespace GamePlay {
 			this->toolStripStatusLabel1 = (gcnew System::Windows::Forms::ToolStripStatusLabel());
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->lblInfoG1 = (gcnew System::Windows::Forms::Label());
+			this->lblInfoG2 = (gcnew System::Windows::Forms::Label());
+			this->lblInfoG3 = (gcnew System::Windows::Forms::Label());
+			this->lblInfoG4 = (gcnew System::Windows::Forms::Label());
 			this->menuStrip1->SuspendLayout();
 			this->statusStrip1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
@@ -267,6 +276,7 @@ namespace GamePlay {
 			this->pomocToolStripMenuItem->Name = L"pomocToolStripMenuItem";
 			this->pomocToolStripMenuItem->Size = System::Drawing::Size(132, 22);
 			this->pomocToolStripMenuItem->Text = L"Pomoc";
+			this->pomocToolStripMenuItem->Click += gcnew System::EventHandler(this, &HomeForm::pomocToolStripMenuItem_Click);
 			// 
 			// lblKviz
 			// 
@@ -522,6 +532,46 @@ namespace GamePlay {
 			this->label1->TabIndex = 28;
 			this->label1->Text = L"Trenutni rezultat:";
 			// 
+			// lblInfoG1
+			// 
+			this->lblInfoG1->AutoSize = true;
+			this->lblInfoG1->BackColor = System::Drawing::Color::Transparent;
+			this->lblInfoG1->Location = System::Drawing::Point(88, 192);
+			this->lblInfoG1->Name = L"lblInfoG1";
+			this->lblInfoG1->Size = System::Drawing::Size(54, 13);
+			this->lblInfoG1->TabIndex = 29;
+			this->lblInfoG1->Text = L"Ponistena";
+			// 
+			// lblInfoG2
+			// 
+			this->lblInfoG2->AutoSize = true;
+			this->lblInfoG2->BackColor = System::Drawing::Color::Transparent;
+			this->lblInfoG2->Location = System::Drawing::Point(293, 192);
+			this->lblInfoG2->Name = L"lblInfoG2";
+			this->lblInfoG2->Size = System::Drawing::Size(54, 13);
+			this->lblInfoG2->TabIndex = 30;
+			this->lblInfoG2->Text = L"Ponistena";
+			// 
+			// lblInfoG3
+			// 
+			this->lblInfoG3->AutoSize = true;
+			this->lblInfoG3->BackColor = System::Drawing::Color::Transparent;
+			this->lblInfoG3->Location = System::Drawing::Point(495, 192);
+			this->lblInfoG3->Name = L"lblInfoG3";
+			this->lblInfoG3->Size = System::Drawing::Size(54, 13);
+			this->lblInfoG3->TabIndex = 31;
+			this->lblInfoG3->Text = L"Ponistena";
+			// 
+			// lblInfoG4
+			// 
+			this->lblInfoG4->AutoSize = true;
+			this->lblInfoG4->BackColor = System::Drawing::Color::Transparent;
+			this->lblInfoG4->Location = System::Drawing::Point(700, 192);
+			this->lblInfoG4->Name = L"lblInfoG4";
+			this->lblInfoG4->Size = System::Drawing::Size(54, 13);
+			this->lblInfoG4->TabIndex = 32;
+			this->lblInfoG4->Text = L"Ponistena";
+			// 
 			// HomeForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -529,6 +579,10 @@ namespace GamePlay {
 			this->AutoScroll = true;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->ClientSize = System::Drawing::Size(838, 441);
+			this->Controls->Add(this->lblInfoG4);
+			this->Controls->Add(this->lblInfoG3);
+			this->Controls->Add(this->lblInfoG2);
+			this->Controls->Add(this->lblInfoG1);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->pictureBox1);
 			this->Controls->Add(this->statusStrip1);
@@ -673,17 +727,24 @@ private: void ButtonManagementControll() {
 		btnStartGame1->Enabled = true;
 		btnCancelGame1->Enabled = true;
 		btnUGame1->Enabled = false;
+		lblInfoG1->Text = "Aktivna";
+		lblInfoG1->ForeColor = System::Drawing::Color::Green;
 	}
 	else {
 		btnStartGame1->Enabled = false;
 		btnCancelGame1->Enabled = false;
 		if (isDeactivated(1)) {
 			btnUGame1->Enabled = false;
+			lblInfoG1->Text = "Ponistena";
+			lblInfoG1->ForeColor = System::Drawing::Color::Red;
 		}
 		else if (isExpired(1)) {
+			lblInfoG1->Text = "Istekla";
+			lblInfoG1->ForeColor = System::Drawing::Color::Red;
 			btnUGame1->Enabled = false;
 		}
 		else {
+			lblInfoG1->Text = "";
 			btnUGame1->Enabled = true;
 		}
 	}
@@ -693,17 +754,24 @@ private: void ButtonManagementControll() {
 		btnStartGame2->Enabled = true;
 		btnCancelGame2->Enabled = true;
 		btnUGame2->Enabled = false;
+		lblInfoG2->Text = "Aktivna";
+		lblInfoG2->ForeColor = System::Drawing::Color::Green;
 	}
 	else {
 		btnStartGame2->Enabled = false;
 		btnCancelGame2->Enabled = false;
 		if (isDeactivated(2)) {
 			btnUGame2->Enabled = false;
+			lblInfoG2->Text = "Ponistena";
+			lblInfoG2->ForeColor = System::Drawing::Color::Red;
 		}
 		else if (isExpired(2)) {
+			lblInfoG2->Text = "Istekla";
+			lblInfoG2->ForeColor = System::Drawing::Color::Red;
 			btnUGame2->Enabled = false;
 		}
 		else {
+			lblInfoG1->Text = "";
 			btnUGame2->Enabled = true;
 		}
 	}
@@ -712,17 +780,24 @@ private: void ButtonManagementControll() {
 		btnStartGame3->Enabled = true;
 		btnCancelGame3->Enabled = true;
 		btnUGame3->Enabled = false;
+		lblInfoG3->Text = "Aktivna";
+		lblInfoG3->ForeColor = System::Drawing::Color::Green;
 	}
 	else {
 		btnStartGame3->Enabled = false;
 		btnCancelGame3->Enabled = false;
 		if (isDeactivated(3)) {
 			btnUGame3->Enabled = false;
+			lblInfoG3->Text = "Ponistena";
+			lblInfoG3->ForeColor = System::Drawing::Color::Red;
 		}
 		else if (isExpired(3)) {
+			lblInfoG3->Text = "Istekla";
+			lblInfoG3->ForeColor = System::Drawing::Color::Red;
 			btnUGame3->Enabled = false;
 		}
 		else {
+			lblInfoG1->Text = "";
 			btnUGame3->Enabled = true;
 		}
 	}
@@ -731,17 +806,24 @@ private: void ButtonManagementControll() {
 		btnStartGame4->Enabled = true;
 		btnCancelGame4->Enabled = true;
 		btnUGame4->Enabled = false;
+		lblInfoG4->Text = "Aktivna";
+		lblInfoG4->ForeColor = System::Drawing::Color::Green;
 	}
 	else {
 		btnStartGame4->Enabled = false;
 		btnCancelGame4->Enabled = false;
 		if (isDeactivated(4)) {
+			lblInfoG4->Text = "Ponistena";
+			lblInfoG4->ForeColor = System::Drawing::Color::Red;
 			btnUGame4->Enabled = false;
 		}
 		else if (isExpired(4)) {
+			lblInfoG4->Text = "Istekla";
+			lblInfoG4->ForeColor = System::Drawing::Color::Red;
 			btnUGame4->Enabled = false;
 		}
 		else {
+			lblInfoG4->Text = "";
 			btnUGame4->Enabled = true;
 		}
 	}
@@ -777,6 +859,10 @@ private: System::Void btnCancelGame4_Click(System::Object^  sender, System::Even
 		deaktivirajIgru(4);
 		ButtonManagementControll();
 	}
+}
+private: System::Void pomocToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
+	HelpForm frm;
+	frm.ShowDialog();
 }
 };
 }
