@@ -45,7 +45,7 @@ void game_call(int gameNum, int currentPoints)
 		else if (currentPoints <= 50 && currentPoints > 20) percentage = 10;
 		else percentage = 0;
 		newPoints = Game4(currentPoints, percentage);
-		insertDataIntoStats(4, newPoints - currentPoints + 100);
+		insertDataIntoStats(4, newPoints - currentPoints);
 		setActiveScore(newPoints);
 	}
 	return;

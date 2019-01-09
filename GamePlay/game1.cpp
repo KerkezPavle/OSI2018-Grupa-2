@@ -54,7 +54,6 @@ void upisiBrojIgranja(int br)
 int game1(int brb,int percentage)
 {
 	int br_igranja;
-	int sbrb = brb;
 	br_igranja = ucitajBrojIgranja();
 	int n, a, b;
 
