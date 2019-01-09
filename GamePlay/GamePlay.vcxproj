@@ -102,7 +102,7 @@
       <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
-      <AdditionalDependencies />
+      <AdditionalDependencies>kernel32.lib;user32.lib;advapi32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -136,6 +136,7 @@
     <ClCompile Include="Game1.cpp" />
     <ClCompile Include="Game2.cpp" />
     <ClCompile Include="Game4.cpp" />
+    <ClCompile Include="HelpForm.cpp" />
     <ClCompile Include="HomeForm.cpp" />
     <ClCompile Include="InfoAboutUs.cpp" />
     <ClCompile Include="KeysValidation.cpp" />
@@ -153,6 +154,9 @@
     <ClInclude Include="Game1.h" />
     <ClInclude Include="Game2.h" />
     <ClInclude Include="Game4.h" />
+    <ClInclude Include="HelpForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="HomeForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -174,6 +178,9 @@
   <ItemGroup>
     <EmbeddedResource Include="EnterCodeForm.resx">
       <DependentUpon>EnterCodeForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelpForm.resx">
+      <DependentUpon>HelpForm.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HomeForm.resx">
       <DependentUpon>HomeForm.h</DependentUpon>

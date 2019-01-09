@@ -9,6 +9,7 @@
 #include <cstdlib>
 #include "InfoAboutUs.h"
 #include "KeysValidation.h"
+#include "HelpForm.h"
 
 
 namespace GamePlay {
@@ -258,15 +259,16 @@ namespace GamePlay {
 			// oAutorimaToolStripMenuItem
 			// 
 			this->oAutorimaToolStripMenuItem->Name = L"oAutorimaToolStripMenuItem";
-			this->oAutorimaToolStripMenuItem->Size = System::Drawing::Size(132, 22);
+			this->oAutorimaToolStripMenuItem->Size = System::Drawing::Size(180, 22);
 			this->oAutorimaToolStripMenuItem->Text = L"O aplikaciji";
 			this->oAutorimaToolStripMenuItem->Click += gcnew System::EventHandler(this, &HomeForm::oAutorimaToolStripMenuItem_Click);
 			// 
 			// pomocToolStripMenuItem
 			// 
 			this->pomocToolStripMenuItem->Name = L"pomocToolStripMenuItem";
-			this->pomocToolStripMenuItem->Size = System::Drawing::Size(132, 22);
+			this->pomocToolStripMenuItem->Size = System::Drawing::Size(180, 22);
 			this->pomocToolStripMenuItem->Text = L"Pomoc";
+			this->pomocToolStripMenuItem->Click += gcnew System::EventHandler(this, &HomeForm::pomocToolStripMenuItem_Click);
 			// 
 			// lblKviz
 			// 
@@ -777,6 +779,10 @@ private: System::Void btnCancelGame4_Click(System::Object^  sender, System::Even
 		deaktivirajIgru(4);
 		ButtonManagementControll();
 	}
+}
+private: System::Void pomocToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
+	HelpForm frm;
+	frm.ShowDialog();
 }
 };
 }
