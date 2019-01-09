@@ -645,7 +645,7 @@ private: void ButtonManagementControll() {
 		}
 	}
 
-	if (isActive(s, 3)) {
+	/*if (isActive(s, 3)) {
 		btnStartGame3->Enabled = true;
 		btnCancelGame3->Enabled = true;
 		btnUGame3->Enabled = false;
@@ -662,7 +662,7 @@ private: void ButtonManagementControll() {
 		else {
 			btnUGame3->Enabled = true;
 		}
-	}
+	}*/
 
 	if (isActive(s, 4)) {
 		btnStartGame4->Enabled = true;
