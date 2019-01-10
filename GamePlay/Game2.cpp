@@ -19,11 +19,15 @@ int Question::chooseQuestion() {  //odabir i ucitavanje pitanja iz .txt fajla
 	std::string tmp;
 	std::random_device rd;
 	int Qnum; static int used[NUM_OF_Q] = { -1,-1,-1,-1,-1 };
+	if (queNum == 0) {
+		for (int& i : used)
+			i = -1;
+	}
 	Qnum = (queNum) ? rd() % (NUM_OF_AQ)+1 : 0;
 	for (int i : used) {
 		if (Qnum == i) return chooseQuestion();
 	}
-	used[queNum] = Qnum;
+	if (queNum != 0)used[queNum - 1] = Qnum;
 	std::string location = "assets//data//QandA.txt";
 	std::ifstream file(location);
 	if (file.is_open()) {
@@ -104,11 +108,11 @@ int Question::answerIt() {	// odgovor na pitanje
 	if ((ans == "y") || (ans == "Y")) {
 		std::cout << "Odgovor je.... ";
 		if (answer[index].is_Correct) {
-			ans="tacan.";
+			ans = "tacan.";
 			color_Text(ans, 2); return 20;
 		}
 		else {
-			ans="netacan.";
+			ans = "netacan.";
 			color_Text(ans, 7); return -30;
 		}
 	}
@@ -119,6 +123,7 @@ int Question::answerIt() {	// odgovor na pitanje
 
 int game2(int points, double percentage) { //glavna funkcija
 	int offset = 0;
+	Question::counter = 0;
 	Question start{};
 	start.draw(points);
 	if (start.answerIt() == 2) {
