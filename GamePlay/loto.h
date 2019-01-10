@@ -71,17 +71,19 @@ int lotoGame(int currentNUmberOfPoints, double inputPercentage)
     int userScore = 0;
     int *userCombination = new int[NUMBER];
     int *randomCombination = new int[RANDNUMBER];
+    std::cout<<"-------------------------------------------------------------"<<std::endl;
+    std::cout<<"|                           BINGO                           |"<<std::endl;
+    std::cout<<"-------------------------------------------------------------"<<std::endl;
+    std::cout<<"Cijena igranja ove ogre je 100 bodova.                      |"<<std::endl;
+    std::cout<<"TRENUTNI BROJ BODOVA: ";std::cout<<currentNUmberOfPoints<<std::endl;
+    std::cout<<"-------------------------------------------------------------"<<std::endl;
+    
     loadUserCombination(userCombination);
     do{
         generateRandomCombination(randomCombination);
         userScore = calculateScore(userCombination,randomCombination);
     }while(userScore>FACTOR);
-
-    std::cout<<"-------------------------------------------------------------"<<std::endl;
-    std::cout<<"|                           BINGO                           |"<<std::endl;
-    std::cout<<"-------------------------------------------------------------"<<std::endl;
-    std::cout<<"TRENUTNI BROJ BODOVA: ";std::cout<<currentNUmberOfPoints<<std::endl;
-    std::cout<<"-------------------------------------------------------------"<<std::endl;
+    
     std::cout<<"VASA KOMBINACIJA: "; printCombination(userCombination,NUMBER);
     std::cout<<"-------------------------------------------------------------"<<std::endl;
     std::cout<<"DOBITNA KOMBINACIJA: "<<std::endl; printCombination(randomCombination,RANDNUMBER);
