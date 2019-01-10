@@ -23,7 +23,7 @@ int ucitaj_br(int a, int b)
 	do
 	{
 		std::cin >> s;
-		if ((!is_number(s))||(strlen(s)>6))
+		if ((!is_number(s))||((s.length())>6))
 		{
 			std::cout<<"Unos nije validan, pokusajte ponovo..."<<std::endl;
 			n=-1;
