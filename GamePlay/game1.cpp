@@ -72,49 +72,36 @@ void upisiBrojIgranja(int br)
 }
 
 
-int game1(int brb,int percentage)
+int game1(int brb, int percentage)
 {
 	int br_igranja;
 	br_igranja = ucitajBrojIgranja();
 	int n, a, b;
-
-	/*std::cout << "Pravila igre: " << std::endl;
-	std::cout << "Aplikacija ce prvo na slucajan nacin izabrati odredjeni broj." << std::endl;
-	std::cout << "Korisnik ima 5 pokusaja da ga pogodi tako sto unosi broj" << std::endl;
-	std::cout << "Aplikacija nakon svakog pokusaja prikazuje poruku:" << std::endl << "\"Broj koji trazite je[veci | manji] od unesenog broja\"" << std::endl;
-	std::cout << "Ako korisnik pogodi trazeni broj dobija" << std::endl << "100 / broj_pokusaja bodova za svoj profil. " << std::endl << std::endl << std::endl;
-	*/
-		a = 100;
-		b = 0;
-
-		//NORMALNI, POSTENI DIO IGRE
-		if (br_igranja >= 3)
+	a = 100;
+	b = 0;
+	//POSTENI DIO IGRE
+	if (br_igranja >= 3)
+	{
+		int br_pokusaja = 0;
+		if (brb > 100)
 		{
 			int trazeni_br = slucajan_br(100, 0);
-			int br_pokusaja = 0;
-
 			while (true)
 			{
-
 				n = ucitaj_br(a, b);
 				br_pokusaja++;
-
 				if (n == trazeni_br)
 				{
 					brb = brb + 100 / br_pokusaja;
 					std::cout << std::endl << "Pogodili ste trazeni broj i dobili " << (100 / br_pokusaja) << " bodova" << std::endl;
-
 					upisiBrojIgranja(br_igranja + 1);
 					return brb;//vracam ukupan broj bodova iz funkcije
-					
 				}
 				else
 				{
 					if (br_pokusaja == 5)
 					{
 						std::cout << std::endl << "Niste pogodili, trazeni broj je bio " << trazeni_br << "." << std::endl;
-
-						
 						upisiBrojIgranja(br_igranja + 1);
 						return brb;//vracam ukupan broj bodova iz funkcije
 					}
@@ -131,35 +118,39 @@ int game1(int brb,int percentage)
 				}
 			}
 		}
-		//Namjesteni dio igre, dobija
-		if (br_igranja < 3)
+		else if (brb <= 100 && brb > 50)
 		{
-			int br_pokusaja = 0;
-			int pogodak;
-			pogodak = slucajan_br(5, 1); // slucajnim izborom odredim kad korisnik treba da dobije u prva tri puta
-
+			int trazeni_br = slucajan_br(100, 0);
 			while (true)
 			{
-				n = ucitaj_br(a, b);//ucita se broj koji korisnik misli da je odgovarajuci
+				n = ucitaj_br(a, b);
 				br_pokusaja++;
-				if (br_pokusaja == pogodak) //ako je broj pokusaja jednak onom broju koji sam slucajnim izborom izvukao
-				{							//onda je "pogodio" broj
-					brb = brb + 100 / br_pokusaja; //povecava se br bodova
-
-					std::cout << std::endl << "Pogodili ste trazeni broj i dobili " << (100 / br_pokusaja) << " bodova" << std::endl;
-					
-					
-					upisiBrojIgranja(br_igranja+1);
-					return brb; //vracam ukupan broj bodova iz funkcije
-				}
-				if (br_pokusaja < pogodak) //...
+				if (n == trazeni_br)
 				{
-					if (n >= ((a + b) / 2))
+					if(br_pokusaja<2)
+						trazeni_br = slucajan_br(a, b);
+					else
+					{
+						brb = brb + 100 / br_pokusaja;
+						std::cout << std::endl << "Pogodili ste trazeni broj i dobili " << (100 / br_pokusaja) << " bodova" << std::endl;
+						upisiBrojIgranja(br_igranja + 1);
+						return brb;//vracam ukupan broj bodova iz funkcije
+					}
+				}
+				else
+				{
+					if (br_pokusaja == 5)
+					{
+						std::cout << std::endl << "Niste pogodili, trazeni broj je bio " << trazeni_br << "." << std::endl;
+						upisiBrojIgranja(br_igranja + 1);
+						return brb;//vracam ukupan broj bodova iz funkcije
+					}
+					if (n > trazeni_br)
 					{
 						std::cout << std::endl << "Broj koji trazite je manji od navedenog broja." << std::endl;
 						a = n - 1;
 					}
-					if (n < (a + b) / 2)
+					if (n < trazeni_br)
 					{
 						std::cout << std::endl << "Broj koji trazite je veci od navedenog broja." << std::endl;
 						b = n + 1;
@@ -167,22 +158,131 @@ int game1(int brb,int percentage)
 				}
 			}
 		}
-}
-
-
-
-/*
-//NAMJESTENO, GUBI
-
-prag ti je taj neki uslov da treba izgubiti (ja sam koristio prag kao br bodova) nez kako si osmislio ugl u uslov pisi taj uslov sto ti  treba
-ovo dole sve fercera, i obrisi negdje taj prag ako sam mjenjao
-
-i vracanje bodova podesi, dok je bio ovaj kod nisu se vracali bodovi tako
-mozda ima neka sitna greska al bi trebalo da fercera
-
-		if ((br_igranja > 3) && (prag < 20))
+		else if (brb <= 50 && brb > 33)
 		{
-			int br_pokusaja = 0;
+			int trazeni_br = slucajan_br(100, 0);
+			while (true)
+			{
+				n = ucitaj_br(a, b);
+				br_pokusaja++;
+				if (n == trazeni_br)
+				{
+					if(br_pokusaja<3)
+						trazeni_br = slucajan_br(a, b);
+					else
+					{
+						brb = brb + 100 / br_pokusaja;
+						std::cout << std::endl << "Pogodili ste trazeni broj i dobili " << (100 / br_pokusaja) << " bodova" << std::endl;
+
+						upisiBrojIgranja(br_igranja + 1);
+						return brb;//vracam ukupan broj bodova iz funkcije
+					}
+				}
+				else
+				{
+					if (br_pokusaja == 5)
+					{
+						std::cout << std::endl << "Niste pogodili, trazeni broj je bio " << trazeni_br << "." << std::endl;
+						upisiBrojIgranja(br_igranja + 1);
+						return brb;//vracam ukupan broj bodova iz funkcije
+					}
+					if (n > trazeni_br)
+					{
+						std::cout << std::endl << "Broj koji trazite je manji od navedenog broja." << std::endl;
+						a = n - 1;
+					}
+					if (n < trazeni_br)
+					{
+						std::cout << std::endl << "Broj koji trazite je veci od navedenog broja." << std::endl;
+						b = n + 1;
+					}
+				}
+			}
+		}
+		else if (brb <= 33 && brb > 25)
+		{
+			int trazeni_br = slucajan_br(100, 0);
+			while (true)
+			{
+				n = ucitaj_br(a, b);
+				br_pokusaja++;
+				if (n == trazeni_br && br_pokusaja < 4)
+				{
+					if(br_pokusaja<4)
+						trazeni_br = slucajan_br(a, b);
+					else
+					{
+						brb = brb + 100 / br_pokusaja;
+						std::cout << std::endl << "Pogodili ste trazeni broj i dobili " << (100 / br_pokusaja) << " bodova" << std::endl;
+						upisiBrojIgranja(br_igranja + 1);
+						return brb;//vracam ukupan broj bodova iz funkcije
+					}
+				}
+				else
+				{
+					if (br_pokusaja == 5)
+					{
+						std::cout << std::endl << "Niste pogodili, trazeni broj je bio " << trazeni_br << "." << std::endl;
+						upisiBrojIgranja(br_igranja + 1);
+						return brb;//vracam ukupan broj bodova iz funkcije
+					}
+					if (n > trazeni_br)
+					{
+						std::cout << std::endl << "Broj koji trazite je manji od navedenog broja." << std::endl;
+						a = n - 1;
+					}
+					if (n < trazeni_br)
+					{
+						std::cout << std::endl << "Broj koji trazite je veci od navedenog broja." << std::endl;
+						b = n + 1;
+					}
+				}
+			}
+		}
+		else if (brb <= 25 && brb > 20)
+		{
+			int trazeni_br = slucajan_br(100, 0);
+			while (true)
+			{
+				n = ucitaj_br(a, b);
+				br_pokusaja++;
+				if (n == trazeni_br && br_pokusaja < 5)
+				{
+					if(br_pokusaja<5)
+						trazeni_br = slucajan_br(a, b);
+					else
+					{
+						brb = brb + 100 / br_pokusaja;
+						std::cout << std::endl << "Pogodili ste trazeni broj i dobili " << (100 / br_pokusaja) << " bodova" << std::endl;
+						upisiBrojIgranja(br_igranja + 1);
+						return brb;//vracam ukupan broj bodova iz funkcije
+					}
+				}
+				else
+				{
+					if (br_pokusaja == 5)
+					{
+						std::cout << std::endl << "Niste pogodili, trazeni broj je bio " << trazeni_br << "." << std::endl;
+						upisiBrojIgranja(br_igranja + 1);
+						return brb;//vracam ukupan broj bodova iz funkcije
+					}
+					if (n > trazeni_br)
+					{
+						std::cout << std::endl << "Broj koji trazite je manji od navedenog broja." << std::endl;
+						a = n - 1;
+					}
+					if (n < trazeni_br)
+					{
+						std::cout << std::endl << "Broj koji trazite je veci od navedenog broja." << std::endl;
+						b = n + 1;
+					}
+				}
+			}
+		}
+		
+	//NAMJESTENI DIO IGRE,KORISNIK GUBI
+		else
+		{
 			while (true)
 			{
 				if (br_pokusaja <= 4)
@@ -203,18 +303,43 @@ mozda ima neka sitna greska al bi trebalo da fercera
 				else
 				{
 					std::cout << std::endl << "Niste pogodili, trazeni broj je bio " << slucajan_br(a, b) << "." << std::endl;
-					if (izlaz_iz_igre(brb) == 2) //ako zeli napustiti igru vraca broj bodova i prekida while petlju
-					{
-						return brb;//vracam ukupan broj bodova iz funkcije
-					}
-					else //inace vraca se br pokusaja na 0
-					{
-						br_pokusaja = 0;
-						a = 100;
-						b = 0;
-						break;
-					}
+					upisiBrojIgranja(br_igranja + 1);
+					return brb;//vracam ukupan broj bodova iz funkcije
 				}
 			}
 		}
-*/
+	}
+
+	//NAMJESTENI DIO IGRE,KORISNIK DOBIJA PRVA 3 PUTA
+	else
+	{
+		int br_pokusaja = 0;
+		int pogodak;
+		pogodak = slucajan_br(5, 1); // slucajnim izborom odredim kad korisnik treba da dobije u prva tri puta
+		while (true)
+		{
+			n = ucitaj_br(a, b);//ucita se broj koji korisnik misli da je odgovarajuci
+			br_pokusaja++;
+			if (br_pokusaja == pogodak) //ako je broj pokusaja jednak onom broju koji sam slucajnim izborom izvukao
+			{							//onda je "pogodio" broj
+				brb = brb + 100 / br_pokusaja; //povecava se br bodova
+				std::cout << std::endl << "Pogodili ste trazeni broj i dobili " << (100 / br_pokusaja) << " bodova" << std::endl;
+				upisiBrojIgranja(br_igranja+1);
+				return brb; //vracam ukupan broj bodova iz funkcije
+			}
+			if (br_pokusaja < pogodak) //...
+			{
+				if (n >= ((a + b) / 2))
+				{
+					std::cout << std::endl << "Broj koji trazite je manji od navedenog broja." << std::endl;
+					a = n - 1;
+				}
+				if (n < (a + b) / 2)
+				{
+					std::cout << std::endl << "Broj koji trazite je veci od navedenog broja." << std::endl;
+					b = n + 1;
+				}
+			}
+		}
+	}
+}
