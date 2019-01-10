@@ -35,13 +35,13 @@ namespace GamePlay {
 			void set(System::String^ text) {
 				lblGameCode->Text = text;
 				if (text == "1")
-					lblGameName->Text = "Guess the Number";
+					lblGameName->Text = ". Pogodite broj";
 				else if(text == "2")
-					lblGameName->Text = "Quiz";
+					lblGameName->Text = ". Kviz";
 				else if(text == "3")
-					lblGameName->Text = "Bingo";
+					lblGameName->Text = ". Bingo";
 				else if(text == "4")
-					lblGameName->Text = "Minesweeper";
+					lblGameName->Text = ". Minolovac";
 			}
 		}
 
@@ -116,6 +116,7 @@ namespace GamePlay {
 			this->txtCode1->TabIndex = 0;
 			this->txtCode1->TextChanged += gcnew System::EventHandler(this, &EnterCodeForm::txtCode1_TextChanged);
 			this->txtCode1->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &EnterCodeForm::txtCode1_KeyPress);
+			this->txtCode1->KeyUp += gcnew System::Windows::Forms::KeyEventHandler(this, &EnterCodeForm::txtCode1_KeyUp);
 			// 
 			// txtCode2
 			// 
@@ -124,7 +125,8 @@ namespace GamePlay {
 			this->txtCode2->Name = L"txtCode2";
 			this->txtCode2->Size = System::Drawing::Size(76, 20);
 			this->txtCode2->TabIndex = 1;
-			this->txtCode2->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &EnterCodeForm::txtCode1_KeyPress);
+			this->txtCode2->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &EnterCodeForm::txtCode2_KeyPress);
+			this->txtCode2->KeyUp += gcnew System::Windows::Forms::KeyEventHandler(this, &EnterCodeForm::txtCode2_KeyUp);
 			// 
 			// txtCode3
 			// 
@@ -133,7 +135,8 @@ namespace GamePlay {
 			this->txtCode3->Name = L"txtCode3";
 			this->txtCode3->Size = System::Drawing::Size(76, 20);
 			this->txtCode3->TabIndex = 2;
-			this->txtCode3->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &EnterCodeForm::txtCode1_KeyPress);
+			this->txtCode3->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &EnterCodeForm::txtCode3_KeyPress);
+			this->txtCode3->KeyUp += gcnew System::Windows::Forms::KeyEventHandler(this, &EnterCodeForm::txtCode3_KeyUp);
 			// 
 			// txtCode4
 			// 
@@ -142,7 +145,7 @@ namespace GamePlay {
 			this->txtCode4->Name = L"txtCode4";
 			this->txtCode4->Size = System::Drawing::Size(76, 20);
 			this->txtCode4->TabIndex = 3;
-			this->txtCode4->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &EnterCodeForm::txtCode1_KeyPress);
+			this->txtCode4->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &EnterCodeForm::txtCode4_KeyPress);
 			// 
 			// button1
 			// 
@@ -196,11 +199,11 @@ namespace GamePlay {
 			// 
 			this->lblGameName->AutoSize = true;
 			this->lblGameName->Font = (gcnew System::Drawing::Font(L"Cambria", 14.25F));
-			this->lblGameName->Location = System::Drawing::Point(224, 37);
+			this->lblGameName->Location = System::Drawing::Point(210, 37);
 			this->lblGameName->Name = L"lblGameName";
-			this->lblGameName->Size = System::Drawing::Size(59, 22);
+			this->lblGameName->Size = System::Drawing::Size(50, 22);
 			this->lblGameName->TabIndex = 8;
-			this->lblGameName->Text = L"label1";
+			this->lblGameName->Text = L"1. Po";
 			// 
 			// label1
 			// 
@@ -254,6 +257,7 @@ namespace GamePlay {
 			this->Controls->Add(this->txtCode2);
 			this->Controls->Add(this->txtCode1);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->MaximizeBox = false;
 			this->Name = L"EnterCodeForm";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterParent;
@@ -300,6 +304,36 @@ private: System::Void txtCode1_TextChanged(System::Object^  sender, System::Even
 private: System::Void txtCode1_KeyPress(System::Object^  sender, System::Windows::Forms::KeyPressEventArgs^  e) {
 	if (e->KeyChar != '\b') {
 		e->Handled = !std::isdigit(e->KeyChar);
+	}
+}
+private: System::Void txtCode2_KeyPress(System::Object^  sender, System::Windows::Forms::KeyPressEventArgs^  e) {
+	if (e->KeyChar != '\b') {
+		e->Handled = !std::isdigit(e->KeyChar);
+	}
+}
+private: System::Void txtCode3_KeyPress(System::Object^  sender, System::Windows::Forms::KeyPressEventArgs^  e) {
+	if (e->KeyChar != '\b') {
+		e->Handled = !std::isdigit(e->KeyChar);
+	}
+}
+private: System::Void txtCode4_KeyPress(System::Object^  sender, System::Windows::Forms::KeyPressEventArgs^  e) {
+	if (e->KeyChar != '\b') {
+		e->Handled = !std::isdigit(e->KeyChar);
+	}
+}
+private: System::Void txtCode1_KeyUp(System::Object^  sender, System::Windows::Forms::KeyEventArgs^  e) {
+	if (txtCode1->TextLength == 4) {
+		keybd_event(0x09, 0, 0, 0);
+	}
+}
+private: System::Void txtCode2_KeyUp(System::Object^  sender, System::Windows::Forms::KeyEventArgs^  e) {
+	if (txtCode2->TextLength == 4) {
+		keybd_event(0x09, 0, 0, 0);
+	}
+}
+private: System::Void txtCode3_KeyUp(System::Object^  sender, System::Windows::Forms::KeyEventArgs^  e) {
+	if (txtCode3->TextLength == 4) {
+		keybd_event(0x09, 0, 0, 0);
 	}
 }
 };

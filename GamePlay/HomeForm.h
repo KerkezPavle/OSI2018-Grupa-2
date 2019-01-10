@@ -211,8 +211,8 @@ namespace GamePlay {
 			// 
 			// menuStrip1
 			// 
-			this->menuStrip1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), static_cast<System::Int32>(static_cast<System::Byte>(199)),
-				static_cast<System::Int32>(static_cast<System::Byte>(205)));
+			this->menuStrip1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(234)), static_cast<System::Int32>(static_cast<System::Byte>(234)),
+				static_cast<System::Int32>(static_cast<System::Byte>(234)));
 			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(2) {
 				this->optionsToolStripMenuItem,
 					this->aboutToolStripMenuItem
@@ -494,8 +494,8 @@ namespace GamePlay {
 			// 
 			// statusStrip1
 			// 
-			this->statusStrip1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(228)), static_cast<System::Int32>(static_cast<System::Byte>(232)),
-				static_cast<System::Int32>(static_cast<System::Byte>(236)));
+			this->statusStrip1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(248)), static_cast<System::Int32>(static_cast<System::Byte>(248)),
+				static_cast<System::Int32>(static_cast<System::Byte>(248)));
 			this->statusStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->toolStripStatusLabel1 });
 			this->statusStrip1->Location = System::Drawing::Point(0, 419);
 			this->statusStrip1->Name = L"statusStrip1";
@@ -628,9 +628,8 @@ namespace GamePlay {
 
 	}
 	private: System::Void btnGame1_Click(System::Object^  sender, System::EventArgs^  e) {
-		testFun(1);
+		runGames(1);
 		HomeFormActiveScoreLoad();
-		//insertDataIntoStats(1, 10);
 
 	}
 	private: System::Void btnSettings_Click(System::Object^  sender, System::EventArgs^  e) {
@@ -645,7 +644,7 @@ namespace GamePlay {
 
 	}
 	private: System::Void button5_Click(System::Object^  sender, System::EventArgs^  e) {
-		testFun(3);
+		runGames(3);
 		HomeFormActiveScoreLoad();
 	}
 private: System::Void clearUsernameToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
@@ -703,11 +702,11 @@ private: System::Void HomeForm_Load(System::Object^  sender, System::EventArgs^ 
 
 }
 private: System::Void btnStartGame4_Click(System::Object^  sender, System::EventArgs^  e) {
-	testFun(4);
+	runGames(4);
 	HomeFormActiveScoreLoad();
 }
 private: System::Void btnStartGame2_Click(System::Object^  sender, System::EventArgs^  e) {
-	testFun(2);
+	runGames(2);
 	HomeFormActiveScoreLoad();
 }
 private: System::Void izlazToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
@@ -771,7 +770,7 @@ private: void ButtonManagementControll() {
 			btnUGame2->Enabled = false;
 		}
 		else {
-			lblInfoG1->Text = "";
+			lblInfoG2->Text = "";
 			btnUGame2->Enabled = true;
 		}
 	}
@@ -797,7 +796,7 @@ private: void ButtonManagementControll() {
 			btnUGame3->Enabled = false;
 		}
 		else {
-			lblInfoG1->Text = "";
+			lblInfoG3->Text = "";
 			btnUGame3->Enabled = true;
 		}
 	}

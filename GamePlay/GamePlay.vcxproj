@@ -111,7 +111,7 @@
       <PreprocessorDefinitions>WIN32;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
-      <AdditionalDependencies />
+      <AdditionalDependencies>user32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -141,7 +141,6 @@
     <ClCompile Include="InfoAboutUs.cpp" />
     <ClCompile Include="KeysValidation.cpp" />
     <ClCompile Include="ShowStatistics.cpp" />
-    <ClCompile Include="Test.cpp" />
     <ClCompile Include="tinyxml2.cpp" />
     <ClCompile Include="Username.cpp" />
     <ClCompile Include="XMLDataFile.cpp" />

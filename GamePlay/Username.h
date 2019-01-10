@@ -79,9 +79,9 @@ namespace GamePlay {
 				static_cast<System::Byte>(128)));
 			this->label1->Location = System::Drawing::Point(17, 124);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(102, 19);
+			this->label1->Size = System::Drawing::Size(109, 19);
 			this->label1->TabIndex = 0;
-			this->label1->Text = L"Korisniko ime";
+			this->label1->Text = L"Korisnicko ime";
 			// 
 			// txtUsername
 			// 
