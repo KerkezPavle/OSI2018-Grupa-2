@@ -410,12 +410,14 @@ namespace GamePlay {
 			// 
 			// button1
 			// 
+			this->button1->Font = (gcnew System::Drawing::Font(L"Cambria", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->button1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button1.Image")));
 			this->button1->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->button1->Location = System::Drawing::Point(310, 23);
+			this->button1->Location = System::Drawing::Point(285, 23);
 			this->button1->Name = L"button1";
-			this->button1->Padding = System::Windows::Forms::Padding(3, 0, 0, 0);
-			this->button1->Size = System::Drawing::Size(104, 41);
+			this->button1->Padding = System::Windows::Forms::Padding(5, 0, 0, 0);
+			this->button1->Size = System::Drawing::Size(129, 41);
 			this->button1->TabIndex = 3;
 			this->button1->Text = L"Preuzmite statistiku";
 			this->button1->UseVisualStyleBackColor = true;
@@ -425,6 +427,7 @@ namespace GamePlay {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->ClientSize = System::Drawing::Size(428, 375);
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->tabControl1);

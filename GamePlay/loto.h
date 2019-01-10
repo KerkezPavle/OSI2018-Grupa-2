@@ -74,7 +74,7 @@ int lotoGame(int currentNUmberOfPoints, double inputPercentage)
     std::cout<<"-------------------------------------------------------------"<<std::endl;
     std::cout<<"|                           BINGO                           |"<<std::endl;
     std::cout<<"-------------------------------------------------------------"<<std::endl;
-    std::cout<<"Cijena igranja ove ogre je 100 bodova.                      |"<<std::endl;
+    std::cout<<"Cijena igranja ove igre je 100 bodova.                      |"<<std::endl;
     std::cout<<"TRENUTNI BROJ BODOVA: ";std::cout<<currentNUmberOfPoints<<std::endl;
     std::cout<<"-------------------------------------------------------------"<<std::endl;
     

@@ -144,14 +144,16 @@ namespace GamePlay {
 			this->AutoValidate = System::Windows::Forms::AutoValidate::EnablePreventFocusChange;
 			this->BackColor = System::Drawing::SystemColors::Control;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
-			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->ClientSize = System::Drawing::Size(288, 225);
 			this->Controls->Add(this->pictureBox1);
 			this->Controls->Add(this->btnCancel);
 			this->Controls->Add(this->btnSetUsername);
 			this->Controls->Add(this->txtUsername);
 			this->Controls->Add(this->label1);
+			this->DoubleBuffered = true;
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Name = L"Username";
 			this->Padding = System::Windows::Forms::Padding(1);
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;

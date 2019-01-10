@@ -57,6 +57,7 @@ namespace GamePlay {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(HelpForm::typeid));
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->linkLabelCSV = (gcnew System::Windows::Forms::LinkLabel());
@@ -119,7 +120,7 @@ namespace GamePlay {
 				static_cast<System::Byte>(0)));
 			this->linkLabel1->LinkBehavior = System::Windows::Forms::LinkBehavior::HoverUnderline;
 			this->linkLabel1->LinkColor = System::Drawing::Color::DodgerBlue;
-			this->linkLabel1->Location = System::Drawing::Point(382, 79);
+			this->linkLabel1->Location = System::Drawing::Point(372, 79);
 			this->linkLabel1->Name = L"linkLabel1";
 			this->linkLabel1->Size = System::Drawing::Size(147, 15);
 			this->linkLabel1->TabIndex = 4;
@@ -138,20 +139,21 @@ namespace GamePlay {
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->MaximizeBox = false;
 			this->Name = L"HelpForm";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterParent;
-			this->Text = L"HelpForm";
+			this->Text = L"Pomoc";
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
 		}
 #pragma endregion
 	private: System::Void linkLabelCSV_LinkClicked(System::Object^  sender, System::Windows::Forms::LinkLabelLinkClickedEventArgs^  e) {
-		//ShellExecute(NULL, NULL, L"https://www.hesa.ac.uk/support/user-guides/import-csv?fbclid=IwAR1VWmfvpfIZ6PE1mV0oaeoQpXebCPKHeT4kg8T_LZffX_XHxMGcunEck30", NULL, NULL, SW_RESTORE);
+		ShellExecute(NULL, NULL, L"https://www.hesa.ac.uk/support/user-guides/import-csv?fbclid=IwAR1VWmfvpfIZ6PE1mV0oaeoQpXebCPKHeT4kg8T_LZffX_XHxMGcunEck30", NULL, NULL, SW_SHOW);
 	}
 	private: System::Void linkLabel1_LinkClicked(System::Object^  sender, System::Windows::Forms::LinkLabelLinkClickedEventArgs^  e) {
-		//ShellExecute(NULL, NULL, L"mailto: kerkezpavle@yahoo.com", NULL, NULL, SW_RESTORE);
+		ShellExecute(NULL, NULL, L"mailto: kerkezpavle@yahoo.com", NULL, NULL, SW_RESTORE);
 	}
 };
 }

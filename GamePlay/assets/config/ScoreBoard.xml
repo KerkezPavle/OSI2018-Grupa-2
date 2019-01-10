@@ -1,66 +1,20 @@
 <Statistics>
     <FirstGame>
         <Score>
-            <date>Thu Jan 10 13:18:10 2019</date>
-            <value>100</value>
-        </Score>
-        <Score>
-            <date>Thu Jan 10 14:25:15 2019</date>
-            <value>25</value>
-        </Score>
-        <Score>
-            <date>Thu Jan 10 13:18:02 2019</date>
-            <value>25</value>
-        </Score>
-        <Score>
-            <date>Thu Jan 10 13:17:36 2019</date>
-            <value>25</value>
-        </Score>
-        <Score>
-            <date>Thu Jan 10 13:43:47 2019</date>
-            <value>0</value>
-        </Score>
-        <Score>
-            <date>Thu Jan 10 13:43:27 2019</date>
+            <date>Thu Jan 10 20:08:24 2019</date>
             <value>0</value>
         </Score>
     </FirstGame>
-    <SecondGame>
-        <Score>
-            <date>Thu Jan 10 13:21:50 2019</date>
-            <value>150</value>
-        </Score>
-        <Score>
-            <date>Thu Jan 10 13:31:11 2019</date>
-            <value>50</value>
-        </Score>
-        <Score>
-            <date>Thu Jan 10 14:11:39 2019</date>
-            <value>-100</value>
-        </Score>
-        <Score>
-            <date>Thu Jan 10 14:30:52 2019</date>
-            <value>-100</value>
-        </Score>
-    </SecondGame>
+    <SecondGame/>
     <ThirdGame>
         <Score>
-            <date>Thu Jan 10 14:08:00 2019</date>
-            <value>100</value>
-        </Score>
-        <Score>
-            <date>Thu Jan 10 14:26:12 2019</date>
+            <date>Thu Jan 10 20:08:39 2019</date>
             <value>60</value>
         </Score>
         <Score>
-            <date>Thu Jan 10 14:10:04 2019</date>
-            <value>10</value>
+            <date>Thu Jan 10 20:11:21 2019</date>
+            <value>30</value>
         </Score>
     </ThirdGame>
-    <FourthGame>
-        <Score>
-            <date>Thu Jan 10 13:32:09 2019</date>
-            <value>162</value>
-        </Score>
-    </FourthGame>
+    <FourthGame/>
 </Statistics>

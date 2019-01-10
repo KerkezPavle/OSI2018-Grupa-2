@@ -172,11 +172,11 @@ namespace GamePlay {
 			// 
 			this->label2->AutoSize = true;
 			this->label2->BackColor = System::Drawing::Color::Transparent;
-			this->label2->Font = (gcnew System::Drawing::Font(L"Cambria", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label2->Font = (gcnew System::Drawing::Font(L"Cambria", 11.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label2->Location = System::Drawing::Point(69, 171);
+			this->label2->Location = System::Drawing::Point(61, 171);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(93, 17);
+			this->label2->Size = System::Drawing::Size(103, 17);
 			this->label2->TabIndex = 3;
 			this->label2->Text = L"Pogodite broj";
 			this->label2->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
@@ -211,8 +211,7 @@ namespace GamePlay {
 			// 
 			// menuStrip1
 			// 
-			this->menuStrip1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(234)), static_cast<System::Int32>(static_cast<System::Byte>(234)),
-				static_cast<System::Int32>(static_cast<System::Byte>(234)));
+			this->menuStrip1->BackColor = System::Drawing::Color::Transparent;
 			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(2) {
 				this->optionsToolStripMenuItem,
 					this->aboutToolStripMenuItem
@@ -282,11 +281,11 @@ namespace GamePlay {
 			// 
 			this->lblKviz->AutoSize = true;
 			this->lblKviz->BackColor = System::Drawing::Color::Transparent;
-			this->lblKviz->Font = (gcnew System::Drawing::Font(L"Cambria", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->lblKviz->Font = (gcnew System::Drawing::Font(L"Cambria", 11.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->lblKviz->Location = System::Drawing::Point(301, 171);
 			this->lblKviz->Name = L"lblKviz";
-			this->lblKviz->Size = System::Drawing::Size(35, 17);
+			this->lblKviz->Size = System::Drawing::Size(37, 17);
 			this->lblKviz->TabIndex = 8;
 			this->lblKviz->Text = L"Kviz";
 			// 
@@ -294,11 +293,11 @@ namespace GamePlay {
 			// 
 			this->lblbingo->AutoSize = true;
 			this->lblbingo->BackColor = System::Drawing::Color::Transparent;
-			this->lblbingo->Font = (gcnew System::Drawing::Font(L"Cambria", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->lblbingo->Font = (gcnew System::Drawing::Font(L"Cambria", 11.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->lblbingo->Location = System::Drawing::Point(496, 171);
 			this->lblbingo->Name = L"lblbingo";
-			this->lblbingo->Size = System::Drawing::Size(44, 17);
+			this->lblbingo->Size = System::Drawing::Size(49, 17);
 			this->lblbingo->TabIndex = 9;
 			this->lblbingo->Text = L"Bingo";
 			// 
@@ -306,11 +305,11 @@ namespace GamePlay {
 			// 
 			this->label5->AutoSize = true;
 			this->label5->BackColor = System::Drawing::Color::Transparent;
-			this->label5->Font = (gcnew System::Drawing::Font(L"Cambria", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label5->Font = (gcnew System::Drawing::Font(L"Cambria", 11.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label5->Location = System::Drawing::Point(687, 171);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(74, 17);
+			this->label5->Size = System::Drawing::Size(81, 17);
 			this->label5->TabIndex = 10;
 			this->label5->Text = L"Minolovac";
 			// 
@@ -494,8 +493,7 @@ namespace GamePlay {
 			// 
 			// statusStrip1
 			// 
-			this->statusStrip1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(248)), static_cast<System::Int32>(static_cast<System::Byte>(248)),
-				static_cast<System::Int32>(static_cast<System::Byte>(248)));
+			this->statusStrip1->BackColor = System::Drawing::Color::Transparent;
 			this->statusStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->toolStripStatusLabel1 });
 			this->statusStrip1->Location = System::Drawing::Point(0, 419);
 			this->statusStrip1->Name = L"statusStrip1";
@@ -536,31 +534,31 @@ namespace GamePlay {
 			// 
 			this->lblInfoG1->AutoSize = true;
 			this->lblInfoG1->BackColor = System::Drawing::Color::Transparent;
-			this->lblInfoG1->Location = System::Drawing::Point(88, 192);
+			this->lblInfoG1->Location = System::Drawing::Point(91, 192);
 			this->lblInfoG1->Name = L"lblInfoG1";
-			this->lblInfoG1->Size = System::Drawing::Size(54, 13);
+			this->lblInfoG1->Size = System::Drawing::Size(43, 13);
 			this->lblInfoG1->TabIndex = 29;
-			this->lblInfoG1->Text = L"Ponistena";
+			this->lblInfoG1->Text = L"Aktivna";
 			// 
 			// lblInfoG2
 			// 
 			this->lblInfoG2->AutoSize = true;
 			this->lblInfoG2->BackColor = System::Drawing::Color::Transparent;
-			this->lblInfoG2->Location = System::Drawing::Point(293, 192);
+			this->lblInfoG2->Location = System::Drawing::Point(301, 192);
 			this->lblInfoG2->Name = L"lblInfoG2";
-			this->lblInfoG2->Size = System::Drawing::Size(54, 13);
+			this->lblInfoG2->Size = System::Drawing::Size(43, 13);
 			this->lblInfoG2->TabIndex = 30;
-			this->lblInfoG2->Text = L"Ponistena";
+			this->lblInfoG2->Text = L"Aktivna";
 			// 
 			// lblInfoG3
 			// 
 			this->lblInfoG3->AutoSize = true;
 			this->lblInfoG3->BackColor = System::Drawing::Color::Transparent;
-			this->lblInfoG3->Location = System::Drawing::Point(495, 192);
+			this->lblInfoG3->Location = System::Drawing::Point(498, 192);
 			this->lblInfoG3->Name = L"lblInfoG3";
-			this->lblInfoG3->Size = System::Drawing::Size(54, 13);
+			this->lblInfoG3->Size = System::Drawing::Size(43, 13);
 			this->lblInfoG3->TabIndex = 31;
-			this->lblInfoG3->Text = L"Ponistena";
+			this->lblInfoG3->Text = L"Aktivna";
 			// 
 			// lblInfoG4
 			// 
@@ -568,9 +566,9 @@ namespace GamePlay {
 			this->lblInfoG4->BackColor = System::Drawing::Color::Transparent;
 			this->lblInfoG4->Location = System::Drawing::Point(700, 192);
 			this->lblInfoG4->Name = L"lblInfoG4";
-			this->lblInfoG4->Size = System::Drawing::Size(54, 13);
+			this->lblInfoG4->Size = System::Drawing::Size(43, 13);
 			this->lblInfoG4->TabIndex = 32;
-			this->lblInfoG4->Text = L"Ponistena";
+			this->lblInfoG4->Text = L"Aktivna";
 			// 
 			// HomeForm
 			// 

@@ -289,7 +289,7 @@ private: System::Void button1_Click(System::Object^  sender, System::EventArgs^ 
 			this->Close();
 		}
 		else {
-			System::Windows::Forms::MessageBox::Show("Kod koji ste unijei nije validan!", "Greska", System::Windows::Forms::MessageBoxButtons::RetryCancel, System::Windows::Forms::MessageBoxIcon::Error);
+			System::Windows::Forms::MessageBox::Show("Kod koji ste unijeli nije validan!", "Greska", System::Windows::Forms::MessageBoxButtons::RetryCancel, System::Windows::Forms::MessageBoxIcon::Error);
 		}
 		
 	}
