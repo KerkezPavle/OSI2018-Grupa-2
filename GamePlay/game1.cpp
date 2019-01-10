@@ -294,7 +294,13 @@ int game1(int brb,int percentage)
 		{
 			while (true)
 			{
-				if (br_pokusaja <= 4)
+				if (br_pokusaja == 5)
+				{
+					std::cout << std::endl << "Niste pogodili, trazeni broj je bio " << slucajan_br(a, b) << "." << std::endl;
+					upisiBrojIgranja(br_igranja + 1);
+					return brb;//vracam ukupan broj bodova iz funkcije
+				}
+				else
 				{
 					n = ucitaj_br(a, b);
 					br_pokusaja++;
@@ -308,12 +314,6 @@ int game1(int brb,int percentage)
 						std::cout << std::endl << "Broj koji trazite je veci od navedenog broja." << std::endl;
 						b = n + 1;
 					}
-				}
-				else
-				{
-					std::cout << std::endl << "Niste pogodili, trazeni broj je bio " << slucajan_br(a, b) << "." << std::endl;
-					upisiBrojIgranja(br_igranja + 1);
-					return brb;//vracam ukupan broj bodova iz funkcije
 				}
 			}
 		}
