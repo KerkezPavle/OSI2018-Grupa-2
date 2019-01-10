@@ -150,10 +150,8 @@ bool Mineboard::index_in_range(int row, int col, int width, int height)
 	if (row >= 0 && col >= 0 && row < height &&  col < width) //provjerava se da li je indeks u opsegu
 		return true;
 	else
-	{
-		//std::cout << "\nError: please enter a number in range.\n";
-		return false;
-	}
+	return false;
+	
 }
 
 void Mineboard::place_mines(int row, int col, int numberOfMines)
@@ -163,12 +161,12 @@ void Mineboard::place_mines(int row, int col, int numberOfMines)
 		square_at(row, col).put_mine();
 		numberOfMines--;
 	}
-	for (int i = 0; i < height; i++) //dodavanje mina da se zadovolje jedinice koje su prikazane korisniku
+	for (int i = 0; i < height; i++) //dodavanje mina da se zadovolji podatak koji je prikazan korisniku
 	{
 		for (int j = 0; j < width; j++)
 		{
 			Square& currSquare = square_at(i, j);
-			if (currSquare.closeMines != '/' && !count_matches_mines(i, j)) // ako trenutno polje ima neki broj kao vrijednost i ako taj broj ne odgovara dosadasnjem stanju na tabli
+			if (currSquare.closeMines != '/' && !count_matches_mines(i, j)) // ako trenutno polje ima neki broj kao vrijednost i ako taj broj ne odgovara dosadasnjem stanju na tabli dodaju se mine oko datog polja
 			{
 				for (int k = -1; k < 2 && !count_matches_mines(i, j); k++)
 					for (int l = -1; l < 2 && count_matches_mines(i, j) != 1; l++)
