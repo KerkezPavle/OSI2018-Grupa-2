@@ -8,7 +8,7 @@
 #include <cctype>
 #include <algorithm>
 
-bool is_number(const std::string& s)
+bool is_number(const std::string& s)//funkcija za provjeru da li je ucitani string br ili nije
 {
 	return !s.empty() && std::find_if(s.begin(), s.end(), [](char c) {return !std::isdigit(c); }) == s.end();
 }
@@ -32,9 +32,8 @@ int ucitaj_br(int a, int b)
 			std::cout << "Niste unijeli broj, unesite ponovo";
 			n = -1;
 		}
-		if (n>=0)
-			if (n > a || n < b)
-				std::cout << "Taj broj nije iz dozvoljenog opsega, unesite ponovo broj." << std::endl;
+		if ((n!=-1)&&(n > a || n < b))
+			std::cout << "Taj broj nije iz dozvoljenog opsega, unesite ponovo broj." << std::endl;
 	} while (n > a || n < b);
 	return n;
 	
@@ -203,17 +202,8 @@ mozda ima neka sitna greska al bi trebalo da fercera
 				else
 				{
 					std::cout << std::endl << "Niste pogodili, trazeni broj je bio " << slucajan_br(a, b) << "." << std::endl;
-					if (izlaz_iz_igre(brb) == 2) //ako zeli napustiti igru vraca broj bodova i prekida while petlju
-					{
-						return brb;//vracam ukupan broj bodova iz funkcije
-					}
-					else //inace vraca se br pokusaja na 0
-					{
-						br_pokusaja = 0;
-						a = 100;
-						b = 0;
-						break;
-					}
+					return brb;//vracam ukupan broj bodova iz funkcije
+					
 				}
 			}
 		}
