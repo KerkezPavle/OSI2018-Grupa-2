@@ -23,7 +23,16 @@ int ucitaj_br(int a, int b)
 	do
 	{
 		std::cin >> s;
-		if (is_number(s))
+		if ((!is_number(s))||(strlen(s)>6))
+		{
+			std::cout<<"Unos nije validan, pokusajte ponovo..."<<std::endl;
+			n=-1;
+		}
+		else
+		{
+			n=std::stoi(s);
+		}
+		/*if (is_number(s))
 		{
 			n = std::stoi(s);
 		}
@@ -31,7 +40,7 @@ int ucitaj_br(int a, int b)
 		{
 			std::cout << "Niste unijeli broj, unesite ponovo";
 			n = -1;
-		}
+		}*/
 		if ((n!=-1)&&(n > a || n < b))
 			std::cout << "Taj broj nije iz dozvoljenog opsega, unesite ponovo broj." << std::endl;
 	} while (n > a || n < b);
@@ -294,7 +303,13 @@ int game1(int brb,int percentage)
 		{
 			while (true)
 			{
-				if (br_pokusaja <= 4)
+				if (br_pokusaja == 5)
+				{
+					std::cout << std::endl << "Niste pogodili, trazeni broj je bio " << slucajan_br(a, b) << "." << std::endl;
+					upisiBrojIgranja(br_igranja + 1);
+					return brb;//vracam ukupan broj bodova iz funkcije
+				}
+				else
 				{
 					n = ucitaj_br(a, b);
 					br_pokusaja++;
@@ -308,12 +323,6 @@ int game1(int brb,int percentage)
 						std::cout << std::endl << "Broj koji trazite je veci od navedenog broja." << std::endl;
 						b = n + 1;
 					}
-				}
-				else
-				{
-					std::cout << std::endl << "Niste pogodili, trazeni broj je bio " << slucajan_br(a, b) << "." << std::endl;
-					upisiBrojIgranja(br_igranja + 1);
-					return brb;//vracam ukupan broj bodova iz funkcije
 				}
 			}
 		}
