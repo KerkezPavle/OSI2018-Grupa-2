@@ -1,30 +1,28 @@
 #pragma once
-#pragma once
-#pragma once
 #define STANDARDSIZE 8
-#include <Windows.h>
+#include <vector>
+#include <iostream>
 
 
 class Mineboard
 {
 public:
-	Mineboard(int, int);
-	Mineboard(int, int, bool);
+	Mineboard(int, int); // konstruktor popunjene table za neometanu igru
+	Mineboard(int, int, bool); // konstruktor prazne table za kontrolisanu igru
 	~Mineboard();
 
 	void draw_board(bool);// bool u slucaju da je igrac izgubio funkciji govori da otkrije sva polja
 	void uncover_square(int, int);// otkriva dato polje i susjedna polja ako je potrebno
 	int how_many_left() const { return squaresLeft; } // daje podatak koliko je polja ostalo neotkriveno
 	static bool index_in_range(int, int, int, int); //provjera korisnickog unosa
-	int count_close_mines(int, int);
-	int count_hidden(int row, int col);
+	int count_close_mines(int, int);// broj mina u blizini datog polja/kvadratica
+	int count_hidden(int row, int col); // proj skrivenih polja u blizini datog polja
 	bool surrounded_by_hidden(int, int);// provjerava da li je polje okruzeno skrivenim poljima
 	int get_width() { return width; }
 	int get_height() { return height; }
 	void place_mines(int, int, int);
-	bool are_neighbours(int, int, int, int);// provjerava da li su unesena mjesta za jedinice
 
-											//susjedna i ako jesu stavlja minu na potrebno mjesto da bi se odrzao logicki poredak na tabeli
+	//susjedna i ako jesu stavlja minu na potrebno mjesto da bi se odrzao logicki poredak na tabeli
 	bool count_matches_mines(int, int); // provjerava da li brojac za mine odgovara stvarnom broju mina oko polja
 
 
@@ -45,8 +43,6 @@ private:
 		void make_revealed() { state = State::Revealed; }
 
 
-
-
 	private:
 		bool isMine = false;
 		State state = State::Hidden;
@@ -58,13 +54,13 @@ private:
 	const int width;
 	const int height;
 
-	Square** board;
+	std::vector<std::vector<Mineboard::Square>> board;
 
 public:
 	unsigned squaresLeft = width * height; //inicijalna vrijednost
 	Square& square_at(int, int); //koristi se za pristup polju na datim koordinatama
 private:
-	static Square** allocate(int, int); // pomocna funkcija za alokaciju prostora za matricu
+	static std::vector<std::vector<Mineboard::Square>> allocate(int, int); // pomocna funkcija za alokaciju prostora za matricu
 
 
 

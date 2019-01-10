@@ -1,6 +1,6 @@
 
 #include "Game4.h"
-#include <iostream>
+#include <Windows.h>
 #include <random>
 #include <iomanip>
 #include <string>
@@ -75,17 +75,13 @@ Mineboard::Mineboard(int width, int height) :width(width), height(height)
 Mineboard::Mineboard(int width, int height, bool) :width(width), height(height)
 {
 	board = allocate(width, height);
-	for (int i = 0; i < width; i++)
-		for (int j = 0; j < height; j++)
+	for (int i = 0; i < height; i++)
+		for (int j = 0; j < width; j++)
 			square_at(i, j).isMine = false;
 }
 
 Mineboard::~Mineboard()
 {
-
-	for (int i = 0; i < width; i++)
-		delete[] board[i];
-	delete[] board;
 
 }
 
@@ -140,20 +136,18 @@ void Mineboard::uncover_square(int row, int col)
 
 Mineboard::Square& Mineboard::square_at(int row, int col)
 {
-	return board[col][row];
+	return board[row][col];
 }
 
-Mineboard::Square** Mineboard::allocate(int width, int height)
+std::vector<std::vector<Mineboard::Square>> Mineboard::allocate(int width, int height)
 {
-	Square** array = new Square*[width];
-	for (int i = 0; i < width; i++)
-		array[i] = new Square[height];
-	return array;
+	std::vector<std::vector<Square>> matrix(height, std::vector<Square>(width));
+	return matrix;
 }
 
 bool Mineboard::index_in_range(int row, int col, int width, int height)
 {
-	if (row >= 0 && col >= 0 && row < height  &&  col < width) //provjerava se da li je indeks u opsegu
+	if (row >= 0 && col >= 0 && row < height &&  col < width) //provjerava se da li je indeks u opsegu
 		return true;
 	else
 	{
@@ -218,58 +212,7 @@ void Mineboard::place_mines(int row, int col, int numberOfMines)
 
 }
 
-bool Mineboard::are_neighbours(int row1, int col1, int row2, int col2)
-{
-	Square& square1 = square_at(row1, col1);
-	Square& square2 = square_at(row2, col2);
 
-	if (row1 - row2 <= 1 && row1 - row2 >= -1) // provjeravamo da li su im redovi susjedni
-		if (col1 - col2 <= 1 && col1 - col2 >= -1) //provjeravamo da li su kolone susjedne, ako jeste oboje, i polja su susjedna
-		{
-			if (row1 == row2)// ako su u istom redu
-			{
-				if (row1 + 1 < height)//ako se moze dodati iznad,tj ako nije red krajnji donji
-				{
-					square_at(row1 + 1, col1).put_mine(); return true; //dodajemo ispod prvog polja
-				}
-				else
-				{
-					square_at(row1 - 1, col1).put_mine(); return true; //dodajemo iznad prvog polja
-				}
-
-			}
-
-			if (col1 == col2)// ako su u istoj koloni
-			{
-				if (col1 + 1 < width)//ako se moze dodati desno,tj ako nije red krajnji desni
-				{
-					square_at(row1, col1 + 1).put_mine(); return true; //dodajemo desno od prvog polja
-				}
-				else
-				{
-					square_at(row1, col1 - 1).put_mine(); return true; //dodajemo lijevo od prvog polja
-				}
-
-			}
-
-			else
-			{
-				if (col2 > col1)
-				{
-					square_at(row1, col2).put_mine();// ako su dijagonalno dodamo na desno mjesto,gornje ili donje zavisi od polozaja;
-					return true;
-				}
-				else
-				{
-					square_at(row2, col1).put_mine();
-					return true;
-				}
-			}
-		}
-		else
-			return false;
-	return false;
-}
 
 bool Mineboard::count_matches_mines(int row, int col)
 {
@@ -306,9 +249,9 @@ bool Mineboard::surrounded_by_hidden(int row, int col)
 		for (int j = -1; j < 2; j++)
 		{
 
-			if (index_in_range(row + i, col + j, this->width, this->height)) // provjera da li je index u opsegu tj da li postoji ta plocica na tabli
+			if (index_in_range(row + i, col + j, this->width, this->height)) // provjera da li je index u opsegu tj da li postoji ta plocica na tabli, ako ne postoji ne ugrozava sakrivenost trenutne plocice
 			{
-				if (square_at(row + i, col + j).state == Mineboard::Square::State::Revealed) // ako plocica nije otkrivena ona ne predstavlja problem pri ubacivanju mine
+				if (square_at(row + i, col + j).state == Mineboard::Square::State::Revealed) // ako je susjedna plocica otkrivena onda trenutna nije okruzena sakrivenim
 				{
 					isHidden = false;
 				}
@@ -452,14 +395,11 @@ int Game4(int points, int percentToLose)
 			else
 			{                                                          // izracunavanje broja cistih polja
 				std::cout << "Ups! Stali ste na minu. Izgubili ste " << board.how_many_left() - (STANDARDSIZE*STANDARDSIZE) / 6 << " poena. Vise srece drugi put! \n";
-				return points + (board.how_many_left() - (STANDARDSIZE*STANDARDSIZE) / 6); // od trenutnog broja poena oduzima se broj preostalih cisth polja
+				return points - (board.how_many_left() - (STANDARDSIZE*STANDARDSIZE) / 6); // od trenutnog broja poena oduzima se broj preostalih cisth polja
 			}
-
-
 		}
 		else
 		{
-
 			int width, height, numberOfMines;
 			calculate_dimension(pointsToLose, numberOfMines, width, height); //preracunavaju se dimenzije tabele najpogodnije za zeljeni rezultat
 
@@ -467,12 +407,8 @@ int Game4(int points, int percentToLose)
 			board.draw_board(true);
 			std::cout << std::endl << "Dobrodosli! Igracete igru na tabli velicine " << width << "x" << height << " koja sadrzi " << numberOfMines << " sakrivenih mina. Srecno! \n" << std::endl;
 
-
-			int row;
-			int  col;
-
+			int row, col;
 			// prividno normalno igranje igre i izbor polja
-
 			do
 			{
 				try {
@@ -496,10 +432,8 @@ int Game4(int points, int percentToLose)
 			} while (!Mineboard::index_in_range(row, col, board.get_width(), board.get_height()) || board.square_at(row, col).is_revealed());
 			board.squaresLeft--;
 
-			if (pointsToLose < 7 && row==1 && col==1)
+			if (pointsToLose < 7 && row == 1 && col == 1)
 				board.square_at(row, col).set_close_mines(width*height - pointsToLose - 1);
-
-
 			else
 			{
 				srand(time(NULL));
@@ -513,17 +447,13 @@ int Game4(int points, int percentToLose)
 				if (edge == 2 && random > 3)
 					random = 3;
 
-				if (random > numberOfMines-1)
-					random = numberOfMines-1;
+				if (random > numberOfMines - 1)
+					random = numberOfMines - 1;
 
 				board.square_at(row, col).set_close_mines(random);
 			}
-
 			board.square_at(row, col).make_revealed();
 			board.draw_board(false);
-
-
-
 			do
 			{
 				try {
@@ -550,8 +480,7 @@ int Game4(int points, int percentToLose)
 			board.place_mines(row, col, numberOfMines); //popunjavanje minama u skladu sa dosadasnjim prikazanim stanjem
 			board.draw_board(true);
 			std::cout << "Ups! Stali ste na minu. Izgubili ste " << width * height - numberOfMines - 1 << " poena. Vise srece drugi put! \n";
-			return points + pointsToLose;
-
+			return points - pointsToLose;
 		}
 	}
 
