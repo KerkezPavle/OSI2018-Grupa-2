@@ -75,9 +75,6 @@ Mineboard::Mineboard(int width, int height) :width(width), height(height)
 Mineboard::Mineboard(int width, int height, bool) :width(width), height(height)
 {
 	board = allocate(width, height);
-	for (int i = 0; i < height; i++)
-		for (int j = 0; j < width; j++)
-			square_at(i, j).isMine = false;
 }
 
 Mineboard::~Mineboard()
@@ -354,7 +351,7 @@ int Game4(int points, int percentToLose)
 				int  col;
 
 				do
-				{
+				{  
 					try {
 						std::string input;
 						std::cout << "Unesite red:";
@@ -436,13 +433,13 @@ int Game4(int points, int percentToLose)
 			{
 				srand(time(NULL));
 				int random = rand() % 4 + 1;
-				int edge = 0; // provjera na koliko ivica se nalazi izabrano polje (npr. u cosku table :2 ivice)
+				int edge = 0; // provjera na koliko ivica se nalazi izabrano polje (npr. u cosku table :2 ivice) da se ne bi prikazao nemoguc broj susjednih mina
 				edge += Mineboard::index_in_range(row - 1, col, width, height);
 				edge += Mineboard::index_in_range(row + 1, col, width, height);
 				edge += Mineboard::index_in_range(row, col - 1, width, height);
 				edge += Mineboard::index_in_range(row, col + 1, width, height);
 
-				if (edge == 2 && random > 3)
+				if (edge == 2 && random > 3) // provjera da li se polje nalazi u cosku
 					random = 3;
 
 				if (random > numberOfMines - 1)

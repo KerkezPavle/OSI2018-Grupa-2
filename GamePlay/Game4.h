@@ -20,10 +20,10 @@ public:
 	bool surrounded_by_hidden(int, int);// provjerava da li je polje okruzeno skrivenim poljima
 	int get_width() { return width; }
 	int get_height() { return height; }
-	void place_mines(int, int, int);
+	void place_mines(int, int, int); // rasporedjuje mine na tabli u skladu sa dotadasnjim stanjem prikazanim korisniku (koristi se u kontrolisanom nacinu igranja)
 
 	//susjedna i ako jesu stavlja minu na potrebno mjesto da bi se odrzao logicki poredak na tabeli
-	bool count_matches_mines(int, int); // provjerava da li brojac za mine odgovara stvarnom broju mina oko polja
+	bool count_matches_mines(int, int); // provjerava da li podatak o broju okolnih mina polja odgovara stvarnom broju mina oko polja
 
 
 private:
@@ -39,7 +39,7 @@ private:
 		bool is_revealed() { return state == State::Revealed ? true : false; }
 
 		void draw_square(bool) const;
-		void set_close_mines(int);
+		void set_close_mines(int); // postavlja podatak o broju okolnih/susjednih mina
 		void make_revealed() { state = State::Revealed; }
 
 
