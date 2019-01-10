@@ -351,26 +351,34 @@ int Game4(int points, int percentToLose)
 				int  col;
 
 				do
-				{  
+				{
 					try {
-						std::string input;
-						std::cout << "Unesite red:";
-						std::getline(std::cin, input);
-						row = std::stoi(input);
-						std::cout << "Unesite kolonu:";
-						std::getline(std::cin, input);
-						col = std::stoi(input);
+						try {
+							std::string input;
+							std::cout << "Unesite red:";
+							std::getline(std::cin, input);
+							row = std::stoi(input);
+							std::cout << "Unesite kolonu:";
+							std::getline(std::cin, input);
+							col = std::stoi(input);
+						}
+						catch (std::invalid_argument ex) {
+							std::cout << "Na ulazu mora biti broj! Pokusajte ponovo.\n";
+							row = col = -1;
+						}
+						catch (std::out_of_range ex) {
+							std::cout << "Na ulazu mora biti broj! Pokusajte ponovo.\n";
+							row = col = -1;
+						}
+
+						if (!Mineboard::index_in_range(row, col, board.get_width(), board.get_height()) || board.square_at(row, col).is_revealed())
+							throw 1; //ako indeks nije u opsegu ili je polje otvoreno bice ispisana odgovarajuca poruka
 					}
-					catch (std::invalid_argument ex) {
-						std::cout << "Na ulazu mora biti broj! Pokusajte ponovo.\n";
-						row = col = -1;
-					}
-					catch (std::out_of_range ex) {
-						std::cout << "Na ulazu mora biti broj! Pokusajte ponovo.\n";
-						row = col = -1;
+					catch (int)
+					{
+						std::cout << "Molimo vas da izaberete neotvoreno polje u opsegu.\n";
 					}
 				} while (!Mineboard::index_in_range(row, col, board.get_width(), board.get_height()) || board.square_at(row, col).is_revealed());
-
 
 				if (Mineboard::index_in_range(row, col, board.get_width(), board.get_height()))
 
@@ -407,23 +415,31 @@ int Game4(int points, int percentToLose)
 			do
 			{
 				try {
-					std::string input;
-					std::cout << "Unesite red:";
-					std::getline(std::cin, input);
-					row = std::stoi(input);
-					std::cout << "Unesite kolonu:";
-					std::getline(std::cin, input);
-					col = std::stoi(input);
-				}
-				catch (std::invalid_argument ex) {
-					std::cout << "Na ulazu mora biti broj! Pokusajte ponovo.\n";
-					row = col = -1;
-				}
-				catch (std::out_of_range ex) {
-					std::cout << "Na ulazu mora biti broj! Pokusajte ponovo.\n";
-					row = col = -1;
-				}
+					try {
+						std::string input;
+						std::cout << "Unesite red:";
+						std::getline(std::cin, input);
+						row = std::stoi(input);
+						std::cout << "Unesite kolonu:";
+						std::getline(std::cin, input);
+						col = std::stoi(input);
+					}
+					catch (std::invalid_argument ex) {
+						std::cout << "Na ulazu mora biti broj! Pokusajte ponovo.\n";
+						row = col = -1;
+					}
+					catch (std::out_of_range ex) {
+						std::cout << "Na ulazu mora biti broj! Pokusajte ponovo.\n";
+						row = col = -1;
+					}
 
+					if (!Mineboard::index_in_range(row, col, board.get_width(), board.get_height()) || board.square_at(row, col).is_revealed())
+						throw 1; //ako indeks nije u opsegu ili je polje otvoreno bice ispisana odgovarajuca poruka
+				}
+				catch (int)
+				{
+					std::cout << "Molimo vas da izaberete neotvoreno polje u opsegu.\n";
+				}
 			} while (!Mineboard::index_in_range(row, col, board.get_width(), board.get_height()) || board.square_at(row, col).is_revealed());
 			board.squaresLeft--;
 
@@ -452,24 +468,32 @@ int Game4(int points, int percentToLose)
 			do
 			{
 				try {
-					std::string input;
-					std::cout << "Unesite red:";
-					std::getline(std::cin, input);
-					row = std::stoi(input);
-					std::cout << "Unesite kolonu:";
-					std::getline(std::cin, input);
-					col = std::stoi(input);
+					try {
+						std::string input;
+						std::cout << "Unesite red:";
+						std::getline(std::cin, input);
+						row = std::stoi(input);
+						std::cout << "Unesite kolonu:";
+						std::getline(std::cin, input);
+						col = std::stoi(input);
+					}
+					catch (std::invalid_argument ex) {
+						std::cout << "Na ulazu mora biti broj! Pokusajte ponovo.\n";
+						row = col = -1;
+					}
+					catch (std::out_of_range ex) {
+						std::cout << "Na ulazu mora biti broj! Pokusajte ponovo.\n";
+						row = col = -1;
+					}
+
+					if (!Mineboard::index_in_range(row, col, board.get_width(), board.get_height()) || board.square_at(row, col).is_revealed())
+						throw 1; //ako indeks nije u opsegu ili je polje otvoreno bice ispisana odgovarajuca poruka
 				}
-				catch (std::invalid_argument ex) {
-					std::cout << "Na ulazu mora biti broj! Pokusajte ponovo.\n";
-					row = col = -1;
-				}
-				catch (std::out_of_range ex) {
-					std::cout << "Na ulazu mora biti broj! Pokusajte ponovo.\n";
-					row = col = -1;
+				catch (int)
+				{
+					std::cout << "Molimo vas da izaberete neotvoreno polje u opsegu.\n";
 				}
 			} while (!Mineboard::index_in_range(row, col, board.get_width(), board.get_height()) || board.square_at(row, col).is_revealed());
-
 
 			board.squaresLeft--;
 			board.place_mines(row, col, numberOfMines); //popunjavanje minama u skladu sa dosadasnjim prikazanim stanjem
