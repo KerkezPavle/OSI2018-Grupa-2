@@ -16,7 +16,7 @@ public:
 	void draw(int);
 	int answerIt();
 	Question();
-	~Question();
+	~Question() {};
 };
 
 int game2(int, double);

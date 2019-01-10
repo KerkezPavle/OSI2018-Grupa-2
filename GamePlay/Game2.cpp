@@ -139,7 +139,3 @@ int game2(int points, double percentage) { //glavna funkcija
 	if (offset == 100)offset += 50;
 	return points + offset;
 }
-
-Question::~Question() {
-	if (queNum == 5) counter = 0;
-};
