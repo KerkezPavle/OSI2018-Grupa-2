@@ -91,26 +91,25 @@ void Question::draw(int p = 0) {		//ispis pitanja i odgovora
 
 
 int Question::answerIt() {	// odgovor na pitanje
-	char ans; int index;
+	std::string ans; int index;
 	std::cout << "Odgovor je pod: ";
 	std::cin >> ans;
-	index = (ans < 'Z') ? ans - 'A' : ans - 'a';
-	if ((index > 2) || (index < 0)) {
-		std::cout << "Pokusaj ponovo:" << std::endl;
-		return answerIt();
-	}
+	if ((ans == "A") || (ans == "a"))index = 0;
+	else if ((ans == "B") || (ans == "b"))index = 1;
+	else if ((ans == "C") || (ans == "c"))index = 2;
+	else return answerIt();
 	if (queNum == 0) return index;
 	std::cout << "Jeste li sigurni \""; color_Text(answer[index].text, index + 4); std::cout << "\" je ispravan odgovor?(y/n):";
 	std::cin >> ans;
-	if ((ans == 'y') || (ans == 'Y')) {
+	if ((ans == "y") || (ans == "Y")) {
 		std::cout << "Odgovor je.... ";
 		if (answer[index].is_Correct) {
-			std::string tmp("tacan.");
-			color_Text(tmp, 2); return 20;
+			ans="tacan.";
+			color_Text(ans, 2); return 20;
 		}
 		else {
-			std::string tmp("netacan.");
-			color_Text(tmp, 7); return -30;
+			ans="netacan.";
+			color_Text(ans, 7); return -30;
 		}
 	}
 	else return answerIt();
