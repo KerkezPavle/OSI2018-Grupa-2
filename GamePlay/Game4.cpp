@@ -496,7 +496,7 @@ int Game4(int points, int percentToLose)
 			} while (!Mineboard::index_in_range(row, col, board.get_width(), board.get_height()) || board.square_at(row, col).is_revealed());
 			board.squaresLeft--;
 
-			if (pointsToLose < 7)
+			if (pointsToLose < 7 && row==1 && col==1)
 				board.square_at(row, col).set_close_mines(width*height - pointsToLose - 1);
 
 
@@ -504,7 +504,7 @@ int Game4(int points, int percentToLose)
 			{
 				srand(time(NULL));
 				int random = rand() % 4 + 1;
-				int edge = 0; // provjera na koliko ivica se nalazi izabrano polje (npr. u cosku table -2 ivice)
+				int edge = 0; // provjera na koliko ivica se nalazi izabrano polje (npr. u cosku table :2 ivice)
 				edge += Mineboard::index_in_range(row - 1, col, width, height);
 				edge += Mineboard::index_in_range(row + 1, col, width, height);
 				edge += Mineboard::index_in_range(row, col - 1, width, height);
@@ -513,8 +513,8 @@ int Game4(int points, int percentToLose)
 				if (edge == 2 && random > 3)
 					random = 3;
 
-				if (random > numberOfMines)
-					random = numberOfMines;
+				if (random > numberOfMines-1)
+					random = numberOfMines-1;
 
 				board.square_at(row, col).set_close_mines(random);
 			}
