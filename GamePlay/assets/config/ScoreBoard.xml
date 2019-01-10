@@ -1,81 +1,66 @@
 <Statistics>
     <FirstGame>
         <Score>
-            <date>Wed Jan  9 20:10:38 2019</date>
-            <value>50</value>
-        </Score>
-        <Score>
-            <date>Wed Jan  9 20:12:25 2019</date>
-            <value>25</value>
-        </Score>
-        <Score>
-            <date>Wed Jan  9 20:12:53 2019</date>
-            <value>25</value>
-        </Score>
-        <Score>
-            <date>Wed Jan  9 20:14:26 2019</date>
-            <value>25</value>
-        </Score>
-        <Score>
-            <date>Wed Jan  9 20:11:30 2019</date>
-            <value>25</value>
-        </Score>
-        <Score>
-            <date>Wed Jan  9 20:14:02 2019</date>
-            <value>25</value>
-        </Score>
-        <Score>
-            <date>Wed Jan  9 20:14:41 2019</date>
-            <value>20</value>
-        </Score>
-        <Score>
-            <date>Wed Jan  9 20:12:07 2019</date>
-            <value>20</value>
-        </Score>
-        <Score>
-            <date>Wed Jan  9 20:18:27 2019</date>
-            <value>20</value>
-        </Score>
-        <Score>
-            <date>Wed Jan  9 20:16:14 2019</date>
-            <value>10</value>
-        </Score>
-    </FirstGame>
-    <SecondGame/>
-    <ThirdGame>
-        <Score>
-            <date>Wed Jan  9 20:07:35 2019</date>
+            <date>Thu Jan 10 13:18:10 2019</date>
             <value>100</value>
         </Score>
         <Score>
-            <date>Wed Jan  9 20:08:04 2019</date>
+            <date>Thu Jan 10 14:25:15 2019</date>
+            <value>25</value>
+        </Score>
+        <Score>
+            <date>Thu Jan 10 13:18:02 2019</date>
+            <value>25</value>
+        </Score>
+        <Score>
+            <date>Thu Jan 10 13:17:36 2019</date>
+            <value>25</value>
+        </Score>
+        <Score>
+            <date>Thu Jan 10 13:43:47 2019</date>
+            <value>0</value>
+        </Score>
+        <Score>
+            <date>Thu Jan 10 13:43:27 2019</date>
+            <value>0</value>
+        </Score>
+    </FirstGame>
+    <SecondGame>
+        <Score>
+            <date>Thu Jan 10 13:21:50 2019</date>
+            <value>150</value>
+        </Score>
+        <Score>
+            <date>Thu Jan 10 13:31:11 2019</date>
+            <value>50</value>
+        </Score>
+        <Score>
+            <date>Thu Jan 10 14:11:39 2019</date>
+            <value>-100</value>
+        </Score>
+        <Score>
+            <date>Thu Jan 10 14:30:52 2019</date>
+            <value>-100</value>
+        </Score>
+    </SecondGame>
+    <ThirdGame>
+        <Score>
+            <date>Thu Jan 10 14:08:00 2019</date>
+            <value>100</value>
+        </Score>
+        <Score>
+            <date>Thu Jan 10 14:26:12 2019</date>
             <value>60</value>
         </Score>
         <Score>
-            <date>Wed Jan  9 20:36:23 2019</date>
-            <value>60</value>
-        </Score>
-        <Score>
-            <date>Wed Jan  9 20:07:49 2019</date>
-            <value>30</value>
-        </Score>
-        <Score>
-            <date>Wed Jan  9 20:36:28 2019</date>
-            <value>30</value>
+            <date>Thu Jan 10 14:10:04 2019</date>
+            <value>10</value>
         </Score>
     </ThirdGame>
     <FourthGame>
         <Score>
-            <date>Wed Jan  9 20:36:36 2019</date>
-            <value>-5</value>
-        </Score>
-        <Score>
-            <date>Wed Jan  9 20:37:16 2019</date>
-            <value>-20</value>
-        </Score>
-        <Score>
-            <date>Wed Jan  9 20:36:43 2019</date>
-            <value>-52</value>
+            <date>Thu Jan 10 13:32:09 2019</date>
+            <value>162</value>
         </Score>
     </FourthGame>
 </Statistics>

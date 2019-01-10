@@ -15,14 +15,6 @@
 using namespace tinyxml2;
 
 
-/*HELPER FUNCTIONS - Only for interlan file use*/
-/*----------------------------------------------*/
-
-
-/*
-	@desc: Helper function that gets XMLElement of parent
-	@tested: working
-*/
 XMLElement* getParentGame(tinyxml2::XMLDocument& xmlDoc, int game) {
 	switch (game)
 	{
@@ -39,10 +31,6 @@ XMLElement* getParentGame(tinyxml2::XMLDocument& xmlDoc, int game) {
 	}
 }
 
-/*
-	@desc: Helper: Sorts all scores in the file
-	@tested: not working
-*/
 void sortGameResults(const char* XMLFileName) {
 	tinyxml2::XMLDocument xmlDoc;
 	xmlDoc.LoadFile(XMLFileName);
@@ -159,10 +147,6 @@ void sortGameResults(const char* XMLFileName) {
 	xmlDoc.SaveFile(XMLFileName);
 }
 
-/*
-	@desc: Helper: Gets the smalest score of the game
-	@tested: working
-*/
 XMLElement* getSmallest(tinyxml2::XMLDocument& xmlDoc, int game) {
 	XMLElement* minChild, *child;
 	XMLElement* parentGame = getParentGame(xmlDoc, game);
@@ -176,9 +160,7 @@ XMLElement* getSmallest(tinyxml2::XMLDocument& xmlDoc, int game) {
 
 }
 
-/*
-	@desc: Helper - Deletes smallest score of the game
-*/
+
 void deleteDataFromStats(const char* XMLFileName, int game) {
 	tinyxml2::XMLDocument xmlDoc;
 	xmlDoc.LoadFile(XMLFileName);
@@ -189,26 +171,6 @@ void deleteDataFromStats(const char* XMLFileName, int game) {
 	xmlDoc.SaveFile(XMLFileName);
 }
 
-/*----------------------------------------------*/
-/* MAIN FUNCTIIONS */
-
-
-/*
-	@desc: Function deletes XML score file
-	@tested: working
-*/
-void delXMLFile() {
-	system("del ScoreBoard.xml");
-}
-
-
-
-
-/*
-	@desc: Function for reading and displaying XML data
-	@parm: tinyxml2::XMLDocument doc
-	@tested: working
-*/
 void readXMLFile(const char* XMLFileName, int game) {
 	tinyxml2::XMLDocument xmlDoc;
 	int counter = 1;
@@ -225,11 +187,6 @@ void readXMLFile(const char* XMLFileName, int game) {
 	}
 }
 
-/*
-	@decs: Function that checks does the file already exists and if not, creates a new one
-	@parm: Name of the file
-	@tested: works
-*/
 int makeXMLScoreFileSafe() {
 	const char *XMLFileName = "assets/config/ScoreBoard.xml";
 	tinyxml2::XMLDocument xmlDoc;
@@ -240,10 +197,6 @@ int makeXMLScoreFileSafe() {
 	return 0;
 }
 
-/*
-	@desc: Function makes new XML score file
-	@tested: works
-*/
 void makeXMLSroreFile(const char *XMLFileName) {
 	tinyxml2::XMLDocument xmlDoc;
 	XMLNode *pRoot = xmlDoc.NewElement("Statistics");
@@ -284,11 +237,6 @@ bool makeXMLSettingsFile() {
 	return true;
 }
 
-/*
-	@desc:Function that insets new score into file
-	@parm: Filename, game number and score number
-	@tested: working
-*/
 bool insertDataIntoStats(int game, int score) {
 	const char* XMLFileName = "assets/config/ScoreBoard.xml";
 	tinyxml2::XMLDocument xmlDoc;
@@ -334,7 +282,6 @@ bool insertDataIntoStats(int game, int score) {
 	sortGameResults(XMLFileName);
 	return true;
 }
-
 
 bool isUserNameSet() {
 	const char* XMLFileName = "assets/config/Settings.xml";
@@ -467,7 +414,7 @@ BOOL WINAPI CtrlHandler(DWORD fdwCtrlType)
 }
 
 
-void testFun(int n) {
+void runGames(int n) {
 	AllocConsole();
 	SetConsoleCtrlHandler(CtrlHandler, TRUE);
 	freopen("CONIN$", "r", stdin);
@@ -483,10 +430,4 @@ void testFun(int n) {
 	fclose(stdout);
 	fclose(stderr);
 	FreeConsole();
-}
-
-void testTest() {
-	int a;
-	std::cin >> a;
-	std::cout << a;
 }

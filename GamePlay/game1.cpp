@@ -19,7 +19,7 @@ int ucitaj_br(int a, int b)
 	
 	int n;
 	std::string s;
-	std::cout << "Unesite broj iz opsega" << b << "-" << a << ":" << std::endl;
+	std::cout << "Unesite broj iz opsega (" << b << " - " << a << ")" << ":" << std::endl;
 	do
 	{
 		std::cin >> s;
@@ -84,6 +84,10 @@ int game1(int brb,int percentage)
 	std::cout << "Aplikacija nakon svakog pokusaja prikazuje poruku:" << std::endl << "\"Broj koji trazite je[veci | manji] od unesenog broja\"" << std::endl;
 	std::cout << "Ako korisnik pogodi trazeni broj dobija" << std::endl << "100 / broj_pokusaja bodova za svoj profil. " << std::endl << std::endl << std::endl;
 	*/
+
+	std::cout << "*********************************" << std::endl;
+	std::cout << "*          Pogodite broj        *" << std::endl;
+	std::cout << "*********************************" << std::endl;
 		a = 100;
 		b = 0;
 
